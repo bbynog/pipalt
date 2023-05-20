@@ -1,5 +1,5 @@
 {
-  "name": "marvel-admin",
+  "name": "pipalt-admin",
   "version": "10.0.0",
   "private": true,
   "author": "REDQ",
@@ -10,12 +10,12 @@
   "scripts": {
     "clean": "yarn workspaces run rimraf \"{.next,node_modules,__generated__,.cache,src/graphql/*.d.ts,src/framework/graphql/**/*.d.ts}\" && rimraf node_modules",
     "gql-clean": "yarn workspaces run rimraf \"{__generated__,src/graphql/*.d.ts,src/framework/graphql/**/*.d.ts}\"",
-    "dev:rest": "yarn workspace @marvel/admin-rest dev",
-    "build:rest": "yarn workspace @marvel/admin-rest build",
-    "start:rest": "yarn workspace @marvel/admin-rest start",
-    "dev:gql": "yarn workspace @marvel/admin-graphql dev",
-    "build:gql": "yarn workspace @marvel/admin-graphql build",
-    "start:gql": "yarn workspace @marvel/admin-graphql start"
+    "dev:rest": "yarn workspace @pipalt/admin dev",
+    "build:rest": "yarn workspace @pipalt/admin build",
+    "start:rest": "yarn workspace @pipalt/admin start",
+    "dev:gql": "yarn workspace @pipalt/admin dev",
+    "build:gql": "yarn workspace @pipalt/admin build",
+    "start:gql": "yarn workspace @pipalt/admin start"
   },
   "devDependencies": {
     "prettier": "2.8.4",

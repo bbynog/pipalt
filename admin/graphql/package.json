@@ -1,5 +1,5 @@
 {
-  "name": "@marvel/admin-graphql",
+  "name": "@pipalt/admin",
   "version": "10.0.0",
   "private": true,
   "scripts": {

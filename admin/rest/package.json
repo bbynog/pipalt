@@ -1,5 +1,5 @@
 {
-  "name": "@marvel/admin-rest",
+  "name": "@pipalt/admin-rest",
   "version": "10.0.0",
   "private": true,
   "scripts": {
