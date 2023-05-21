@@ -2,12 +2,12 @@ import invariant from 'tiny-invariant';
 
 invariant(
   process.env.NEXT_PUBLIC_DEFAULT_LANGUAGE,
-  'Default language is not set'
+  'Default language is not set',
 );
 
 invariant(
   process.env.NEXT_PUBLIC_AVAILABLE_LANGUAGES,
-  'Available language is not set'
+  'Available language is not set',
 );
 export const Config = {
   defaultLanguage: process.env.NEXT_PUBLIC_DEFAULT_LANGUAGE ?? 'en',

@@ -28,15 +28,15 @@ const WithdrawTable = ({ withdraws, title }: IProps) => {
   const renderStatusBadge = (status: string) => {
     switch (status) {
       case 'APPROVED':
-        return <Badge text={t('text-approved')} color="bg-accent" />;
+        return <Badge text={t('text-approved')} color='bg-accent' />;
       case 'PENDING':
-        return <Badge text={t('text-pending')} color="bg-purple-500" />;
+        return <Badge text={t('text-pending')} color='bg-purple-500' />;
       case 'ON_HOLD':
-        return <Badge text={t('text-on-hold')} color="bg-pink-500" />;
+        return <Badge text={t('text-on-hold')} color='bg-pink-500' />;
       case 'REJECTED':
-        return <Badge text={t('text-rejected')} color="bg-red-500" />;
+        return <Badge text={t('text-rejected')} color='bg-red-500' />;
       case 'PROCESSING':
-        return <Badge text={t('text-processing')} color="bg-yellow-500" />;
+        return <Badge text={t('text-processing')} color='bg-yellow-500' />;
     }
   };
 
@@ -77,7 +77,7 @@ const WithdrawTable = ({ withdraws, title }: IProps) => {
         dayjs.extend(utc);
         dayjs.extend(timezone);
         return (
-          <span className="whitespace-nowrap">
+          <span className='whitespace-nowrap'>
             {dayjs.utc(date).tz(dayjs.tz.guess()).fromNow()}
           </span>
         );
@@ -108,8 +108,8 @@ const WithdrawTable = ({ withdraws, title }: IProps) => {
   }
 
   return (
-    <div className="rounded overflow-hidden shadow">
-      <h3 className="text-heading text-center font-semibold px-4 py-3 bg-light border-b border-border-200">
+    <div className='overflow-hidden rounded shadow'>
+      <h3 className='border-b border-border-200 bg-light px-4 py-3 text-center font-semibold text-heading'>
         {title}
       </h3>
       <Table
@@ -117,7 +117,7 @@ const WithdrawTable = ({ withdraws, title }: IProps) => {
         columns={columns}
         emptyText={t('table:empty-table-data')}
         data={data}
-        rowKey="id"
+        rowKey='id'
         scroll={{ x: 700 }}
       />
     </div>

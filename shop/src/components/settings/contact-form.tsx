@@ -31,33 +31,33 @@ const ContactForm = () => {
     >
       {({ register, formState: { errors } }) => (
         <>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          <div className='grid grid-cols-1 gap-6 sm:grid-cols-2'>
             <Input
               label={t('text-name')}
               {...register('name')}
-              variant="outline"
+              variant='outline'
               error={t(errors.name?.message!)}
             />
             <Input
               label={t('text-email')}
               {...register('email')}
-              type="email"
-              variant="outline"
+              type='email'
+              variant='outline'
               error={t(errors.email?.message!)}
             />
           </div>
           <Input
             label={t('text-subject')}
             {...register('subject')}
-            variant="outline"
-            className="my-6"
+            variant='outline'
+            className='my-6'
             error={t(errors.subject?.message!)}
           />
           <TextArea
             label={t('text-description')}
             {...register('description')}
-            variant="outline"
-            className="my-6"
+            variant='outline'
+            className='my-6'
             error={t(errors.description?.message!)}
           />
 

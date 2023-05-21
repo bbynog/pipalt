@@ -23,7 +23,7 @@ export function formatSearchParams(params: Partial<SearchParamOptions>) {
         ? `${k}.slug:${v}`
         : ['is_approved'].includes(k)
         ? formatBooleanSearchParam(k, v as boolean)
-        : `${k}:${v}`
+        : `${k}:${v}`,
     )
     .join(';');
 }

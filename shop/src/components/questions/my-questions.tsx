@@ -38,41 +38,41 @@ function QuestionItem({ question }: { question: Question }) {
   });
 
   return (
-    <div className="border-t border-border-200 border-opacity-70 py-7 first:border-t-0">
-      <div className="mb-5 flex items-center space-x-4">
-        <div className="relative h-10 w-10 overflow-hidden rounded border border-gray-200">
+    <div className='border-t border-border-200 border-opacity-70 py-7 first:border-t-0'>
+      <div className='mb-5 flex items-center space-x-4'>
+        <div className='relative h-10 w-10 overflow-hidden rounded border border-gray-200'>
           <Image
             src={product.image?.original ?? productPlaceholder}
             fill
-            sizes="(max-width: 768px) 100vw"
+            sizes='(max-width: 768px) 100vw'
             alt={product?.name}
           />
         </div>
-        <div className="flex flex-col">
+        <div className='flex flex-col'>
           <Link
-            className="mb-0.5 inline-block text-sm font-semibold text-heading transition-colors hover:text-accent"
+            className='mb-0.5 inline-block text-sm font-semibold text-heading transition-colors hover:text-accent'
             href={Routes.product(product?.slug)}
           >
             {product?.name}
           </Link>
 
           {product?.product_type.toLowerCase() === 'variable' ? (
-            <div className="flex items-center justify-start space-x-1.5 rtl:space-x-reverse">
-              <span className="text-sm font-semibold text-body">
+            <div className='flex items-center justify-start space-x-1.5 rtl:space-x-reverse'>
+              <span className='text-sm font-semibold text-body'>
                 {minPrice}
               </span>
               <span> - </span>
-              <span className="text-sm font-semibold text-body">
+              <span className='text-sm font-semibold text-body'>
                 {maxPrice}
               </span>
             </div>
           ) : (
-            <span className="flex min-w-150 items-center">
-              <ins className="text-sm font-semibold text-body no-underline">
+            <span className='flex min-w-150 items-center'>
+              <ins className='text-sm font-semibold text-body no-underline'>
                 {price}
               </ins>
               {basePrice && (
-                <del className="text-sm font-normal text-muted ltr:ml-3 rtl:mr-3">
+                <del className='text-sm font-normal text-muted ltr:ml-3 rtl:mr-3'>
                   {basePrice}
                 </del>
               )}
@@ -81,10 +81,10 @@ function QuestionItem({ question }: { question: Question }) {
         </div>
       </div>
 
-      <div className="rounded-md bg-gray-50 px-4 py-3">
-        <p className="mb-2.5 text-base font-semibold text-heading">
+      <div className='rounded-md bg-gray-50 px-4 py-3'>
+        <p className='mb-2.5 text-base font-semibold text-heading'>
           <span
-            className="inline-block uppercase ltr:mr-1 rtl:ml-1"
+            className='inline-block uppercase ltr:mr-1 rtl:ml-1'
             title={t('text-question')}
           >
             Q:
@@ -92,29 +92,29 @@ function QuestionItem({ question }: { question: Question }) {
           {myQuestion}
         </p>
         {answer && (
-          <p className="text-base">
+          <p className='text-base'>
             <span
-              className="inline-block font-semibold uppercase text-heading ltr:mr-1 rtl:ml-1"
+              className='inline-block font-semibold uppercase text-heading ltr:mr-1 rtl:ml-1'
               title={t('text-answer')}
             >
               A:
             </span>
-            <span className="text-gray-600">{answer}</span>
+            <span className='text-gray-600'>{answer}</span>
           </p>
         )}
 
-        <div className="flex items-center justify-between">
-          <div className="mt-5 text-xs text-gray-400">
+        <div className='flex items-center justify-between'>
+          <div className='mt-5 text-xs text-gray-400'>
             {t('text-date')}: {dayjs(created_at).format('D MMMM, YYYY')}
           </div>
 
-          <div className="flex items-center space-x-6 rtl:space-x-reverse">
-            <span className="flex items-center text-xs tracking-wider text-gray-400 transition">
-              <LikeIcon className="h-4 w-4 ltr:mr-1.5 rtl:ml-1.5" />
+          <div className='flex items-center space-x-6 rtl:space-x-reverse'>
+            <span className='flex items-center text-xs tracking-wider text-gray-400 transition'>
+              <LikeIcon className='h-4 w-4 ltr:mr-1.5 rtl:ml-1.5' />
               {positive_feedbacks_count}
             </span>
-            <span className="flex items-center text-xs tracking-wider text-gray-400 transition">
-              <DislikeIcon className="h-4 w-4 ltr:mr-1.5 rtl:ml-1.5" />
+            <span className='flex items-center text-xs tracking-wider text-gray-400 transition'>
+              <DislikeIcon className='h-4 w-4 ltr:mr-1.5 rtl:ml-1.5' />
               {negative_feedbacks_count}
             </span>
           </div>
@@ -134,9 +134,9 @@ const MyQuestions: React.FC = () => {
   // loader
   if (!questions.length && isLoading) {
     return (
-      <div className="flex w-full flex-col">
-        <div className="mb-8 flex items-center justify-center sm:mb-10">
-          <h1 className="text-center text-lg font-semibold text-heading sm:text-xl">
+      <div className='flex w-full flex-col'>
+        <div className='mb-8 flex items-center justify-center sm:mb-10'>
+          <h1 className='text-center text-lg font-semibold text-heading sm:text-xl'>
             {t('profile-sidebar-my-questions')}
           </h1>
         </div>
@@ -149,15 +149,15 @@ const MyQuestions: React.FC = () => {
 
   if (!questions.length && !isLoading) {
     return (
-      <div className="flex w-full flex-col">
-        <div className="mb-8 flex items-center justify-between sm:mb-10">
-          <h1 className="ml-auto text-center text-lg font-semibold text-heading sm:text-xl">
+      <div className='flex w-full flex-col'>
+        <div className='mb-8 flex items-center justify-between sm:mb-10'>
+          <h1 className='ml-auto text-center text-lg font-semibold text-heading sm:text-xl'>
             {t('profile-sidebar-my-questions')}
           </h1>
         </div>
         <NotFound
-          text="text-no-download"
-          className="mx-auto w-full md:w-7/12"
+          text='text-no-download'
+          className='mx-auto w-full md:w-7/12'
         />
       </div>
     );
@@ -165,9 +165,9 @@ const MyQuestions: React.FC = () => {
 
   return (
     <>
-      <div className="flex w-full flex-col">
-        <div className="mb-2 flex items-center justify-center md:mb-8">
-          <h1 className="text-center text-lg font-semibold text-heading sm:text-xl">
+      <div className='flex w-full flex-col'>
+        <div className='mb-2 flex items-center justify-center md:mb-8'>
+          <h1 className='text-center text-lg font-semibold text-heading sm:text-xl'>
             {t('profile-sidebar-my-questions')}
           </h1>
         </div>
@@ -179,7 +179,7 @@ const MyQuestions: React.FC = () => {
       </div>
 
       {hasMore && (
-        <div className="xxl:mt-8 mt-2 flex w-full justify-center xl:mt-4">
+        <div className='xxl:mt-8 mt-2 flex w-full justify-center xl:mt-4'>
           <Button
             loading={isLoadingMore}
             disabled={isLoadingMore}

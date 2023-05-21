@@ -30,8 +30,8 @@ const Coupon = ({ theme, subtotal }: { theme?: 'dark'; subtotal: number }) => {
   if (!hasCoupon && !coupon) {
     return (
       <p
-        role="button"
-        className="text-xs font-bold transition duration-200 text-body hover:text-accent"
+        role='button'
+        className='text-xs font-bold text-body transition duration-200 hover:text-accent'
         onClick={() => setHasCoupon(true)}
       >
         {t('text-have-coupon')}
@@ -67,20 +67,20 @@ const Coupon = ({ theme, subtotal }: { theme?: 'dark'; subtotal: number }) => {
     <form
       onSubmit={handleSubmit(onSubmit)}
       noValidate
-      className="flex flex-col w-full sm:flex-row"
+      className='flex w-full flex-col sm:flex-row'
     >
       <Input
         {...register('code', { required: 'text-coupon-required' })}
         placeholder={t('text-enter-coupon')}
-        variant="outline"
-        className="flex-1 mb-4 sm:mb-0 ltr:sm:mr-4 rtl:sm:ml-4"
-        dimension="small"
+        variant='outline'
+        className='mb-4 flex-1 sm:mb-0 ltr:sm:mr-4 rtl:sm:ml-4'
+        dimension='small'
         error={t(formError?.code!)}
       />
       <Button
         loading={loading}
         disabled={loading}
-        size="small"
+        size='small'
         className={classNames('w-full sm:w-40 lg:w-auto', {
           'bg-gray-800 transition-colors hover:bg-gray-900': theme === 'dark',
         })}

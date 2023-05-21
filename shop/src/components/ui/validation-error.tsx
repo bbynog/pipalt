@@ -4,7 +4,7 @@ interface Props {
 
 const ValidationError = ({ message }: Props) => {
   return (
-    <p className="my-2 text-sm ltr:text-left rtl:text-right text-red-500">
+    <p className='my-2 text-sm text-red-500 ltr:text-left rtl:text-right'>
       {message}
     </p>
   );

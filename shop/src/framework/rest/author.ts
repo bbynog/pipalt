@@ -34,7 +34,7 @@ export function useAuthors(options?: Partial<AuthorQueryOptions>) {
     {
       getNextPageParam: ({ current_page, last_page }) =>
         last_page > current_page && { page: current_page + 1 },
-    }
+    },
   );
 
   function handleLoadMore() {
@@ -65,7 +65,7 @@ export function useTopAuthors(options: Pick<QueryOptions, 'limit'>) {
 
   const { data, isLoading, error } = useQuery<Author[], Error>(
     [API_ENDPOINTS.AUTHORS_TOP, formattedOptions],
-    ({ queryKey }) => client.authors.top(queryKey[1] as QueryOptions)
+    ({ queryKey }) => client.authors.top(queryKey[1] as QueryOptions),
   );
   return {
     authors: data ?? [],

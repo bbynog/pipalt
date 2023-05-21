@@ -53,7 +53,7 @@ const StarFilter = () => {
   const { t } = useTranslation('common');
   const { isRTL } = useIsRTL();
   const [selected, setSelected] = useState(
-    () => plans.find((plan) => plan.value === router.query.rating) ?? plans[0]
+    () => plans.find((plan) => plan.value === router.query.rating) ?? plans[0],
   );
 
   useEffect(() => {
@@ -74,14 +74,14 @@ const StarFilter = () => {
         },
       },
       undefined,
-      { scroll: false }
+      { scroll: false },
     );
     setSelected(values);
   }
 
   return (
-    <div className="flex items-center">
-      <span className="min-w-[50px] text-sm text-body ltr:mr-2 rtl:ml-2">
+    <div className='flex items-center'>
+      <span className='min-w-[50px] text-sm text-body ltr:mr-2 rtl:ml-2'>
         {t('text-filter')} :
       </span>
       <Select

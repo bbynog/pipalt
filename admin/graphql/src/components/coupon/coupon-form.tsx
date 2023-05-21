@@ -133,7 +133,7 @@ export default function CreateOrUpdateCouponForm({ initialValues }: IProps) {
             undefined,
             {
               locale: router.locale,
-            }
+            },
           );
         }
       }
@@ -150,19 +150,19 @@ export default function CreateOrUpdateCouponForm({ initialValues }: IProps) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="flex flex-wrap pb-8 my-5 border-b border-dashed border-border-base sm:my-8">
+      <div className='my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8'>
         <Description
           title={t('form:input-label-image')}
           details={t('form:coupon-image-helper-text')}
-          className="w-full px-0 pb-5 sm:pe-4 md:pe-5 sm:w-4/12 md:w-1/3 sm:py-8"
+          className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
         />
 
-        <Card className="w-full sm:w-8/12 md:w-2/3">
-          <FileInput name="image" control={control} multiple={false} />
+        <Card className='w-full sm:w-8/12 md:w-2/3'>
+          <FileInput name='image' control={control} multiple={false} />
         </Card>
       </div>
 
-      <div className="flex flex-wrap my-5 sm:my-8">
+      <div className='my-5 flex flex-wrap sm:my-8'>
         <Description
           title={t('form:input-label-description')}
           details={`${
@@ -170,46 +170,46 @@ export default function CreateOrUpdateCouponForm({ initialValues }: IProps) {
               ? t('form:item-description-edit')
               : t('form:item-description-add')
           } ${t('form:coupon-form-info-help-text')}`}
-          className="w-full px-0 pb-5 sm:pe-4 md:pe-5 sm:w-4/12 md:w-1/3 sm:py-8 "
+          className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5 '
         />
 
-        <Card className="w-full sm:w-8/12 md:w-2/3">
+        <Card className='w-full sm:w-8/12 md:w-2/3'>
           <Input
             label={t('form:input-label-code')}
             {...register('code')}
             error={t(errors.code?.message!)}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
             disabled={isTranslateCoupon}
           />
 
           <TextArea
             label={t('form:input-label-description')}
             {...register('description')}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
           />
 
-          <div className="mb-5">
+          <div className='mb-5'>
             <Label>{t('form:input-label-type')}</Label>
-            <div className="space-y-3.5">
+            <div className='space-y-3.5'>
               <Radio
                 label={t('form:input-label-fixed')}
                 {...register('type')}
-                id="fixed"
+                id='fixed'
                 value={CouponType.FIXED}
                 error={t(errors.type?.message!)}
               />
               <Radio
                 label={t('form:input-label-percentage')}
                 {...register('type')}
-                id="percentage"
+                id='percentage'
                 value={CouponType.PERCENTAGE}
               />
               <Radio
                 label={t('form:input-label-free-shipping')}
                 {...register('type')}
-                id="free_shipping"
+                id='free_shipping'
                 value={CouponType.FREE_SHIPPING}
               />
             </div>
@@ -219,33 +219,33 @@ export default function CreateOrUpdateCouponForm({ initialValues }: IProps) {
             <Input
               label={`${t('form:coupon-input-label-amount')} (${currency})`}
               {...register('amount')}
-              type="number"
+              type='number'
               error={t(errors.amount?.message!)}
-              variant="outline"
-              className="mb-5"
+              variant='outline'
+              className='mb-5'
               disabled={isTranslateCoupon}
             />
           )}
           <Input
             label={`${t('form:input-label-minimum-cart-amount')} (${currency})`}
             {...register('minimum_cart_amount')}
-            type="number"
+            type='number'
             error={t(errors.minimum_cart_amount?.message!)}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
             disabled={isTranslateCoupon}
           />
-          <div className="flex flex-col sm:flex-row">
-            <div className="w-full p-0 mb-5 sm:w-1/2 sm:pe-2 sm:mb-0">
+          <div className='flex flex-col sm:flex-row'>
+            <div className='mb-5 w-full p-0 sm:mb-0 sm:w-1/2 sm:pe-2'>
               <Label>{t('form:coupon-active-from')}</Label>
 
               <Controller
                 control={control}
-                name="active_from"
+                name='active_from'
                 render={({ field: { onChange, onBlur, value } }) => (
                   //@ts-ignore
                   <DatePicker
-                    dateFormat="dd/MM/yyyy"
+                    dateFormat='dd/MM/yyyy'
                     onChange={onChange}
                     onBlur={onBlur}
                     selected={value}
@@ -254,23 +254,23 @@ export default function CreateOrUpdateCouponForm({ initialValues }: IProps) {
                     maxDate={expire_at}
                     startDate={active_from}
                     endDate={expire_at}
-                    className="border border-border-base"
+                    className='border border-border-base'
                     disabled={isTranslateCoupon}
                   />
                 )}
               />
               <ValidationError message={t(errors.active_from?.message!)} />
             </div>
-            <div className="w-full p-0 sm:w-1/2 sm:ps-2">
+            <div className='w-full p-0 sm:w-1/2 sm:ps-2'>
               <Label>{t('form:coupon-expire-at')}</Label>
 
               <Controller
                 control={control}
-                name="expire_at"
+                name='expire_at'
                 render={({ field: { onChange, onBlur, value } }) => (
                   //@ts-ignore
                   <DatePicker
-                    dateFormat="dd/MM/yyyy"
+                    dateFormat='dd/MM/yyyy'
                     onChange={onChange}
                     onBlur={onBlur}
                     selected={value}
@@ -278,7 +278,7 @@ export default function CreateOrUpdateCouponForm({ initialValues }: IProps) {
                     startDate={active_from}
                     endDate={expire_at}
                     minDate={active_from}
-                    className="border border-border-base"
+                    className='border border-border-base'
                     disabled={isTranslateCoupon}
                   />
                 )}
@@ -288,13 +288,13 @@ export default function CreateOrUpdateCouponForm({ initialValues }: IProps) {
           </div>
         </Card>
       </div>
-      <div className="mb-4 text-end">
+      <div className='mb-4 text-end'>
         {initialValues && (
           <Button
-            variant="outline"
+            variant='outline'
             onClick={router.back}
-            className="me-4"
-            type="button"
+            className='me-4'
+            type='button'
           >
             {t('form:button-label-back')}
           </Button>

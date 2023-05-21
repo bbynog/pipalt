@@ -15,18 +15,18 @@ const BoxedCheckbox = React.forwardRef<HTMLInputElement, Props>(
         <input
           id={name}
           name={name}
-          type="checkbox"
+          type='checkbox'
           ref={ref}
-          className="boxed-checkbox"
+          className='boxed-checkbox'
           {...rest}
         />
 
-        <label htmlFor={name} className="text-body text-sm">
+        <label htmlFor={name} className='text-sm text-body'>
           {label}
         </label>
       </div>
     );
-  }
+  },
 );
 
 BoxedCheckbox.displayName = 'Boxed Checkbox';

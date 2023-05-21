@@ -31,8 +31,8 @@ const GroupsMenu: React.FC<GroupsMenuProps> = ({
     groups?.find((type) => router.asPath.includes(type?.slug)) ?? defaultGroup;
   return (
     <Menu
-      as="div"
-      className="relative inline-block ltr:text-left rtl:text-right"
+      as='div'
+      className='relative inline-block ltr:text-left rtl:text-right'
     >
       <Menu.Button
         className={cn(
@@ -43,13 +43,13 @@ const GroupsMenu: React.FC<GroupsMenuProps> = ({
             'rounded border-border-200 bg-light xl:min-w-150 xl:border xl:text-accent':
               variant === 'colored',
           },
-          className
+          className,
         )}
       >
         {({ open }) => (
           <>
             {variant === 'colored' && selectedMenu?.icon && (
-              <span className="flex h-5 w-5 items-center justify-center ltr:mr-2 rtl:ml-2">
+              <span className='flex h-5 w-5 items-center justify-center ltr:mr-2 rtl:ml-2'>
                 {getIcon({
                   iconList: groupIcons,
                   iconName: selectedMenu?.icon,
@@ -57,8 +57,8 @@ const GroupsMenu: React.FC<GroupsMenuProps> = ({
                 })}
               </span>
             )}
-            <span className="whitespace-nowrap">{selectedMenu?.name}</span>
-            <span className="flex pt-1 ltr:ml-auto ltr:pl-2.5 rtl:mr-auto rtl:pr-2.5">
+            <span className='whitespace-nowrap'>{selectedMenu?.name}</span>
+            <span className='flex pt-1 ltr:ml-auto ltr:pl-2.5 rtl:mr-auto rtl:pr-2.5'>
               {variant === 'colored' && (
                 <CaretDown
                   className={open ? 'rotate-180 transform' : undefined}
@@ -79,15 +79,15 @@ const GroupsMenu: React.FC<GroupsMenuProps> = ({
 
       <Transition
         as={Fragment}
-        enter="transition ease-out duration-100"
-        enterFrom="transform opacity-0 scale-95"
-        enterTo="transform opacity-100 scale-100"
-        leave="transition ease-in duration-75"
-        leaveFrom="transform opacity-100 scale-100"
-        leaveTo="transform opacity-0 scale-95"
+        enter='transition ease-out duration-100'
+        enterFrom='transform opacity-0 scale-95'
+        enterTo='transform opacity-100 scale-100'
+        leave='transition ease-in duration-75'
+        leaveFrom='transform opacity-100 scale-100'
+        leaveTo='transform opacity-0 scale-95'
       >
         <Menu.Items
-          as="ul"
+          as='ul'
           className={cn(
             'absolute mt-2 h-56 max-h-56 min-h-40 w-48 overflow-hidden rounded bg-light py-2 shadow-700 focus:outline-none focus-visible:outline-0 sm:max-h-72 lg:h-72 2xl:h-auto 2xl:max-h-screen',
             {
@@ -95,11 +95,11 @@ const GroupsMenu: React.FC<GroupsMenuProps> = ({
                 variant === 'minimal',
               'ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left ltr:xl:right-auto ltr:xl:left-0 ltr:xl:origin-top-left rtl:xl:left-auto rtl:xl:right-0 rtl:xl:origin-top-right':
                 variant !== 'minimal',
-            }
+            },
           )}
         >
           <Scrollbar
-            className="h-full w-full"
+            className='h-full w-full'
             options={{
               scrollbars: {
                 autoHide: 'never',
@@ -115,11 +115,11 @@ const GroupsMenu: React.FC<GroupsMenuProps> = ({
                       href={`/${slug}`}
                       className={cn(
                         'flex w-full items-center space-x-4 px-5 py-2.5 text-sm font-semibold capitalize transition duration-200 hover:text-accent focus:outline-0 focus-visible:outline-0 rtl:space-x-reverse',
-                        active ? 'text-accent' : 'text-body-dark'
+                        active ? 'text-accent' : 'text-body-dark',
                       )}
                     >
                       {icon && variant === 'colored' && (
-                        <span className="flex h-5 w-5 items-center justify-center">
+                        <span className='flex h-5 w-5 items-center justify-center'>
                           {getIcon({
                             iconList: groupIcons,
                             iconName: icon,

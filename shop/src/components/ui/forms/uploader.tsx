@@ -26,7 +26,7 @@ export default function Uploader({
     (acceptedFiles: any) => {
       upload(acceptedFiles);
     },
-    [upload]
+    [upload],
   );
   const { getRootProps, getInputProps } = useDropzone({
     //@ts-ignore
@@ -47,10 +47,10 @@ export default function Uploader({
   // multiple: false
   const thumbs = files.map((file: any, idx) => (
     <div
-      className="relative inline-flex flex-col mt-2 overflow-hidden border rounded border-border-100 ltr:mr-2 rtl:ml-2"
+      className='relative mt-2 inline-flex flex-col overflow-hidden rounded border border-border-100 ltr:mr-2 rtl:ml-2'
       key={idx}
     >
-      <div className="flex items-center justify-center w-16 h-16 min-w-0 overflow-hidden">
+      <div className='flex h-16 w-16 min-w-0 items-center justify-center overflow-hidden'>
         {/* eslint-disable */}
         <img src={file.preview} alt={file?.name} />
       </div>
@@ -62,11 +62,11 @@ export default function Uploader({
       // Make sure to revoke the data uris to avoid memory leaks
       files.forEach((file: any) => URL.revokeObjectURL(file.preview));
     },
-    [files]
+    [files],
   );
 
   return (
-    <section className="upload">
+    <section className='upload'>
       <div
         {...getRootProps({
           className:
@@ -79,24 +79,24 @@ export default function Uploader({
             onBlur,
           })}
         />
-        <UploadIcon className="text-muted-light" />
-        <p className="mt-4 text-sm text-center text-body">
-          <span className="font-semibold text-accent">
+        <UploadIcon className='text-muted-light' />
+        <p className='mt-4 text-center text-sm text-body'>
+          <span className='font-semibold text-accent'>
             {t('text-upload-highlight')}
           </span>{' '}
           {t('text-upload-message')} <br />
-          <span className="text-xs text-body">{t('text-img-format')}</span>
+          <span className='text-xs text-body'>{t('text-img-format')}</span>
         </p>
       </div>
 
-      <aside className="flex flex-wrap mt-2">
+      <aside className='mt-2 flex flex-wrap'>
         {!!thumbs.length && thumbs}
         {isLoading && (
-          <div className="flex items-center h-16 mt-2 ltr:ml-2 rtl:mr-2">
+          <div className='mt-2 flex h-16 items-center ltr:ml-2 rtl:mr-2'>
             <Spinner
               text={t('text-loading')}
               simple={true}
-              className="w-6 h-6"
+              className='h-6 w-6'
             />
           </div>
         )}

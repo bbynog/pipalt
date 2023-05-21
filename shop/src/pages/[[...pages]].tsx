@@ -14,7 +14,7 @@ export { getStaticPaths, getStaticProps };
 
 const CartCounterButton = dynamic(
   () => import('@/components/cart/cart-counter-button'),
-  { ssr: false }
+  { ssr: false },
 );
 const Classic = dynamic(() => import('@/components/layouts/classic'));
 const Standard = dynamic(() => import('@/components/layouts/standard'));

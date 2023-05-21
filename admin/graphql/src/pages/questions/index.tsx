@@ -6,7 +6,11 @@ import ErrorMessage from '@/components/ui/error-message';
 import Loader from '@/components/ui/loader/loader';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { QuestionPaginator, SortOrder, QueryQuestionsOrderByColumn } from '__generated__/__types__';
+import {
+  QuestionPaginator,
+  SortOrder,
+  QueryQuestionsOrderByColumn,
+} from '__generated__/__types__';
 import { useQuestionsQuery } from '@/graphql/questions.graphql';
 
 export default function Questions() {
@@ -34,9 +38,9 @@ export default function Questions() {
 
   return (
     <>
-      <Card className="flex flex-col mb-8">
-        <div className="flex flex-col items-center w-full md:flex-row">
-          <h1 className="text-xl font-semibold text-heading">
+      <Card className='mb-8 flex flex-col'>
+        <div className='flex w-full flex-col items-center md:flex-row'>
+          <h1 className='text-xl font-semibold text-heading'>
             {t('common:sidebar-nav-item-questions')}
           </h1>
         </div>

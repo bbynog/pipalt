@@ -13,7 +13,7 @@ const ReviewDeleteView = () => {
         fields: {
           reviews(existingRefs, { readField }) {
             return existingRefs.data.filter(
-              (ref: any) => deleteReview.id !== readField('id', ref)
+              (ref: any) => deleteReview.id !== readField('id', ref),
             );
           },
         },

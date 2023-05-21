@@ -75,9 +75,9 @@ const LoginForm = () => {
         <Input
           label={t('form:input-label-email')}
           {...register('email')}
-          type="email"
-          variant="outline"
-          className="mb-4"
+          type='email'
+          variant='outline'
+          className='mb-4'
           error={t(errors?.email?.message!)}
         />
         <PasswordInput
@@ -85,26 +85,26 @@ const LoginForm = () => {
           forgotPassHelpText={t('form:input-forgot-password-label')}
           {...register('password')}
           error={t(errors?.password?.message!)}
-          variant="outline"
-          className="mb-4"
+          variant='outline'
+          className='mb-4'
           forgotPageLink={Routes.forgotPassword}
         />
-        <Button className="w-full" loading={loading} disabled={loading}>
+        <Button className='w-full' loading={loading} disabled={loading}>
           {t('form:button-label-login')}
         </Button>
 
-        <div className="flex flex-col items-center justify-center relative text-sm text-heading mt-8 sm:mt-11 mb-6 sm:mb-8">
-          <hr className="w-full" />
-          <span className="absolute start-2/4 -top-2.5 px-2 -ms-4 bg-light">
+        <div className='relative mt-8 mb-6 flex flex-col items-center justify-center text-sm text-heading sm:mt-11 sm:mb-8'>
+          <hr className='w-full' />
+          <span className='absolute -top-2.5 bg-light px-2 -ms-4 start-2/4'>
             {t('common:text-or')}
           </span>
         </div>
 
-        <div className="text-sm sm:text-base text-body text-center">
+        <div className='text-center text-sm text-body sm:text-base'>
           {t('form:text-no-account')}{' '}
           <Link
             href={Routes.register}
-            className="ms-1 underline text-accent font-semibold transition-colors duration-200 focus:outline-none hover:text-accent-hover focus:text-accent-700 hover:no-underline focus:no-underline"
+            className='font-semibold text-accent underline transition-colors duration-200 ms-1 hover:text-accent-hover hover:no-underline focus:text-accent-700 focus:no-underline focus:outline-none'
           >
             {t('form:link-register-shop-owner')}
           </Link>
@@ -113,9 +113,9 @@ const LoginForm = () => {
         {errorMessage ? (
           <Alert
             message={t(errorMessage)}
-            variant="error"
+            variant='error'
             closeable={true}
-            className="mt-5"
+            className='mt-5'
             onClose={() => setErrorMessage(null)}
           />
         ) : null}

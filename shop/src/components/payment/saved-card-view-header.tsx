@@ -26,15 +26,15 @@ const SavedCardViewHeader: React.FC<Props> = ({
   };
   return (
     <>
-      <div className="mb-8 flex items-center justify-between sm:mb-10">
-        <h1 className="text-center text-lg font-semibold text-heading sm:text-xl">
+      <div className='mb-8 flex items-center justify-between sm:mb-10'>
+        <h1 className='text-center text-lg font-semibold text-heading sm:text-xl'>
           {t('profile-sidebar-my-cards')}
         </h1>
         <button
-          className="flex items-center text-sm font-semibold text-accent"
+          className='flex items-center text-sm font-semibold text-accent'
           onClick={handleAddNewCard}
         >
-          <PlusIcon className="mr-1" width={16} height={16} />
+          <PlusIcon className='mr-1' width={16} height={16} />
           {t('profile-add-cards')}
         </button>
       </div>

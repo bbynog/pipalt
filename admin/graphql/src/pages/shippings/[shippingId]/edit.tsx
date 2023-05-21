@@ -21,14 +21,12 @@ export default function UpdateShippingPage() {
 
   return (
     <>
-      <div className="py-5 sm:py-8 flex border-b border-dashed border-border-base">
-        <h1 className="text-lg font-semibold text-heading">
+      <div className='flex border-b border-dashed border-border-base py-5 sm:py-8'>
+        <h1 className='text-lg font-semibold text-heading'>
           {t('form:form-title-update-shipping')} #{data?.shippingClass?.id}
         </h1>
       </div>
-      <CreateOrUpdateShippingForm
-        initialValues={data?.shippingClass as any}
-      />
+      <CreateOrUpdateShippingForm initialValues={data?.shippingClass as any} />
     </>
   );
 }

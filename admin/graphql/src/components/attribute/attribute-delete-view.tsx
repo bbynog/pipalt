@@ -14,7 +14,7 @@ const AttributeDeleteView = () => {
         fields: {
           attributes(existingRefs, { readField }) {
             return existingRefs.filter(
-              (ref: any) => deleteAttribute.id !== readField('id', ref)
+              (ref: any) => deleteAttribute.id !== readField('id', ref),
             );
           },
         },

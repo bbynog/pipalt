@@ -24,7 +24,7 @@ module.exports = {
     },
     extend: {
       screens: {
-        xs: '490px',
+        'xs': '490px',
         ...defaultTheme.screens,
         '3xl': '2100px',
       },
@@ -39,9 +39,9 @@ module.exports = {
         '10px': '0.625rem',
       },
       colors: {
-        light: withOpacity('--color-light'),
-        dark: withOpacity('--color-dark'),
-        accent: withOpacity('--color-accent'),
+        'light': withOpacity('--color-light'),
+        'dark': withOpacity('--color-dark'),
+        'accent': withOpacity('--color-accent'),
         'accent-hover': withOpacity('--color-accent-hover'),
         'accent-200': withOpacity('--color-accent-200'),
         'accent-300': withOpacity('--color-accent-300'),
@@ -74,24 +74,24 @@ module.exports = {
         'orange-700': withOpacity('--color-orange-700'),
         'orange-800': withOpacity('--color-orange-800'),
         'orange-900': withOpacity('--color-orange-900'),
-        social: {
-          facebook: '#3b5998',
+        'social': {
+          'facebook': '#3b5998',
           'facebook-hover': '#35508a',
-          twitter: '#1da1f2',
-          instagram: '#e1306c',
-          youtube: '#ff0000',
-          google: '#4285f4',
+          'twitter': '#1da1f2',
+          'instagram': '#e1306c',
+          'youtube': '#ff0000',
+          'google': '#4285f4',
           'google-hover': '#3574de',
         },
       },
       textColor: {
-        body: withOpacity('--text-base'),
+        'body': withOpacity('--text-base'),
         'body-dark': withOpacity('--text-base-dark'),
-        muted: withOpacity('--text-muted'),
+        'muted': withOpacity('--text-muted'),
         'muted-light': withOpacity('--text-muted-light'),
-        heading: withOpacity('--text-heading'),
+        'heading': withOpacity('--text-heading'),
         'sub-heading': withOpacity('--text-sub-heading'),
-        bolder: withOpacity('--text-text-bolder'),
+        'bolder': withOpacity('--text-text-bolder'),
       },
       minHeight: {
         580: '580px',
@@ -108,7 +108,7 @@ module.exports = {
       maxHeight: {
         '70vh': '70vh',
         '85vh': '85vh',
-        140: '35rem', // 560px
+        '140': '35rem', // 560px
       },
       maxWidth: {
         1920: '1920px',
@@ -126,20 +126,20 @@ module.exports = {
         2.5: '2.5',
       },
       boxShadow: {
-        200: 'rgba(0, 0, 0, 0.16) 0px 3px 6px',
-        300: 'rgba(0, 0, 0, 0.16) 0px 0px 6px',
-        350: 'rgba(0, 0, 0, 0.16) 0px 3px 6px',
-        400: 'rgba(0, 0, 0, 0.1) 0px 0px 8px 0',
-        500: 'rgba(0, 0, 0, 0.17) 0px 0px 12px',
-        600: 'rgba(0, 0, 0, 0.1) 0px 3px 8px',
-        700: 'rgba(0, 0, 0, 0.08) 0px 2px 16px',
-        900: 'rgba(0, 0, 0, 0.05) 0px 21px 36px',
-        downfall: 'rgba(0, 0, 0, 0.14) 0px 6px 12px',
-        paymentCard: '0px 2px 6px rgba(59, 74, 92, 0.1)',
+        '200': 'rgba(0, 0, 0, 0.16) 0px 3px 6px',
+        '300': 'rgba(0, 0, 0, 0.16) 0px 0px 6px',
+        '350': 'rgba(0, 0, 0, 0.16) 0px 3px 6px',
+        '400': 'rgba(0, 0, 0, 0.1) 0px 0px 8px 0',
+        '500': 'rgba(0, 0, 0, 0.17) 0px 0px 12px',
+        '600': 'rgba(0, 0, 0, 0.1) 0px 3px 8px',
+        '700': 'rgba(0, 0, 0, 0.08) 0px 2px 16px',
+        '900': 'rgba(0, 0, 0, 0.05) 0px 21px 36px',
+        'downfall': 'rgba(0, 0, 0, 0.14) 0px 6px 12px',
+        'paymentCard': '0px 2px 6px rgba(59, 74, 92, 0.1)',
         'downfall-xs': 'rgba(0, 0, 0, 0.14) 0px 1px 2px',
         'downfall-sm': 'rgba(0, 0, 0, 0.14) 0px 2px 4px',
         'downfall-lg': 'rgba(0, 0, 0, 0.16) 0px 8px 16px',
-        cardAction:
+        'cardAction':
           '0 0 0 1px #8898aa1a, 0 15px 35px #31315d1a, 0 5px 15px #00000014',
       },
       transitionProperty: {

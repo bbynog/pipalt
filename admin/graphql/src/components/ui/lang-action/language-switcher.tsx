@@ -35,14 +35,14 @@ const LanguageSwitcher = ({
   const { locales, locale } = router;
 
   let filterItem = [...languageMenu]?.filter((element) =>
-    locales?.includes(element?.id)
+    locales?.includes(element?.id),
   );
 
   let options = [...filterItem]?.filter(
     (filter) =>
       !record?.translated_languages?.find(
-        (translated: any) => translated === filter?.value
-      )
+        (translated: any) => translated === filter?.value,
+      ),
   );
 
   let filterTranslatedItem = [...languageMenu]
@@ -64,16 +64,16 @@ const LanguageSwitcher = ({
   }, [refs.reference, refs.floating, update]);
 
   return (
-    <div className={`w-full flex items-center justify-end gap-5 ${className}`}>
+    <div className={`flex w-full items-center justify-end gap-5 ${className}`}>
       <ActionButtons
         id={record?.id}
         editUrl={routes.editWithoutLang(slug)}
         deleteModalView={deleteModalView}
       />
       {Config.defaultLanguage === router.locale && (
-        <Popover className="relative inline-block">
+        <Popover className='relative inline-block'>
           <Popover.Button
-            className="p-2 text-base transition duration-200 hover:text-heading opacity-80"
+            className='p-2 text-base opacity-80 transition duration-200 hover:text-heading'
             ref={reference}
           >
             <ToggleIcon width={20} />
@@ -87,12 +87,12 @@ const LanguageSwitcher = ({
               zIndex: 1,
             }}
           >
-            <Popover.Panel className="px-4 sm:px-0 max-w-[20rem] w-[18rem] bg-[#F7F8F9] shadow-translatePanel rounded overflow-hidden">
+            <Popover.Panel className='w-[18rem] max-w-[20rem] overflow-hidden rounded bg-[#F7F8F9] px-4 shadow-translatePanel sm:px-0'>
               {options.length ? (
                 <LanguageListbox
                   title={t('text-non-translated-title')}
                   items={options}
-                  translate="false"
+                  translate='false'
                   slug={slug}
                   id={record?.id}
                   routes={routes}
@@ -104,7 +104,7 @@ const LanguageSwitcher = ({
                 <LanguageListbox
                   title={t('text-translated-title')}
                   items={filterTranslatedItem}
-                  translate="true"
+                  translate='true'
                   slug={slug}
                   id={record?.id}
                   routes={routes}

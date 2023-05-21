@@ -22,7 +22,11 @@ export const selectStyles = {
     backgroundColor: state?.isDisabled ? '#EEF1F4' : '#ffffff',
     borderRadius: 5,
     border: '1px solid #D1D5DB',
-    borderColor: state?.isDisabled ? '#D4D8DD' : state.isFocused ? 'rgb(var(--color-accent-500))' : '#D1D5DB',
+    borderColor: state?.isDisabled
+      ? '#D4D8DD'
+      : state.isFocused
+      ? 'rgb(var(--color-accent-500))'
+      : '#D1D5DB',
     boxShadow:
       state.menuIsOpen &&
       '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',

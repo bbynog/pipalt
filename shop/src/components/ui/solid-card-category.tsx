@@ -13,17 +13,17 @@ interface CategoryItemProps {
 }
 const CategoryItem: React.FC<CategoryItemProps> = ({ item }) => {
   return (
-    <div className="group relative cursor-pointer overflow-hidden text-center">
+    <div className='group relative cursor-pointer overflow-hidden text-center'>
       <Link href={`/${item?.type?.slug}/search/?category=${item.slug}`}>
         <Image
           src={item?.image?.original! ?? productPlaceholder}
           alt={item?.name!}
           width={200}
           height={240}
-          className="rounded-md"
+          className='rounded-md'
         />
       </Link>
-      <span className="mt-2 block text-base font-semibold text-heading transition-colors group-hover:text-orange-500 ltr:text-left rtl:text-right">
+      <span className='mt-2 block text-base font-semibold text-heading transition-colors group-hover:text-orange-500 ltr:text-left rtl:text-right'>
         {item.name}
       </span>
     </div>
@@ -73,9 +73,9 @@ function SolidCardCategory({ items }: any) {
   };
 
   return (
-    <div className="relative">
+    <div className='relative'>
       <Swiper
-        id="category-card-menu"
+        id='category-card-menu'
         modules={[Navigation]}
         navigation={{
           prevEl,
@@ -94,16 +94,16 @@ function SolidCardCategory({ items }: any) {
       </Swiper>
       <div
         ref={(node) => setPrevEl(node)}
-        className="banner-slider-prev absolute top-1/2 z-10 -mt-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-light text-heading shadow-300 outline-none transition-colors hover:text-orange-500 focus:outline-none ltr:-left-4 rtl:-right-4"
+        className='banner-slider-prev absolute top-1/2 z-10 -mt-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-light text-heading shadow-300 outline-none transition-colors hover:text-orange-500 focus:outline-none ltr:-left-4 rtl:-right-4'
       >
-        <span className="sr-only">{t('text-previous')}</span>
+        <span className='sr-only'>{t('text-previous')}</span>
         {isRTL ? <ArrowNextIcon /> : <ArrowPrevIcon />}
       </div>
       <div
         ref={(node) => setNextEl(node)}
-        className="banner-slider-next absolute top-1/2 z-10 -mt-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-light text-heading shadow-300 outline-none transition-colors hover:text-orange-500 focus:outline-none ltr:-right-4 rtl:-left-4"
+        className='banner-slider-next absolute top-1/2 z-10 -mt-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-light text-heading shadow-300 outline-none transition-colors hover:text-orange-500 focus:outline-none ltr:-right-4 rtl:-left-4'
       >
-        <span className="sr-only">{t('text-next')}</span>
+        <span className='sr-only'>{t('text-next')}</span>
         {isRTL ? <ArrowPrevIcon /> : <ArrowNextIcon />}
       </div>
     </div>

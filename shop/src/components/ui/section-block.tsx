@@ -27,20 +27,20 @@ const SectionBlock: React.FC<SectionProps> = ({
     <div
       className={cn(
         'flex w-full flex-col px-7 pb-[40px] xl:px-16 xl:pb-[54px] 3xl:pb-[60px]',
-        className
+        className,
       )}
     >
       {title && (
-        <div className="flex items-center justify-between mb-7 ">
+        <div className='mb-7 flex items-center justify-between '>
           {title && (
-            <h3 className="text-2xl font-semibold lg:text-[27px] 3xl:text-3xl">
+            <h3 className='text-2xl font-semibold lg:text-[27px] 3xl:text-3xl'>
               {t(title)}
             </h3>
           )}
           {href && (
             <Link
               href={href}
-              className="justify-end text-base font-semibold transition-colors hover:text-orange-500"
+              className='justify-end text-base font-semibold transition-colors hover:text-orange-500'
             >
               {t('text-see-all')}
             </Link>

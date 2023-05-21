@@ -10,11 +10,11 @@ export default function MessagePageIndex() {
   return (
     <>
       <Card
-        className="h-full overflow-hidden !p-0 !shadow-chatBox"
+        className='h-full overflow-hidden !p-0 !shadow-chatBox'
         style={{ maxHeight: 'calc(100% - 5px)' }}
       >
         {width >= RESPONSIVE_WIDTH ? (
-          <div className="flex h-full flex-wrap overflow-hidden">
+          <div className='flex h-full flex-wrap overflow-hidden'>
             <UserListIndex />
 
             <UserMessageIndex />

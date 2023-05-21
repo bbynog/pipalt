@@ -46,7 +46,7 @@ const CardsView = ({
       align: alignLeft,
       render: (record: any) => {
         return record?.default_card ? (
-          <div className="w-10 text-accent">
+          <div className='w-10 text-accent'>
             <CheckIconWithBg />
           </div>
         ) : (
@@ -56,7 +56,7 @@ const CardsView = ({
     },
     {
       title: (
-        <span className="text-sm text-[#686D73]">{t('text-company')}</span>
+        <span className='text-sm text-[#686D73]'>{t('text-company')}</span>
       ),
       dataIndex: 'network',
       key: 'network',
@@ -64,7 +64,7 @@ const CardsView = ({
       align: alignLeft,
       render: (network: string) => {
         return (
-          <div className="w-10">
+          <div className='w-10'>
             {network ? (
               <Image
                 src={images[network]}
@@ -86,7 +86,7 @@ const CardsView = ({
     },
     {
       title: (
-        <span className="text-sm text-[#686D73]">{t('text-card-number')}</span>
+        <span className='text-sm text-[#686D73]'>{t('text-card-number')}</span>
       ),
       dataIndex: 'last4',
       key: 'last4',
@@ -94,13 +94,13 @@ const CardsView = ({
       width: 200,
       render: (last4: number) => {
         return (
-          <p className="truncate text-base text-black">{`**** **** **** ${last4}`}</p>
+          <p className='truncate text-base text-black'>{`**** **** **** ${last4}`}</p>
         );
       },
     },
     {
       title: (
-        <span className="text-sm text-[#686D73]">
+        <span className='text-sm text-[#686D73]'>
           {t('text-card-owner-name')}
         </span>
       ),
@@ -109,19 +109,19 @@ const CardsView = ({
       align: alignLeft,
       width: 250,
       render: (owner_name: string) => {
-        return <p className="truncate text-base text-black">{owner_name}</p>;
+        return <p className='truncate text-base text-black'>{owner_name}</p>;
       },
     },
     {
       title: (
-        <span className="text-sm text-[#686D73]">{t('text-card-expire')}</span>
+        <span className='text-sm text-[#686D73]'>{t('text-card-expire')}</span>
       ),
       dataIndex: 'expires',
       key: 'expires',
       align: alignLeft,
       width: 200,
       render: (expires: string) => {
-        return <p className="text-base text-black">{expires}</p>;
+        return <p className='text-base text-black'>{expires}</p>;
       },
     },
     {
@@ -131,7 +131,7 @@ const CardsView = ({
       width: 200,
       render: (card: any) => {
         return (
-          <div className="relative flex items-center justify-end">
+          <div className='relative flex items-center justify-end'>
             <Action card={card} payments={payments} />
           </div>
         );
@@ -143,7 +143,7 @@ const CardsView = ({
       //@ts-ignore
       columns={columns}
       data={payments}
-      className="card-view-table w-full shadow-none"
+      className='card-view-table w-full shadow-none'
       scroll={{ x: 350, y: 500 }}
       rowClassName={(record, i) =>
         record?.default_card ? 'row-highlight' : ''

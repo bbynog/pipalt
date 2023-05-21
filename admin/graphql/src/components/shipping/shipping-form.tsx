@@ -82,7 +82,7 @@ export default function CreateOrUpdateShippingForm({ initialValues }: IProps) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="flex flex-wrap my-5 sm:my-8">
+      <div className='my-5 flex flex-wrap sm:my-8'>
         <Description
           title={t('form:item-description')}
           details={`${
@@ -90,37 +90,37 @@ export default function CreateOrUpdateShippingForm({ initialValues }: IProps) {
               ? t('form:item-description-update')
               : t('form:item-description-add')
           } ${t('form:shipping-form-info-help-text')}`}
-          className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8"
+          className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
         />
-        <Card className="w-full sm:w-8/12 md:w-2/3">
+        <Card className='w-full sm:w-8/12 md:w-2/3'>
           <Input
             label={t('form:input-label-name')}
             {...register('name')}
             error={t(errors.name?.message!)}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
           />
 
-          <div className="mb-5">
+          <div className='mb-5'>
             <Label>{t('form:input-label-type')}</Label>
             <Radio
               label={t('form:input-label-free')}
               {...register('type')}
-              id="FREE"
+              id='FREE'
               value={ShippingType.Free}
-              className="mb-2"
+              className='mb-2'
             />
             <Radio
               label={t('form:input-label-fixed')}
               {...register('type')}
-              id="FIXED"
+              id='FIXED'
               value={ShippingType.Fixed}
-              className="mb-2"
+              className='mb-2'
             />
             <Radio
               label={t('form:input-label-percentage')}
               {...register('type')}
-              id="PERCENTAGE"
+              id='PERCENTAGE'
               value={ShippingType.Percentage}
             />
           </div>
@@ -128,22 +128,22 @@ export default function CreateOrUpdateShippingForm({ initialValues }: IProps) {
             <Input
               label={t('form:input-label-amount')}
               {...register('amount')}
-              type="number"
+              type='number'
               error={t(errors.amount?.message!)}
-              variant="outline"
-              className="mb-5"
+              variant='outline'
+              className='mb-5'
             />
           )}
         </Card>
       </div>
 
-      <div className="mb-4 text-end">
+      <div className='mb-4 text-end'>
         {initialValues && (
           <Button
-            variant="outline"
+            variant='outline'
             onClick={router.back}
-            className="me-4"
-            type="button"
+            className='me-4'
+            type='button'
           >
             {t('form:button-label-back')}
           </Button>

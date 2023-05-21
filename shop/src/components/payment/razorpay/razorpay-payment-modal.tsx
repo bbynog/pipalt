@@ -28,7 +28,8 @@ const RazorpayPaymentModal: React.FC<Props> = ({
   const { createOrderPayment } = useOrderPayment();
 
   // @ts-ignore
-  const { customer_name, customer_contact, customer, billing_address } = order ?? {};
+  const { customer_name, customer_contact, customer, billing_address } =
+    order ?? {};
 
   const paymentHandle = useCallback(async () => {
     if (!checkScriptLoaded()) {

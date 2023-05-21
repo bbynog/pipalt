@@ -28,14 +28,14 @@ export default function OtpCodeForm({
   const { closeModal } = useModalAction();
 
   return (
-    <div className="space-y-5 rounded border border-gray-200 p-5">
+    <div className='space-y-5 rounded border border-gray-200 p-5'>
       <Form<OptCodeFormProps>
         onSubmit={onSubmit}
         validationSchema={otpLoginFormSchemaForExistingUser}
       >
         {({ control, formState: { errors } }) => (
           <>
-            <div className="mb-5">
+            <div className='mb-5'>
               <Label>{t('text-otp-code')}</Label>
               <Controller
                 control={control}
@@ -45,22 +45,22 @@ export default function OtpCodeForm({
                     onChange={onChange}
                     numInputs={6}
                     separator={
-                      <span className="hidden sm:inline-block">-</span>
+                      <span className='hidden sm:inline-block'>-</span>
                     }
-                    containerStyle="flex items-center justify-between -mx-2"
-                    inputStyle="flex items-center justify-center !w-full mx-2 sm:!w-9 !px-0 appearance-none transition duration-300 ease-in-out text-heading text-sm focus:outline-0 focus:ring-0 border border-border-base rounded focus:border-accent h-12"
-                    disabledStyle="!bg-gray-100"
+                    containerStyle='flex items-center justify-between -mx-2'
+                    inputStyle='flex items-center justify-center !w-full mx-2 sm:!w-9 !px-0 appearance-none transition duration-300 ease-in-out text-heading text-sm focus:outline-0 focus:ring-0 border border-border-base rounded focus:border-accent h-12'
+                    disabledStyle='!bg-gray-100'
                   />
                 )}
-                name="code"
-                defaultValue=""
+                name='code'
+                defaultValue=''
               />
             </div>
-            <div className="grid grid-cols-2 gap-5">
+            <div className='grid grid-cols-2 gap-5'>
               <Button
-                variant="outline"
+                variant='outline'
                 onClick={closeModal}
-                className="hover:border-red-500 hover:bg-red-500"
+                className='hover:border-red-500 hover:bg-red-500'
               >
                 {t('text-cancel')}
               </Button>

@@ -31,7 +31,7 @@ const UserListIndex = ({ className, ...rest }: Props) => {
             : '',
           'flex h-full flex-1 flex-col',
           adminPermission ? 'pb-6' : '',
-          className
+          className,
         )}
         {...rest}
       >
@@ -46,8 +46,8 @@ const UserListIndex = ({ className, ...rest }: Props) => {
         <UserListView filterText={text} permission={adminPermission} />
 
         {adminPermission ? (
-          <div className="mx-6 block">
-            <Button onClick={handleComposeClick} className="w-full">
+          <div className='mx-6 block'>
+            <Button onClick={handleComposeClick} className='w-full'>
               {t('text-compose')}
             </Button>
           </div>

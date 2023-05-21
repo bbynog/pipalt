@@ -172,14 +172,14 @@ export default function CreateOrUpdateAttributeForm({ initialValues }: IProps) {
       {errorMessage ? (
         <Alert
           message={t(`common:${errorMessage}`)}
-          variant="error"
+          variant='error'
           closeable={true}
-          className="mt-5"
+          className='mt-5'
           onClose={() => setErrorMessage(null)}
         />
       ) : null}
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="flex flex-wrap pb-8 border-b border-dashed border-border-base my-5 sm:my-8">
+        <div className='my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8'>
           <Description
             title={t('common:attribute')}
             details={`${
@@ -187,21 +187,21 @@ export default function CreateOrUpdateAttributeForm({ initialValues }: IProps) {
                 ? t('form:item-description-update')
                 : t('form:item-description-add')
             } ${t('form:form-description-attribute-name')}`}
-            className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8"
+            className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
           />
 
-          <Card className="w-full sm:w-8/12 md:w-2/3">
+          <Card className='w-full sm:w-8/12 md:w-2/3'>
             <Input
               label={t('form:input-label-name')}
               {...register('name', { required: 'Name is required' })}
               error={t(errors.name?.message!)}
-              variant="outline"
-              className="mb-5"
+              variant='outline'
+              className='mb-5'
             />
           </Card>
         </div>
 
-        <div className="flex flex-wrap my-5 sm:my-8">
+        <div className='my-5 flex flex-wrap sm:my-8'>
           <Description
             title={t('common:attribute-values')}
             details={`${
@@ -209,36 +209,36 @@ export default function CreateOrUpdateAttributeForm({ initialValues }: IProps) {
                 ? t('form:item-description-update')
                 : t('form:item-description-add')
             } ${t('form:form-description-attribute-value')}`}
-            className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8"
+            className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
           />
 
-          <Card className="w-full sm:w-8/12 md:w-2/3">
+          <Card className='w-full sm:w-8/12 md:w-2/3'>
             <div>
               {/* @ts-ignore */}
               {fields.map((item: AttributeValue, index: number) => (
                 <div
-                  className="border-b border-dashed border-border-200 last:border-0 py-5 md:py-8"
+                  className='border-b border-dashed border-border-200 py-5 last:border-0 md:py-8'
                   key={item.id}
                 >
-                  <div className="grid grid-cols-1 sm:grid-cols-5 gap-5">
+                  <div className='grid grid-cols-1 gap-5 sm:grid-cols-5'>
                     <Input
-                      className="sm:col-span-2"
+                      className='sm:col-span-2'
                       label={t('form:input-label-value')}
-                      variant="outline"
+                      variant='outline'
                       {...register(`values.${index}.value` as const)}
                       defaultValue={item.value!} // make sure to set up defaultValue
                     />
                     <Input
-                      className="sm:col-span-2"
+                      className='sm:col-span-2'
                       label={t('form:input-label-meta')}
-                      variant="outline"
+                      variant='outline'
                       {...register(`values.${index}.meta` as const)}
                       defaultValue={item.meta!} // make sure to set up defaultValue
                     />
                     <button
                       onClick={() => remove(index)}
-                      type="button"
-                      className="text-sm text-red-500 hover:text-red-700 transition-colors duration-200 focus:outline-none sm:mt-4 sm:col-span-1"
+                      type='button'
+                      className='text-sm text-red-500 transition-colors duration-200 hover:text-red-700 focus:outline-none sm:col-span-1 sm:mt-4'
                     >
                       {t('form:button-label-remove')}
                     </button>
@@ -248,22 +248,22 @@ export default function CreateOrUpdateAttributeForm({ initialValues }: IProps) {
             </div>
 
             <Button
-              type="button"
+              type='button'
               onClick={() => append({ value: '', meta: '' })}
-              className="w-full sm:w-auto"
+              className='w-full sm:w-auto'
             >
               {t('form:button-label-add-value')}
             </Button>
           </Card>
         </div>
 
-        <div className="mb-4 text-end">
+        <div className='mb-4 text-end'>
           {initialValues && (
             <Button
-              variant="outline"
+              variant='outline'
               onClick={router.back}
-              className="me-4"
-              type="button"
+              className='me-4'
+              type='button'
             >
               {t('form:button-label-back')}
             </Button>

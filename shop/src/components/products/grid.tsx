@@ -44,8 +44,8 @@ export function Grid({
 
   if (!isLoading && !products?.length) {
     return (
-      <div className="w-full min-h-full px-4 pt-6 pb-8 lg:p-8">
-        <NotFound text="text-not-found" className="w-7/12 mx-auto" />
+      <div className='min-h-full w-full px-4 pt-6 pb-8 lg:p-8'>
+        <NotFound text='text-not-found' className='mx-auto w-7/12' />
       </div>
     );
   }
@@ -60,7 +60,7 @@ export function Grid({
             'grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-6 gap-y-10 lg:grid-cols-[repeat(auto-fill,minmax(200px,1fr))] xl:grid-cols-[repeat(auto-fill,minmax(220px,1fr))] xl:gap-8 xl:gap-y-11 2xl:grid-cols-5 3xl:grid-cols-[repeat(auto-fill,minmax(360px,1fr))]':
               column === 'five',
           },
-          gridClassName
+          gridClassName,
         )}
       >
         {isLoading && !products?.length
@@ -72,11 +72,11 @@ export function Grid({
             ))}
       </div>
       {hasMore && (
-        <div className="flex justify-center mt-8 lg:mt-12">
+        <div className='mt-8 flex justify-center lg:mt-12'>
           <Button
             loading={isLoadingMore}
             onClick={loadMore}
-            className="text-sm font-semibold h-11 md:text-base"
+            className='h-11 text-sm font-semibold md:text-base'
           >
             {t('text-load-more')}
           </Button>

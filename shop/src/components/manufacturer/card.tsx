@@ -22,37 +22,37 @@ const ManufacturerCard: React.FC<ManufacturerProps> = ({ item, className }) => {
     <div
       className={cn(
         'relative flex cursor-pointer items-center rounded border border-gray-200 bg-white p-5 shadow-md',
-        className
+        className,
       )}
       title={item?.name}
       onClick={() => router.push(Routes.manufacturer(item?.slug))}
     >
       <span
         className={cn(
-          'relative flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-full bg-gray-300'
+          'relative flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-full bg-gray-300',
         )}
       >
         <Image
           src={item?.image?.original! ?? avatarPlaceholder}
           alt={item?.name!}
           fill
-          sizes="(max-width: 768px) 100vw"
-          className="object-cover"
+          sizes='(max-width: 768px) 100vw'
+          className='object-cover'
         />
       </span>
-      <div className="flex flex-col overflow-hidden ltr:ml-4 rtl:mr-4">
-        <span className="mb-2 truncate text-lg font-semibold text-heading transition-colors hover:text-orange-500">
+      <div className='flex flex-col overflow-hidden ltr:ml-4 rtl:mr-4'>
+        <span className='mb-2 truncate text-lg font-semibold text-heading transition-colors hover:text-orange-500'>
           {item?.name}
         </span>
         {!isEmpty(item?.socials) ? (
-          <div className="mt-1.5 flex items-center space-x-3 ltr:ml-1 rtl:mr-1 rtl:space-x-reverse">
+          <div className='mt-1.5 flex items-center space-x-3 ltr:ml-1 rtl:mr-1 rtl:space-x-reverse'>
             {item?.socials?.map((item: any, index: number) => (
               <a
                 key={index}
                 href={item.url}
-                target="_blank"
+                target='_blank'
                 className={`cursor-pointer text-body transition-colors duration-300 hover:text-accent focus:outline-none`}
-                rel="noreferrer"
+                rel='noreferrer'
               >
                 {getIcon({
                   iconList: socialIcons,
@@ -63,12 +63,12 @@ const ManufacturerCard: React.FC<ManufacturerProps> = ({ item, className }) => {
             ))}
           </div>
         ) : (
-          <div className="mt-1.5 flex items-center space-x-3 rtl:space-x-reverse">
+          <div className='mt-1.5 flex items-center space-x-3 rtl:space-x-reverse'>
             <a
-              href="/"
-              target="_blank"
+              href='/'
+              target='_blank'
               className={`cursor-pointer text-body transition-colors duration-300 hover:text-accent focus:outline-none`}
-              rel="noreferrer"
+              rel='noreferrer'
             >
               {getIcon({
                 iconList: socialIcons,

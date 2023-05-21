@@ -8,7 +8,10 @@ import Fuse from 'fuse.js';
 import { GetCouponsArgs } from './dto/get-coupons.args';
 import { paginate } from 'src/common/pagination/paginate';
 import { GetCouponArgs } from './dto/get-coupon.args';
-import {VerifyCouponInput, VerifyCouponResponse} from './dto/verify-coupon.input';
+import {
+  VerifyCouponInput,
+  VerifyCouponResponse,
+} from './dto/verify-coupon.input';
 
 const coupons = plainToClass(Coupon, couponsJson);
 const options = {

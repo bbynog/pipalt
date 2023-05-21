@@ -41,7 +41,7 @@ const ActionButtons = ({
   showMakeAdminButton = false,
   changeRefundStatus = false,
   showReplyQuestion = false,
-  customLocale
+  customLocale,
 }: Props) => {
   const { t } = useTranslation();
   const { openModal } = useModalAction();
@@ -83,11 +83,11 @@ const ActionButtons = ({
   }
 
   return (
-    <div className="gap-8 inline-flex w-auto items-center">
+    <div className='inline-flex w-auto items-center gap-8'>
       {showReplyQuestion && (
         <button
           onClick={handleReplyQuestion}
-          className="transition duration-200 text-accent hover:text-accent-hover focus:outline-none"
+          className='text-accent transition duration-200 hover:text-accent-hover focus:outline-none'
         >
           {t('form:button-text-reply')}
         </button>
@@ -95,7 +95,7 @@ const ActionButtons = ({
       {showMakeAdminButton && (
         <button
           onClick={handleMakeAdmin}
-          className="text-accent transition duration-200 hover:text-accent-hover focus:outline-none"
+          className='text-accent transition duration-200 hover:text-accent-hover focus:outline-none'
           title={t('common:text-make-admin')}
         >
           <AdminIcon width={18} />
@@ -104,7 +104,7 @@ const ActionButtons = ({
       {showAddWalletPoints && (
         <button
           onClick={handleAddWalletPoints}
-          className="text-accent transition duration-200 hover:text-accent-hover focus:outline-none"
+          className='text-accent transition duration-200 hover:text-accent-hover focus:outline-none'
           title={t('form:input-label-add-wallet-points')}
         >
           <WalletPointsIcon width={22} />
@@ -113,7 +113,7 @@ const ActionButtons = ({
       {editModalView && (
         <button
           onClick={handleEditModal}
-          className="transition duration-200 text-body hover:text-heading focus:outline-none"
+          className='text-body transition duration-200 hover:text-heading focus:outline-none'
           title={t('common:text-edit')}
         >
           <EditIcon width={16} />
@@ -122,7 +122,7 @@ const ActionButtons = ({
       {changeRefundStatus && (
         <button
           onClick={handleUpdateRefundStatus}
-          className="text-accent transition duration-200 hover:text-accent-hover focus:outline-none"
+          className='text-accent transition duration-200 hover:text-accent-hover focus:outline-none'
           title={t('common:text-change-refund-status')}
         >
           <CheckMarkCircle width={20} />
@@ -131,7 +131,7 @@ const ActionButtons = ({
       {deleteModalView && (
         <button
           onClick={handleDelete}
-          className="text-red-500 transition duration-200 hover:text-red-600 focus:outline-none"
+          className='text-red-500 transition duration-200 hover:text-red-600 focus:outline-none'
           title={t('common:text-delete')}
         >
           <TrashIcon width={16} />
@@ -141,7 +141,7 @@ const ActionButtons = ({
         (!isShopActive ? (
           <button
             onClick={() => handleShopStatus(true)}
-            className="text-accent transition duration-200 hover:text-accent-hover focus:outline-none"
+            className='text-accent transition duration-200 hover:text-accent-hover focus:outline-none'
             title={t('common:text-approve-shop')}
           >
             <CheckMarkCircle width={20} />
@@ -149,7 +149,7 @@ const ActionButtons = ({
         ) : (
           <button
             onClick={() => handleShopStatus(false)}
-            className="text-red-500 transition duration-200 hover:text-red-600 focus:outline-none"
+            className='text-red-500 transition duration-200 hover:text-red-600 focus:outline-none'
             title={t('common:text-disapprove-shop')}
           >
             <CloseFillIcon width={20} />
@@ -160,7 +160,7 @@ const ActionButtons = ({
           {isUserActive ? (
             <button
               onClick={() => handleUserStatus('ban')}
-              className="text-red-500 transition duration-200 hover:text-red-600 focus:outline-none"
+              className='text-red-500 transition duration-200 hover:text-red-600 focus:outline-none'
               title={t('common:text-ban-user')}
             >
               <BanUser width={20} />
@@ -168,7 +168,7 @@ const ActionButtons = ({
           ) : (
             <button
               onClick={() => handleUserStatus('active')}
-              className="text-accent transition duration-200 hover:text-accent focus:outline-none"
+              className='text-accent transition duration-200 hover:text-accent focus:outline-none'
               title={t('common:text-activate-user')}
             >
               <CheckMarkCircle width={20} />
@@ -180,7 +180,7 @@ const ActionButtons = ({
       {editUrl && (
         <Link
           href={editUrl}
-          className="text-base transition duration-200 hover:text-heading"
+          className='text-base transition duration-200 hover:text-heading'
           title={t('common:text-edit')}
         >
           <EditIcon width={16} />
@@ -189,7 +189,7 @@ const ActionButtons = ({
       {detailsUrl && (
         <Link
           href={detailsUrl}
-          className="ml-2 text-base transition duration-200 hover:text-heading"
+          className='ml-2 text-base transition duration-200 hover:text-heading'
           title={t('common:text-view')}
           locale={customLocale}
         >

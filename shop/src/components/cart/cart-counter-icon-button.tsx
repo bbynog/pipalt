@@ -11,12 +11,12 @@ const CartCounterIconButton = () => {
   }
   return (
     <button
-      className="hidden product-cart lg:flex relative"
+      className='product-cart relative hidden lg:flex'
       onClick={handleCartSidebar}
     >
-      <CartOutlinedIcon className="w-5 h-5" />
+      <CartOutlinedIcon className='h-5 w-5' />
       {totalUniqueItems > 0 && (
-        <span className="min-w-[20px] h-5 flex items-center justify-center rounded-full bg-accent text-light text-[10px] absolute ltr:-right-1/2 rtl:-left-1/2 -top-1/2">
+        <span className='absolute -top-1/2 flex h-5 min-w-[20px] items-center justify-center rounded-full bg-accent text-[10px] text-light ltr:-right-1/2 rtl:-left-1/2'>
           {totalUniqueItems}
         </span>
       )}

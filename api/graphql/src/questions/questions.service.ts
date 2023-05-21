@@ -50,7 +50,7 @@ export class QuestionsService {
       paginatorInfo: paginate(data.length, page, first, results.length),
     };
   }
-  
+
   // findAllQuestion({ page, first, product_id }: GetAllQuestionsArgs) {
   //   const startIndex = (page - 1) * first;
   //   const endIndex = page * first;

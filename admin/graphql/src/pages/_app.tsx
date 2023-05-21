@@ -60,7 +60,7 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
                       <Component {...pageProps} />
                     </Layout>
                   )}
-                  <ToastContainer autoClose={2000} theme="colored" />
+                  <ToastContainer autoClose={2000} theme='colored' />
                   <ManagedModal />
                 </>
               </CartProvider>

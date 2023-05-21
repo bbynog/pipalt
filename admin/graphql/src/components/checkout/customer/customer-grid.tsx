@@ -21,34 +21,34 @@ const CustomerGrid = ({ label, count, className }: CustomerProps) => {
 
   return (
     <div className={className}>
-      <div className="flex items-center justify-between mb-5 md:mb-8">
-        <div className="flex items-center space-s-3 md:space-s-4">
+      <div className='mb-5 flex items-center justify-between md:mb-8'>
+        <div className='flex items-center space-s-3 md:space-s-4'>
           {count && (
-            <span className="rounded-full w-8 h-8 bg-accent flex items-center justify-center text-base lg:text-xl text-light">
+            <span className='flex h-8 w-8 items-center justify-center rounded-full bg-accent text-base text-light lg:text-xl'>
               {count}
             </span>
           )}
-          <p className="text-lg lg:text-xl text-heading capitalize">{label}</p>
+          <p className='text-lg capitalize text-heading lg:text-xl'>{label}</p>
         </div>
 
         <button
-          className="flex items-center text-sm font-semibold text-accent transition-colors duration-200 focus:outline-none focus:text-accent-hover hover:text-accent-hover"
+          className='flex items-center text-sm font-semibold text-accent transition-colors duration-200 hover:text-accent-hover focus:text-accent-hover focus:outline-none'
           onClick={onAddOrChange}
         >
-          <PlusIcon className="w-4 h-4 stroke-2 me-0.5" />
+          <PlusIcon className='h-4 w-4 stroke-2 me-0.5' />
           {customer?.value ? t('text-update') : t('text-add')}
         </button>
       </div>
 
-      <div className="grid gap-4 grid-cols-1">
+      <div className='grid grid-cols-1 gap-4'>
         {customer?.value ? (
-          <div className="relative p-4 h-full rounded border cursor-pointer group hover:border-accent border-accent shadow-sm bg-light">
-            <p className="text-sm text-heading font-semibold capitalize">
+          <div className='group relative h-full cursor-pointer rounded border border-accent bg-light p-4 shadow-sm hover:border-accent'>
+            <p className='text-sm font-semibold capitalize text-heading'>
               {customer.label}
             </p>
           </div>
         ) : (
-          <span className="relative px-5 py-6 text-base text-center bg-gray-100 rounded border border-border-200">
+          <span className='relative rounded border border-border-200 bg-gray-100 px-5 py-6 text-center text-base'>
             {t('text-no-customer')}
           </span>
         )}

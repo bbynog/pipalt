@@ -69,7 +69,7 @@ const UpdateRefundConfirmationView = () => {
     // <Form<FormValues> onSubmit={handleUpdateRefundStatus}>
     <form onSubmit={handleSubmit(handleUpdateRefundStatus)} noValidate>
       {/* {({ register }) => ( */}
-      <div className="p-5 bg-light flex flex-col m-auto max-w-sm w-full rounded sm:w-[24rem]">
+      <div className='m-auto flex w-full max-w-sm flex-col rounded bg-light p-5 sm:w-[24rem]'>
         {/* <select {...register("status")}>
             {Object.keys(RefundStatus).map((status, idx) => (
               <option value={status.toLowerCase()} key={idx}>
@@ -77,19 +77,19 @@ const UpdateRefundConfirmationView = () => {
               </option>
             ))}
           </select> */}
-        <div className="text-body font-semibold text-lg text-center mb-5">
+        <div className='mb-5 text-center text-lg font-semibold text-body'>
           {t('text-update-refund')}
         </div>
 
         <SelectInput
-          name="status"
+          name='status'
           control={control}
           getOptionLabel={(option: any) => option.name}
           getOptionValue={(option: any) => option.value}
           options={RefundStatus}
         />
 
-        <Button className="mt-3" loading={loading} disabled={loading}>
+        <Button className='mt-3' loading={loading} disabled={loading}>
           {t('text-shop-approve-button')}
         </Button>
       </div>

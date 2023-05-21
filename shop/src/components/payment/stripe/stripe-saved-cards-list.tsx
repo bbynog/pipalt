@@ -40,7 +40,7 @@ const StripeSavedCardsList = ({
 }: CardViewProps) => {
   const defaultCard = payments?.filter((payment: any) => payment?.default_card);
   const [selected, setSelected] = useState<any>(
-    Object.assign({}, defaultCard.length ? defaultCard[0] : [])
+    Object.assign({}, defaultCard.length ? defaultCard[0] : []),
   );
   const { t } = useTranslation('common');
   const stripe = useStripe();
@@ -65,7 +65,7 @@ const StripeSavedCardsList = ({
         paymentIntentInfo?.client_secret!,
         {
           payment_method: method_key,
-        }
+        },
       );
 
       await createOrderPayment({
@@ -94,7 +94,7 @@ const StripeSavedCardsList = ({
       align: alignLeft,
       render: (record: any) => {
         return selected?.id === record?.id ? (
-          <div className="w-10 text-accent">
+          <div className='w-10 text-accent'>
             <CheckIconWithBg />
           </div>
         ) : (
@@ -104,7 +104,7 @@ const StripeSavedCardsList = ({
     },
     {
       title: (
-        <span className="text-sm text-[#686D73]">{t('text-company')}</span>
+        <span className='text-sm text-[#686D73]'>{t('text-company')}</span>
       ),
       dataIndex: 'network',
       key: 'network',
@@ -112,7 +112,7 @@ const StripeSavedCardsList = ({
       align: alignLeft,
       render: (network: string) => {
         return (
-          <div className="w-10">
+          <div className='w-10'>
             {network ? (
               <Image
                 src={images[network]}
@@ -134,7 +134,7 @@ const StripeSavedCardsList = ({
     },
     {
       title: (
-        <span className="text-sm text-[#686D73]">{t('text-card-number')}</span>
+        <span className='text-sm text-[#686D73]'>{t('text-card-number')}</span>
       ),
       dataIndex: 'last4',
       key: 'last4',
@@ -142,13 +142,13 @@ const StripeSavedCardsList = ({
       width: 150,
       render: (last4: number) => {
         return (
-          <p className="truncate text-base text-black">{`**** **** **** ${last4}`}</p>
+          <p className='truncate text-base text-black'>{`**** **** **** ${last4}`}</p>
         );
       },
     },
     {
       title: (
-        <span className="text-sm text-[#686D73]">
+        <span className='text-sm text-[#686D73]'>
           {t('text-card-owner-name')}
         </span>
       ),
@@ -157,19 +157,19 @@ const StripeSavedCardsList = ({
       align: alignLeft,
       width: 180,
       render: (owner_name: string) => {
-        return <p className="truncate text-base text-black">{owner_name}</p>;
+        return <p className='truncate text-base text-black'>{owner_name}</p>;
       },
     },
     {
       title: (
-        <span className="text-sm text-[#686D73]">{t('text-card-expire')}</span>
+        <span className='text-sm text-[#686D73]'>{t('text-card-expire')}</span>
       ),
       dataIndex: 'expires',
       key: 'expires',
       align: alignLeft,
       width: 130,
       render: (expires: string) => {
-        return <p className="text-base text-black">{expires}</p>;
+        return <p className='text-base text-black'>{expires}</p>;
       },
     },
   ];
@@ -179,7 +179,7 @@ const StripeSavedCardsList = ({
         //@ts-ignore
         columns={columns}
         data={payments}
-        className="card-view-table w-full shadow-none"
+        className='card-view-table w-full shadow-none'
         scroll={{ x: 350, y: 500 }}
         rowClassName={(record, i) =>
           selected?.id === record?.id ? `row-highlight` : ''
@@ -189,11 +189,11 @@ const StripeSavedCardsList = ({
           onClick: onClickRow.bind(null, record, columns),
         })}
       />
-      <div className="mt-8 flex justify-end">
+      <div className='mt-8 flex justify-end'>
         <Button
           loading={loading}
           disabled={!!loading}
-          className="!h-9 px-4"
+          className='!h-9 px-4'
           onClick={() => {
             continuePayment(selected?.method_key);
           }}

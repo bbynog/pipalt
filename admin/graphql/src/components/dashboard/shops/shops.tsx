@@ -20,8 +20,8 @@ const ShopList = () => {
   return (
     <>
       {permission ? (
-        <div className="border-b border-dashed border-border-base mb-5 sm:mb-8 pb-8">
-          <h1 className="text-lg font-semibold text-heading">
+        <div className='mb-5 border-b border-dashed border-border-base pb-8 sm:mb-8'>
+          <h1 className='text-lg font-semibold text-heading'>
             {t('common:sidebar-nav-item-my-shops')}
           </h1>
         </div>
@@ -29,24 +29,24 @@ const ShopList = () => {
         ''
       )}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 3xl:grid-cols-4 gap-5">
+      <div className='grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 3xl:grid-cols-4'>
         {data?.me?.shops?.map((myShop: any, idx: number) => (
           <ShopCard shop={myShop} key={idx} />
         ))}
       </div>
 
       {!data?.me?.managed_shop && !data?.me?.shops?.length ? (
-        <div className="flex flex-col items-center w-full p-10">
-          <div className="relative h-auto min-h-[180px] w-[300px] sm:min-h-[370px] sm:w-[490px]">
+        <div className='flex w-full flex-col items-center p-10'>
+          <div className='relative h-auto min-h-[180px] w-[300px] sm:min-h-[370px] sm:w-[490px]'>
             <NoShop />
           </div>
-          <span className="mt-6 text-lg font-semibold text-center text-body-dark sm:mt-10">
+          <span className='mt-6 text-center text-lg font-semibold text-body-dark sm:mt-10'>
             {t('common:text-no-shop')}
           </span>
         </div>
       ) : null}
       {!!data?.me?.managed_shop ? (
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5">
+        <div className='grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5'>
           <ShopCard shop={data?.me?.managed_shop} />
         </div>
       ) : null}

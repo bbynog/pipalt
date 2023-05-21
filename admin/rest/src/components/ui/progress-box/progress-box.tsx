@@ -25,7 +25,10 @@ const ProgressBox: React.FC<ProgressProps> = ({
     >
       <div className="flex w-full flex-col py-7 md:flex-row md:items-start md:justify-center">
         {data?.map((item: any, index) => (
-          <div className={styles.progress_container} key={`order-status-${index}`}>
+          <div
+            className={styles.progress_container}
+            key={`order-status-${index}`}
+          >
             <div
               className={cn(
                 styles.progress_wrapper,

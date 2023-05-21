@@ -14,18 +14,18 @@ import ProductGridHome from '@/components/products/grids/home';
 export default function CompactLayout({ variables }: HomePageProps) {
   const { t } = useTranslation('common');
   return (
-    <div className="flex flex-1 flex-col bg-white">
-      <FilterBar className="lg:hidden" variables={variables.categories} />
-      <main className="mt-6 block w-full xl:overflow-hidden">
+    <div className='flex flex-1 flex-col bg-white'>
+      <FilterBar className='lg:hidden' variables={variables.categories} />
+      <main className='mt-6 block w-full xl:overflow-hidden'>
         <SectionBlock>
-          <Banner layout="compact" variables={variables.types} />
+          <Banner layout='compact' variables={variables.types} />
         </SectionBlock>
         <PopularProductsGrid variables={variables.popularProducts} />
-        <Categories layout="compact" variables={variables.categories} />
+        <Categories layout='compact' variables={variables.categories} />
         <GroupProducts />
         <SectionBlock title={t('text-new-arrival')}>
           <ProductGridHome
-            column="five"
+            column='five'
             variables={{
               ...variables.products,
               sortedBy: 'DESC',

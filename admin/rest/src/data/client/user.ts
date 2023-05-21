@@ -83,5 +83,5 @@ export const userClient = {
   },
   updateEmail: ({ email }: { email: string }) => {
     return HttpClient.post<any>(API_ENDPOINTS.UPDATE_EMAIL, { email });
-  }
+  },
 };

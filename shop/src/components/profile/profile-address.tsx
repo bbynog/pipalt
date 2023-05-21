@@ -30,7 +30,7 @@ export const ProfileAddressGrid: React.FC<AddressesProps> = ({
   return (
     <div className={className}>
       <AddressHeader onAdd={onAdd} count={false} label={label} />
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+      <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3'>
         {addresses?.map((address) => (
           <AddressCard
             checked={false}
@@ -40,7 +40,7 @@ export const ProfileAddressGrid: React.FC<AddressesProps> = ({
           />
         ))}
         {!Boolean(addresses?.length) && (
-          <span className="relative px-5 py-6 text-base text-left bg-gray-100 border rounded border-border-200">
+          <span className='relative rounded border border-border-200 bg-gray-100 px-5 py-6 text-left text-base'>
             {t('text-no-address')}
           </span>
         )}

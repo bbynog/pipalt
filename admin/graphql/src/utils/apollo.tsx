@@ -47,7 +47,7 @@ function createApolloClient() {
           Router.push(Routes.verifyEmail);
         }
         console.log(
-          `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
+          `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`,
         );
       });
     if (networkError) console.log(`[Network error]: ${networkError}`);
@@ -95,7 +95,7 @@ export function initializeApollo(initialState: any = null) {
       arrayMerge: (destinationArray, sourceArray) => [
         ...sourceArray,
         ...destinationArray.filter((d) =>
-          sourceArray.every((s) => !isEqual(d, s))
+          sourceArray.every((s) => !isEqual(d, s)),
         ),
       ],
     });

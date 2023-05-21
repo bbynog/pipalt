@@ -1410,9 +1410,9 @@ export interface OrderPaginator extends PaginatorInfo<Order> {}
 
 export interface CouponPaginator extends PaginatorInfo<Coupon> {}
 
-export interface StoreNoticePaginator extends PaginatorInfo<StoreNotice> { }
+export interface StoreNoticePaginator extends PaginatorInfo<StoreNotice> {}
 
-export interface ProductPaginator extends PaginatorInfo<Product> { }
+export interface ProductPaginator extends PaginatorInfo<Product> {}
 
 export interface CategoryPaginator extends PaginatorInfo<Category> {}
 

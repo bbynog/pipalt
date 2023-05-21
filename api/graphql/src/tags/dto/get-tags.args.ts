@@ -5,7 +5,8 @@ import {
   registerEnumType,
 } from '@nestjs/graphql';
 import {
-  SortOrder, WhereGTEConditions,
+  SortOrder,
+  WhereGTEConditions,
   WhereHasConditions,
   WhereHasConditionsRelation,
 } from 'src/common/dto/generic-conditions.input';

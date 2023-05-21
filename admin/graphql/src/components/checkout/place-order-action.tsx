@@ -55,7 +55,7 @@ export const PlaceOrderAction: React.FC<{
   }, [payment_gateway]);
 
   const available_items = items?.filter(
-    (item) => !verified_response?.unavailable_products?.includes(item.id)
+    (item) => !verified_response?.unavailable_products?.includes(item.id),
   );
 
   const subtotal = calculateTotal(available_items);
@@ -65,7 +65,7 @@ export const PlaceOrderAction: React.FC<{
       tax: verified_response?.total_tax!,
       shipping_charge: verified_response?.shipping_charge!,
     },
-    Number(discount)
+    Number(discount),
   );
   const handlePlaceOrder = () => {
     if (!customer_contact) {
@@ -132,13 +132,13 @@ export const PlaceOrderAction: React.FC<{
     <>
       <Button
         loading={loading}
-        className="w-full mt-5"
+        className='mt-5 w-full'
         onClick={handlePlaceOrder}
         disabled={!isAllRequiredFieldSelected}
         {...props}
       />
       {errorMessage && (
-        <div className="mt-3">
+        <div className='mt-3'>
           <ValidationError message={errorMessage} />
         </div>
       )}

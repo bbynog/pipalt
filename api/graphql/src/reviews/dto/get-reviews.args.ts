@@ -2,7 +2,8 @@ import {
   ArgsType,
   Field,
   ID,
-  InputType, Int,
+  InputType,
+  Int,
   ObjectType,
   registerEnumType,
 } from '@nestjs/graphql';

@@ -11,15 +11,15 @@ const NotFound: React.FC<Props> = ({ className, text }) => {
   const { t } = useTranslation('common');
   return (
     <div className={cn('flex flex-col items-center', className)}>
-      <div className="w-full h-full flex items-center justify-center">
+      <div className='flex h-full w-full items-center justify-center'>
         <Image
           src={noResult}
           alt={text ? t(text) : t('text-no-result-found')}
-          className="w-full h-full object-contain"
+          className='h-full w-full object-contain'
         />
       </div>
       {text && (
-        <h3 className="w-full text-center text-xl font-semibold text-body my-7">
+        <h3 className='my-7 w-full text-center text-xl font-semibold text-body'>
           {t(text)}
         </h3>
       )}

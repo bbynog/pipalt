@@ -58,7 +58,7 @@ export const ScrollContent: React.FC<Props> = ({
   return (
     <div className={cn('relative', className)}>
       <div
-        className="absolute top-0 hidden w-4 h-4 min-h-full bg-red-500 leftArrow vertical-scroll-arrow left start-0"
+        className='leftArrow vertical-scroll-arrow left absolute top-0 hidden h-4 min-h-full w-4 bg-red-500 start-0'
         onClick={() => {
           document!.querySelector(scrollDiv)!.scrollLeft -= 20;
           console.log('clicked prev');
@@ -69,7 +69,7 @@ export const ScrollContent: React.FC<Props> = ({
       </div>
       {children}
       <div
-        className="absolute top-0 block w-4 h-4 min-h-full bg-red-500 rightArrow vertical-scroll-arrow right end-0"
+        className='rightArrow vertical-scroll-arrow right absolute top-0 block h-4 min-h-full w-4 bg-red-500 end-0'
         onClick={() => {
           document!.querySelector(scrollDiv)!.scrollLeft += 20;
           console.log('clicked next');

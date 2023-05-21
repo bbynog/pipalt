@@ -9,11 +9,11 @@ const AuthPageLayout: React.FC<{
 
   return (
     <div
-      className="flex items-center justify-center h-screen bg-light sm:bg-gray-100"
+      className='flex h-screen items-center justify-center bg-light sm:bg-gray-100'
       dir={dir}
     >
-      <div className="m-auto max-w-[420px] w-full bg-light sm:shadow p-5 sm:p-8 rounded">
-        <div className="flex justify-center mb-2">
+      <div className='m-auto w-full max-w-[420px] rounded bg-light p-5 sm:p-8 sm:shadow'>
+        <div className='mb-2 flex justify-center'>
           <Logo />
         </div>
         {children}

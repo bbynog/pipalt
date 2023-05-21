@@ -16,7 +16,7 @@ const ProgressBox: React.FC<ProgressProps> = ({
 }) => {
   return (
     <Scrollbar
-      className="h-full w-full"
+      className='h-full w-full'
       options={{
         scrollbars: {
           autoHide: 'never',
@@ -37,13 +37,13 @@ const ProgressBox: React.FC<ProgressProps> = ({
             <div
               className={cn(
                 styles.progress_wrapper,
-                index <= filledIndex ? styles.checked : ''
+                index <= filledIndex ? styles.checked : '',
               )}
             >
               <div className={styles.status_wrapper}>
                 {index <= filledIndex ? (
-                  <div className="h-4 w-3">
-                    <CheckMark className="w-full" />
+                  <div className='h-4 w-3'>
+                    <CheckMark className='w-full' />
                   </div>
                 ) : (
                   item.serial
@@ -52,9 +52,9 @@ const ProgressBox: React.FC<ProgressProps> = ({
               <div className={styles.bar} />
             </div>
 
-            <div className="flex flex-col items-start ltr:ml-5 rtl:mr-5 md:items-center ltr:md:ml-0 rtl:md:mr-0">
+            <div className='flex flex-col items-start ltr:ml-5 rtl:mr-5 md:items-center ltr:md:ml-0 rtl:md:mr-0'>
               {item && (
-                <span className="text-base font-semibold capitalize text-body-dark ltr:text-left rtl:text-right md:px-2 md:!text-center">
+                <span className='text-base font-semibold capitalize text-body-dark ltr:text-left rtl:text-right md:px-2 md:!text-center'>
                   {item?.name}
                 </span>
               )}

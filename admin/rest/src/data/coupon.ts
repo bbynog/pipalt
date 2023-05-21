@@ -21,9 +21,9 @@ export const useCreateCouponMutation = () => {
       toast.success(t('common:successfully-created'));
     },
     onError: (error: any) => {
-      const {data, status} =  error?.response;
+      const { data, status } = error?.response;
       if (status === 422) {
-        const errorMessage:any = Object.values(data).flat();
+        const errorMessage: any = Object.values(data).flat();
         toast.error(errorMessage[0]);
       }
     },

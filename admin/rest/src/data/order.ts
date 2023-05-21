@@ -119,7 +119,11 @@ export const useUpdateOrderMutation = () => {
 };
 
 export const useDownloadInvoiceMutation = (
-  { order_id, isRTL, language }: { order_id: string, isRTL: boolean, language: string },
+  {
+    order_id,
+    isRTL,
+    language,
+  }: { order_id: string; isRTL: boolean; language: string },
   options: any = {}
 ) => {
   const { t } = useTranslation();

@@ -35,7 +35,7 @@ const PaymentGroupOption: React.FC<PaymentGroupOptionProps> = ({
           checked && '!border-accent bg-light shadow-600',
           {
             '!border-gray-800 bg-light shadow-600': theme === 'bw' && checked,
-          }
+          },
         )}
       >
         {icon ? (
@@ -43,13 +43,13 @@ const PaymentGroupOption: React.FC<PaymentGroupOptionProps> = ({
             <Image
               src={icon}
               alt={name}
-              className="h-[30px]"
+              className='h-[30px]'
               width={63}
               height={30}
             />
           </>
         ) : (
-          <span className="text-xs font-semibold text-heading">{name}</span>
+          <span className='text-xs font-semibold text-heading'>{name}</span>
         )}
       </div>
     )}
@@ -148,19 +148,19 @@ const PaymentGrid: React.FC<{ className?: string; theme?: 'bw' }> = ({
       {errorMessage ? (
         <Alert
           message={t(`common:${errorMessage}`)}
-          variant="error"
+          variant='error'
           closeable={true}
-          className="mt-5"
+          className='mt-5'
           onClose={() => setErrorMessage(null)}
         />
       ) : null}
 
       <RadioGroup value={gateway} onChange={setGateway}>
-        <RadioGroup.Label className="mb-5 block text-base font-semibold text-heading">
+        <RadioGroup.Label className='mb-5 block text-base font-semibold text-heading'>
           {t('text-choose-payment')}
         </RadioGroup.Label>
 
-        <div className="mb-8 grid grid-cols-2 gap-4 md:grid-cols-3">
+        <div className='mb-8 grid grid-cols-2 gap-4 md:grid-cols-3'>
           {settings?.paymentGateway && (
             <PaymentGroupOption
               theme={theme}

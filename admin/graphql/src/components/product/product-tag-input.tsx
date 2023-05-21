@@ -47,7 +47,7 @@ const ProductTagInput = ({ control, setValue }: Props) => {
     <div>
       <Label>{t('sidebar-nav-item-tags')}</Label>
       <SelectInput
-        name="tags"
+        name='tags'
         isMulti
         control={control}
         getOptionLabel={(option: any) => option.name}

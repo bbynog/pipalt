@@ -36,7 +36,7 @@ export const AddToCart = ({
   } = useCart();
   const item = generateCartItem(data, variation);
   const handleAddClick = (
-    e: React.MouseEvent<HTMLButtonElement | MouseEvent>
+    e: React.MouseEvent<HTMLButtonElement | MouseEvent>,
   ) => {
     e.stopPropagation();
     addItemToCart(item, 1);

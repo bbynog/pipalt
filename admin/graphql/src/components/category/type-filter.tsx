@@ -23,7 +23,7 @@ export default function TypeFilter({ refetch, className }: Props) {
 
   return (
     <div className={cn('flex w-full', className)}>
-      <div className="w-full">
+      <div className='w-full'>
         <Select
           options={data?.types}
           isLoading={loading}

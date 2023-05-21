@@ -17,27 +17,27 @@ const Radio = React.forwardRef<HTMLInputElement, Props>(
     const { t } = useTranslation();
     return (
       <div className={className}>
-        <div className="flex items-center">
+        <div className='flex items-center'>
           <input
             id={id}
             name={name}
-            type="radio"
+            type='radio'
             ref={ref}
             className={styles.radio_input}
             {...rest}
           />
 
-          <label htmlFor={id} className="text-body text-sm">
+          <label htmlFor={id} className='text-sm text-body'>
             {t(labelKey ? labelKey : label!)}
           </label>
         </div>
 
         {errorKey && (
-          <p className="my-2 text-xs text-start text-red-500">{t(errorKey)}</p>
+          <p className='my-2 text-xs text-red-500 text-start'>{t(errorKey)}</p>
         )}
       </div>
     );
-  }
+  },
 );
 
 Radio.displayName = 'Radio';

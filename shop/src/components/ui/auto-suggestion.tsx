@@ -38,44 +38,44 @@ const AutoSuggestion: React.FC<Props> = ({
   return (
     <Transition
       show={visible}
-      enter="transition-opacity duration-75"
-      enterFrom="opacity-0"
-      enterTo="opacity-100"
-      leave="transition-opacity duration-150"
-      leaveFrom="opacity-100"
-      leaveTo="opacity-0"
+      enter='transition-opacity duration-75'
+      enterFrom='opacity-0'
+      enterTo='opacity-100'
+      leave='transition-opacity duration-150'
+      leaveFrom='opacity-100'
+      leaveTo='opacity-0'
     >
       <div
         className={cn(
           'absolute top-11 left-0 mt-2 w-full lg:top-16 lg:mt-1',
-          className
+          className,
         )}
       >
-        <div className="h-full w-full rounded-lg bg-white py-2 shadow-downfall-lg">
-          <Scrollbar className="h-full w-full">
+        <div className='h-full w-full rounded-lg bg-white py-2 shadow-downfall-lg'>
+          <Scrollbar className='h-full w-full'>
             {notFound && (
-              <h3 className="flex h-full w-full items-center justify-center py-10 font-semibold text-gray-400">
+              <h3 className='flex h-full w-full items-center justify-center py-10 font-semibold text-gray-400'>
                 {t('text-no-products')}
               </h3>
             )}
 
             {showLoaders && (
-              <div className="flex h-full w-full items-center justify-center py-14">
-                <Spinner simple={true} className="h-9 w-9" />
+              <div className='flex h-full w-full items-center justify-center py-14'>
+                <Spinner simple={true} className='h-9 w-9' />
               </div>
             )}
 
             {!notFound && !showLoaders && (
-              <div className="max-h-52">
+              <div className='max-h-52'>
                 {suggestions?.map((item: any) => (
                   <div
                     onClick={() => handleClick(Routes.product(item?.slug))}
                     key={item?.slug}
-                    className="flex w-full cursor-pointer items-center border-b border-border-100 px-5 py-2 transition-colors last:border-b-0 hover:bg-gray-100"
+                    className='flex w-full cursor-pointer items-center border-b border-border-100 px-5 py-2 transition-colors last:border-b-0 hover:bg-gray-100'
                   >
-                    <div className="relative h-8 w-8 overflow-hidden rounded">
+                    <div className='relative h-8 w-8 overflow-hidden rounded'>
                       <Image
-                        className="h-full w-full"
+                        className='h-full w-full'
                         src={item?.image?.original ?? productPlaceholder}
                         alt={item?.name ?? ''}
                         width={100}
@@ -83,7 +83,7 @@ const AutoSuggestion: React.FC<Props> = ({
                       />
                     </div>
 
-                    <span className="text-sm font-semibold text-heading ltr:ml-3 rtl:mr-3">
+                    <span className='text-sm font-semibold text-heading ltr:ml-3 rtl:mr-3'>
                       {item?.name}
                     </span>
                   </div>
@@ -92,10 +92,10 @@ const AutoSuggestion: React.FC<Props> = ({
             )}
           </Scrollbar>
           {seeMore && (
-            <div className="w-full py-3 text-center">
+            <div className='w-full py-3 text-center'>
               <button
                 onClick={seeMoreLink}
-                className="text-sm font-semibold text-accent transition-colors hover:text-accent-hover"
+                className='text-sm font-semibold text-accent transition-colors hover:text-accent-hover'
               >
                 {t('text-see-more')}
               </button>

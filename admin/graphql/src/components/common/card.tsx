@@ -7,7 +7,7 @@ type Props = {
 const Card: React.FC<Props> = ({ className, ...props }) => {
   return (
     <div
-      className={cn('p-5 md:p-8 bg-light shadow rounded', className)}
+      className={cn('rounded bg-light p-5 shadow md:p-8', className)}
       {...props}
     />
   );

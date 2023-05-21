@@ -49,26 +49,26 @@ const VerifiedItemList: React.FC<Props> = ({ className }) => {
     ?.options as SettingsOptions;
 
   const available_items = items?.filter(
-    (item) => !verifiedResponse?.unavailable_products?.includes(item.id)
+    (item) => !verifiedResponse?.unavailable_products?.includes(item.id),
   );
 
   const { price: tax } = usePrice(
     verifiedResponse && {
       amount: verifiedResponse.total_tax ?? 0,
-    }
+    },
   );
 
   const { price: shipping } = usePrice(
     verifiedResponse && {
       amount: verifiedResponse.shipping_charge ?? 0,
-    }
+    },
   );
 
   const base_amount = calculateTotal(available_items);
   const { price: sub_total } = usePrice(
     verifiedResponse && {
       amount: base_amount,
-    }
+    },
   );
 
   // Calculate Discount base on coupon type
@@ -90,7 +90,7 @@ const VerifiedItemList: React.FC<Props> = ({ className }) => {
     //@ts-ignore
     discount && {
       amount: Number(calculateDiscount),
-    }
+    },
   );
   let freeShippings = freeShipping && Number(freeShippingAmount) <= base_amount;
   const totalPrice = verifiedResponse
@@ -100,26 +100,26 @@ const VerifiedItemList: React.FC<Props> = ({ className }) => {
           tax: verifiedResponse?.total_tax,
           shipping_charge: verifiedResponse?.shipping_charge,
         },
-        Number(calculateDiscount)
+        Number(calculateDiscount),
       )
     : 0;
   const { price: total } = usePrice(
     verifiedResponse && {
       amount: totalPrice <= 0 ? 0 : totalPrice,
-    }
+    },
   );
   return (
     <div className={className}>
-      <div className="flex flex-col items-center mb-4 space-s-4">
-        <span className="text-base font-bold text-heading">
+      <div className='mb-4 flex flex-col items-center space-s-4'>
+        <span className='text-base font-bold text-heading'>
           {t('text-your-order')}
         </span>
       </div>
-      <div className="flex flex-col pb-2 border-b border-border-200">
+      <div className='flex flex-col border-b border-border-200 pb-2'>
         {!isEmptyCart ? (
           items?.map((item) => {
             const notAvailable = verifiedResponse?.unavailable_products?.find(
-              (d: any) => d === item.id
+              (d: any) => d === item.id,
             );
             return (
               <ItemCard
@@ -134,50 +134,50 @@ const VerifiedItemList: React.FC<Props> = ({ className }) => {
         )}
       </div>
 
-      <div className="mt-4 space-y-2">
+      <div className='mt-4 space-y-2'>
         <ItemInfoRow title={t('text-sub-total')} value={sub_total} />
         <ItemInfoRow title={t('text-tax')} value={tax} />
-        <div className="flex justify-between">
-          <p className="text-sm text-body">
+        <div className='flex justify-between'>
+          <p className='text-sm text-body'>
             {t('text-shipping')}{' '}
-            <span className="text-xs font-semibold text-accent">
+            <span className='text-xs font-semibold text-accent'>
               {freeShippings && `(${t('text-free-shipping')})`}
             </span>
           </p>
-          <span className="text-sm text-body"> {shipping}</span>
+          <span className='text-sm text-body'> {shipping}</span>
         </div>
         {discount && coupon ? (
-          <div className="flex justify-between">
-            <p className="flex items-center gap-1 text-sm text-body me-2">
+          <div className='flex justify-between'>
+            <p className='me-2 flex items-center gap-1 text-sm text-body'>
               {t('text-discount')}{' '}
-              <span className="-mt-px text-xs font-semibold text-accent">
+              <span className='-mt-px text-xs font-semibold text-accent'>
                 {coupon?.type === CouponType.FREE_SHIPPING &&
                   `(${t('text-free-shipping')})`}
               </span>
             </p>
-            <span className="flex items-center text-xs font-semibold text-red-500 me-auto">
+            <span className='flex items-center text-xs font-semibold text-red-500 me-auto'>
               ({coupon?.code})
               <button onClick={() => setCoupon(null)}>
-                <CloseIcon className="w-3 h-3 ms-2" />
+                <CloseIcon className='h-3 w-3 ms-2' />
               </button>
             </span>
-            <span className="flex items-center gap-1 text-sm text-body">
+            <span className='flex items-center gap-1 text-sm text-body'>
               {calculateDiscount > 0 ? (
-                <span className="-mt-0.5">-</span>
+                <span className='-mt-0.5'>-</span>
               ) : null}{' '}
               {discountPrice}
             </span>
           </div>
         ) : (
-          <div className="flex justify-between mt-5 !mb-4">
+          <div className='mt-5 !mb-4 flex justify-between'>
             <Coupon subtotal={base_amount} />
           </div>
         )}
-        <div className="flex justify-between pt-3 border-t-4 border-double border-border-200">
-          <p className="text-base font-semibold text-heading">
+        <div className='flex justify-between border-t-4 border-double border-border-200 pt-3'>
+          <p className='text-base font-semibold text-heading'>
             {t('text-total')}
           </p>
-          <span className="text-base font-semibold text-heading">{total}</span>
+          <span className='text-base font-semibold text-heading'>{total}</span>
         </div>
       </div>
       {verifiedResponse && (
@@ -188,7 +188,7 @@ const VerifiedItemList: React.FC<Props> = ({ className }) => {
         />
       )}
       {use_wallet && !Boolean(payableAmount) ? null : (
-        <PaymentGrid className="p-5 mt-10 border border-gray-200 bg-light" />
+        <PaymentGrid className='mt-10 border border-gray-200 bg-light p-5' />
       )}
       <PlaceOrderAction>{t('text-place-order')}</PlaceOrderAction>
     </div>

@@ -23,7 +23,7 @@ export default function QuantitySortFilter({ refetch, className }: Props) {
 
   return (
     <div className={cn('flex w-full', className)}>
-      <div className="w-full">
+      <div className='w-full'>
         <Label>{t('common:sort-by-quantity')}</Label>
         <Select
           options={data?.types}

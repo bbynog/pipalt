@@ -24,37 +24,37 @@ const UserBoxHeaderView = ({
       <form
         className={cn(
           'relative h-14 border-b border-solid border-b-[#E5E7EB] sm:h-20',
-          className
+          className,
         )}
         {...rest}
         onSubmit={(e) => e.preventDefault()}
         onChange={onChange}
       >
         <Input
-          type="text"
-          name="search"
-          variant="solid"
-          className="h-full"
-          inputClassName="!bg-white !pr-11 !border-0 !h-full"
+          type='text'
+          name='search'
+          variant='solid'
+          className='h-full'
+          inputClassName='!bg-white !pr-11 !border-0 !h-full'
           showLabel={false}
           onKeyUp={onChange}
           value={value}
           placeholder={t('text-input-search')}
         />
-        <div className="absolute top-0 right-0 flex h-full w-12 select-none">
+        <div className='absolute top-0 right-0 flex h-full w-12 select-none'>
           {!!value ? (
             <button
-              type="button"
+              type='button'
               onClick={clear}
-              className="my-auto ml-auto mr-3 text-[#9CA3AF] outline-none focus:outline-none active:outline-none"
+              className='my-auto ml-auto mr-3 text-[#9CA3AF] outline-none focus:outline-none active:outline-none'
             >
-              <CloseIcon className="h-4 w-4" />
+              <CloseIcon className='h-4 w-4' />
             </button>
           ) : (
             <SearchIcon
               height={15}
               width={16}
-              className="my-auto ml-auto mr-3 text-[#9CA3AF]"
+              className='my-auto ml-auto mr-3 text-[#9CA3AF]'
             />
           )}
         </div>

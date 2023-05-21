@@ -97,10 +97,10 @@ export default function GooglePlacesAutocomplete({
     return <div>{t('common:text-map-cant-load')}</div>;
   }
   return isLoaded ? (
-    <div className="relative">
+    <div className='relative'>
       {icon && (
-        <div className="absolute top-0 left-0 flex items-center justify-center w-10 h-12 text-gray-400">
-          <MapPin className="w-[18px]" />
+        <div className='absolute top-0 left-0 flex h-12 w-10 items-center justify-center text-gray-400'>
+          <MapPin className='w-[18px]' />
         </div>
       )}
       <Autocomplete
@@ -116,7 +116,7 @@ export default function GooglePlacesAutocomplete({
         className={className}
       >
         <input
-          type="text"
+          type='text'
           placeholder={t('form:placeholder-search-location')}
           defaultValue={data?.formattedAddress!}
           className={`flex h-12 w-full appearance-none items-center rounded border border-border-base text-sm text-heading transition duration-300 ease-in-out focus:border-accent focus:outline-none focus:ring-0 ${
@@ -127,6 +127,6 @@ export default function GooglePlacesAutocomplete({
       </Autocomplete>
     </div>
   ) : (
-    <Loader simple={true} className="w-6 h-6" />
+    <Loader simple={true} className='h-6 w-6' />
   );
 }

@@ -6,8 +6,8 @@ import {
   OrderFileResolver,
   OrdersResolver,
 } from './orders.resolver';
-import {PaymentModule} from 'src/payment/payment.module';
-import {AuthorsModule} from 'src/authors/authors.module';
+import { PaymentModule } from 'src/payment/payment.module';
+import { AuthorsModule } from 'src/authors/authors.module';
 import { UsersModule } from 'src/users/users.module';
 
 @Module({

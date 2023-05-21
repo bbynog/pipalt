@@ -52,7 +52,7 @@ const QuestionList = ({ questions, onPagination, refetch }: IProps) => {
           ],
         });
       }, 500),
-    [order]
+    [order],
   );
 
   const onHeaderClick = (value: string | undefined) => ({
@@ -97,7 +97,7 @@ const QuestionList = ({ questions, onPagination, refetch }: IProps) => {
           alt={product?.name}
           width={60}
           height={60}
-          className="overflow-hidden rounded"
+          className='overflow-hidden rounded'
         />
       ),
     },
@@ -129,9 +129,9 @@ const QuestionList = ({ questions, onPagination, refetch }: IProps) => {
       render: (product: Product) => (
         <a
           href={process.env.NEXT_PUBLIC_SHOP_URL + '/products/' + product?.slug}
-          className="transition-colors hover:text-accent"
-          target="_blank"
-          rel="noreferrer"
+          className='transition-colors hover:text-accent'
+          target='_blank'
+          rel='noreferrer'
         >
           {product?.name}
         </a>
@@ -144,13 +144,13 @@ const QuestionList = ({ questions, onPagination, refetch }: IProps) => {
       align: alignLeft,
       width: 200,
       render: (record: any) => (
-        <div className="flex items-center space-x-4">
-          <span className="flex items-center text-xs tracking-wider text-gray-400 transition">
-            <LikeIcon className="w-4 h-4 me-1.5" />
+        <div className='flex items-center space-x-4'>
+          <span className='flex items-center text-xs tracking-wider text-gray-400 transition'>
+            <LikeIcon className='h-4 w-4 me-1.5' />
             {record?.positive_feedbacks_count}
           </span>
-          <span className="flex items-center text-xs tracking-wider text-gray-400 transition">
-            <DislikeIcon className="w-4 h-4 me-1.5" />
+          <span className='flex items-center text-xs tracking-wider text-gray-400 transition'>
+            <DislikeIcon className='h-4 w-4 me-1.5' />
             {record?.negative_feedbacks_count}
           </span>
         </div>
@@ -174,7 +174,7 @@ const QuestionList = ({ questions, onPagination, refetch }: IProps) => {
         dayjs.extend(utc);
         dayjs.extend(timezone);
         return (
-          <span className="whitespace-nowrap">
+          <span className='whitespace-nowrap'>
             {dayjs.utc(date).tz(dayjs.tz.guess()).fromNow()}
           </span>
         );
@@ -193,7 +193,7 @@ const QuestionList = ({ questions, onPagination, refetch }: IProps) => {
         return (
           <ActionButtons
             id={id}
-            editModalView="REPLY_QUESTION"
+            editModalView='REPLY_QUESTION'
             deleteModalView={!shop ? 'DELETE_QUESTION' : false}
           />
         );
@@ -203,19 +203,19 @@ const QuestionList = ({ questions, onPagination, refetch }: IProps) => {
 
   return (
     <>
-      <div className="mb-6 overflow-hidden rounded shadow">
+      <div className='mb-6 overflow-hidden rounded shadow'>
         <Table
           //@ts-ignore
           columns={columns}
           emptyText={t('table:empty-table-data')}
           data={data}
-          rowKey="id"
+          rowKey='id'
           scroll={{ x: 1000 }}
         />
       </div>
 
       {!!paginatorInfo.total && (
-        <div className="flex items-center justify-end">
+        <div className='flex items-center justify-end'>
           <Pagination
             total={paginatorInfo.total}
             current={paginatorInfo.currentPage}

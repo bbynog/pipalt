@@ -55,17 +55,17 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({
             'flex flex-col justify-between sm:flex-row sm:items-center',
             {
               'mx-auto max-w-screen-xl': boxedLayout,
-            }
+            },
           )}
         >
-          <h2 className="mt-3 text-lg font-semibold tracking-tight text-heading sm:mt-0">
+          <h2 className='mt-3 text-lg font-semibold tracking-tight text-heading sm:mt-0'>
             {t('text-product-reviews')} ({paginatorInfo?.total ?? 0})
           </h2>
-          <div className="flex flex-col items-center border-border-200 border-opacity-70 py-3 sm:space-y-1 ltr:sm:border-l rtl:sm:border-r lg:flex-row lg:space-y-0 lg:!border-0 lg:py-0">
-            <div className="w-full shrink-0 border-border-200 border-opacity-70 ltr:sm:pl-8 ltr:sm:pr-5 rtl:sm:pl-5 rtl:sm:pr-8 lg:w-auto lg:py-5 ltr:lg:border-l rtl:lg:border-r">
+          <div className='flex flex-col items-center border-border-200 border-opacity-70 py-3 sm:space-y-1 ltr:sm:border-l rtl:sm:border-r lg:flex-row lg:space-y-0 lg:!border-0 lg:py-0'>
+            <div className='w-full shrink-0 border-border-200 border-opacity-70 ltr:sm:pl-8 ltr:sm:pr-5 rtl:sm:pl-5 rtl:sm:pr-8 lg:w-auto lg:py-5 ltr:lg:border-l rtl:lg:border-r'>
               <Sorting />
             </div>
-            <div className="w-full shrink-0 border-border-200 border-opacity-70 ltr:sm:pl-8 ltr:sm:pr-5 rtl:sm:pl-5 rtl:sm:pr-8 lg:w-auto lg:py-5 ltr:lg:border-l rtl:lg:border-r">
+            <div className='w-full shrink-0 border-border-200 border-opacity-70 ltr:sm:pl-8 ltr:sm:pr-5 rtl:sm:pl-5 rtl:sm:pr-8 lg:w-auto lg:py-5 ltr:lg:border-l rtl:lg:border-r'>
               <StarFilter />
             </div>
           </div>
@@ -90,13 +90,13 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({
             {/* Pagination */}
 
             {paginatorInfo && (
-              <div className="flex items-center justify-between border-t border-border-200 border-opacity-70 py-4">
-                <div className="text-xs text-gray-400">
+              <div className='flex items-center justify-between border-t border-border-200 border-opacity-70 py-4'>
+                <div className='text-xs text-gray-400'>
                   {t('text-page')} {paginatorInfo.currentPage} {t('text-of')}{' '}
                   {Math.ceil(paginatorInfo.total / paginatorInfo.perPage)}
                 </div>
 
-                <div className="mb-2 flex items-center">
+                <div className='mb-2 flex items-center'>
                   <Pagination
                     total={paginatorInfo.total}
                     current={paginatorInfo.currentPage}
@@ -109,8 +109,8 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({
           </div>
         </div>
       ) : (
-        <div className="flex flex-col items-center justify-center border-b border-border-200 border-opacity-70 px-5 py-16">
-          <h3 className="text-lg font-semibold text-gray-400">
+        <div className='flex flex-col items-center justify-center border-b border-border-200 border-opacity-70 px-5 py-16'>
+          <h3 className='text-lg font-semibold text-gray-400'>
             {t('text-no-reviews-found')}
           </h3>
         </div>

@@ -8,6 +8,6 @@ export const getIcon = ({ iconList, iconName, ...rest }: Props) => {
   return !!TagName ? (
     <TagName {...rest} />
   ) : (
-    <p className="text-sm text-red-500">{iconName} is not a valid icon</p>
+    <p className='text-sm text-red-500'>{iconName} is not a valid icon</p>
   );
 };

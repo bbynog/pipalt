@@ -9,12 +9,12 @@ export function useTypes(options?: Partial<TypeQueryOptions>) {
 
   let formattedOptions = {
     ...options,
-    language: locale
-  }
+    language: locale,
+  };
 
   const { data, isLoading, error } = useQuery<Type[], Error>(
     [API_ENDPOINTS.TYPES, formattedOptions],
-    ({ queryKey }) => client.types.all(Object.assign({}, queryKey[1]))
+    ({ queryKey }) => client.types.all(Object.assign({}, queryKey[1])),
   );
   return {
     types: data,
@@ -31,7 +31,7 @@ export function useType(slug: string) {
     () => client.types.get({ slug, language: locale! }),
     {
       enabled: Boolean(slug),
-    }
+    },
   );
   return {
     type: data,

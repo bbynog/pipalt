@@ -83,37 +83,37 @@ export default function Orders() {
 
   return (
     <>
-      <Card className="flex flex-col md:flex-row items-center justify-between mb-8">
-        <div className="md:w-1/4 mb-4 md:mb-0">
-          <h1 className="text-lg font-semibold text-heading">
+      <Card className='mb-8 flex flex-col items-center justify-between md:flex-row'>
+        <div className='mb-4 md:mb-0 md:w-1/4'>
+          <h1 className='text-lg font-semibold text-heading'>
             {t('form:input-label-orders')}
           </h1>
         </div>
 
-        <div className="w-full md:w-1/2 flex flex-col md:flex-row items-center ms-auto">
+        <div className='flex w-full flex-col items-center ms-auto md:w-1/2 md:flex-row'>
           <Search onSearch={handleSearch} />
         </div>
 
         <Menu
-          as="div"
-          className="relative inline-block ltr:text-left rtl:text-right"
+          as='div'
+          className='relative inline-block ltr:text-left rtl:text-right'
         >
-          <Menu.Button className="group p-2">
-            <MoreIcon className="w-3.5 text-body" />
+          <Menu.Button className='group p-2'>
+            <MoreIcon className='w-3.5 text-body' />
           </Menu.Button>
           <Transition
             as={Fragment}
-            enter="transition ease-out duration-100"
-            enterFrom="transform opacity-0 scale-95"
-            enterTo="transform opacity-100 scale-100"
-            leave="transition ease-in duration-75"
-            leaveFrom="transform opacity-100 scale-100"
-            leaveTo="transform opacity-0 scale-95"
+            enter='transition ease-out duration-100'
+            enterFrom='transform opacity-0 scale-95'
+            enterTo='transform opacity-100 scale-100'
+            leave='transition ease-in duration-75'
+            leaveFrom='transform opacity-100 scale-100'
+            leaveTo='transform opacity-0 scale-95'
           >
             <Menu.Items
-              as="ul"
+              as='ul'
               className={classNames(
-                'absolute mt-2 w-52 overflow-hidden rounded border border-border-200 bg-light py-2 shadow-700 focus:outline-none ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left z-50'
+                'shadow-700 absolute z-50 mt-2 w-52 overflow-hidden rounded border border-border-200 bg-light py-2 focus:outline-none ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left',
               )}
             >
               <Menu.Item>
@@ -122,11 +122,11 @@ export default function Orders() {
                     onClick={handleExportOrder}
                     className={classNames(
                       'flex w-full items-center space-x-3 px-5 py-2.5 text-sm font-semibold capitalize transition duration-200 hover:text-accent focus:outline-none rtl:space-x-reverse',
-                      active ? 'text-accent' : 'text-body'
+                      active ? 'text-accent' : 'text-body',
                     )}
                   >
-                    <DownloadIcon className="w-5 shrink-0" />
-                    <span className="whitespace-nowrap">
+                    <DownloadIcon className='w-5 shrink-0' />
+                    <span className='whitespace-nowrap'>
                       {t('common:text-export-orders')}
                     </span>
                   </button>

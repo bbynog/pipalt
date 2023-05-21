@@ -28,7 +28,7 @@ export const SettingsProvider: React.FC<{ initialValue: any }> = ({
       ...state,
       updateSettings,
     }),
-    [state]
+    [state],
   );
   return <SettingsContext.Provider value={value} {...props} />;
 };

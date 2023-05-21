@@ -6,12 +6,12 @@ const MessageNotFound = ({ ...rest }) => {
   const { t } = useTranslation();
   return (
     <>
-      <div className="flex h-full" {...rest}>
-        <div className="m-auto">
-          <div className="mb-8">
+      <div className='flex h-full' {...rest}>
+        <div className='m-auto'>
+          <div className='mb-8'>
             <NoMessageFound />
           </div>
-          <p className="font-semibold text-[#686D73]">
+          <p className='font-semibold text-[#686D73]'>
             {t('text-no-message-found')}
           </p>
         </div>

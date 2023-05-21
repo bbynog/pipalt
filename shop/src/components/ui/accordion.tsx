@@ -33,38 +33,38 @@ const Collapse: React.FC<CollapseProps> = ({
   return (
     <div
       className={cn(
-        'border border-solid border-border-200 bg-light rounded mb-2.5 transition-all hover:border-border-base',
-        activeClass
+        'mb-2.5 rounded border border-solid border-border-200 bg-light transition-all hover:border-border-base',
+        activeClass,
       )}
     >
       <motion.header
         initial={false}
         onClick={() => setExpanded(isOpen ? false : i)}
-        className="py-4 px-5 rounded cursor-pointer flex items-center justify-between transition-colors"
+        className='flex cursor-pointer items-center justify-between rounded py-4 px-5 transition-colors'
       >
-        <h2 className="text-sm md:text-base font-semibold leading-relaxed text-heading">
+        <h2 className='text-sm font-semibold leading-relaxed text-heading md:text-base'>
           {t(title)}
         </h2>
         {isOpen ? (
           <MinusIcon
-            className="flex-shrink-0 stroke-2"
+            className='flex-shrink-0 stroke-2'
             width={18}
             height={18}
           />
         ) : (
-          <PlusIcon className="flex-shrink-0 stroke-2" width={20} height={20} />
+          <PlusIcon className='flex-shrink-0 stroke-2' width={20} height={20} />
         )}
       </motion.header>
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
-            key="content"
-            initial="from"
-            animate="to"
-            exit="from"
+            key='content'
+            initial='from'
+            animate='to'
+            exit='from'
             variants={heightCollapse()}
           >
-            <div className="md:pt-1 pb-4 px-5 leading-7 text-sm md:text-base md:leading-loose text-body-dark">
+            <div className='px-5 pb-4 text-sm leading-7 text-body-dark md:pt-1 md:text-base md:leading-loose'>
               {t(content)}
             </div>
           </motion.div>

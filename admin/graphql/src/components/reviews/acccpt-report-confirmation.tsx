@@ -18,10 +18,10 @@ const AcceptAbuseReportView = () => {
   }
   return (
     <ConfirmationCard
-      title="text-accept"
-      description="text-accept-report-modal-description"
+      title='text-accept'
+      description='text-accept-report-modal-description'
       onCancel={closeModal}
-      deleteBtnText="text-accept"
+      deleteBtnText='text-accept'
       onDelete={handleDelete}
       deleteBtnLoading={loading}
     />

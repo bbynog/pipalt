@@ -51,7 +51,7 @@ const StoreNoticeList = ({ storeNotices, onPagination, refetch }: IProps) => {
           orderBy: value,
         });
       }, 500),
-    [order]
+    [order],
   );
 
   const onHeaderClick = (value: string | undefined) => ({
@@ -84,7 +84,7 @@ const StoreNoticeList = ({ storeNotices, onPagination, refetch }: IProps) => {
       width: 200,
       onHeaderCell: () => onHeaderClick('notice'),
       render: (text: string) => (
-        <span className="whitespace-nowrap">{text}</span>
+        <span className='whitespace-nowrap'>{text}</span>
       ),
     },
     {
@@ -103,7 +103,7 @@ const StoreNoticeList = ({ storeNotices, onPagination, refetch }: IProps) => {
       ellipsis: true,
       onHeaderCell: () => onHeaderClick('description'),
       render: (text: string) => (
-        <span className="whitespace-nowrap">{text}</span>
+        <span className='whitespace-nowrap'>{text}</span>
       ),
     },
     {
@@ -124,7 +124,7 @@ const StoreNoticeList = ({ storeNotices, onPagination, refetch }: IProps) => {
         const typeText: string = text.replace(/_/g, ' ');
         const finalResult: string =
           typeText.charAt(0).toUpperCase() + typeText.slice(1);
-        return <span className="whitespace-nowrap">{finalResult}</span>;
+        return <span className='whitespace-nowrap'>{finalResult}</span>;
       },
     },
     {
@@ -142,7 +142,7 @@ const StoreNoticeList = ({ storeNotices, onPagination, refetch }: IProps) => {
       width: 130,
       onHeaderCell: () => onHeaderClick('effective_from'),
       render: (effective_from: string) => (
-        <span className="whitespace-nowrap">
+        <span className='whitespace-nowrap'>
           {dayjs()?.to(dayjs?.utc(effective_from)?.tz(dayjs?.tz?.guess()))}
         </span>
       ),
@@ -162,7 +162,7 @@ const StoreNoticeList = ({ storeNotices, onPagination, refetch }: IProps) => {
       width: 130,
       onHeaderCell: () => onHeaderClick('expired_at'),
       render: (expired_date: string) => (
-        <span className="whitespace-nowrap">
+        <span className='whitespace-nowrap'>
           {dayjs()?.to(dayjs?.utc(expired_date)?.tz(dayjs?.tz?.guess()))}
         </span>
       ),
@@ -182,7 +182,7 @@ const StoreNoticeList = ({ storeNotices, onPagination, refetch }: IProps) => {
       width: 100,
       onHeaderCell: () => onHeaderClick('creator_role'),
       render: (text: string) => (
-        <span className="whitespace-nowrap">{text}</span>
+        <span className='whitespace-nowrap'>{text}</span>
       ),
     },
     {
@@ -202,7 +202,7 @@ const StoreNoticeList = ({ storeNotices, onPagination, refetch }: IProps) => {
       render: (text: string) => (
         <Badge
           text={text}
-          className="font-medium uppercase"
+          className='font-medium uppercase'
           color={PriorityColor(text)}
         />
       ),
@@ -219,7 +219,7 @@ const StoreNoticeList = ({ storeNotices, onPagination, refetch }: IProps) => {
               <LanguageSwitcher
                 slug={data?.id}
                 record={data}
-                deleteModalView="DELETE_STORE_NOTICE"
+                deleteModalView='DELETE_STORE_NOTICE'
                 routes={Routes?.storeNotice}
               />
             </>
@@ -239,28 +239,28 @@ const StoreNoticeList = ({ storeNotices, onPagination, refetch }: IProps) => {
 
   return (
     <>
-      <div className="mb-6 overflow-hidden rounded shadow">
+      <div className='mb-6 overflow-hidden rounded shadow'>
         <Table
           // @ts-ignore
           columns={columns}
           emptyText={() => (
-            <div className="flex flex-col items-center py-6">
-              <div className="relative w-72 sm:h-80 sm:w-96">
+            <div className='flex flex-col items-center py-6'>
+              <div className='relative w-72 sm:h-80 sm:w-96'>
                 <NoShop />
               </div>
-              <div className="pt-6 text-sm font-semibold">
+              <div className='pt-6 text-sm font-semibold'>
                 {t('table:empty-table-data')}
               </div>
             </div>
           )}
           data={data}
-          rowKey="id"
+          rowKey='id'
           scroll={{ x: 1000 }}
         />
       </div>
 
       {!!paginatorInfo.total && (
-        <div className="flex items-center justify-end">
+        <div className='flex items-center justify-end'>
           <Pagination
             total={paginatorInfo.total}
             current={paginatorInfo.currentPage}

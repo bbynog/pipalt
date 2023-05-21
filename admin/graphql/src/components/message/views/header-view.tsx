@@ -30,14 +30,14 @@ const HeaderView = ({ className, shop, ...rest }: Props) => {
         className={cn(
           'relative flex shrink-0 items-center border-b border-solid border-b-[#E5E7EB] bg-white p-2 sm:h-20 sm:pl-6 sm:pr-9',
           width >= RESPONSIVE_WIDTH ? 'justify-between' : '',
-          className
+          className,
         )}
         {...rest}
       >
         {width <= RESPONSIVE_WIDTH ? (
           <Link
             href={routes}
-            className="mr-1 inline-block p-1 pl-0 text-2xl transition-colors duration-300 hover:text-accent-hover"
+            className='mr-1 inline-block p-1 pl-0 text-2xl transition-colors duration-300 hover:text-accent-hover'
           >
             <BackIcon />
           </Link>
@@ -55,7 +55,7 @@ const HeaderView = ({ className, shop, ...rest }: Props) => {
             {...rest}
             alt={shop?.name}
           />
-          <h2 className="ml-2 text-xs font-semibold text-[#64748B]">
+          <h2 className='ml-2 text-xs font-semibold text-[#64748B]'>
             {shop?.name}
           </h2>
         </div>

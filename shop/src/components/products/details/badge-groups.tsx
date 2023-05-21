@@ -4,11 +4,11 @@ interface Props {
 
 const BadgeGroups = ({ title, children }: React.PropsWithChildren<Props>) => {
   return (
-    <div className="flex flex-col items-start w-full">
-      <span className="pb-3 text-sm font-semibold capitalize text-heading">
+    <div className='flex w-full flex-col items-start'>
+      <span className='pb-3 text-sm font-semibold capitalize text-heading'>
         {title}
       </span>
-      <div className="flex flex-row flex-wrap">{children}</div>
+      <div className='flex flex-row flex-wrap'>{children}</div>
     </div>
   );
 };

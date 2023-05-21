@@ -6,7 +6,7 @@ interface ErrorProps {
 export const Error: React.FC<ErrorProps> = ({ message }) => {
   const { t } = useTranslation('common');
   return (
-    <p className="mt-2 text-xs text-red-500 ltr:text-left rtl:text-right">
+    <p className='mt-2 text-xs text-red-500 ltr:text-left rtl:text-right'>
       {t(message!)}
     </p>
   );
@@ -15,7 +15,7 @@ export const Error: React.FC<ErrorProps> = ({ message }) => {
 const ErrorMessage: React.FC<ErrorProps> = ({ message }) => {
   const { t } = useTranslation('common');
   return (
-    <p className="max-w-sm p-5 mx-auto mt-16 text-lg font-semibold text-center bg-red-400 rounded min-w-min text-light">
+    <p className='mx-auto mt-16 min-w-min max-w-sm rounded bg-red-400 p-5 text-center text-lg font-semibold text-light'>
       {t(message!)}
     </p>
   );

@@ -24,10 +24,10 @@ const ReviewImageModal = () => {
   const [prevEl, prevRef] = useSwiperRef<HTMLDivElement>();
 
   return (
-    <div className="p-3 bg-light block m-auto max-w-[680px] w-full rounded">
-      <div className="relative">
+    <div className='m-auto block w-full max-w-[680px] rounded bg-light p-3'>
+      <div className='relative'>
         <Swiper
-          id="review-gallery"
+          id='review-gallery'
           modules={[Navigation]}
           initialSlide={data?.initSlide ?? 0}
           onSwiper={(swiper) => {
@@ -45,14 +45,14 @@ const ReviewImageModal = () => {
           {data?.images?.map((item: any) => (
             <SwiperSlide
               key={`review-gallery-${item.id}`}
-              className="flex items-center justify-center selection:bg-transparent"
+              className='flex items-center justify-center selection:bg-transparent'
             >
               <Image
                 src={item?.original ?? '/product-placeholder-borderless.svg'}
                 alt={`Review gallery ${item.id}`}
                 width={600}
                 height={600}
-                className="object-contain"
+                className='object-contain'
               />
             </SwiperSlide>
           ))}
@@ -61,22 +61,22 @@ const ReviewImageModal = () => {
           <>
             <div
               ref={prevRef}
-              className="absolute z-10 flex items-center justify-center w-8 h-8 -mt-4 transition-all duration-200 border rounded-full shadow-xl cursor-pointer review-gallery-prev top-2/4 start-2 md:start-3 md:-mt-5 md:w-9 md:h-9 bg-light border-border-200 border-opacity-70 text-heading hover:bg-gray-100"
+              className='review-gallery-prev absolute top-2/4 z-10 -mt-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border border-border-200 border-opacity-70 bg-light text-heading shadow-xl transition-all duration-200 start-2 hover:bg-gray-100 md:-mt-5 md:h-9 md:w-9 md:start-3'
             >
               {isRTL ? (
-                <ChevronRight className="w-4 h-4" />
+                <ChevronRight className='h-4 w-4' />
               ) : (
-                <ChevronLeft className="w-4 h-4" />
+                <ChevronLeft className='h-4 w-4' />
               )}
             </div>
             <div
               ref={nextRef}
-              className="absolute z-10 flex items-center justify-center w-8 h-8 -mt-4 transition-all duration-200 border rounded-full shadow-xl cursor-pointer review-gallery-next top-2/4 end-2 md:end-3 md:-mt-5 md:w-9 md:h-9 bg-light border-border-200 border-opacity-70 text-heading hover:bg-gray-100"
+              className='review-gallery-next absolute top-2/4 z-10 -mt-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border border-border-200 border-opacity-70 bg-light text-heading shadow-xl transition-all duration-200 end-2 hover:bg-gray-100 md:-mt-5 md:h-9 md:w-9 md:end-3'
             >
               {isRTL ? (
-                <ChevronLeft className="w-4 h-4" />
+                <ChevronLeft className='h-4 w-4' />
               ) : (
-                <ChevronRight className="w-4 h-4" />
+                <ChevronRight className='h-4 w-4' />
               )}
             </div>
           </>

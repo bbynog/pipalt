@@ -19,7 +19,7 @@ export function useReviews(options?: Partial<ReviewQueryOptions>) {
       client.reviews.all(Object.assign({}, queryKey[1] as ReviewQueryOptions)),
     {
       keepPreviousData: true,
-    }
+    },
   );
   return {
     reviews: response?.data ?? [],
@@ -37,7 +37,7 @@ export function useReview({ id }: { id: string }) {
     () => client.reviews.get({ id }),
     {
       enabled: Boolean(id),
-    }
+    },
   );
   return {
     review: data,
@@ -60,7 +60,7 @@ export function useCreateReview() {
         queryClient.invalidateQueries([API_ENDPOINTS.ORDERS]);
         closeModal();
       },
-    }
+    },
   );
   return {
     createReview,
@@ -82,7 +82,7 @@ export function useUpdateReview() {
         queryClient.invalidateQueries([API_ENDPOINTS.ORDERS]);
         closeModal();
       },
-    }
+    },
   );
   return {
     updateReview,

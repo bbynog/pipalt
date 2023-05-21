@@ -11,12 +11,12 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery(
     [API_ENDPOINTS.SETTINGS, { language: locale }],
-    ({ queryKey }) => client.settings.all(queryKey[1] as SettingsQueryOptions)
+    ({ queryKey }) => client.settings.all(queryKey[1] as SettingsQueryOptions),
   );
 
   await queryClient.fetchQuery(
     [API_ENDPOINTS.TYPES, { limit: TYPES_PER_PAGE, language: locale }],
-    ({ queryKey }) => client.types.all(queryKey[1] as TypeQueryOptions)
+    ({ queryKey }) => client.types.all(queryKey[1] as TypeQueryOptions),
   );
 
   return {

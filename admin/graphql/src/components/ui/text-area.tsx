@@ -9,7 +9,7 @@ export interface Props extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   error?: string;
   shadow?: boolean;
   variant?: 'normal' | 'solid' | 'outline';
-  disabled?: boolean
+  disabled?: boolean;
 }
 
 const classes = {
@@ -45,30 +45,32 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
     {
       [classes.shadow]: shadow,
     },
-    inputClassName
+    inputClassName,
   );
 
   return (
     <div className={className}>
       {label && (
-        <label className="block text-body-dark font-semibold text-sm leading-none mb-3">
+        <label className='mb-3 block text-sm font-semibold leading-none text-body-dark'>
           {label}
         </label>
       )}
       <textarea
         id={name}
         name={name}
-        className={`${rootClassName} ${disabled ? 'cursor-not-allowed bg-[#EEF1F4] border-[#D4D8DD]' : ''}`}
-        autoComplete="off"
-        autoCorrect="off"
-        autoCapitalize="off"
-        spellCheck="false"
+        className={`${rootClassName} ${
+          disabled ? 'cursor-not-allowed border-[#D4D8DD] bg-[#EEF1F4]' : ''
+        }`}
+        autoComplete='off'
+        autoCorrect='off'
+        autoCapitalize='off'
+        spellCheck='false'
         rows={4}
         ref={ref}
         disabled={disabled}
         {...rest}
       />
-      {error && <p className="my-2 text-xs text-end text-red-500">{error}</p>}
+      {error && <p className='my-2 text-xs text-red-500 text-end'>{error}</p>}
     </div>
   );
 });

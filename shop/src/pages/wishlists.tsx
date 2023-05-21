@@ -8,14 +8,14 @@ import DashboardLayout from '@/layouts/_dashboard';
 export { getStaticProps } from '@/framework/general.ssr';
 const CartCounterButton = dynamic(
   () => import('@/components/cart/cart-counter-button'),
-  { ssr: false }
+  { ssr: false },
 );
 const MyWishlistPage = () => {
   const { width } = useWindowSize();
   return (
     <>
       <Seo noindex={true} nofollow={true} />
-      <Card className="w-full shadow-none sm:shadow">
+      <Card className='w-full shadow-none sm:shadow'>
         <WishlistProducts />
       </Card>
       {width > 1023 && <CartCounterButton />}

@@ -19,12 +19,12 @@ export default function Dashboard() {
   const { price: total_revenue } = usePrice(
     data && {
       amount: data?.analytics?.totalRevenue!,
-    }
+    },
   );
   const { price: todays_revenue } = usePrice(
     data && {
       amount: data?.analytics?.todaysRevenue!,
-    }
+    },
   );
 
   if (loading) return <Loader text={t('common:text-loading')} />;
@@ -32,48 +32,48 @@ export default function Dashboard() {
   let salesByYear: number[] = Array.from({ length: 12 }, (_) => 0);
   if (!!data?.analytics?.totalYearSaleByMonth?.length) {
     salesByYear = data.analytics.totalYearSaleByMonth.map((item: any) =>
-      item.total.toFixed(2)
+      item.total.toFixed(2),
     );
   }
 
   return (
     <>
-      <div className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 mb-6">
-        <div className="w-full ">
+      <div className='mb-6 grid w-full grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4'>
+        <div className='w-full '>
           <StickerCard
-            titleTransKey="sticker-card-title-rev"
-            subtitleTransKey="sticker-card-subtitle-rev"
-            icon={<DollarIcon className="w-7 h-7" color="#047857" />}
+            titleTransKey='sticker-card-title-rev'
+            subtitleTransKey='sticker-card-subtitle-rev'
+            icon={<DollarIcon className='h-7 w-7' color='#047857' />}
             iconBgStyle={{ backgroundColor: '#A7F3D0' }}
             count={total_revenue}
           />
         </div>
-        <div className="w-full">
+        <div className='w-full'>
           <StickerCard
-            titleTransKey="sticker-card-title-order"
-            subtitleTransKey="sticker-card-subtitle-order"
+            titleTransKey='sticker-card-title-order'
+            subtitleTransKey='sticker-card-subtitle-order'
             icon={<CartIconBig />}
             count={data?.analytics?.totalOrders}
           />
         </div>
-        <div className="w-full">
+        <div className='w-full'>
           <StickerCard
-            titleTransKey="sticker-card-title-today-rev"
+            titleTransKey='sticker-card-title-today-rev'
             icon={<CoinIcon />}
             count={todays_revenue}
           />
         </div>
-        <div className="w-full">
+        <div className='w-full'>
           <StickerCard
-            titleTransKey="sticker-card-title-total-shops"
-            icon={<ShopIcon className="w-6" color="#1D4ED8" />}
+            titleTransKey='sticker-card-title-total-shops'
+            icon={<ShopIcon className='w-6' color='#1D4ED8' />}
             iconBgStyle={{ backgroundColor: '#93C5FD' }}
             count={data?.analytics?.totalShops}
           />
         </div>
       </div>
 
-      <div className="w-full flex flex-wrap mb-6">
+      <div className='mb-6 flex w-full flex-wrap'>
         <ColumnChart
           widgetTitle={t('common:sale-history')}
           colors={['#03D3B5']}
@@ -95,8 +95,8 @@ export default function Dashboard() {
         />
       </div>
 
-      <div className="w-full flex flex-wrap xl:flex-nowrap mb-6 space-y-6 xl:space-y-0 xl:space-x-5 rtl:space-x-reverse">
-        <div className="w-full xl:w-1/2">
+      <div className='mb-6 flex w-full flex-wrap space-y-6 rtl:space-x-reverse xl:flex-nowrap xl:space-y-0 xl:space-x-5'>
+        <div className='w-full xl:w-1/2'>
           <RecentOrders
             //@ts-ignore
             orders={data?.orders}
@@ -104,7 +104,7 @@ export default function Dashboard() {
           />
         </div>
 
-        <div className="w-full xl:w-1/2">
+        <div className='w-full xl:w-1/2'>
           <WithdrawTable
             //@ts-ignore
             withdraws={data?.withdraws}
@@ -112,7 +112,7 @@ export default function Dashboard() {
           />
         </div>
       </div>
-      <div className="w-full">
+      <div className='w-full'>
         <PopularProductList
           title={t('table:popular-products-table-title')}
           //@ts-ignore

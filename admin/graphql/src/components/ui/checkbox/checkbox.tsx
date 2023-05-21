@@ -11,25 +11,25 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>(
   ({ className, label, name, error, ...rest }, ref) => {
     return (
       <div className={className}>
-        <div className="flex items-center">
+        <div className='flex items-center'>
           <input
             id={name}
             name={name}
-            type="checkbox"
+            type='checkbox'
             ref={ref}
-            className="pb-checkbox"
+            className='pb-checkbox'
             {...rest}
           />
 
-          <label htmlFor={name} className="text-body text-sm">
+          <label htmlFor={name} className='text-sm text-body'>
             {label}
           </label>
         </div>
 
-        {error && <p className="my-2 text-xs text-end text-red-500">{error}</p>}
+        {error && <p className='my-2 text-xs text-red-500 text-end'>{error}</p>}
       </div>
     );
-  }
+  },
 );
 
 Checkbox.displayName = 'Checkbox';

@@ -56,7 +56,7 @@ export default function VariableProductForm({ initialValues }: IProps) {
   const cartesianProduct = getCartesianProduct(getValues('variations'));
   const attributes = data?.attributes;
   return (
-    <div className="flex flex-wrap my-5 sm:my-8">
+    <div className='my-5 flex flex-wrap sm:my-8'>
       <Description
         title={t('form:form-title-variation-product-info')}
         details={`${
@@ -64,11 +64,11 @@ export default function VariableProductForm({ initialValues }: IProps) {
             ? t('form:item-description-update')
             : t('form:item-description-choose')
         } ${t('form:form-description-variation-product-info')}`}
-        className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8"
+        className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
       />
-      <Card className="w-full sm:w-8/12 md:w-2/3 p-0 md:p-0">
-        <div className="border-t border-dashed border-border-200 mb-5 md:mb-8">
-          <Title className="text-lg uppercase text-center px-5 md:px-8 mb-0 mt-8">
+      <Card className='w-full p-0 sm:w-8/12 md:w-2/3 md:p-0'>
+        <div className='mb-5 border-t border-dashed border-border-200 md:mb-8'>
+          <Title className='mb-0 mt-8 px-5 text-center text-lg uppercase md:px-8'>
             {t('form:form-title-options')}
           </Title>
           <div>
@@ -76,23 +76,23 @@ export default function VariableProductForm({ initialValues }: IProps) {
               return (
                 <div
                   key={field.id}
-                  className="border-b border-dashed border-border-200 last:border-0 p-5 md:p-8"
+                  className='border-b border-dashed border-border-200 p-5 last:border-0 md:p-8'
                 >
-                  <div className="flex items-center justify-between">
-                    <Title className="mb-0">
+                  <div className='flex items-center justify-between'>
+                    <Title className='mb-0'>
                       {t('form:form-title-options')} {index + 1}
                     </Title>
                     <button
                       onClick={() => remove(index)}
-                      type="button"
-                      className="text-sm text-red-500 hover:text-red-700 transition-colors duration-200 focus:outline-none"
+                      type='button'
+                      className='text-sm text-red-500 transition-colors duration-200 hover:text-red-700 focus:outline-none'
                     >
                       {t('form:button-label-remove')}
                     </button>
                   </div>
 
-                  <div className="grid grid-cols-fit gap-5">
-                    <div className="mt-5">
+                  <div className='grid grid-cols-fit gap-5'>
+                    <div className='mt-5'>
                       <Label>{t('form:input-label-attribute-name')}*</Label>
                       <SelectInput
                         name={`variations.${index}.attribute`}
@@ -105,7 +105,7 @@ export default function VariableProductForm({ initialValues }: IProps) {
                       />
                     </div>
 
-                    <div className="mt-5 col-span-2">
+                    <div className='col-span-2 mt-5'>
                       <Label>{t('form:input-label-attribute-value')}*</Label>
                       <SelectInput
                         isMulti
@@ -123,11 +123,11 @@ export default function VariableProductForm({ initialValues }: IProps) {
             })}
           </div>
 
-          <div className="px-5 md:px-8">
+          <div className='px-5 md:px-8'>
             <Button
               disabled={fields.length === attributes?.length}
               onClick={() => append({ attribute: '', value: [] })}
-              type="button"
+              type='button'
             >
               {t('form:button-label-add-option')}
             </Button>
@@ -135,8 +135,8 @@ export default function VariableProductForm({ initialValues }: IProps) {
 
           {/* Preview generation section start */}
           {!!cartesianProduct?.length && (
-            <div className="border-t border-dashed border-border-200 pt-5 md:pt-8 mt-5 md:mt-8">
-              <Title className="text-lg uppercase text-center px-5 md:px-8 mb-0">
+            <div className='mt-5 border-t border-dashed border-border-200 pt-5 md:mt-8 md:pt-8'>
+              <Title className='mb-0 px-5 text-center text-lg uppercase md:px-8'>
                 {cartesianProduct?.length} {t('form:total-variation-added')}
               </Title>
               {cartesianProduct.map(
@@ -144,11 +144,11 @@ export default function VariableProductForm({ initialValues }: IProps) {
                   return (
                     <div
                       key={`fieldAttributeValues-${index}`}
-                      className="border-b last:border-0 border-dashed border-border-200 p-5 md:p-8 md:last:pb-0 mb-5 last:mb-8 mt-5"
+                      className='mb-5 mt-5 border-b border-dashed border-border-200 p-5 last:mb-8 last:border-0 md:p-8 md:last:pb-0'
                     >
-                      <Title className="!text-lg mb-8">
+                      <Title className='mb-8 !text-lg'>
                         {t('form:form-title-variant')}:{' '}
-                        <span className="text-blue-600 font-normal">
+                        <span className='font-normal text-blue-600'>
                           {Array.isArray(fieldAttributeValue)
                             ? fieldAttributeValue?.map((a) => a.value).join('/')
                             : fieldAttributeValue.value}
@@ -163,39 +163,39 @@ export default function VariableProductForm({ initialValues }: IProps) {
 
                       <input
                         {...register(`variation_options.${index}.id`)}
-                        type="hidden"
+                        type='hidden'
                       />
 
-                      <div className="grid grid-cols-2 gap-5">
+                      <div className='grid grid-cols-2 gap-5'>
                         <Input
                           label={`${t('form:input-label-price')}*`}
-                          type="number"
+                          type='number'
                           {...register(`variation_options.${index}.price`)}
                           error={t(
-                            errors.variation_options?.[index]?.price?.message
+                            errors.variation_options?.[index]?.price?.message,
                           )}
-                          variant="outline"
-                          className="mb-5"
+                          variant='outline'
+                          className='mb-5'
                         />
                         <Input
                           label={t('form:input-label-sale-price')}
-                          type="number"
+                          type='number'
                           {...register(`variation_options.${index}.sale_price`)}
                           error={t(
                             errors.variation_options?.[index]?.sale_price
-                              ?.message
+                              ?.message,
                           )}
-                          variant="outline"
-                          className="mb-5"
+                          variant='outline'
+                          className='mb-5'
                         />
                         <Input
                           label={`${t('form:input-label-sku')}*`}
                           {...register(`variation_options.${index}.sku`)}
                           error={t(
-                            errors.variation_options?.[index]?.sku?.message
+                            errors.variation_options?.[index]?.sku?.message,
                           )}
-                          variant="outline"
-                          className="mb-5"
+                          variant='outline'
+                          className='mb-5'
                           note={
                             Config.enableMultiLang
                               ? `${t('form:input-note-multilang-sku')}`
@@ -204,13 +204,14 @@ export default function VariableProductForm({ initialValues }: IProps) {
                         />
                         <Input
                           label={`${t('form:input-label-quantity')}*`}
-                          type="number"
+                          type='number'
                           {...register(`variation_options.${index}.quantity`)}
                           error={t(
-                            errors.variation_options?.[index]?.quantity?.message
+                            errors.variation_options?.[index]?.quantity
+                              ?.message,
                           )}
-                          variant="outline"
-                          className="mb-5"
+                          variant='outline'
+                          className='mb-5'
                         />
                       </div>
 
@@ -222,13 +223,13 @@ export default function VariableProductForm({ initialValues }: IProps) {
                           multiple={false}
                         />
                       </div>
-                      <div className="mb-5 mt-5">
+                      <div className='mb-5 mt-5'>
                         <Checkbox
                           {...register(`variation_options.${index}.is_digital`)}
                           label={t('form:input-label-is-digital')}
                         />
                         {watch(`variation_options.${index}.is_digital`) && (
-                          <div className="mt-5">
+                          <div className='mt-5'>
                             <Label>{t('form:input-label-digital-file')}</Label>
                             <FileInput
                               name={`variation_options.${index}.digital_file_input`}
@@ -238,27 +239,27 @@ export default function VariableProductForm({ initialValues }: IProps) {
                               helperText={t('form:text-upload-digital-file')}
                             />
                             <input
-                              type="hidden"
+                              type='hidden'
                               {...register(
-                                `variation_options.${index}.digital_file`
+                                `variation_options.${index}.digital_file`,
                               )}
                             />
                           </div>
                         )}
                       </div>
-                      <div className="mb-5 mt-5">
+                      <div className='mb-5 mt-5'>
                         <Checkbox
                           {...register(`variation_options.${index}.is_disable`)}
                           error={t(
                             errors.variation_options?.[index]?.is_disable
-                              ?.message
+                              ?.message,
                           )}
                           label={t('form:input-label-disable-variant')}
                         />
                       </div>
                     </div>
                   );
-                }
+                },
               )}
             </div>
           )}
@@ -286,10 +287,10 @@ export const TitleAndOptionsInput = ({
   }, [fieldAttributeValue]);
   return (
     <>
-      <input {...register(`variation_options.${index}.title`)} type="hidden" />
+      <input {...register(`variation_options.${index}.title`)} type='hidden' />
       <input
         {...register(`variation_options.${index}.options`)}
-        type="hidden"
+        type='hidden'
       />
     </>
   );

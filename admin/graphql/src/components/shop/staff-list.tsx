@@ -32,7 +32,7 @@ const StaffList = ({ staffs, onPagination, refetch }: IProps) => {
           orderBy: value,
         });
       }, 500),
-    [order]
+    [order],
   );
 
   const onHeaderClick = (value: string | undefined) => ({
@@ -76,25 +76,25 @@ const StaffList = ({ staffs, onPagination, refetch }: IProps) => {
       key: 'actions',
       align: alignRight,
       render: (id: string) => {
-        return <ActionButtons id={id} deleteModalView="DELETE_STAFF" />;
+        return <ActionButtons id={id} deleteModalView='DELETE_STAFF' />;
       },
     },
   ];
 
   return (
     <>
-      <div className="rounded overflow-hidden shadow mb-6">
+      <div className='mb-6 overflow-hidden rounded shadow'>
         <Table
           // @ts-ignore
           columns={columns}
           emptyText={t('table:empty-table-data')}
           data={data!}
-          rowKey="id"
+          rowKey='id'
           scroll={{ x: 800 }}
         />
       </div>
       {!!paginatorInfo.total && (
-        <div className="flex justify-end items-center">
+        <div className='flex items-center justify-end'>
           <Pagination
             total={paginatorInfo.total}
             current={paginatorInfo.currentPage}

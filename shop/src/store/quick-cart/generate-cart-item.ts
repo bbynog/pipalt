@@ -32,7 +32,7 @@ export function generateCartItem(item: Item, variation: Variation) {
     quantity,
     unit,
     is_digital,
-    language
+    language,
   } = item;
   if (!isEmpty(variation)) {
     return {
@@ -44,11 +44,11 @@ export function generateCartItem(item: Item, variation: Variation) {
       is_digital: variation?.is_digital,
       stock: variation.quantity,
       price: Number(
-        variation.sale_price ? variation.sale_price : variation.price
+        variation.sale_price ? variation.sale_price : variation.price,
       ),
       image: image?.thumbnail,
       variationId: variation.id,
-      language
+      language,
     };
   }
   return {
@@ -60,6 +60,6 @@ export function generateCartItem(item: Item, variation: Variation) {
     image: image?.thumbnail,
     stock: quantity,
     price: Number(sale_price ? sale_price : price),
-    language
+    language,
   };
 }

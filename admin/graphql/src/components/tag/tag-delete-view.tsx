@@ -14,7 +14,7 @@ const TagDeleteView = () => {
         fields: {
           tags(existingRefs, { readField }) {
             return existingRefs.data.filter(
-              (ref: any) => deleteTag.id !== readField('id', ref)
+              (ref: any) => deleteTag.id !== readField('id', ref),
             );
           },
         },

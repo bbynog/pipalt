@@ -50,7 +50,7 @@ const Sorting: React.FC<Props> = ({ variant = 'radio' }) => {
   const { isRTL } = useIsRTL();
   const [selected, setSelected] = useState(
     () =>
-      plans.find((plan) => plan.orderBy === router.query.orderBy) ?? plans[0]
+      plans.find((plan) => plan.orderBy === router.query.orderBy) ?? plans[0],
   );
 
   useEffect(() => {
@@ -87,15 +87,15 @@ const Sorting: React.FC<Props> = ({ variant = 'radio' }) => {
       {variant === 'radio' && (
         <Scrollbar style={{ maxHeight: '400px' }}>
           <RadioGroup value={selected} onChange={handleChange}>
-            <RadioGroup.Label className="sr-only">
+            <RadioGroup.Label className='sr-only'>
               {t('text-sort')}
             </RadioGroup.Label>
-            <div className="space-y-4">
+            <div className='space-y-4'>
               {plans.map((plan) => (
                 <RadioGroup.Option key={plan.id} value={plan}>
                   {({ checked }) => (
                     <>
-                      <div className="flex w-full cursor-pointer items-center">
+                      <div className='flex w-full cursor-pointer items-center'>
                         <span
                           className={`h-[18px] w-[18px] rounded-full bg-white ltr:mr-3 rtl:ml-3 ${
                             checked
@@ -103,7 +103,7 @@ const Sorting: React.FC<Props> = ({ variant = 'radio' }) => {
                               : 'border border-gray-600'
                           }`}
                         />
-                        <RadioGroup.Label as="p" className="text-sm text-body">
+                        <RadioGroup.Label as='p' className='text-sm text-body'>
                           {plan.label}
                         </RadioGroup.Label>
                       </div>

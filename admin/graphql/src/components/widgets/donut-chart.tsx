@@ -37,46 +37,46 @@ const DonutChart = ({ series, icon, labels, prefix, colors }: any) => {
   };
 
   return (
-    <div className="bg-light shadow-sm rounded w-full h-full">
-      <div className="p-8 flex items-start justify-between">
-        <div className="w-full flex items-center justify-start">
-          <span className="w-14 h-14 me-4 flex">{icon[0]}</span>
+    <div className='h-full w-full rounded bg-light shadow-sm'>
+      <div className='flex items-start justify-between p-8'>
+        <div className='flex w-full items-center justify-start'>
+          <span className='flex h-14 w-14 me-4'>{icon[0]}</span>
 
-          <div className="flex flex-col">
+          <div className='flex flex-col'>
             <span
-              className="text-lg text-heading font-semibold"
+              className='text-lg font-semibold text-heading'
               style={{ color: colors[0] }}
             >
               {prefix}
               {numberWithCommas(series[0])}
             </span>
-            <span className="text-xs text-body mt-1">{labels[0]}</span>
+            <span className='mt-1 text-xs text-body'>{labels[0]}</span>
           </div>
         </div>
       </div>
 
-      <div className="w-full">
+      <div className='w-full'>
         <Chart
           options={options.options}
           series={options.series}
-          width="100%"
-          type="donut"
+          width='100%'
+          type='donut'
         />
       </div>
 
-      <div className="p-8 flex items-start justify-between">
-        <div className="w-full flex flex-row-reverse items-center justify-start ">
-          <span className="w-14 h-14 ms-4 flex">{icon[1]}</span>
+      <div className='flex items-start justify-between p-8'>
+        <div className='flex w-full flex-row-reverse items-center justify-start '>
+          <span className='flex h-14 w-14 ms-4'>{icon[1]}</span>
 
-          <div className="flex flex-col items-end">
+          <div className='flex flex-col items-end'>
             <span
-              className="text-lg text-heading font-semibold"
+              className='text-lg font-semibold text-heading'
               style={{ color: colors[1] }}
             >
               {prefix}
               {numberWithCommas(series[1])}
             </span>
-            <span className="text-xs text-body mt-1">{labels[1]}</span>
+            <span className='mt-1 text-xs text-body'>{labels[1]}</span>
           </div>
         </div>
       </div>

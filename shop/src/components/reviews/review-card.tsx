@@ -65,19 +65,19 @@ export default function ReviewCard({ review }: ReviewCardProps) {
   };
 
   return (
-    <div className="border-t border-border-200 border-opacity-70 py-7 first:border-t-0">
-      <Rating rating={rating} className="mb-2.5" />
-      <div className="mb-4 flex items-center text-xs text-gray-500">
+    <div className='border-t border-border-200 border-opacity-70 py-7 first:border-t-0'>
+      <Rating rating={rating} className='mb-2.5' />
+      <div className='mb-4 flex items-center text-xs text-gray-500'>
         {t('text-by')}{' '}
-        <span className="capitalize ltr:ml-1 rtl:mr-1">{user?.name}</span>
-        <CheckedIcon className="h-[13px] w-[13px] text-gray-700 ltr:ml-1 rtl:mr-1" />
+        <span className='capitalize ltr:ml-1 rtl:mr-1'>{user?.name}</span>
+        <CheckedIcon className='h-[13px] w-[13px] text-gray-700 ltr:ml-1 rtl:mr-1' />
       </div>
-      <p className="text-base leading-7 text-heading">{comment}</p>
+      <p className='text-base leading-7 text-heading'>{comment}</p>
 
-      <div className="space-s-2 flex items-start pt-3">
+      <div className='space-s-2 flex items-start pt-3'>
         {photos?.map((photo, idx) => (
           <div
-            className="m-1.5 cursor-pointer"
+            className='m-1.5 cursor-pointer'
             key={photo.id}
             onClick={() => handleImageClick(idx)}
           >
@@ -86,19 +86,19 @@ export default function ReviewCard({ review }: ReviewCardProps) {
               alt={user.name ?? ''}
               width={80}
               height={80}
-              className="inline-flex rounded-md bg-gray-200 object-contain"
+              className='inline-flex rounded-md bg-gray-200 object-contain'
             />
           </div>
         ))}
       </div>
 
-      <div className="flex items-center justify-between">
-        <div className="mt-3.5 text-xs text-gray-400">
+      <div className='flex items-center justify-between'>
+        <div className='mt-3.5 text-xs text-gray-400'>
           {t('text-date')}: {dayjs(created_at).format('MMMM D, YYYY')}
         </div>
-        <div className="flex items-center space-x-6 rtl:space-x-reverse">
+        <div className='flex items-center space-x-6 rtl:space-x-reverse'>
           <button
-            className="flex items-center text-xs tracking-wider text-gray-400 transition"
+            className='flex items-center text-xs tracking-wider text-gray-400 transition'
             disabled={my_feedback?.positive}
             onClick={() => feedback({ positive: true })}
           >
@@ -110,7 +110,7 @@ export default function ReviewCard({ review }: ReviewCardProps) {
             {positive_feedbacks_count}
           </button>
           <button
-            className="flex items-center text-xs tracking-wider text-gray-400 transition"
+            className='flex items-center text-xs tracking-wider text-gray-400 transition'
             onClick={() => feedback({ negative: true })}
             disabled={my_feedback?.negative}
           >
@@ -123,25 +123,25 @@ export default function ReviewCard({ review }: ReviewCardProps) {
           </button>
 
           <Menu
-            as="div"
-            className="relative inline-block ltr:text-left rtl:text-right"
+            as='div'
+            className='relative inline-block ltr:text-left rtl:text-right'
           >
-            <Menu.Button className="group p-2">
-              <MenuIcon className="text-gray-400 transition-colors group-hover:text-accent" />
+            <Menu.Button className='group p-2'>
+              <MenuIcon className='text-gray-400 transition-colors group-hover:text-accent' />
             </Menu.Button>
             <Transition
               as={Fragment}
-              enter="transition ease-out duration-100"
-              enterFrom="transform opacity-0 scale-95"
-              enterTo="transform opacity-100 scale-100"
-              leave="transition ease-in duration-75"
-              leaveFrom="transform opacity-100 scale-100"
-              leaveTo="transform opacity-0 scale-95"
+              enter='transition ease-out duration-100'
+              enterFrom='transform opacity-0 scale-95'
+              enterTo='transform opacity-100 scale-100'
+              leave='transition ease-in duration-75'
+              leaveFrom='transform opacity-100 scale-100'
+              leaveTo='transform opacity-0 scale-95'
             >
               <Menu.Items
-                as="ul"
+                as='ul'
                 className={cn(
-                  'absolute mt-2 w-48 overflow-hidden rounded border border-border-200 bg-light py-2 shadow-700 focus:outline-none ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left'
+                  'absolute mt-2 w-48 overflow-hidden rounded border border-border-200 bg-light py-2 shadow-700 focus:outline-none ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left',
                 )}
               >
                 <Menu.Item>
@@ -150,7 +150,7 @@ export default function ReviewCard({ review }: ReviewCardProps) {
                       onClick={openAbuseReportModal}
                       className={cn(
                         'flex w-full items-center space-x-4 px-5 py-2.5 text-sm font-semibold capitalize transition duration-200 hover:text-accent focus:outline-0 rtl:space-x-reverse',
-                        active ? 'text-accent' : 'text-body'
+                        active ? 'text-accent' : 'text-body',
                       )}
                     >
                       {t('text-report-abuse')}

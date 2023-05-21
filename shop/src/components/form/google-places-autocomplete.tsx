@@ -26,7 +26,7 @@ export default function GooglePlacesAutocomplete({
   const [autocomplete, setAutocomplete] = React.useState<any>(null);
 
   const onLoad = React.useCallback(function callback(
-    autocompleteInstance: any
+    autocompleteInstance: any,
   ) {
     setAutocomplete(autocompleteInstance);
   },
@@ -97,9 +97,9 @@ export default function GooglePlacesAutocomplete({
     return <div>{t('common:text-map-cant-load')}</div>;
   }
   return isLoaded ? (
-    <div className="relative">
-      <div className="absolute top-0 left-0 flex h-12 w-10 items-center justify-center text-gray-400">
-        <MapPin className="w-[18px]" />
+    <div className='relative'>
+      <div className='absolute top-0 left-0 flex h-12 w-10 items-center justify-center text-gray-400'>
+        <MapPin className='w-[18px]' />
       </div>
       <Autocomplete
         onLoad={onLoad}
@@ -113,7 +113,7 @@ export default function GooglePlacesAutocomplete({
         types={['address']}
       >
         <input
-          type="text"
+          type='text'
           placeholder={t('common:placeholder-search-location')}
           defaultValue={data?.formattedAddress!}
           className={`rtl::pr-9 flex h-12 w-full appearance-none items-center rounded border border-border-base text-sm text-heading transition duration-300 ease-in-out focus:border-accent focus:outline-0 focus:ring-0 ltr:pr-4 ltr:pl-9 rtl:pl-4 ${

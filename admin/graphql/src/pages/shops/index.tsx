@@ -44,14 +44,14 @@ export default function AllShopPage() {
 
   return (
     <>
-      <Card className="flex flex-col md:flex-row items-center justify-between mb-8">
-        <div className="md:w-1/4 mb-4 md:mb-0">
-          <h1 className="text-lg font-semibold text-heading">
+      <Card className='mb-8 flex flex-col items-center justify-between md:flex-row'>
+        <div className='mb-4 md:mb-0 md:w-1/4'>
+          <h1 className='text-lg font-semibold text-heading'>
             {t('common:sidebar-nav-item-shops')}
           </h1>
         </div>
 
-        <div className="w-full md:w-1/2 flex flex-col md:flex-row items-center ms-auto">
+        <div className='flex w-full flex-col items-center ms-auto md:w-1/2 md:flex-row'>
           <Search onSearch={handleSearch} />
         </div>
       </Card>

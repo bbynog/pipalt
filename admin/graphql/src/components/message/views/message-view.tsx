@@ -105,7 +105,7 @@ const UserMessageView = ({
     const toggleVisible = () => {
       if (
         Number(
-          Number(chatBody?.scrollHeight) - Number(chatBody?.clientHeight)
+          Number(chatBody?.scrollHeight) - Number(chatBody?.clientHeight),
         ) !== Number(chatBody?.scrollTop) &&
         Number(chatBody?.clientHeight) <= Number(chatBody?.scrollHeight)
       ) {
@@ -121,11 +121,11 @@ const UserMessageView = ({
   }, [loading]);
   if (loading || meLoading)
     return (
-      <Loader className="!h-full flex-1" text={t('common:text-loading')} />
+      <Loader className='!h-full flex-1' text={t('common:text-loading')} />
     );
   if (meError)
     return (
-      <div className="!h-full flex-1">
+      <div className='!h-full flex-1'>
         <ErrorMessage message={meError?.message} />
       </div>
     );
@@ -133,7 +133,7 @@ const UserMessageView = ({
     <>
       <div
         id={id}
-        className="relative flex-auto px-6 pt-10 overflow-x-hidden overflow-y-auto pb-14"
+        className='relative flex-auto overflow-y-auto overflow-x-hidden px-6 pt-10 pb-14'
         style={{
           maxHeight:
             width >= RESPONSIVE_WIDTH
@@ -158,14 +158,14 @@ const UserMessageView = ({
             zIndex: 50,
           }}
         >
-          <ArrowDown height="14" width="14" className="m-auto" />
+          <ArrowDown height='14' width='14' className='m-auto' />
         </div>
          {/* render loader */}
         {children}
         {/* render content */}
         <>
           {!isEmpty(messages) ? (
-            <div className="space-y-6">
+            <div className='space-y-6'>
               {messages?.map((item: any, key: number) => {
                 const { body, created_at, user_id, conversation } = item;
                 const checkUser = Number(data?.me?.id) === Number(user_id);
@@ -185,11 +185,11 @@ const UserMessageView = ({
                       </>
                     )}
                     {checkUser ? null : (
-                      <div className="w-10">
+                      <div className='w-10'>
                         <Avatar
                           src={avatarUrl ?? siteSettings?.avatar?.placeholder}
                           {...rest}
-                          alt="avatar"
+                          alt='avatar'
                         />
                       </div>
                     )}
@@ -198,17 +198,17 @@ const UserMessageView = ({
                         checkUser ? 'text-right' : 'text-left'
                       }`}
                     >
-                      <div className="space-y-1">
+                      <div className='space-y-1'>
                         <h2
                           className={`${cn(
                             classes?.common,
-                            checkUser ? classes?.default : classes?.reverse
+                            checkUser ? classes?.default : classes?.reverse,
                           )}`}
                         >
                           {body.replace(/['"]+/g, '')}
                         </h2>
                       </div>
-                      <div className="mt-2 text-xs text-[#686D73]">
+                      <div className='mt-2 text-xs text-[#686D73]'>
                         {dayjs().to(dayjs.utc(created_at))}
                       </div>
                     </div>

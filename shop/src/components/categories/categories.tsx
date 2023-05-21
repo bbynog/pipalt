@@ -3,19 +3,19 @@ import dynamic from 'next/dynamic';
 import { useCategories } from '@/framework/category';
 
 const StickySidebarListCategories = dynamic(
-  () => import('@/components/categories/sticky-sidebar-list-categories')
+  () => import('@/components/categories/sticky-sidebar-list-categories'),
 );
 const StaticSidebarVerticalRectangleCategories = dynamic(
-  () => import('@/components/categories/sliding-vertical-rectangle-categories')
+  () => import('@/components/categories/sliding-vertical-rectangle-categories'),
 );
 const StickySidebarBoxedCategories = dynamic(
-  () => import('@/components/categories/sticky-sidebar-boxed-categories')
+  () => import('@/components/categories/sticky-sidebar-boxed-categories'),
 );
 const FilterCategoryGrid = dynamic(
-  () => import('@/components/categories/filter-category-grid')
+  () => import('@/components/categories/filter-category-grid'),
 );
 const SlidingCardCategories = dynamic(
-  () => import('@/components/categories/sliding-card-category')
+  () => import('@/components/categories/sliding-card-category'),
 );
 const MAP_CATEGORY_TO_GROUP: Record<string, any> = {
   classic: StickySidebarListCategories,

@@ -70,7 +70,7 @@ const PaymentForm: React.FC<Props> = ({
                 {
                   payment_method: payload.method_key,
                   setup_future_usage: 'on_session',
-                }
+                },
               );
               // Send card response to the api\
               await createOrderPayment({
@@ -86,7 +86,7 @@ const PaymentForm: React.FC<Props> = ({
                 setLoading(false);
               }
             },
-          }
+          },
         );
       }
     } else {
@@ -96,7 +96,7 @@ const PaymentForm: React.FC<Props> = ({
           payment_method: {
             card: cardElement,
           },
-        }
+        },
       );
       // Send card response to the api
       await createOrderPayment({

@@ -33,7 +33,7 @@ import dynamic from 'next/dynamic';
 
 const FavoriteButton = dynamic(
   () => import('@/components/products/details/favorite-button'),
-  { ssr: false }
+  { ssr: false },
 );
 
 type Props = {
@@ -96,7 +96,7 @@ const Details: React.FC<Props> = ({
 
   const variations = useMemo(
     () => getVariations(product?.variations),
-    [product?.variations]
+    [product?.variations],
   );
   const isSelected = isVariationSelected(variations, attributes);
   let selectedVariation: any = {};
@@ -104,8 +104,8 @@ const Details: React.FC<Props> = ({
     selectedVariation = product?.variation_options?.find((o: any) =>
       isEqual(
         o.options.map((v: any) => v.value).sort(),
-        Object.values(attributes).sort()
-      )
+        Object.values(attributes).sort(),
+      ),
     );
   }
 
@@ -120,19 +120,19 @@ const Details: React.FC<Props> = ({
   const previewImages = displayImage(selectedVariation?.image, gallery, image);
 
   return (
-    <article className="rounded-lg bg-light">
-      <div className="flex flex-col border-b border-border-200 border-opacity-70 md:flex-row">
-        <div className="p-6 pt-10 md:w-1/2 lg:p-14 xl:p-16">
-          <div className="flex items-center justify-between mb-8 lg:mb-10">
+    <article className='rounded-lg bg-light'>
+      <div className='flex flex-col border-b border-border-200 border-opacity-70 md:flex-row'>
+        <div className='p-6 pt-10 md:w-1/2 lg:p-14 xl:p-16'>
+          <div className='mb-8 flex items-center justify-between lg:mb-10'>
             {backBtn && <BackButton />}
             {discount && (
-              <div className="px-3 text-xs font-semibold leading-6 bg-yellow-500 rounded-full text-light ltr:ml-auto rtl:mr-auto">
+              <div className='rounded-full bg-yellow-500 px-3 text-xs font-semibold leading-6 text-light ltr:ml-auto rtl:mr-auto'>
                 {discount}
               </div>
             )}
           </div>
 
-          <div className="h-full product-gallery">
+          <div className='product-gallery h-full'>
             <ThumbsCarousel
               gallery={previewImages}
               hideThumbs={previewImages.length <= 1}
@@ -140,16 +140,16 @@ const Details: React.FC<Props> = ({
           </div>
         </div>
 
-        <div className="flex flex-col items-start p-5 pt-10 md:w-1/2 lg:p-14 xl:p-16">
-          <div className="w-full" ref={intersectionRef}>
-            <div className="flex items-start justify-between w-full space-x-8 rtl:space-x-reverse">
+        <div className='flex flex-col items-start p-5 pt-10 md:w-1/2 lg:p-14 xl:p-16'>
+          <div className='w-full' ref={intersectionRef}>
+            <div className='flex w-full items-start justify-between space-x-8 rtl:space-x-reverse'>
               <h1
                 className={classNames(
                   `text-lg font-semibold tracking-tight text-heading md:text-xl xl:text-2xl`,
                   {
                     'cursor-pointer transition-colors hover:text-accent':
                       isModal,
-                  }
+                  },
                 )}
                 {...(isModal && {
                   onClick: () => navigate(Routes.product(slug)),
@@ -165,23 +165,23 @@ const Details: React.FC<Props> = ({
                 />
               </div>
             </div>
-            <div className="flex items-center justify-between mt-2">
+            <div className='mt-2 flex items-center justify-between'>
               {unit && !hasVariations && (
-                <span className="block text-sm font-normal text-body">
+                <span className='block text-sm font-normal text-body'>
                   {unit}
                 </span>
               )}
 
               {isModal && (
-                <div className="inline-flex items-center px-3 py-1 text-sm text-white border rounded shrink-0 border-accent bg-accent">
+                <div className='inline-flex shrink-0 items-center rounded border border-accent bg-accent px-3 py-1 text-sm text-white'>
                   {ratings}
-                  <StarIcon className="h-2.5 w-2.5 ltr:ml-1 rtl:mr-1" />
+                  <StarIcon className='h-2.5 w-2.5 ltr:ml-1 rtl:mr-1' />
                 </div>
               )}
             </div>
 
             {description && (
-              <div className="mt-3 text-sm leading-7 text-body md:mt-4">
+              <div className='mt-3 text-sm leading-7 text-body md:mt-4'>
                 <Truncate
                   character={150}
                   {...(!isModal && {
@@ -196,7 +196,7 @@ const Details: React.FC<Props> = ({
 
             {hasVariations ? (
               <>
-                <div className="flex items-center my-5 md:my-10">
+                <div className='my-5 flex items-center md:my-10'>
                   <VariationPrice
                     selectedVariation={selectedVariation}
                     minPrice={product.min_price}
@@ -208,23 +208,23 @@ const Details: React.FC<Props> = ({
                 </div>
               </>
             ) : (
-              <span className="flex items-center my-5 md:my-10">
-                <ins className="text-2xl font-semibold no-underline text-accent md:text-3xl">
+              <span className='my-5 flex items-center md:my-10'>
+                <ins className='text-2xl font-semibold text-accent no-underline md:text-3xl'>
                   {price}
                 </ins>
                 {basePrice && (
-                  <del className="text-sm font-normal text-muted ltr:ml-2 rtl:mr-2 md:text-base">
+                  <del className='text-sm font-normal text-muted ltr:ml-2 rtl:mr-2 md:text-base'>
                     {basePrice}
                   </del>
                 )}
               </span>
             )}
 
-            <div className="flex flex-col items-center mt-6 md:mt-6 lg:flex-row">
-              <div className="mb-3 w-full lg:mb-0 lg:max-w-[400px]">
+            <div className='mt-6 flex flex-col items-center md:mt-6 lg:flex-row'>
+              <div className='mb-3 w-full lg:mb-0 lg:max-w-[400px]'>
                 <AddToCart
                   data={product}
-                  variant="big"
+                  variant='big'
                   variation={selectedVariation}
                   disabled={selectedVariation?.is_disable || !isSelected}
                 />
@@ -233,23 +233,23 @@ const Details: React.FC<Props> = ({
               {!hasVariations && (
                 <>
                   {Number(quantity) > 0 ? (
-                    <span className="text-base whitespace-nowrap text-body ltr:lg:ml-7 rtl:lg:mr-7">
+                    <span className='whitespace-nowrap text-base text-body ltr:lg:ml-7 rtl:lg:mr-7'>
                       {quantity} {t('text-pieces-available')}
                     </span>
                   ) : (
-                    <div className="text-base text-red-500 whitespace-nowrap ltr:lg:ml-7 rtl:lg:mr-7">
+                    <div className='whitespace-nowrap text-base text-red-500 ltr:lg:ml-7 rtl:lg:mr-7'>
                       {t('text-out-stock')}
                     </div>
                   )}
                 </>
               )}
               {!isEmpty(selectedVariation) && (
-                <span className="text-base whitespace-nowrap text-body ltr:lg:ml-7 rtl:lg:mr-7">
+                <span className='whitespace-nowrap text-base text-body ltr:lg:ml-7 rtl:lg:mr-7'>
                   {selectedVariation?.is_disable ||
                   selectedVariation.quantity === 0
                     ? t('text-out-stock')
                     : `${selectedVariation.quantity} ${t(
-                        'text-pieces-available'
+                        'text-pieces-available',
                       )}`}
                 </span>
               )}
@@ -265,14 +265,14 @@ const Details: React.FC<Props> = ({
           )}
 
           {shop?.name && (
-            <div className="flex items-center mt-2">
-              <span className="py-1 text-sm font-semibold capitalize text-heading ltr:mr-6 rtl:ml-6">
+            <div className='mt-2 flex items-center'>
+              <span className='py-1 text-sm font-semibold capitalize text-heading ltr:mr-6 rtl:ml-6'>
                 {t('common:text-sellers')}
               </span>
 
               <button
                 onClick={() => navigate(Routes.shop(shop?.slug))}
-                className="text-sm tracking-wider underline transition text-accent hover:text-accent-hover hover:no-underline"
+                className='text-sm tracking-wider text-accent underline transition hover:text-accent-hover hover:no-underline'
               >
                 {shop?.name}
               </button>
@@ -282,13 +282,13 @@ const Details: React.FC<Props> = ({
       </div>
 
       <Element
-        name="details"
-        className="px-5 py-4 border-b border-border-200 border-opacity-70 lg:px-16 lg:py-14"
+        name='details'
+        className='border-b border-border-200 border-opacity-70 px-5 py-4 lg:px-16 lg:py-14'
       >
-        <h2 className="mb-4 text-lg font-semibold tracking-tight text-heading md:mb-6">
+        <h2 className='mb-4 text-lg font-semibold tracking-tight text-heading md:mb-6'>
           {t('text-details')}
         </h2>
-        <p className="text-sm text-body">{description}</p>
+        <p className='text-sm text-body'>{description}</p>
       </Element>
     </article>
   );

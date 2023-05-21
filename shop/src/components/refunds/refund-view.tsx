@@ -19,13 +19,13 @@ const RenderStatusBadge: React.FC<{ status: string }> = ({ status }) => {
   const { t } = useTranslation('common');
   switch (status.toLowerCase()) {
     case 'approved':
-      return <Badge text={t('text-approved')} color="bg-accent" />;
+      return <Badge text={t('text-approved')} color='bg-accent' />;
     case 'rejected':
-      return <Badge text={t('text-rejected')} color="bg-red-500" />;
+      return <Badge text={t('text-rejected')} color='bg-red-500' />;
     case 'processing':
-      return <Badge text={t('text-processing')} color="bg-yellow-500" />;
+      return <Badge text={t('text-processing')} color='bg-yellow-500' />;
     default:
-      return <Badge text={t('text-pending')} color="bg-purple-500" />;
+      return <Badge text={t('text-pending')} color='bg-purple-500' />;
   }
 };
 
@@ -56,7 +56,7 @@ const RefundView: React.FC = () => {
         className: '!text-sm',
         width: 220,
         render: function renderQuantity(title: any) {
-          return <p className="whitespace-nowrap">{title}</p>;
+          return <p className='whitespace-nowrap'>{title}</p>;
         },
       },
       {
@@ -108,7 +108,7 @@ const RefundView: React.FC = () => {
           dayjs.extend(utc);
           dayjs.extend(timezone);
           return (
-            <span className="whitespace-nowrap">
+            <span className='whitespace-nowrap'>
               {dayjs.utc(date).tz(dayjs.tz.guess()).fromNow()}
             </span>
           );
@@ -124,7 +124,7 @@ const RefundView: React.FC = () => {
         render: (order: any) => (
           <Link
             href={Routes.order(order?.tracking_number)}
-            className="inline-block transition duration-200 text-body hover:text-accent-hover focus:text-accent-hover"
+            className='inline-block text-body transition duration-200 hover:text-accent-hover focus:text-accent-hover'
             title={t('text-view-order')}
           >
             <Eye width={20} />
@@ -132,13 +132,13 @@ const RefundView: React.FC = () => {
         ),
       },
     ],
-    [alignLeft, alignRight, t]
+    [alignLeft, alignRight, t],
   );
   if (err) return <ErrorMessage message={err?.message} />;
   return (
-    <Card className="self-stretch w-full min-h-screen overflow-hidden lg:min-h-0">
-      <div className="flex items-center justify-center mb-8 sm:mb-10">
-        <h3 className="text-lg font-semibold text-center text-heading sm:text-xl">
+    <Card className='min-h-screen w-full self-stretch overflow-hidden lg:min-h-0'>
+      <div className='mb-8 flex items-center justify-center sm:mb-10'>
+        <h3 className='text-center text-lg font-semibold text-heading sm:text-xl'>
           {t('text-my-refunds')}
         </h3>
       </div>
@@ -146,7 +146,7 @@ const RefundView: React.FC = () => {
         columns={refundTableColumns}
         data={refunds}
         rowKey={(record: any) => record.created_at}
-        className="w-full border border-gray-200 orderDetailsTable"
+        className='orderDetailsTable w-full border border-gray-200'
         scroll={{ x: 500, y: 700 }}
       />
     </Card>

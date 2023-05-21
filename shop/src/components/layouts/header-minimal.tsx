@@ -14,7 +14,7 @@ import LanguageSwitcher from '@/components/ui/language-switcher';
 
 const CartCounterIconButton = dynamic(
   () => import('@/components/cart/cart-counter-icon-button'),
-  { ssr: false }
+  { ssr: false },
 );
 const AuthorizedMenu = dynamic(() => import('./menu/authorized-menu'), {
   ssr: false,
@@ -37,27 +37,31 @@ const HeaderMinimal = ({ layout }: { layout: string }) => {
           'fixed z-50 flex h-14 w-full items-center justify-between border-b border-border-200 bg-light px-4 py-5  shadow-sm transition-transform duration-300 md:h-16 lg:h-22 ltr:lg:pl-12 ltr:lg:pr-8 rtl:lg:pr-12 rtl:lg:pl-8',
           {
             'px-5 lg:!px-12 xl:px-16': layout === 'compact',
-          }
+          },
         )}
       >
-        <div className="flex w-full items-center lg:w-auto">
+        <div className='flex w-full items-center lg:w-auto'>
           {/* <Logo className="mx-auto lg:mx-0" /> */}
-          <Logo className={`${!isMultilangEnable ? 'mx-auto lg:mx-0' : 'ltr:ml-0 rtl:mr-0'}`} />
+          <Logo
+            className={`${
+              !isMultilangEnable ? 'mx-auto lg:mx-0' : 'ltr:ml-0 rtl:mr-0'
+            }`}
+          />
 
           {isMultilangEnable ? (
-            <div className="lg:hidden ltr:ml-auto rtl:mr-auto">
+            <div className='ltr:ml-auto rtl:mr-auto lg:hidden'>
               <LanguageSwitcher />
             </div>
           ) : (
             ''
           )}
 
-          <ul className="hidden shrink-0 items-center space-x-7 ltr:ml-10 ltr:mr-auto rtl:mr-10 rtl:ml-auto rtl:space-x-reverse lg:flex 2xl:space-x-10">
+          <ul className='hidden shrink-0 items-center space-x-7 ltr:ml-10 ltr:mr-auto rtl:mr-10 rtl:ml-auto rtl:space-x-reverse lg:flex 2xl:space-x-10'>
             <StaticMenu />
-            <li className="hidden lg:inline-block xl:hidden">
+            <li className='hidden lg:inline-block xl:hidden'>
               <Link
                 href={`${router.asPath}/search`}
-                className="flex items-center font-normal text-heading no-underline transition duration-200 hover:text-accent focus:text-accent"
+                className='flex items-center font-normal text-heading no-underline transition duration-200 hover:text-accent focus:text-accent'
               >
                 {t('text-search')}
               </Link>
@@ -66,40 +70,40 @@ const HeaderMinimal = ({ layout }: { layout: string }) => {
         </div>
 
         {displayMobileHeaderSearch && (
-          <div className="absolute top-0 block h-full w-full bg-light px-5 pt-1.5 ltr:left-0 rtl:right-0 md:pt-2 lg:hidden">
+          <div className='absolute top-0 block h-full w-full bg-light px-5 pt-1.5 ltr:left-0 rtl:right-0 md:pt-2 lg:hidden'>
             <SearchWithSuggestion
               label={t('text-search-label')}
-              variant="minimal"
+              variant='minimal'
               seeMore={true}
             />
           </div>
         )}
 
         {layout === 'compact' && (
-          <div className="mx-auto hidden w-full px-8 xl:flex xl:w-6/12 xl:px-10 xl:rtl:w-4/12 2xl:rtl:w-5/12">
+          <div className='mx-auto hidden w-full px-8 xl:flex xl:w-6/12 xl:px-10 xl:rtl:w-4/12 2xl:rtl:w-5/12'>
             <SearchWithSuggestion
               label={t('text-search-label')}
-              variant="minimal"
+              variant='minimal'
               seeMore={true}
             />
           </div>
         )}
 
-        <div className="hidden shrink-0 items-center space-x-9 rtl:space-x-reverse lg:flex">
-          <GroupsDropdownMenu variant="minimal" />
+        <div className='hidden shrink-0 items-center space-x-9 rtl:space-x-reverse lg:flex'>
+          <GroupsDropdownMenu variant='minimal' />
           {isMultilangEnable ? (
-            <div className="ms-auto lg:me-5 xl:me-8 2xl:me-10 flex-shrink-0">
+            <div className='ms-auto lg:me-5 xl:me-8 2xl:me-10 flex-shrink-0'>
               <LanguageSwitcher />
             </div>
           ) : (
             ''
           )}
           <CartCounterIconButton />
-          <div className="flex items-center space-x-4 rtl:space-x-reverse">
+          <div className='flex items-center space-x-4 rtl:space-x-reverse'>
             <Link
               href={`${process.env.NEXT_PUBLIC_ADMIN_URL}/register`}
-              variant="button"
-              target="_blank"
+              variant='button'
+              target='_blank'
             >
               {t('text-become-seller')}
             </Link>

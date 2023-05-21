@@ -18,9 +18,7 @@
     "updated_at": "2023-01-02T16:05:56.000000Z",
     "deleted_at": null,
     "is_valid": true,
-    "translated_languages": [
-      "en"
-    ]
+    "translated_languages": ["en"]
   },
   {
     "id": 8,
@@ -41,9 +39,7 @@
     "updated_at": "2021-08-19T03:58:43.000000Z",
     "deleted_at": null,
     "is_valid": true,
-    "translated_languages": [
-      "en"
-    ]
+    "translated_languages": ["en"]
   },
   {
     "id": 7,
@@ -64,9 +60,7 @@
     "updated_at": "2021-08-19T03:59:09.000000Z",
     "deleted_at": null,
     "is_valid": true,
-    "translated_languages": [
-      "en"
-    ]
+    "translated_languages": ["en"]
   },
   {
     "id": 5,
@@ -87,9 +81,7 @@
     "updated_at": "2021-08-19T03:59:29.000000Z",
     "deleted_at": null,
     "is_valid": true,
-    "translated_languages": [
-      "en"
-    ]
+    "translated_languages": ["en"]
   },
   {
     "id": 4,
@@ -110,9 +102,7 @@
     "updated_at": "2021-08-19T03:59:38.000000Z",
     "deleted_at": null,
     "is_valid": true,
-    "translated_languages": [
-      "en"
-    ]
+    "translated_languages": ["en"]
   },
   {
     "id": 3,
@@ -133,9 +123,7 @@
     "updated_at": "2021-08-19T03:59:49.000000Z",
     "deleted_at": null,
     "is_valid": true,
-    "translated_languages": [
-      "en"
-    ]
+    "translated_languages": ["en"]
   },
   {
     "id": 2,
@@ -156,9 +144,7 @@
     "updated_at": "2021-08-19T04:00:00.000000Z",
     "deleted_at": null,
     "is_valid": true,
-    "translated_languages": [
-      "en"
-    ]
+    "translated_languages": ["en"]
   },
   {
     "id": 1,
@@ -179,8 +165,6 @@
     "updated_at": "2021-08-19T04:00:12.000000Z",
     "deleted_at": null,
     "is_valid": true,
-    "translated_languages": [
-      "en"
-    ]
+    "translated_languages": ["en"]
   }
 ]

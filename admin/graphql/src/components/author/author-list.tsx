@@ -49,7 +49,7 @@ const AuthorList = ({ authors, onPagination, refetch }: IProps) => {
           ],
         });
       }, 500),
-    [order]
+    [order],
   );
 
   const onHeaderClick = (value: string | undefined) => ({
@@ -74,10 +74,10 @@ const AuthorList = ({ authors, onPagination, refetch }: IProps) => {
       render: (image: Attachment) => (
         <Image
           src={image?.thumbnail ?? siteSettings.product.placeholder}
-          alt="coupon banner"
+          alt='coupon banner'
           width={42}
           height={42}
-          className="overflow-hidden rounded"
+          className='overflow-hidden rounded'
         />
       ),
     },
@@ -130,14 +130,14 @@ const AuthorList = ({ authors, onPagination, refetch }: IProps) => {
               onChange={handleOnClick}
               className={`${
                 is_approved ? 'bg-accent' : 'bg-gray-300'
-              } relative inline-flex items-center h-6 rounded-full w-11 focus:outline-none`}
-              dir="ltr"
+              } relative inline-flex h-6 w-11 items-center rounded-full focus:outline-none`}
+              dir='ltr'
             >
-              <span className="sr-only">Enable</span>
+              <span className='sr-only'>Enable</span>
               <span
                 className={`${
                   is_approved ? 'translate-x-6' : 'translate-x-1'
-                } inline-block w-4 h-4 transition-transform transform bg-light rounded-full`}
+                } inline-block h-4 w-4 transform rounded-full bg-light transition-transform`}
               />
             </Switch>
           </>
@@ -153,7 +153,7 @@ const AuthorList = ({ authors, onPagination, refetch }: IProps) => {
         <LanguageSwitcher
           slug={slug}
           record={record}
-          deleteModalView="DELETE_AUTHOR"
+          deleteModalView='DELETE_AUTHOR'
           routes={Routes?.author}
         />
       ),
@@ -162,24 +162,24 @@ const AuthorList = ({ authors, onPagination, refetch }: IProps) => {
 
   if (router?.query?.shop) {
     columns = columns?.filter(
-      (col) => col?.key !== 'approve' && col?.key !== 'actions'
+      (col) => col?.key !== 'approve' && col?.key !== 'actions',
     );
   }
 
   return (
     <>
-      <div className="mb-6 overflow-hidden rounded shadow">
+      <div className='mb-6 overflow-hidden rounded shadow'>
         <Table
           columns={columns}
           emptyText={t('table:empty-table-data')}
           data={data as Author[]}
-          rowKey="id"
+          rowKey='id'
           scroll={{ x: 900 }}
         />
       </div>
 
       {!!paginatorInfo.total && (
-        <div className="flex items-center justify-end">
+        <div className='flex items-center justify-end'>
           <Pagination
             total={paginatorInfo.total}
             current={paginatorInfo.currentPage}

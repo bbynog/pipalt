@@ -105,27 +105,27 @@ export default function ProductsPage() {
 
   return (
     <>
-      <Card className="flex flex-col mb-8">
-        <div className="flex flex-col items-center w-full md:flex-row">
-          <div className="mb-4 md:w-1/4 md:mb-0">
-            <h1 className="text-lg font-semibold text-heading">
+      <Card className='mb-8 flex flex-col'>
+        <div className='flex w-full flex-col items-center md:flex-row'>
+          <div className='mb-4 md:mb-0 md:w-1/4'>
+            <h1 className='text-lg font-semibold text-heading'>
               {t('form:input-label-products')}
             </h1>
           </div>
 
-          <div className="flex flex-col items-center w-full md:w-3/4 md:flex-row">
-            <div className="flex items-center w-full">
+          <div className='flex w-full flex-col items-center md:w-3/4 md:flex-row'>
+            <div className='flex w-full items-center'>
               <Search onSearch={handleSearch} />
 
               {locale === Config.defaultLanguage && (
                 <LinkButton
                   href={`/${shop}/products/create`}
-                  className="h-12 ms-4 md:ms-6"
+                  className='h-12 ms-4 md:ms-6'
                 >
-                  <span className="hidden md:block">
+                  <span className='hidden md:block'>
                     + {t('form:button-label-add-product')}
                   </span>
-                  <span className="md:hidden">
+                  <span className='md:hidden'>
                     + {t('form:button-label-add')}
                   </span>
                 </LinkButton>
@@ -134,40 +134,40 @@ export default function ProductsPage() {
 
             <Button
               onClick={handleImportModal}
-              className="w-full mt-5 md:hidden"
+              className='mt-5 w-full md:hidden'
             >
               {t('common:text-export-import')}
             </Button>
 
             <button
-              className="flex items-center mt-5 text-base font-semibold text-accent md:ms-5 md:mt-0 whitespace-nowrap"
+              className='mt-5 flex items-center whitespace-nowrap text-base font-semibold text-accent md:mt-0 md:ms-5'
               onClick={toggleVisible}
             >
               {t('common:text-filter')}{' '}
               {visible ? (
-                <ArrowUp className="ms-2" />
+                <ArrowUp className='ms-2' />
               ) : (
-                <ArrowDown className="ms-2" />
+                <ArrowDown className='ms-2' />
               )}
             </button>
 
             <button
               onClick={handleImportModal}
-              className="items-center justify-center flex-shrink-0 hidden w-8 h-8 transition duration-300 rounded-full md:flex bg-gray-50 hover:bg-gray-100 ms-5"
+              className='hidden h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-gray-50 transition duration-300 ms-5 hover:bg-gray-100 md:flex'
             >
-              <MoreIcon className="w-3.5 text-body" />
+              <MoreIcon className='w-3.5 text-body' />
             </button>
           </div>
         </div>
 
         <div
-          className={cn('w-full flex transition', {
-            'h-auto visible': visible,
-            'h-0 invisible': !visible,
+          className={cn('flex w-full transition', {
+            'visible h-auto': visible,
+            'invisible h-0': !visible,
           })}
         >
-          <div className="flex flex-col w-full pt-5 mt-5 border-t border-gray-200 md:flex-row md:items-center md:mt-8 md:pt-8">
-            <CategoryTypeFilter refetch={refetch} className="w-full" />
+          <div className='mt-5 flex w-full flex-col border-t border-gray-200 pt-5 md:mt-8 md:flex-row md:items-center md:pt-8'>
+            <CategoryTypeFilter refetch={refetch} className='w-full' />
           </div>
         </div>
       </Card>

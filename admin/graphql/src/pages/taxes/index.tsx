@@ -40,19 +40,19 @@ export default function TaxesPage() {
 
   return (
     <>
-      <Card className="flex flex-col xl:flex-row items-center mb-8">
-        <div className="md:w-1/4 mb-4 xl:mb-0">
-          <h1 className="text-xl font-semibold text-heading">
+      <Card className='mb-8 flex flex-col items-center xl:flex-row'>
+        <div className='mb-4 md:w-1/4 xl:mb-0'>
+          <h1 className='text-xl font-semibold text-heading'>
             {t('form:input-label-taxes')}
           </h1>
         </div>
 
-        <div className="w-full xl:w-1/2 flex flex-col md:flex-row space-y-4 md:space-y-0 items-center ms-auto">
+        <div className='flex w-full flex-col items-center space-y-4 ms-auto md:flex-row md:space-y-0 xl:w-1/2'>
           <Search onSearch={handleSearch} />
 
           <LinkButton
             href={`${Routes.tax.create}`}
-            className="h-12 md:ms-6 w-full md:w-auto"
+            className='h-12 w-full md:w-auto md:ms-6'
           >
             <span>+ {t('form:button-label-add-tax')}</span>
           </LinkButton>

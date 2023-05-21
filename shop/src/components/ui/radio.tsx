@@ -23,29 +23,29 @@ const Radio = React.forwardRef<HTMLInputElement, Props>(
       theme = 'primary',
       ...rest
     },
-    ref
+    ref,
   ) => {
     return (
       <div className={className}>
-        <div className="flex items-center">
+        <div className='flex items-center'>
           <input
             id={id}
             name={name}
-            type="radio"
+            type='radio'
             ref={ref}
-            className="radio-input"
+            className='radio-input'
             {...rest}
           />
 
           <label
             htmlFor={id}
             className={cn(
-              'text-body text-sm',
+              'text-sm text-body',
               {
                 primary: theme === 'primary',
                 secondary: theme === 'secondary',
               },
-              labelClassName
+              labelClassName,
             )}
           >
             {label}
@@ -53,13 +53,13 @@ const Radio = React.forwardRef<HTMLInputElement, Props>(
         </div>
 
         {error && (
-          <p className="my-2 text-xs ltr:text-right rtl:text-left text-red-500">
+          <p className='my-2 text-xs text-red-500 ltr:text-right rtl:text-left'>
             {error}
           </p>
         )}
       </div>
     );
-  }
+  },
 );
 
 Radio.displayName = 'Radio';

@@ -47,20 +47,20 @@ const UserWalletPointsAddView = () => {
       validationSchema={addPointsValidationSchema}
     >
       {({ register, formState: { errors } }) => (
-        <div className="p-5 bg-light flex flex-col m-auto max-w-sm w-full rounded sm:w-[24rem]">
+        <div className='m-auto flex w-full max-w-sm flex-col rounded bg-light p-5 sm:w-[24rem]'>
           <Input
             label={t('form:input-label-add-wallet-points')}
             {...register('points')}
             // defaultValue="10"
-            variant="outline"
-            className="mb-4"
+            variant='outline'
+            className='mb-4'
             error={t(errors.points?.message!)}
           />
           <Button
-            type="submit"
+            type='submit'
             loading={loading}
             disabled={loading}
-            className="ms-auto"
+            className='ms-auto'
           >
             {t('form:button-label-submit')}
           </Button>

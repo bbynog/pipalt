@@ -14,21 +14,21 @@ export const AddressHeader: React.FC<AddressHeaderProps> = ({
 }) => {
   const { t } = useTranslation('common');
   return (
-    <div className="flex items-center justify-between mb-5 md:mb-8">
-      <div className="flex items-center space-s-3 md:space-s-4">
+    <div className='mb-5 flex items-center justify-between md:mb-8'>
+      <div className='flex items-center space-s-3 md:space-s-4'>
         {count && (
-          <span className="rounded-full w-8 h-8 bg-accent flex items-center justify-center text-base lg:text-xl text-light">
+          <span className='flex h-8 w-8 items-center justify-center rounded-full bg-accent text-base text-light lg:text-xl'>
             {count}
           </span>
         )}
-        <p className="text-lg lg:text-xl text-heading capitalize">{label}</p>
+        <p className='text-lg capitalize text-heading lg:text-xl'>{label}</p>
       </div>
       {onAdd && (
         <button
-          className="flex items-center text-sm font-semibold text-accent transition-colors duration-200 focus:outline-none focus:text-accent-hover hover:text-accent-hover"
+          className='flex items-center text-sm font-semibold text-accent transition-colors duration-200 hover:text-accent-hover focus:text-accent-hover focus:outline-none'
           onClick={onAdd}
         >
-          <PlusIcon className="w-4 h-4 stroke-2 me-0.5" />
+          <PlusIcon className='h-4 w-4 stroke-2 me-0.5' />
           {t('text-add')}
         </button>
       )}

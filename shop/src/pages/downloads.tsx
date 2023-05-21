@@ -12,8 +12,8 @@ const DownloadableProductsPage = () => {
   return (
     <>
       <Seo noindex={true} nofollow={true} />
-      <Card className="relative w-full self-stretch shadow-none sm:shadow">
-        <h1 className="mb-8 text-center text-lg font-semibold text-heading sm:mb-10 sm:text-xl">
+      <Card className='relative w-full self-stretch shadow-none sm:shadow'>
+        <h1 className='mb-8 text-center text-lg font-semibold text-heading sm:mb-10 sm:text-xl'>
           {t('text-downloads')}
         </h1>
         <DownloadableProducts />
@@ -25,7 +25,7 @@ const DownloadableProductsPage = () => {
 DownloadableProductsPage.authenticationRequired = true;
 
 DownloadableProductsPage.getLayout = function getLayout(
-  page: React.ReactElement
+  page: React.ReactElement,
 ) {
   return <DashboardLayout>{page}</DashboardLayout>;
 };

@@ -29,12 +29,12 @@ export const getStaticPaths: GetStaticPaths<ParsedQueryParams> = async ({
   invariant(locales, 'locales is not defined');
   const data = await client.types.all({ limit: 100 });
   const paths = data?.flatMap((type) =>
-    locales?.map((locale) => ({ params: { pages: [type.slug] }, locale }))
+    locales?.map((locale) => ({ params: { pages: [type.slug] }, locale })),
   );
   // We'll pre-render only these paths at build time also with the slash route.
   return {
     paths: paths.concat(
-      locales?.map((locale) => ({ params: { pages: [] }, locale }))
+      locales?.map((locale) => ({ params: { pages: [] }, locale })),
     ),
     fallback: 'blocking',
   };
@@ -47,11 +47,11 @@ export const getStaticProps: GetStaticProps<
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery(
     [API_ENDPOINTS.SETTINGS, { language: locale }],
-    ({ queryKey }) => client.settings.all(queryKey[1] as SettingsQueryOptions)
+    ({ queryKey }) => client.settings.all(queryKey[1] as SettingsQueryOptions),
   );
   const types = await queryClient.fetchQuery(
     [API_ENDPOINTS.TYPES, { limit: TYPES_PER_PAGE, language: locale }],
-    ({ queryKey }) => client.types.all(queryKey[1] as TypeQueryOptions)
+    ({ queryKey }) => client.types.all(queryKey[1] as TypeQueryOptions),
   );
 
   const { pages } = params!;
@@ -73,7 +73,7 @@ export const getStaticProps: GetStaticProps<
 
   await queryClient.prefetchQuery(
     [API_ENDPOINTS.TYPES, { slug: pageType, language: locale }],
-    ({ queryKey }: any) => client.types.get(queryKey[1])
+    ({ queryKey }: any) => client.types.get(queryKey[1]),
   );
   const productVariables = {
     type: pageType,
@@ -84,7 +84,7 @@ export const getStaticProps: GetStaticProps<
       API_ENDPOINTS.PRODUCTS,
       { limit: PRODUCTS_PER_PAGE, type: pageType, language: locale },
     ],
-    ({ queryKey }) => client.products.all(queryKey[1] as any)
+    ({ queryKey }) => client.products.all(queryKey[1] as any),
   );
 
   const popularProductVariables = {
@@ -99,7 +99,7 @@ export const getStaticProps: GetStaticProps<
     await queryClient.prefetchQuery(
       [API_ENDPOINTS.PRODUCTS_POPULAR, popularProductVariables],
       ({ queryKey }) =>
-        client.products.popular(queryKey[1] as PopularProductQueryOptions)
+        client.products.popular(queryKey[1] as PopularProductQueryOptions),
     );
   }
 
@@ -114,7 +114,8 @@ export const getStaticProps: GetStaticProps<
   };
   await queryClient.prefetchInfiniteQuery(
     [API_ENDPOINTS.CATEGORIES, categoryVariables],
-    ({ queryKey }) => client.categories.all(queryKey[1] as CategoryQueryOptions)
+    ({ queryKey }) =>
+      client.categories.all(queryKey[1] as CategoryQueryOptions),
   );
 
   return {

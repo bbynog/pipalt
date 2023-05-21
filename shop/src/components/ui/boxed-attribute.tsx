@@ -20,10 +20,10 @@ const BoxedAttribute: React.FC<AttributeProps> = ({
   return (
     <div
       className={cn(
-        'h-full py-2 px-5 flex flex-col rounded items-center justify-center border border-gray-200 bg-gray-50 cursor-pointer text-body font-semibold',
+        'flex h-full cursor-pointer flex-col items-center justify-center rounded border border-gray-200 bg-gray-50 py-2 px-5 font-semibold text-body',
         {
-          '!border-accent !border-2 !text-accent': active,
-        }
+          '!border-2 !border-accent !text-accent': active,
+        },
       )}
       {...props}
     >

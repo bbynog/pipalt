@@ -15,8 +15,8 @@ const StickySidebarBoxedCategories: React.FC<
 > = ({ notFound, categories, loading, className }) => {
   if (loading) {
     return (
-      <div className="hidden xl:block">
-        <div className="mt-8 w-72 px-2">
+      <div className='hidden xl:block'>
+        <div className='mt-8 w-72 px-2'>
           <CategoriesLoader />
         </div>
       </div>
@@ -27,14 +27,14 @@ const StickySidebarBoxedCategories: React.FC<
       className={`hidden h-full w-full bg-light lg:sticky lg:top-22 lg:w-[380px] lg:bg-gray-100 xl:block ${className}`}
     >
       <Scrollbar style={{ maxHeight: 'calc(100vh - 88px)' }}>
-        <div className="p-5">
+        <div className='p-5'>
           {!notFound ? (
-            <div className="grid grid-cols-2 gap-4">
-              <OutlinedBoxedCategoryMenu items={categories} className="py-8" />
+            <div className='grid grid-cols-2 gap-4'>
+              <OutlinedBoxedCategoryMenu items={categories} className='py-8' />
             </div>
           ) : (
-            <div className="min-h-full px-4 pt-6 pb-8 lg:p-8">
-              <NotFound text="text-no-category" className="h-96" />
+            <div className='min-h-full px-4 pt-6 pb-8 lg:p-8'>
+              <NotFound text='text-no-category' className='h-96' />
             </div>
           )}
         </div>

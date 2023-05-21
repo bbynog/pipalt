@@ -75,41 +75,41 @@ const AddStaffForm = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
-      <div className="flex flex-wrap my-5 sm:my-8">
+      <div className='my-5 flex flex-wrap sm:my-8'>
         <Description
           title={t('form:form-title-information')}
           details={t('form:form-description-staff-info')}
-          className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8"
+          className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
         />
 
-        <Card className="w-full sm:w-8/12 md:w-2/3">
+        <Card className='w-full sm:w-8/12 md:w-2/3'>
           <Input
             label={t('form:input-label-name')}
             {...register('name')}
-            type="text"
-            variant="outline"
-            className="mb-4"
+            type='text'
+            variant='outline'
+            className='mb-4'
             error={t(errors.name?.message!)}
           />
           <Input
             label={t('form:input-label-email')}
             {...register('email')}
-            type="email"
-            variant="outline"
-            className="mb-4"
+            type='email'
+            variant='outline'
+            className='mb-4'
             error={t(errors.email?.message!)}
           />
           <PasswordInput
             label={t('form:input-label-password')}
             {...register('password')}
             error={t(errors.password?.message!)}
-            variant="outline"
-            className="mb-4"
+            variant='outline'
+            className='mb-4'
           />
         </Card>
       </div>
 
-      <div className="mb-4 text-end">
+      <div className='mb-4 text-end'>
         <Button loading={loading} disabled={loading}>
           {t('form:button-label-add-staff')}
         </Button>

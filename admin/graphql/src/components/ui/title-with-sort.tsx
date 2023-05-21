@@ -10,20 +10,20 @@ type Props = {
 
 const TitleWithSort = ({ title, ascending, isActive }: Props) => {
   return (
-    <span className="inline-flex items-center">
+    <span className='inline-flex items-center'>
       <span>{title}</span>
 
       {ascending ? (
         <TriangleArrowUp
-          width="9"
-          className={cn('ms-1.5 flex-shrink-0 text-gray-400', {
+          width='9'
+          className={cn('flex-shrink-0 text-gray-400 ms-1.5', {
             '!text-heading': isActive,
           })}
         />
       ) : (
         <TriangleArrowDown
-          width="9"
-          className={cn('ms-1.5 flex-shrink-0 text-gray-400', {
+          width='9'
+          className={cn('flex-shrink-0 text-gray-400 ms-1.5', {
             '!text-heading': isActive,
           })}
         />

@@ -15,7 +15,7 @@ const ProductDeleteView = () => {
           products(existingProductRefs, { readField }) {
             return existingProductRefs.data.filter(
               (productRef: any) =>
-                deleteProduct.id !== readField('id', productRef)
+                deleteProduct.id !== readField('id', productRef),
             );
           },
         },

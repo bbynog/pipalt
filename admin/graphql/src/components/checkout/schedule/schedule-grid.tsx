@@ -27,21 +27,21 @@ export const ScheduleGrid: React.FC<ScheduleProps> = ({
   }, []);
   return (
     <div className={className}>
-      <div className="flex items-center justify-between mb-5 md:mb-8">
-        <div className="flex items-center space-s-3 md:space-s-4">
+      <div className='mb-5 flex items-center justify-between md:mb-8'>
+        <div className='flex items-center space-s-3 md:space-s-4'>
           {count && (
-            <span className="rounded-full w-8 h-8 bg-accent flex items-center justify-center text-base lg:text-xl text-light">
+            <span className='flex h-8 w-8 items-center justify-center rounded-full bg-accent text-base text-light lg:text-xl'>
               {count}
             </span>
           )}
-          <p className="text-lg lg:text-xl text-heading capitalize">{label}</p>
+          <p className='text-lg capitalize text-heading lg:text-xl'>{label}</p>
         </div>
       </div>
 
       {schedules && schedules?.length ? (
         <RadioGroup value={selectedSchedule} onChange={setSchedule}>
-          <RadioGroup.Label className="sr-only">{label}</RadioGroup.Label>
-          <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3">
+          <RadioGroup.Label className='sr-only'>{label}</RadioGroup.Label>
+          <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3'>
             {schedules?.map((schedule: any, idx: number) => (
               <RadioGroup.Option value={schedule} key={idx}>
                 {({ checked }) => (
@@ -52,8 +52,8 @@ export const ScheduleGrid: React.FC<ScheduleProps> = ({
           </div>
         </RadioGroup>
       ) : (
-        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3">
-          <span className="relative px-5 py-6 text-base text-center bg-gray-100 rounded border border-border-200">
+        <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3'>
+          <span className='relative rounded border border-border-200 bg-gray-100 px-5 py-6 text-center text-base'>
             {t('text-no-delivery-time-found')}
           </span>
         </div>

@@ -27,11 +27,11 @@ const EnterTokenView = ({ onSubmit, loading }: Props) => {
       <Input
         label={t('form:token-label')}
         {...register('token')}
-        variant="outline"
-        className="mb-5"
+        variant='outline'
+        className='mb-5'
         error={t(errors.token?.message!)}
       />
-      <Button className="w-full h-11" loading={loading} disabled={loading}>
+      <Button className='h-11 w-full' loading={loading} disabled={loading}>
         {t('form:text-submit-token')}
       </Button>
     </form>

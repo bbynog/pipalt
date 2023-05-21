@@ -14,22 +14,22 @@ const VariationGroups: React.FC<Props> = ({ variations }) => {
     <>
       {Object.keys(variations).map((variationName, index) => (
         <div
-          className="py-4 border-b border-border-200  border-opacity-70 first:pt-0 flex items-center last:pb-0 last:border-b-0"
+          className='flex items-center border-b  border-border-200 border-opacity-70 py-4 first:pt-0 last:border-b-0 last:pb-0'
           key={index}
         >
-          <span className="text-sm font-semibold text-heading leading-none capitalize me-5 min-w-[60px] inline-block whitespace-nowrap">
+          <span className='inline-block min-w-[60px] whitespace-nowrap text-sm font-semibold capitalize leading-none text-heading me-5'>
             {replaceHyphens(variationName)}:
           </span>
-          <div className="w-full overflow-hidden -mb-5">
+          <div className='-mb-5 w-full overflow-hidden'>
             <Scrollbar
-              className="w-full pb-5"
+              className='w-full pb-5'
               options={{
                 scrollbars: {
                   autoHide: 'never',
                 },
               }}
             >
-              <div className="w-full flex space-s-4">
+              <div className='flex w-full space-s-4'>
                 {variations[variationName].map((attribute: any) => (
                   <Attribute
                     className={variationName}

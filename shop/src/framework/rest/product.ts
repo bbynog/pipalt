@@ -45,7 +45,7 @@ export function useProducts(options?: Partial<ProductQueryOptions>) {
     {
       getNextPageParam: ({ current_page, last_page }) =>
         last_page > current_page && { page: current_page + 1 },
-    }
+    },
   );
 
   function handleLoadMore() {
@@ -67,7 +67,7 @@ export function useProducts(options?: Partial<ProductQueryOptions>) {
 }
 
 export const usePopularProducts = (
-  options?: Partial<PopularProductQueryOptions>
+  options?: Partial<PopularProductQueryOptions>,
 ) => {
   const { locale } = useRouter();
 
@@ -79,7 +79,7 @@ export const usePopularProducts = (
   const { data, isLoading, error } = useQuery<Product[], Error>(
     [API_ENDPOINTS.PRODUCTS_POPULAR, formattedOptions],
     ({ queryKey }) =>
-      client.products.popular(queryKey[1] as PopularProductQueryOptions)
+      client.products.popular(queryKey[1] as PopularProductQueryOptions),
   );
 
   return {
@@ -94,7 +94,7 @@ export function useProduct({ slug }: { slug: string }) {
 
   const { data, isLoading, error } = useQuery<Product, Error>(
     [API_ENDPOINTS.PRODUCTS, { slug, language }],
-    () => client.products.get({ slug, language })
+    () => client.products.get({ slug, language }),
   );
   return {
     product: data,
@@ -113,11 +113,11 @@ export function useQuestions(options?: Partial<QuestionQueryOptions>) {
     [API_ENDPOINTS.PRODUCTS_QUESTIONS, options],
     ({ queryKey }) =>
       client.products.questions(
-        Object.assign({}, queryKey[1] as QuestionQueryOptions)
+        Object.assign({}, queryKey[1] as QuestionQueryOptions),
       ),
     {
       keepPreviousData: true,
-    }
+    },
   );
   return {
     questions: response?.data ?? [],
@@ -139,7 +139,7 @@ export function useCreateFeedback() {
         queryClient.refetchQueries(API_ENDPOINTS.PRODUCTS_QUESTIONS);
         queryClient.refetchQueries(API_ENDPOINTS.PRODUCTS_REVIEWS);
       },
-    }
+    },
   );
   return {
     createFeedback,
@@ -166,7 +166,7 @@ export function useCreateAbuseReport() {
       onSettled: () => {
         closeModal();
       },
-    }
+    },
   );
   return {
     createAbuseReport,
@@ -195,7 +195,7 @@ export function useCreateQuestion() {
         queryClient.refetchQueries(API_ENDPOINTS.PRODUCTS_QUESTIONS);
         closeModal();
       },
-    }
+    },
   );
   return {
     createQuestion,

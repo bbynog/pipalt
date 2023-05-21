@@ -50,7 +50,7 @@ export const PlaceOrderAction: React.FC<{
   }, [payment_gateway]);
 
   const available_items = items?.filter(
-    (item) => !verified_response?.unavailable_products?.includes(item.id)
+    (item) => !verified_response?.unavailable_products?.includes(item.id),
   );
 
   const subtotal = calculateTotal(available_items);
@@ -64,7 +64,7 @@ export const PlaceOrderAction: React.FC<{
       tax: verified_response?.total_tax!,
       shipping_charge: verified_response?.shipping_charge!,
     },
-    Number(discount)
+    Number(discount),
   );
   const handlePlaceOrder = () => {
     if (!customer_contact) {
@@ -104,7 +104,7 @@ export const PlaceOrderAction: React.FC<{
     createOrder(input);
   };
   const isDigitalCheckout = available_items.find((item) =>
-    Boolean(item.is_digital)
+    Boolean(item.is_digital),
   );
 
   let formatRequiredFields = isDigitalCheckout
@@ -122,7 +122,7 @@ export const PlaceOrderAction: React.FC<{
   }
 
   const isAllRequiredFieldSelected = formatRequiredFields.every(
-    (item) => !isEmpty(item)
+    (item) => !isEmpty(item),
   );
   return (
     <>
@@ -134,12 +134,12 @@ export const PlaceOrderAction: React.FC<{
         {...props}
       />
       {errorMessage && (
-        <div className="mt-3">
+        <div className='mt-3'>
           <ValidationError message={errorMessage} />
         </div>
       )}
       {!isAllRequiredFieldSelected && (
-        <div className="mt-3">
+        <div className='mt-3'>
           <ValidationError message={t('text-place-order-helper-text')} />
         </div>
       )}

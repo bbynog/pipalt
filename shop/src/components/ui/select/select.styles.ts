@@ -34,16 +34,16 @@ export const selectStyles = {
   }),
   dropdownIndicator: (provided: any, state: any) => ({
     ...provided,
-    color: 'rgb(var(--text-heading))',
+    'color': 'rgb(var(--text-heading))',
     '&:hover': {
       color: 'rgb(var(--text-heading))',
     },
   }),
   clearIndicator: (provided: any, state: any) => ({
     ...provided,
-    color: state.isFocused ? '#9CA3AF' : '#cccccc',
-    padding: 0,
-    cursor: 'pointer',
+    'color': state.isFocused ? '#9CA3AF' : '#cccccc',
+    'padding': 0,
+    'cursor': 'pointer',
 
     '&:hover': {
       color: '#9CA3AF',
@@ -89,10 +89,10 @@ export const selectStyles = {
   }),
   multiValueRemove: (provided: any, _: any) => ({
     ...provided,
-    paddingLeft: 0,
-    paddingRight: 8,
-    color: '#ffffff',
-    cursor: 'pointer',
+    'paddingLeft': 0,
+    'paddingRight': 8,
+    'color': '#ffffff',
+    'cursor': 'pointer',
 
     '&:hover': {
       backgroundColor: 'rgb(var(--color-accent-300))',

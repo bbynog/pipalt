@@ -102,8 +102,8 @@ const socialIcon = [
 
 export const updatedIcons = socialIcon.map((item: any) => {
   item.label = (
-    <div className="flex items-center space-s-4 text-body">
-      <span className="flex items-center justify-center w-4 h-4">
+    <div className='flex items-center text-body space-s-4'>
+      <span className='flex h-4 w-4 items-center justify-center'>
         {getIcon({
           iconList: socialIcons,
           iconName: item.value,
@@ -169,7 +169,7 @@ export default function SettingsForm({
       // @ts-ignore
       shippingClass: !!shippingClasses?.length
         ? shippingClasses?.find(
-            (shipping: Shipping) => shipping.id == settings?.shippingClass
+            (shipping: Shipping) => shipping.id == settings?.shippingClass,
           )
         : '',
     },
@@ -248,7 +248,7 @@ export default function SettingsForm({
     <span>
       {t('form:logo-help-text')} <br />
       {t('form:logo-dimension-help-text')} &nbsp;
-      <span className="font-bold">
+      <span className='font-bold'>
         {siteSettings.logo.width}x{siteSettings.logo.height} {t('common:pixel')}
       </span>
     </span>
@@ -256,43 +256,43 @@ export default function SettingsForm({
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="flex flex-wrap pb-8 my-5 border-b border-dashed border-border-base sm:my-8">
+      <div className='my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8'>
         <Description
           title={t('form:input-label-logo')}
           details={logoInformation}
-          className="w-full px-0 pb-5 sm:pe-4 md:pe-5 sm:w-4/12 md:w-1/3 sm:py-8"
+          className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
         />
 
-        <Card className="w-full sm:w-8/12 md:w-2/3">
-          <FileInput name="logo" control={control} multiple={false} />
+        <Card className='w-full sm:w-8/12 md:w-2/3'>
+          <FileInput name='logo' control={control} multiple={false} />
         </Card>
       </div>
 
-      <div className="flex flex-wrap pb-8 my-5 border-b border-dashed border-border-base sm:my-8">
+      <div className='my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8'>
         <Description
           title={t('form:form-title-information')}
           details={t('form:site-info-help-text')}
-          className="w-full px-0 pb-5 sm:pe-4 md:pe-5 sm:w-4/12 md:w-1/3 sm:py-8"
+          className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
         />
 
-        <Card className="w-full sm:w-8/12 md:w-2/3">
+        <Card className='w-full sm:w-8/12 md:w-2/3'>
           <Input
             label={t('form:input-label-site-title')}
             {...register('siteTitle')}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
           />
           <Input
             label={t('form:input-label-site-subtitle')}
             {...register('siteSubtitle')}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
           />
 
-          <div className="mb-5">
+          <div className='mb-5'>
             <Label>{t('form:input-label-currency')}</Label>
             <SelectInput
-              name="currency"
+              name='currency'
               control={control}
               getOptionLabel={(option: any) => option.name}
               getOptionValue={(option: any) => option.code}
@@ -305,66 +305,66 @@ export default function SettingsForm({
           <Input
             label={`${t('form:input-label-min-order-amount')}`}
             {...register('minimumOrderAmount')}
-            type="number"
+            type='number'
             error={t(errors.minimumOrderAmount?.message!)}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
             disabled={isNotDefaultSettingsPage}
           />
           <Input
             label={`${t('form:input-label-wallet-currency-ratio')}`}
             {...register('currencyToWalletRatio')}
-            type="number"
+            type='number'
             error={t(errors.currencyToWalletRatio?.message!)}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
             disabled={isNotDefaultSettingsPage}
           />
           <Input
             label={`${t('form:input-label-signup-points')}`}
             {...register('signupPoints')}
-            type="number"
+            type='number'
             error={t(errors.signupPoints?.message!)}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
             disabled={isNotDefaultSettingsPage}
           />
 
           <Input
             label={`${t('form:input-label-maximum-question-limit')}`}
             {...register('maximumQuestionLimit')}
-            type="number"
+            type='number'
             error={t(errors.maximumQuestionLimit?.message!)}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
             disabled={isNotDefaultSettingsPage}
           />
 
-          <div className="flex items-center mb-5 gap-x-4">
+          <div className='mb-5 flex items-center gap-x-4'>
             <SwitchInput
-              name="useOtp"
+              name='useOtp'
               control={control}
               disabled={isNotDefaultSettingsPage}
             />
-            <Label className="mb-0">{t('form:input-label-enable-otp')}</Label>
+            <Label className='mb-0'>{t('form:input-label-enable-otp')}</Label>
           </div>
-          <div className="mb-5">
-            <div className="flex items-center gap-x-4">
+          <div className='mb-5'>
+            <div className='flex items-center gap-x-4'>
               <SwitchInput
-                name="useMustVerifyEmail"
+                name='useMustVerifyEmail'
                 control={control}
                 disabled={isNotDefaultSettingsPage}
               />
-              <Label className="mb-0">
+              <Label className='mb-0'>
                 {t('form:input-label-use-must-verify-email')}
               </Label>
             </div>
           </div>
 
-          <div className="mb-5">
+          <div className='mb-5'>
             <Label>{t('form:input-label-tax-class')}</Label>
             <SelectInput
-              name="taxClass"
+              name='taxClass'
               control={control}
               getOptionLabel={(option: any) => option.name}
               getOptionValue={(option: any) => option.id}
@@ -373,10 +373,10 @@ export default function SettingsForm({
             />
           </div>
 
-          <div className="mb-5">
+          <div className='mb-5'>
             <Label>{t('form:input-label-shipping-class')}</Label>
             <SelectInput
-              name="shippingClass"
+              name='shippingClass'
               control={control}
               getOptionLabel={(option: any) => option.name}
               getOptionValue={(option: any) => option.id}
@@ -384,14 +384,14 @@ export default function SettingsForm({
               disabled={isNotDefaultSettingsPage}
             />
           </div>
-          <div className="flex items-center gap-x-4">
+          <div className='flex items-center gap-x-4'>
             <SwitchInput
-              name="freeShipping"
+              name='freeShipping'
               control={control}
               checked={enableFreeShipping}
               disabled={isNotDefaultSettingsPage}
             />
-            <Label className="mb-0">
+            <Label className='mb-0'>
               {t('form:input-label-enable-free-shipping')}
             </Label>
           </div>
@@ -401,38 +401,38 @@ export default function SettingsForm({
               label={t('form:free-shipping-input-label-amount')}
               {...register('freeShippingAmount')}
               error={t(errors.freeShippingAmount?.message!)}
-              variant="outline"
-              type="number"
-              className="mt-5"
+              variant='outline'
+              type='number'
+              className='mt-5'
               disabled={isNotDefaultSettingsPage}
             />
           )}
         </Card>
       </div>
 
-      <div className="flex flex-wrap pb-8 my-5 border-b border-dashed border-border-base sm:my-8">
+      <div className='my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8'>
         <Description
           title={t('Payment')}
           details={t('Configure Payment Option')}
-          className="w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5"
+          className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
         />
 
-        <Card className="w-full sm:w-8/12 md:w-2/3">
-          <div className="mb-5">
-            <div className="flex items-center gap-x-4">
+        <Card className='w-full sm:w-8/12 md:w-2/3'>
+          <div className='mb-5'>
+            <div className='flex items-center gap-x-4'>
               <SwitchInput
-                name="useCashOnDelivery"
+                name='useCashOnDelivery'
                 control={control}
                 disabled={isNotDefaultSettingsPage}
               />
-              <Label className="mb-0">{t('Enable Cash On Delivery')}</Label>
+              <Label className='mb-0'>{t('Enable Cash On Delivery')}</Label>
             </div>
           </div>
 
-          <div className="mb-5">
+          <div className='mb-5'>
             <Label>{t('Select Payment Gateway')}</Label>
             <SelectInput
-              name="paymentGateway"
+              name='paymentGateway'
               control={control}
               getOptionLabel={(option: any) => option.title}
               getOptionValue={(option: any) => option.name}
@@ -441,103 +441,103 @@ export default function SettingsForm({
             />
           </div>
 
-          <div className="mb-0">
+          <div className='mb-0'>
             <CopyContent
               label={t('text-webhook-url')}
-              variant="outline"
+              variant='outline'
               value={`${
                 process.env.NEXT_PUBLIC_GRAPHQL_API_ENDPOINT
               }/webhooks/${paymentGateway?.name?.toLowerCase()}`}
-              name="webhook"
+              name='webhook'
             />
           </div>
         </Card>
       </div>
 
-      <div className="flex flex-wrap pb-8 my-5 border-b border-dashed border-border-base sm:my-8">
+      <div className='my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8'>
         <Description
-          title="SEO"
+          title='SEO'
           details={t('form:tax-form-seo-info-help-text')}
-          className="w-full px-0 pb-5 sm:pr-4 md:pr-5 sm:w-4/12 md:w-1/3 sm:py-8"
+          className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pr-4 md:w-1/3 md:pr-5'
         />
 
-        <Card className="w-full sm:w-8/12 md:w-2/3">
+        <Card className='w-full sm:w-8/12 md:w-2/3'>
           <Input
             label={t('form:input-label-meta-title')}
             {...register('seo.metaTitle')}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
           />
           <TextArea
             label={t('form:input-label-meta-description')}
             {...register('seo.metaDescription')}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
           />
           <Input
             label={t('form:input-label-meta-tags')}
             {...register('seo.metaTags')}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
           />
           <Input
             label={t('form:input-label-canonical-url')}
             {...register('seo.canonicalUrl')}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
           />
           <Input
             label={t('form:input-label-og-title')}
             {...register('seo.ogTitle')}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
           />
           <TextArea
             label={t('form:input-label-og-description')}
             {...register('seo.ogDescription')}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
           />
-          <div className="mb-5">
+          <div className='mb-5'>
             <Label>{t('form:input-label-og-image')}</Label>
-            <FileInput name="seo.ogImage" control={control} multiple={false} />
+            <FileInput name='seo.ogImage' control={control} multiple={false} />
           </div>
           <Input
             label={t('form:input-label-twitter-handle')}
             {...register('seo.twitterHandle')}
-            variant="outline"
-            className="mb-5"
-            placeholder="your twitter username (exp: @username)"
+            variant='outline'
+            className='mb-5'
+            placeholder='your twitter username (exp: @username)'
           />
           <Input
             label={t('form:input-label-twitter-card-type')}
             {...register('seo.twitterCardType')}
-            variant="outline"
-            className="mb-5"
-            placeholder="one of summary, summary_large_image, app, or player"
+            variant='outline'
+            className='mb-5'
+            placeholder='one of summary, summary_large_image, app, or player'
           />
         </Card>
       </div>
 
-      <div className="flex flex-wrap my-5 sm:my-8">
+      <div className='my-5 flex flex-wrap sm:my-8'>
         <Description
           title={t('form:text-delivery-schedule')}
           details={t('form:delivery-schedule-help-text')}
-          className="w-full px-0 pb-5 sm:pr-4 md:pr-5 sm:w-4/12 md:w-1/3 sm:py-8"
+          className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pr-4 md:w-1/3 md:pr-5'
         />
 
-        <Card className="w-full sm:w-8/12 md:w-2/3">
+        <Card className='w-full sm:w-8/12 md:w-2/3'>
           <div>
             {fields.map((item: any & { id: string }, index: number) => (
               <div
-                className="py-5 border-b border-dashed border-border-200 last:border-0 md:py-8 first:pt-0"
+                className='border-b border-dashed border-border-200 py-5 first:pt-0 last:border-0 md:py-8'
                 key={item.id}
               >
-                <div className="grid grid-cols-1 gap-5 sm:grid-cols-5">
-                  <div className="grid grid-cols-1 gap-5 sm:col-span-4">
+                <div className='grid grid-cols-1 gap-5 sm:grid-cols-5'>
+                  <div className='grid grid-cols-1 gap-5 sm:col-span-4'>
                     <Input
                       label={t('form:input-delivery-time-title')}
-                      variant="outline"
+                      variant='outline'
                       // @ts-ignore
                       {...register(`deliveryTime.${index}.title` as const)}
                       defaultValue={item?.title!} // make sure to set up defaultValue
@@ -546,10 +546,10 @@ export default function SettingsForm({
                     />
                     <TextArea
                       label={t('form:input-delivery-time-description')}
-                      variant="outline"
+                      variant='outline'
                       {...register(
                         // @ts-ignore
-                        `deliveryTime.${index}.description` as const
+                        `deliveryTime.${index}.description` as const,
                       )}
                       defaultValue={item.description!} // make sure to set up defaultValue
                     />
@@ -558,8 +558,8 @@ export default function SettingsForm({
                     onClick={() => {
                       remove(index);
                     }}
-                    type="button"
-                    className="text-sm text-red-500 transition-colors duration-200 hover:text-red-700 focus:outline-none sm:mt-4 sm:col-span-1"
+                    type='button'
+                    className='text-sm text-red-500 transition-colors duration-200 hover:text-red-700 focus:outline-none sm:col-span-1 sm:mt-4'
                   >
                     {t('form:button-label-remove')}
                   </button>
@@ -568,9 +568,9 @@ export default function SettingsForm({
             ))}
           </div>
           <Button
-            type="button"
+            type='button'
             onClick={() => append({ title: '', description: '' })}
-            className="w-full sm:w-auto"
+            className='w-full sm:w-auto'
           >
             {t('form:button-label-add-delivery-time')}
           </Button>
@@ -580,26 +580,26 @@ export default function SettingsForm({
             <Alert
               // @ts-ignore
               message={t(errors?.deliveryTime?.message)}
-              variant="error"
-              className="mt-5"
+              variant='error'
+              className='mt-5'
             />
           ) : null}
         </Card>
       </div>
 
-      <div className="flex flex-wrap pb-8 my-5 border-b border-gray-300 border-dashed sm:my-8">
+      <div className='my-5 flex flex-wrap border-b border-dashed border-gray-300 pb-8 sm:my-8'>
         <Description
           title={t('form:shop-settings')}
           details={t('form:shop-settings-helper-text')}
-          className="w-full px-0 pb-5 sm:pe-4 md:pe-5 sm:w-4/12 md:w-1/3 sm:py-8"
+          className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
         />
 
-        <Card className="w-full sm:w-8/12 md:w-2/3">
-          <div className="mb-5">
+        <Card className='w-full sm:w-8/12 md:w-2/3'>
+          <div className='mb-5'>
             <Label>{t('form:input-label-autocomplete')}</Label>
             <Controller
               control={control}
-              name="contactDetails.location"
+              name='contactDetails.location'
               render={({ field: { onChange } }) => (
                 <GooglePlacesAutocomplete
                   onChange={onChange}
@@ -612,27 +612,27 @@ export default function SettingsForm({
           <Input
             label={t('form:input-label-contact')}
             {...register('contactDetails.contact')}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
             error={t(errors.contactDetails?.contact?.message!)}
             disabled={isNotDefaultSettingsPage}
           />
           <Input
             label={t('form:input-label-website')}
             {...register('contactDetails.website')}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
             error={t(errors.contactDetails?.website?.message!)}
             disabled={isNotDefaultSettingsPage}
           />
-          <div className="mt-6">
-            <div className="flex items-center gap-x-4">
+          <div className='mt-6'>
+            <div className='flex items-center gap-x-4'>
               <SwitchInput
-                name="useGoogleMap"
+                name='useGoogleMap'
                 control={control}
                 disabled={isNotDefaultSettingsPage}
               />
-              <Label className="mb-0">
+              <Label className='mb-0'>
                 {t('form:input-label-use-google-map-service')}
               </Label>
             </div>
@@ -642,12 +642,12 @@ export default function SettingsForm({
             {socialFields.map(
               (item: ShopSocialInput & { id: string }, index: number) => (
                 <div
-                  className="py-5 border-b border-dashed border-border-200 first:border-t last:border-b-0 first:mt-5 md:first:mt-10 md:py-8"
+                  className='border-b border-dashed border-border-200 py-5 first:mt-5 first:border-t last:border-b-0 md:py-8 md:first:mt-10'
                   key={item.id}
                 >
-                  <div className="grid grid-cols-1 gap-5 sm:grid-cols-5">
-                    <div className="sm:col-span-2">
-                      <Label className="whitespace-nowrap">
+                  <div className='grid grid-cols-1 gap-5 sm:grid-cols-5'>
+                    <div className='sm:col-span-2'>
+                      <Label className='whitespace-nowrap'>
                         {t('form:input-label-select-platform')}
                       </Label>
                       <SelectInput
@@ -660,11 +660,11 @@ export default function SettingsForm({
                       />
                     </div>
                     <Input
-                      className="sm:col-span-2"
+                      className='sm:col-span-2'
                       label={t('form:input-label-social-url')}
-                      variant="outline"
+                      variant='outline'
                       {...register(
-                        `contactDetails.socials.${index}.url` as const
+                        `contactDetails.socials.${index}.url` as const,
                       )}
                       defaultValue={item.url!} // make sure to set up defaultValue
                       disabled={isNotDefaultSettingsPage}
@@ -674,8 +674,8 @@ export default function SettingsForm({
                         onClick={() => {
                           socialRemove(index);
                         }}
-                        type="button"
-                        className="text-sm text-red-500 transition-colors duration-200 hover:text-red-700 focus:outline-none sm:mt-4 sm:col-span-1"
+                        type='button'
+                        className='text-sm text-red-500 transition-colors duration-200 hover:text-red-700 focus:outline-none sm:col-span-1 sm:mt-4'
                         disabled={isNotDefaultSettingsPage}
                       >
                         {t('form:button-label-remove')}
@@ -683,14 +683,14 @@ export default function SettingsForm({
                     )}
                   </div>
                 </div>
-              )
+              ),
             )}
           </div>
           {!isNotDefaultSettingsPage && (
             <Button
-              type="button"
+              type='button'
               onClick={() => socialAppend({ icon: '', url: '' })}
-              className="w-full sm:w-auto"
+              className='w-full sm:w-auto'
               disabled={isNotDefaultSettingsPage}
             >
               {t('form:button-label-add-social')}
@@ -699,7 +699,7 @@ export default function SettingsForm({
         </Card>
       </div>
 
-      <div className="mb-4 text-end">
+      <div className='mb-4 text-end'>
         <Button loading={loading} disabled={loading}>
           {t('form:button-label-save-settings')}
         </Button>

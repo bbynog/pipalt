@@ -29,7 +29,7 @@ export default function SellingProductsGrid({ className, limit = 6 }: Props) {
   if (!isLoading && !products.length) {
     return (
       <SectionBlock title={t('text-selling-books')}>
-        <NotFound text="text-not-found" className="mx-auto w-7/12" />
+        <NotFound text='text-not-found' className='mx-auto w-7/12' />
       </SectionBlock>
     );
   }
@@ -39,14 +39,14 @@ export default function SellingProductsGrid({ className, limit = 6 }: Props) {
       <div
         className={classNames(
           'grid w-full grid-cols-4 gap-6 xl:gap-8',
-          className
+          className,
         )}
       >
         <Link
           href={`/${router.query.pages && router.query.pages[0]}${
             Routes.search
           }`}
-          className="relative h-full w-full"
+          className='relative h-full w-full'
         >
           <Image
             src={
@@ -59,7 +59,7 @@ export default function SellingProductsGrid({ className, limit = 6 }: Props) {
           />
         </Link>
 
-        <div className="col-span-3 grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-6 xl:grid-cols-[repeat(auto-fill,minmax(250px,1fr))] xl:gap-8 2xl:grid-cols-3 3xl:grid-cols-[repeat(auto-fill,minmax(360px,1fr))]">
+        <div className='col-span-3 grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-6 xl:grid-cols-[repeat(auto-fill,minmax(250px,1fr))] xl:gap-8 2xl:grid-cols-3 3xl:grid-cols-[repeat(auto-fill,minmax(360px,1fr))]'>
           {isLoading && !products.length
             ? rangeMap(limit, (i) => (
                 <ProductLoader key={i} uniqueKey={`product-${i}`} />

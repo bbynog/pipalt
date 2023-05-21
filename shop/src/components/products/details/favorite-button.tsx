@@ -34,29 +34,29 @@ function FavoriteButton({
       <div
         className={classNames(
           'mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gray-300',
-          className
+          className,
         )}
       >
-        <Spinner simple={true} className="flex w-5 h-5" />
+        <Spinner simple={true} className='flex h-5 w-5' />
       </div>
     );
   }
   return (
     <button
-      type="button"
+      type='button'
       className={classNames(
         'mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gray-300 transition-colors',
         {
           '!border-accent': inWishlist,
         },
-        className
+        className,
       )}
       onClick={toggle}
     >
       {inWishlist ? (
-        <HeartFillIcon className="w-5 h-5 text-accent" />
+        <HeartFillIcon className='h-5 w-5 text-accent' />
       ) : (
-        <HeartOutlineIcon className="w-5 h-5 text-accent" />
+        <HeartOutlineIcon className='h-5 w-5 text-accent' />
       )}
     </button>
   );

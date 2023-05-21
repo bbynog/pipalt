@@ -141,7 +141,7 @@ class Client {
     createAbuseReport: (input: CreateAbuseReportInput) =>
       HttpClient.post<Review>(
         API_ENDPOINTS.PRODUCTS_REVIEWS_ABUSE_REPORT,
-        input
+        input,
       ),
     createQuestion: (input: CreateQuestionInput) =>
       HttpClient.post<Review>(API_ENDPOINTS.PRODUCTS_QUESTIONS, input),
@@ -181,7 +181,7 @@ class Client {
     update: (input: UpdateReviewInput) =>
       HttpClient.put<ReviewResponse>(
         `${API_ENDPOINTS.PRODUCTS_REVIEWS}/${input.id}`,
-        input
+        input,
       ),
   };
   categories = {
@@ -260,7 +260,7 @@ class Client {
     verify: (input: VerifyCouponInputType) =>
       HttpClient.post<VerifyCouponResponse>(
         API_ENDPOINTS.COUPONS_VERIFY,
-        input
+        input,
       ),
   };
   orders = {
@@ -285,17 +285,17 @@ class Client {
     downloadable: (query?: OrderQueryOptions) =>
       HttpClient.get<DownloadableFilePaginator>(
         API_ENDPOINTS.ORDERS_DOWNLOADS,
-        query
+        query,
       ),
     verify: (input: CheckoutVerificationInput) =>
       HttpClient.post<VerifiedCheckoutData>(
         API_ENDPOINTS.ORDERS_CHECKOUT_VERIFY,
-        input
+        input,
       ),
     generateDownloadLink: (input: { digital_file_id: string }) =>
       HttpClient.post<string>(
         API_ENDPOINTS.GENERATE_DOWNLOADABLE_PRODUCT_LINK,
-        input
+        input,
       ),
     getPaymentIntent: ({ tracking_number }: { tracking_number: string }) =>
       HttpClient.get<PaymentIntentCollection>(API_ENDPOINTS.PAYMENT_INTENT, {
@@ -321,27 +321,27 @@ class Client {
     forgotPassword: (input: ForgotPasswordUserInput) =>
       HttpClient.post<PasswordChangeResponse>(
         API_ENDPOINTS.USERS_FORGOT_PASSWORD,
-        input
+        input,
       ),
     verifyForgotPasswordToken: (input: VerifyForgotPasswordUserInput) =>
       HttpClient.post<PasswordChangeResponse>(
         API_ENDPOINTS.USERS_VERIFY_FORGOT_PASSWORD_TOKEN,
-        input
+        input,
       ),
     resetPassword: (input: ResetPasswordUserInput) =>
       HttpClient.post<PasswordChangeResponse>(
         API_ENDPOINTS.USERS_RESET_PASSWORD,
-        input
+        input,
       ),
     changePassword: (input: ChangePasswordUserInput) =>
       HttpClient.post<PasswordChangeResponse>(
         API_ENDPOINTS.USERS_CHANGE_PASSWORD,
-        input
+        input,
       ),
     updateEmail: (input: UpdateEmailUserInput) =>
       HttpClient.post<EmailChangeResponse>(
         API_ENDPOINTS.USERS_UPDATE_EMAIL,
-        input
+        input,
       ),
     logout: () => HttpClient.post<boolean>(API_ENDPOINTS.USERS_LOGOUT, {}),
     deleteAddress: ({ id }: { id: string }) =>
@@ -353,7 +353,7 @@ class Client {
     resendVerificationEmail: () => {
       return HttpClient.post<VerificationEmailUserInput>(
         API_ENDPOINTS.SEND_VERIFICATION_EMAIL,
-        {}
+        {},
       );
     },
   };
@@ -368,13 +368,13 @@ class Client {
     toggle: (input: { product_id: string; language?: string }) =>
       HttpClient.post<{ in_wishlist: boolean }>(
         API_ENDPOINTS.USERS_WISHLIST_TOGGLE,
-        input
+        input,
       ),
     remove: (id: string) =>
       HttpClient.delete<Wishlist>(`${API_ENDPOINTS.WISHLIST}/${id}`),
     checkIsInWishlist: ({ product_id }: { product_id: string }) =>
       HttpClient.get<boolean>(
-        `${API_ENDPOINTS.WISHLIST}/in_wishlist/${product_id}`
+        `${API_ENDPOINTS.WISHLIST}/in_wishlist/${product_id}`,
       ),
   };
   settings = {

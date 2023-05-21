@@ -39,7 +39,6 @@ export class UserAddressInput {
 
 @InputType()
 export class ConnectProductOrderPivot {
-
   @Field(() => ID)
   product_id: number;
   @Field(() => ID)

@@ -12,20 +12,20 @@ const UnverifiedItemList = () => {
   const { price: subtotal } = usePrice(
     items && {
       amount: total,
-    }
+    },
   );
   return (
-    <div className="w-full">
-      <div className="flex flex-col items-center space-s-4 mb-4">
-        <span className="text-base font-bold text-heading">
+    <div className='w-full'>
+      <div className='mb-4 flex flex-col items-center space-s-4'>
+        <span className='text-base font-bold text-heading'>
           {t('text-your-order')}
         </span>
       </div>
-      <div className="flex flex-col py-3 border-b border-border-200">
+      <div className='flex flex-col border-b border-border-200 py-3'>
         {isEmpty ? (
-          <div className="h-full flex flex-col items-center justify-center mb-4">
+          <div className='mb-4 flex h-full flex-col items-center justify-center'>
             <EmptyCartIcon width={140} height={176} />
-            <h4 className="mt-6 text-base font-semibold">
+            <h4 className='mt-6 text-base font-semibold'>
               {t('text-no-products')}
             </h4>
           </div>
@@ -33,7 +33,7 @@ const UnverifiedItemList = () => {
           items?.map((item) => <ItemCard item={item} key={item.id} />)
         )}
       </div>
-      <div className="space-y-2 mt-4">
+      <div className='mt-4 space-y-2'>
         <ItemInfoRow title={t('text-sub-total')} value={subtotal} />
         <ItemInfoRow
           title={t('text-tax')}

@@ -37,7 +37,7 @@ const RecentOrders = ({ orders, title }: IProps) => {
         const { price } = usePrice({
           amount: value,
         });
-        return <span className="whitespace-nowrap">{price}</span>;
+        return <span className='whitespace-nowrap'>{price}</span>;
       },
     },
     {
@@ -50,7 +50,7 @@ const RecentOrders = ({ orders, title }: IProps) => {
         dayjs.extend(utc);
         dayjs.extend(timezone);
         return (
-          <span className="whitespace-nowrap">
+          <span className='whitespace-nowrap'>
             {dayjs.utc(date).tz(dayjs.tz.guess()).fromNow()}
           </span>
         );
@@ -69,8 +69,8 @@ const RecentOrders = ({ orders, title }: IProps) => {
 
   return (
     <>
-      <div className="rounded overflow-hidden shadow">
-        <h3 className="text-heading text-center font-semibold px-4 py-3 bg-light border-b border-border-200">
+      <div className='overflow-hidden rounded shadow'>
+        <h3 className='border-b border-border-200 bg-light px-4 py-3 text-center font-semibold text-heading'>
           {title}
         </h3>
         <Table
@@ -78,7 +78,7 @@ const RecentOrders = ({ orders, title }: IProps) => {
           columns={columns}
           emptyText={t('table:empty-table-data')}
           data={data}
-          rowKey="id"
+          rowKey='id'
           scroll={{ x: 500 }}
           expandable={{
             expandedRowRender: () => '',

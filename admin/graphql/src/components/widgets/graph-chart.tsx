@@ -102,17 +102,17 @@ const GraphChart = ({ widgetTitle, series, labels, colors }: any) => {
   };
 
   return (
-    <div className="bg-light shadow-sm rounded w-full h-full">
-      <div className="p-8 flex items-start justify-between">
-        <h3 className="text-base font-semibold text-heading">{widgetTitle}</h3>
+    <div className='h-full w-full rounded bg-light shadow-sm'>
+      <div className='flex items-start justify-between p-8'>
+        <h3 className='text-base font-semibold text-heading'>{widgetTitle}</h3>
       </div>
 
-      <div className="w-full">
+      <div className='w-full'>
         <Charts
           options={options.options}
           series={options.series}
-          width="100%"
-          type="area"
+          width='100%'
+          type='area'
         />
       </div>
     </div>

@@ -30,12 +30,12 @@ const ProductDeleteView = () => {
       onCancel={closeModal}
       onDelete={handleDelete}
       deleteBtnLoading={loading}
-      deleteBtnText="text-shop-approve-button"
-      icon={<CheckMarkCircle className="mt-4 w-10 h-10 m-auto text-accent" />}
-      deleteBtnClassName="!bg-accent focus:outline-none hover:!bg-accent-hover focus:!bg-accent-hover"
-      cancelBtnClassName="!bg-red-600 focus:outline-none hover:!bg-red-700 focus:!bg-red-700"
-      title="text-shop-approve-description"
-      description=""
+      deleteBtnText='text-shop-approve-button'
+      icon={<CheckMarkCircle className='m-auto mt-4 h-10 w-10 text-accent' />}
+      deleteBtnClassName='!bg-accent focus:outline-none hover:!bg-accent-hover focus:!bg-accent-hover'
+      cancelBtnClassName='!bg-red-600 focus:outline-none hover:!bg-red-700 focus:!bg-red-700'
+      title='text-shop-approve-description'
+      description=''
     />
   );
 };

@@ -12,7 +12,7 @@ const PriceFilter = () => {
       router.query.price
         ? (router.query.price as string).split(',')
         : defaultPriceRange,
-    [router.query.price]
+    [router.query.price],
   );
   const [state, setState] = useState<number[] | string[]>(selectedValues);
 
@@ -33,7 +33,7 @@ const PriceFilter = () => {
 
   return (
     <>
-      <span className="sr-only">{t('text-sort-by-price')}</span>
+      <span className='sr-only'>{t('text-sort-by-price')}</span>
       <Slider
         allowCross={false}
         range
@@ -45,14 +45,14 @@ const PriceFilter = () => {
         value={state}
         onChange={(value: any) => handleChange(value)}
       />
-      <div className="grid grid-cols-2 gap-3 mt-4">
-        <div className="flex flex-col items-start p-2 bg-gray-100 border border-gray-200 rounded">
-          <label className="text-sm font-semibold text-gray-400">Min</label>
-          <span className="text-sm font-bold text-heading">{state[0]}</span>
+      <div className='mt-4 grid grid-cols-2 gap-3'>
+        <div className='flex flex-col items-start rounded border border-gray-200 bg-gray-100 p-2'>
+          <label className='text-sm font-semibold text-gray-400'>Min</label>
+          <span className='text-sm font-bold text-heading'>{state[0]}</span>
         </div>
-        <div className="flex flex-col p-2 bg-gray-100 border border-gray-200 rounded">
-          <label className="text-sm font-semibold text-gray-400">Max</label>
-          <span className="text-sm font-bold text-heading">{state[1]}</span>
+        <div className='flex flex-col rounded border border-gray-200 bg-gray-100 p-2'>
+          <label className='text-sm font-semibold text-gray-400'>Max</label>
+          <span className='text-sm font-bold text-heading'>{state[1]}</span>
         </div>
       </div>
     </>

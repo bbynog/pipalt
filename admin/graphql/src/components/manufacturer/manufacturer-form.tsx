@@ -49,8 +49,8 @@ const socialIcon = [
 
 export const updatedIcons = socialIcon.map((item: any) => {
   item.label = (
-    <div className="flex space-s-4 items-center text-body">
-      <span className="flex w-4 h-4 items-center justify-center">
+    <div className='flex items-center text-body space-s-4'>
+      <span className='flex h-4 w-4 items-center justify-center'>
         {getIcon({
           iconList: socialIcons,
           iconName: item.value,
@@ -218,30 +218,30 @@ export default function CreateOrUpdateManufacturerForm({
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="flex flex-wrap pb-8 border-b border-dashed border-border-base my-5 sm:my-8">
+      <div className='my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8'>
         <Description
           title={t('form:input-label-logo')}
           details={t('form:manufacturer-image-helper-text')}
-          className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8"
+          className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
         />
 
-        <Card className="w-full sm:w-8/12 md:w-2/3">
-          <FileInput name="image" control={control} multiple={false} />
+        <Card className='w-full sm:w-8/12 md:w-2/3'>
+          <FileInput name='image' control={control} multiple={false} />
         </Card>
       </div>
-      <div className="flex flex-wrap pb-8 border-b border-dashed border-border-base my-5 sm:my-8">
+      <div className='my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8'>
         <Description
           title={t('form:input-label-cover-image')}
           details={t('form:manufacturer-cover-image-helper-text')}
-          className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8"
+          className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
         />
 
-        <Card className="w-full sm:w-8/12 md:w-2/3">
-          <FileInput name="cover_image" control={control} multiple={false} />
+        <Card className='w-full sm:w-8/12 md:w-2/3'>
+          <FileInput name='cover_image' control={control} multiple={false} />
         </Card>
       </div>
 
-      <div className="flex flex-wrap my-5 sm:my-8">
+      <div className='my-5 flex flex-wrap sm:my-8'>
         <Description
           title={t('form:input-label-description')}
           details={`${
@@ -249,31 +249,31 @@ export default function CreateOrUpdateManufacturerForm({
               ? t('form:item-description-edit')
               : t('form:item-description-add')
           } ${t('form:manufacturer-form-description-details')}`}
-          className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8 "
+          className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5 '
         />
 
-        <Card className="w-full sm:w-8/12 md:w-2/3">
+        <Card className='w-full sm:w-8/12 md:w-2/3'>
           <Input
             label={t('form:input-label-name')}
             {...register('name')}
             error={t(errors.name?.message!)}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
           />
 
           <Input
             label={t('form:input-label-website')}
             {...register('website')}
             error={t(errors.website?.message!)}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
           />
 
           <TextArea
             label={t('form:input-label-description')}
             {...register('description')}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
           />
           <ProductGroupInput
             control={control}
@@ -284,11 +284,11 @@ export default function CreateOrUpdateManufacturerForm({
             {fields.map(
               (item: ShopSocialInput & { id: string }, index: number) => (
                 <div
-                  className="border-b border-dashed border-border-200 first:border-t last:border-b-0 first:mt-5 md:first:mt-10 py-5 md:py-8"
+                  className='border-b border-dashed border-border-200 py-5 first:mt-5 first:border-t last:border-b-0 md:py-8 md:first:mt-10'
                   key={item.id}
                 >
-                  <div className="grid grid-cols-1 sm:grid-cols-5 gap-5">
-                    <div className="sm:col-span-2">
+                  <div className='grid grid-cols-1 gap-5 sm:grid-cols-5'>
+                    <div className='sm:col-span-2'>
                       <Label>{t('form:input-label-select-platform')}</Label>
                       <SelectInput
                         name={`socials.${index}.icon` as const}
@@ -300,9 +300,9 @@ export default function CreateOrUpdateManufacturerForm({
                     </div>
 
                     <Input
-                      className="sm:col-span-2"
+                      className='sm:col-span-2'
                       label={t('form:input-label-social-url')}
-                      variant="outline"
+                      variant='outline'
                       {...register(`socials.${index}.url` as const)}
                       defaultValue={item.url!} // make sure to set up defaultValue
                     />
@@ -310,34 +310,34 @@ export default function CreateOrUpdateManufacturerForm({
                       onClick={() => {
                         remove(index);
                       }}
-                      type="button"
-                      className="text-sm text-red-500 hover:text-red-700 transition-colors duration-200 focus:outline-none sm:mt-4 sm:col-span-1"
+                      type='button'
+                      className='text-sm text-red-500 transition-colors duration-200 hover:text-red-700 focus:outline-none sm:col-span-1 sm:mt-4'
                     >
                       {t('form:button-label-remove')}
                     </button>
                   </div>
                 </div>
-              )
+              ),
             )}
           </div>
 
           <Button
-            type="button"
+            type='button'
             onClick={() => append({ icon: '', url: '' })}
-            className="w-full sm:w-auto"
+            className='w-full sm:w-auto'
           >
             {t('form:button-label-add-social')}
           </Button>
         </Card>
       </div>
 
-      <div className="mb-4 text-end">
+      <div className='mb-4 text-end'>
         {initialValues && (
           <Button
-            variant="outline"
+            variant='outline'
             onClick={router.back}
-            className="me-4"
-            type="button"
+            className='me-4'
+            type='button'
           >
             {t('form:button-label-back')}
           </Button>

@@ -25,8 +25,8 @@ export default function UpdateTagPage() {
 
   return (
     <>
-      <div className="py-5 sm:py-8 flex border-b border-dashed border-gray-300">
-        <h1 className="text-lg font-semibold text-heading">
+      <div className='flex border-b border-dashed border-gray-300 py-5 sm:py-8'>
+        <h1 className='text-lg font-semibold text-heading'>
           {t('form:form-title-edit-tags')}
         </h1>
       </div>

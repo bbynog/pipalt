@@ -61,27 +61,27 @@ export default function Categories() {
 
   return (
     <>
-      <Card className="flex flex-col mb-8">
-        <div className="w-full flex flex-col md:flex-row items-center">
-          <div className="md:w-1/4 mb-4 md:mb-0">
-            <h1 className="text-xl font-semibold text-heading">
+      <Card className='mb-8 flex flex-col'>
+        <div className='flex w-full flex-col items-center md:flex-row'>
+          <div className='mb-4 md:mb-0 md:w-1/4'>
+            <h1 className='text-xl font-semibold text-heading'>
               {t('form:input-label-categories')}
             </h1>
           </div>
 
-          <div className="w-full xl:w-3/4 flex flex-col md:flex-row space-y-4 md:space-y-0 items-center ms-auto">
+          <div className='flex w-full flex-col items-center space-y-4 ms-auto md:flex-row md:space-y-0 xl:w-3/4'>
             <Search onSearch={handleSearch} />
-            <TypeFilter refetch={refetch} className="md:ms-6" />
+            <TypeFilter refetch={refetch} className='md:ms-6' />
 
             {locale === Config.defaultLanguage && (
               <LinkButton
                 href={`${Routes.category.create}`}
-                className="h-12 md:ms-6 w-full md:w-auto"
+                className='h-12 w-full md:w-auto md:ms-6'
               >
-                <span className="block md:hidden xl:block">
+                <span className='block md:hidden xl:block'>
                   + {t('form:button-label-add-categories')}
                 </span>
-                <span className="hidden md:block xl:hidden">
+                <span className='hidden md:block xl:hidden'>
                   + {t('form:button-label-add')}
                 </span>
               </LinkButton>

@@ -30,9 +30,9 @@ const CustomerBanView = () => {
     <ConfirmationCard
       onCancel={closeModal}
       onDelete={handleMakeAdmin}
-      deleteBtnText="text-yes"
-      title="text-make-admin"
-      description="text-description-make-admin"
+      deleteBtnText='text-yes'
+      title='text-make-admin'
+      description='text-description-make-admin'
       deleteBtnLoading={loading}
     />
   );

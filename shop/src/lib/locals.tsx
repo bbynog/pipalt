@@ -22,47 +22,47 @@ export function useIsRTL() {
   return { isRTL: false, alignLeft: 'left', alignRight: 'right' };
 }
 
-export let languageMenu =[
+export let languageMenu = [
   {
-    id: "ar",
-    name: "عربى",
-    value: "ar",
-    icon: <SAFlag width="20px" height="15px" />,
-    iconMobile: <SAFlagRound />
+    id: 'ar',
+    name: 'عربى',
+    value: 'ar',
+    icon: <SAFlag width='20px' height='15px' />,
+    iconMobile: <SAFlagRound />,
   },
   {
-    id: "zh",
-    name: "中国人",
-    value: "zh",
-    icon: <CNFlag width="20px" height="15px" />,
-    iconMobile: <CNFlagRound />
+    id: 'zh',
+    name: '中国人',
+    value: 'zh',
+    icon: <CNFlag width='20px' height='15px' />,
+    iconMobile: <CNFlagRound />,
   },
   {
-    id: "en",
-    name: "English",
-    value: "en",
-    icon: <USFlag width="20px" height="15px" />,
-    iconMobile: <USFlagRound />
+    id: 'en',
+    name: 'English',
+    value: 'en',
+    icon: <USFlag width='20px' height='15px' />,
+    iconMobile: <USFlagRound />,
   },
   {
-    id: "de",
-    name: "Deutsch",
-    value: "de",
-    icon: <DEFlag width="20px" height="15px" />,
-    iconMobile: <DEFlagRound />
+    id: 'de',
+    name: 'Deutsch',
+    value: 'de',
+    icon: <DEFlag width='20px' height='15px' />,
+    iconMobile: <DEFlagRound />,
   },
   {
-    id: "he",
-    name: "rעברית",
-    value: "he",
-    icon: <ILFlag width="20px" height="15px" />,
-    iconMobile: <ILFlagRound />
+    id: 'he',
+    name: 'rעברית',
+    value: 'he',
+    icon: <ILFlag width='20px' height='15px' />,
+    iconMobile: <ILFlagRound />,
   },
   {
-    id: "es",
-    name: "Español",
-    value: "es",
-    icon: <ESFlag width="20px" height="15px" />,
-    iconMobile: <ESFlagRound />
+    id: 'es',
+    name: 'Español',
+    value: 'es',
+    icon: <ESFlag width='20px' height='15px' />,
+    iconMobile: <ESFlagRound />,
   },
-]
+];

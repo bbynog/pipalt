@@ -21,7 +21,7 @@ const Avatar: React.FC<AvatarProps> = ({
     <div
       className={cn(
         'relative h-10 w-10 cursor-pointer overflow-hidden rounded-full border border-border-100',
-        className
+        className,
       )}
       {...rest}
     >
@@ -29,9 +29,9 @@ const Avatar: React.FC<AvatarProps> = ({
         alt={alt}
         src={src}
         fill
-        sizes="(max-width: 768px) 100vw"
+        sizes='(max-width: 768px) 100vw'
         priority={true}
-        className="object-cover"
+        className='object-cover'
       />
     </div>
   );

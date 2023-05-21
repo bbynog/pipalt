@@ -75,18 +75,18 @@ const Withdraw = () => {
 
   return (
     <>
-      <h3 className="w-full text-xl font-semibold text-heading mb-6">
+      <h3 className='mb-6 w-full text-xl font-semibold text-heading'>
         {t('common:text-withdrawal-info')}
       </h3>
-      <Card className="flex flex-col">
-        <div className="flex flex-col md:flex-row items-start">
+      <Card className='flex flex-col'>
+        <div className='flex flex-col items-start md:flex-row'>
           <form
             onSubmit={handleSubmit(handleApproveWithdraw)}
-            className="flex items-start ms-auto w-full md:w-1/2 md:order-2 mb-5 md:mb-0 md:ps-3"
+            className='mb-5 flex w-full items-start ms-auto md:order-2 md:mb-0 md:w-1/2 md:ps-3'
           >
-            <div className="w-full me-5 z-20">
+            <div className='z-20 w-full me-5'>
               <SelectInput
-                name="status"
+                name='status'
                 control={control}
                 getOptionLabel={(option: any) => option.name}
                 getOptionValue={(option: any) => option.id}
@@ -105,46 +105,46 @@ const Withdraw = () => {
               <ValidationError message={t(errors?.status?.message)} />
             </div>
             <Button loading={approving}>
-              <span className="hidden sm:block">
+              <span className='hidden sm:block'>
                 {t('form:button-label-change-status')}
               </span>
-              <span className="block sm:hidden">
+              <span className='block sm:hidden'>
                 {t('form:button-label-change')}
               </span>
             </Button>
           </form>
 
-          <div className="w-full md:w-1/2 md:order-1 md:pe-3">
-            <div className="flex items-center justify-start mb-2">
-              <div className="w-4/12 me-5 flex justify-between text-body text-sm flex-shrink-0">
+          <div className='w-full md:order-1 md:w-1/2 md:pe-3'>
+            <div className='mb-2 flex items-center justify-start'>
+              <div className='flex w-4/12 flex-shrink-0 justify-between text-sm text-body me-5'>
                 <span>{t('common:text-amount')}</span>
                 <span>:</span>
               </div>
-              <div className="border border-gray-300 rounded px-4 py-3 w-full xl:w-5/12 items-center flex">
-                <span className="text-heading font-semibold">
+              <div className='flex w-full items-center rounded border border-gray-300 px-4 py-3 xl:w-5/12'>
+                <span className='font-semibold text-heading'>
                   {data?.withdraw?.amount}
                 </span>
               </div>
             </div>
 
-            <div className="flex items-center mb-2">
-              <div className="w-4/12 me-5 flex justify-between text-body text-sm flex-shrink-0">
+            <div className='mb-2 flex items-center'>
+              <div className='flex w-4/12 flex-shrink-0 justify-between text-sm text-body me-5'>
                 <span>{t('common:text-payment-method')}</span>
                 <span>:</span>
               </div>
-              <span className="text-heading text-sm font-semibold w-full">
+              <span className='w-full text-sm font-semibold text-heading'>
                 {!!data?.withdraw?.payment_method
                   ? data?.withdraw?.payment_method
                   : 'N/A'}
               </span>
             </div>
 
-            <div className="flex items-center">
-              <div className="w-4/12 me-5 flex justify-between text-body text-sm flex-shrink-0">
+            <div className='flex items-center'>
+              <div className='flex w-4/12 flex-shrink-0 justify-between text-sm text-body me-5'>
                 <span>{t('common:text-status')}</span>
                 <span>:</span>
               </div>
-              <span className="text-heading text-sm font-semibold w-full">
+              <span className='w-full text-sm font-semibold text-heading'>
                 {data?.withdraw?.status}
               </span>
             </div>
@@ -152,24 +152,24 @@ const Withdraw = () => {
         </div>
       </Card>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
+      <div className='mt-5 grid grid-cols-1 gap-5 md:grid-cols-2'>
         {data?.withdraw?.details && (
-          <Card className="flex flex-col">
-            <div className="mb-2 text-heading font-semibold text-sm">
+          <Card className='flex flex-col'>
+            <div className='mb-2 text-sm font-semibold text-heading'>
               <span>{t('common:text-details')} :</span>
             </div>
 
-            <span className="text-body text-sm">{data?.withdraw?.details}</span>
+            <span className='text-sm text-body'>{data?.withdraw?.details}</span>
           </Card>
         )}
 
         {data?.withdraw?.note && (
-          <Card className="flex flex-col">
-            <div className="mb-2 text-heading font-semibold text-sm">
+          <Card className='flex flex-col'>
+            <div className='mb-2 text-sm font-semibold text-heading'>
               <span>{t('common:text-note')} :</span>
             </div>
 
-            <span className="text-body text-sm">{data?.withdraw?.note}</span>
+            <span className='text-sm text-body'>{data?.withdraw?.note}</span>
           </Card>
         )}
       </div>

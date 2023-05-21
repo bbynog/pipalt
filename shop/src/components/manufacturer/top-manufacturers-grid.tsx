@@ -42,9 +42,9 @@ const TopManufacturersGrid: React.FC = () => {
 
   if (isLoading && manufacturers.length) {
     return (
-      <SectionBlock title="text-top-manufacturer" href={Routes.manufacturers}>
-        <div className="">
-          <div className="grid w-full grid-flow-col gap-6">
+      <SectionBlock title='text-top-manufacturer' href={Routes.manufacturers}>
+        <div className=''>
+          <div className='grid w-full grid-flow-col gap-6'>
             {rangeMap(4, (i) => (
               <ManufacturerLoader key={i} uniqueKey={`manufacturer-${i}`} />
             ))}
@@ -54,10 +54,10 @@ const TopManufacturersGrid: React.FC = () => {
     );
   }
   return (
-    <SectionBlock title="text-top-manufacturer" href={Routes.manufacturers}>
+    <SectionBlock title='text-top-manufacturer' href={Routes.manufacturers}>
       {!isLoading && !manufacturers.length ? (
-        <div className="min-h-full px-9 pt-6 pb-8 lg:p-8">
-          <NotFound text="text-no-category" className="h-96" />
+        <div className='min-h-full px-9 pt-6 pb-8 lg:p-8'>
+          <NotFound text='text-no-category' className='h-96' />
         </div>
       ) : (
         <div>

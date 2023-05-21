@@ -63,40 +63,40 @@ export default function ProductsPage() {
 
   return (
     <>
-      <Card className="flex flex-col mb-8">
-        <div className="w-full flex flex-col md:flex-row items-center">
-          <div className="md:w-1/4 mb-4 md:mb-0">
-            <h1 className="text-lg font-semibold text-heading">
+      <Card className='mb-8 flex flex-col'>
+        <div className='flex w-full flex-col items-center md:flex-row'>
+          <div className='mb-4 md:mb-0 md:w-1/4'>
+            <h1 className='text-lg font-semibold text-heading'>
               {t('form:input-label-products')}
             </h1>
           </div>
 
-          <div className="w-full md:w-3/4 flex flex-col items-center ms-auto">
+          <div className='flex w-full flex-col items-center ms-auto md:w-3/4'>
             <Search onSearch={handleSearch} />
           </div>
 
           <button
-            className="text-accent text-base font-semibold flex items-center md:ms-5 mt-5 md:mt-0 whitespace-nowrap"
+            className='mt-5 flex items-center whitespace-nowrap text-base font-semibold text-accent md:mt-0 md:ms-5'
             onClick={toggleVisible}
           >
             {t('common:text-filter')}{' '}
             {visible ? (
-              <ArrowUp className="ms-2" />
+              <ArrowUp className='ms-2' />
             ) : (
-              <ArrowDown className="ms-2" />
+              <ArrowDown className='ms-2' />
             )}
           </button>
         </div>
 
         <div
-          className={cn('w-full flex transition', {
-            'h-auto visible': visible,
-            'h-0 invisible': !visible,
+          className={cn('flex w-full transition', {
+            'visible h-auto': visible,
+            'invisible h-0': !visible,
           })}
         >
-          <div className="flex flex-col md:flex-row md:items-center md:space-x-5 rtl:space-x-reverse space-y-5 md:space-y-0 mt-5 md:mt-8 border-t border-gray-200 pt-5 md:pt-8 w-full">
-            <CategoryTypeFilter refetch={refetch} className="w-full md:w-2/3" />
-            <QuantitySortFilter refetch={refetch} className="w-full md:w-1/3" />
+          <div className='mt-5 flex w-full flex-col space-y-5 border-t border-gray-200 pt-5 rtl:space-x-reverse md:mt-8 md:flex-row md:items-center md:space-x-5 md:space-y-0 md:pt-8'>
+            <CategoryTypeFilter refetch={refetch} className='w-full md:w-2/3' />
+            <QuantitySortFilter refetch={refetch} className='w-full md:w-1/3' />
           </div>
         </div>
       </Card>

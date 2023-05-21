@@ -16,11 +16,11 @@ const TagGroups = ({ onClose, tags, basePath }: Props) => {
     }
   };
   return (
-    <div className="flex w-full flex-col items-start">
-      <span className="pb-3 text-sm font-semibold capitalize text-heading">
+    <div className='flex w-full flex-col items-start'>
+      <span className='pb-3 text-sm font-semibold capitalize text-heading'>
         {t('text-tags')}
       </span>
-      <div className="flex flex-row flex-wrap">
+      <div className='flex flex-row flex-wrap'>
         {tags?.map((tag: any) => (
           <button
             onClick={() => handleClick(`${basePath}?tag=${tag.slug}`)}

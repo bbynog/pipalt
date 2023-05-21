@@ -17,11 +17,11 @@ const BreadcrumbWithIndicator: React.FC<BreadcrumbButtonProps> = ({
   onClick,
 }) => (
   <>
-    <span className="relative h-[32px] w-[18px] flex-shrink-0">
+    <span className='relative h-[32px] w-[18px] flex-shrink-0'>
       <Image
-        className="h-full w-full"
+        className='h-full w-full'
         src={ArrowForward}
-        alt=">"
+        alt='>'
         width={18}
         height={32}
       />
@@ -51,7 +51,7 @@ const CategoryBreadcrumb: React.FC<CategoryBreadcrumbProps> = ({
       undefined,
       {
         scroll: false,
-      }
+      },
     );
   };
 
@@ -65,12 +65,12 @@ const CategoryBreadcrumb: React.FC<CategoryBreadcrumbProps> = ({
       undefined,
       {
         scroll: false,
-      }
+      },
     );
   };
 
   return (
-    <div className="flex items-center space-x-5 rtl:space-x-reverse">
+    <div className='flex items-center space-x-5 rtl:space-x-reverse'>
       <BreadcrumbButton
         text={t('text-all-categories')}
         onClick={resetCategoryClick}

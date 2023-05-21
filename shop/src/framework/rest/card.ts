@@ -16,7 +16,7 @@ export function useCards(params?: any, options?: any) {
     {
       enabled: isAuthorized,
       ...options,
-    }
+    },
   );
 
   return {
@@ -74,7 +74,7 @@ export function useAddCards(method_key?: any) {
       onSettled: () => {
         queryClient.invalidateQueries(API_ENDPOINTS.CARDS);
       },
-    }
+    },
   );
 
   return {
@@ -97,7 +97,7 @@ export function useDefaultPaymentMethod() {
       onSettled: () => {
         queryClient.invalidateQueries(API_ENDPOINTS.CARDS);
       },
-    }
+    },
   );
 
   return {

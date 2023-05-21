@@ -44,19 +44,19 @@ const SortForm: React.FC<Props> = ({
   // }
 
   return (
-    <div className={cn('flex items-end w-full', className)}>
-      <div className="w-full">
+    <div className={cn('flex w-full items-end', className)}>
+      <div className='w-full'>
         {showLabel && <Label>{t('filter-by-order')}</Label>}
         <Select
           options={options}
           // @ts-ignore
           onChange={onOrderChange}
-          name="orderBy"
+          name='orderBy'
           placeholder={t('filter-by-order-placeholder')}
         />
       </div>
 
-      <div className="w-[150px] ms-5">
+      <div className='w-[150px] ms-5'>
         <Select
           options={[
             { id: 1, value: 'ASC', label: 'ASC' },
@@ -65,7 +65,7 @@ const SortForm: React.FC<Props> = ({
           // @ts-ignore
           onChange={onSortChange}
           defaultValue={{ id: 1, value: 'DESC', label: 'DESC' }}
-          name="sortedBy"
+          name='sortedBy'
         />
       </div>
     </div>

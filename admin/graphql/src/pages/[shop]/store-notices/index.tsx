@@ -75,25 +75,25 @@ export default function StoreNotice() {
 
   return (
     <>
-      <Card className="flex flex-col items-center mb-8 md:flex-row">
-        <div className="mb-4 md:mb-0 md:w-1/4">
-          <h1 className="text-xl font-semibold text-heading">
+      <Card className='mb-8 flex flex-col items-center md:flex-row'>
+        <div className='mb-4 md:mb-0 md:w-1/4'>
+          <h1 className='text-xl font-semibold text-heading'>
             {t('form:input-label-store-notices')}
           </h1>
         </div>
 
-        <div className="flex flex-col items-center w-full space-y-4 ms-auto md:w-2/3 md:flex-row md:space-y-0 xl:w-3/4 2xl:w-1/2">
+        <div className='flex w-full flex-col items-center space-y-4 ms-auto md:w-2/3 md:flex-row md:space-y-0 xl:w-3/4 2xl:w-1/2'>
           <Search onSearch={handleSearch} />
 
           {locale === Config.defaultLanguage && (
             <LinkButton
               href={`/${shop}/store-notices/create`}
-              className="w-full h-12 md:w-auto md:ms-6"
+              className='h-12 w-full md:w-auto md:ms-6'
             >
-              <span className="hidden xl:block">
+              <span className='hidden xl:block'>
                 + {t('form:button-label-add-store-notice')}
               </span>
-              <span className="xl:hidden">+ {t('form:button-label-add')}</span>
+              <span className='xl:hidden'>+ {t('form:button-label-add')}</span>
             </LinkButton>
           )}
         </div>

@@ -21,7 +21,7 @@ export const getStaticPaths: GetStaticPaths<ParsedQueryParams> = async ({
     locales?.map((locale) => ({
       params: { manufacturer: manufacturer.slug },
       locale,
-    }))
+    })),
   );
   return {
     paths,
@@ -39,11 +39,14 @@ export const getStaticProps: GetStaticProps<
 
   await queryClient.prefetchQuery(
     [API_ENDPOINTS.SETTINGS, { language: locale }],
-    ({ queryKey }) => client.settings.all(queryKey[1] as SettingsQueryOptions)
+    ({ queryKey }) => client.settings.all(queryKey[1] as SettingsQueryOptions),
   );
 
   try {
-    const manufacturer = await client.manufacturers.get({slug: params!.manufacturer, language: locale});
+    const manufacturer = await client.manufacturers.get({
+      slug: params!.manufacturer,
+      language: locale,
+    });
     return {
       props: {
         manufacturer,

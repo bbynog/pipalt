@@ -22,22 +22,22 @@ function Attribute({
   switch (type) {
     case 'formats':
       return (
-        <BoxedAttribute title="Hardcover" value="$9.59" active={isActive} />
+        <BoxedAttribute title='Hardcover' value='$9.59' active={isActive} />
       );
     case 'color':
       return (
         <div
-          role="button"
+          role='button'
           onClick={onClick}
           className={cn(
             'flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border-2 border-transparent p-0.5',
             {
               '!border-accent': isActive,
-            }
+            },
           )}
         >
           <span
-            className="h-full w-full rounded-full border border-border-200"
+            className='h-full w-full rounded-full border border-border-200'
             style={{ backgroundColor: color }}
           />
         </div>
@@ -45,7 +45,7 @@ function Attribute({
     default:
       return (
         <div
-          role="button"
+          role='button'
           onClick={onClick}
           className={cn(
             'cursor-pointer whitespace-nowrap rounded border-border-200 bg-gray-50 px-4 py-3 text-sm text-heading transition-colors',
@@ -54,8 +54,8 @@ function Attribute({
                 isActive && variant === 'normal',
               '!border-accent !text-accent': isActive && variant === 'outline',
               'border-2 font-semibold': variant === 'outline',
-              border: variant === 'normal',
-            }
+              'border': variant === 'normal',
+            },
           )}
         >
           {value}

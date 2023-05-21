@@ -13,15 +13,15 @@ const BlockedView = ({ className, name, ...rest }: Props) => {
       <div
         className={cn(
           'space-y-3 rounded bg-[#ebebeb] px-4 py-5 text-center',
-          className
+          className,
         )}
         {...rest}
       >
-        <p className="text-lg">
+        <p className='text-lg'>
           {t('text-blocked-content-one')} <strong>{name}</strong>{' '}
           {t('text-account')}
         </p>
-        <p className="text-sm">{t('text-blocked-content-two')}</p>
+        <p className='text-sm'>{t('text-blocked-content-two')}</p>
       </div>
     </>
   );

@@ -9,8 +9,8 @@ const Title: React.FC<Props> = ({ className = 'mb-3', ...rest }) => {
   return (
     <span
       className={cn(
-        'block text-body-dark font-semibold text-sm leading-none',
-        className
+        'block text-sm font-semibold leading-none text-body-dark',
+        className,
       )}
       {...rest}
     />

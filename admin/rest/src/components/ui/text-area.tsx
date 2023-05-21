@@ -9,7 +9,7 @@ export interface Props extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   error?: string;
   shadow?: boolean;
   variant?: 'normal' | 'solid' | 'outline';
-  disabled?: boolean
+  disabled?: boolean;
 }
 
 const classes = {
@@ -58,7 +58,9 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
       <textarea
         id={name}
         name={name}
-        className={`${rootClassName} ${disabled ? 'cursor-not-allowed bg-[#EEF1F4] border-[#D4D8DD]' : ''}`}
+        className={`${rootClassName} ${
+          disabled ? 'cursor-not-allowed bg-[#EEF1F4] border-[#D4D8DD]' : ''
+        }`}
         autoComplete="off"
         autoCorrect="off"
         autoCapitalize="off"

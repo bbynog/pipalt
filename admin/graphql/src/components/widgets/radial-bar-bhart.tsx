@@ -55,31 +55,31 @@ const RadialBarChart = ({
   };
 
   return (
-    <div className="bg-light shadow-sm rounded w-full h-full">
-      <div className="p-8 flex items-start justify-between">
-        <h3 className="font-semibold text-heading">{widgetTitle}</h3>
+    <div className='h-full w-full rounded bg-light shadow-sm'>
+      <div className='flex items-start justify-between p-8'>
+        <h3 className='font-semibold text-heading'>{widgetTitle}</h3>
       </div>
 
-      <div className="w-full">
+      <div className='w-full'>
         <Chart
           options={options.options}
           series={options.series}
-          type="radialBar"
-          width="100%"
+          type='radialBar'
+          width='100%'
         />
 
-        <div className="w-full flex px-3 pt-4 pb-8">
+        <div className='flex w-full px-3 pt-4 pb-8'>
           {label?.map((_: any, index: number) => (
-            <div className="px-2 flex items-start justify-start" key={index}>
+            <div className='flex items-start justify-start px-2' key={index}>
               <span
-                className="w-4 h-4 rounded-full me-3 flex flex-shrink-0"
+                className='flex h-4 w-4 flex-shrink-0 rounded-full me-3'
                 style={{ backgroundColor: colors[index] }}
               />
-              <div className="flex flex-col">
-                <span className="text-xs text-body mb-1">
+              <div className='flex flex-col'>
+                <span className='mb-1 text-xs text-body'>
                   {helperText[index]}
                 </span>
-                <span className="text-xl font-semibold text-heading">
+                <span className='text-xl font-semibold text-heading'>
                   {label[index]}
                 </span>
               </div>

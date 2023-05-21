@@ -49,9 +49,9 @@ export const ThumbsCarousel: React.FC<Props> = ({
   const nextRef = useRef<HTMLDivElement>(null);
   return (
     <div>
-      <div className="relative">
+      <div className='relative'>
         <Swiper
-          id="productGallery"
+          id='productGallery'
           modules={[Navigation, Thumbs, FreeMode]}
           thumbs={{
             swiper:
@@ -66,7 +66,7 @@ export const ThumbsCarousel: React.FC<Props> = ({
           {gallery?.map((item: any) => (
             <SwiperSlide
               key={`product-gallery-${item.id}`}
-              className="!flex items-center justify-center selection:bg-transparent"
+              className='!flex items-center justify-center selection:bg-transparent'
             >
               <Image
                 src={item?.original ?? productPlaceholder}
@@ -79,22 +79,22 @@ export const ThumbsCarousel: React.FC<Props> = ({
         </Swiper>
         <div
           ref={prevRef}
-          className="product-gallery-prev absolute top-2/4 z-10 -mt-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border border-border-200 border-opacity-70 bg-light text-heading shadow-xl transition-all duration-200 hover:bg-gray-100 ltr:-left-4 rtl:-right-4 md:-mt-5 md:h-9 md:w-9 ltr:md:-left-5 rtl:md:-right-5"
+          className='product-gallery-prev absolute top-2/4 z-10 -mt-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border border-border-200 border-opacity-70 bg-light text-heading shadow-xl transition-all duration-200 hover:bg-gray-100 ltr:-left-4 rtl:-right-4 md:-mt-5 md:h-9 md:w-9 ltr:md:-left-5 rtl:md:-right-5'
         >
           {isRTL ? (
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRight className='h-4 w-4' />
           ) : (
-            <ChevronLeft className="h-4 w-4" />
+            <ChevronLeft className='h-4 w-4' />
           )}
         </div>
         <div
           ref={nextRef}
-          className="product-gallery-next absolute top-2/4 z-10 -mt-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border border-border-200 border-opacity-70 bg-light text-heading shadow-xl transition-all duration-200 hover:bg-gray-100 ltr:-right-4 rtl:-left-4 md:-mt-5 md:h-9 md:w-9 ltr:md:-right-5 rtl:md:-left-5"
+          className='product-gallery-next absolute top-2/4 z-10 -mt-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border border-border-200 border-opacity-70 bg-light text-heading shadow-xl transition-all duration-200 hover:bg-gray-100 ltr:-right-4 rtl:-left-4 md:-mt-5 md:h-9 md:w-9 ltr:md:-right-5 rtl:md:-left-5'
         >
           {isRTL ? (
-            <ChevronLeft className="h-4 w-4" />
+            <ChevronLeft className='h-4 w-4' />
           ) : (
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRight className='h-4 w-4' />
           )}
         </div>
       </div>
@@ -102,11 +102,11 @@ export const ThumbsCarousel: React.FC<Props> = ({
       <div
         className={classNames(
           'relative mx-auto mt-5 max-w-md lg:mt-8 lg:pb-2',
-          { hidden: hideThumbs }
+          { hidden: hideThumbs },
         )}
       >
         <Swiper
-          id="productGalleryThumbs"
+          id='productGalleryThumbs'
           onSwiper={setThumbsSwiper}
           spaceBetween={20}
           watchSlidesProgress={true}
@@ -119,7 +119,7 @@ export const ThumbsCarousel: React.FC<Props> = ({
           {gallery?.map((item: any) => (
             <SwiperSlide
               key={`product-thumb-gallery-${item.id}`}
-              className="!flex cursor-pointer items-center justify-center overflow-hidden rounded border border-border-200 border-opacity-75 hover:opacity-75"
+              className='!flex cursor-pointer items-center justify-center overflow-hidden rounded border border-border-200 border-opacity-75 hover:opacity-75'
             >
               <Image
                 src={item?.thumbnail ?? productPlaceholder}

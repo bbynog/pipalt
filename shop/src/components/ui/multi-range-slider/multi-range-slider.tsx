@@ -17,7 +17,7 @@ const MultiRangeSlider: React.FC<Props> = ({ min, max, onChange }) => {
   // Convert to percentage
   const getPercent = useCallback(
     (value: number) => Math.round(((value - min) / (max - min)) * 100),
-    [min, max]
+    [min, max],
   );
 
   // Set width of the range to decrease from the left side
@@ -51,10 +51,10 @@ const MultiRangeSlider: React.FC<Props> = ({ min, max, onChange }) => {
   }, [minVal, maxVal, onChange]);
 
   return (
-    <div className="relative w-full">
-      <div className="relative w-full py-3">
+    <div className='relative w-full'>
+      <div className='relative w-full py-3'>
         <input
-          type="range"
+          type='range'
           min={min}
           max={max}
           value={minVal}
@@ -68,11 +68,11 @@ const MultiRangeSlider: React.FC<Props> = ({ min, max, onChange }) => {
             'thumb absolute z-[3] h-0 w-full outline-none',
             {
               'z-[5]': minVal > max - 100,
-            }
+            },
           )}
         />
         <input
-          type="range"
+          type='range'
           min={min}
           max={max}
           value={maxVal}
@@ -82,25 +82,25 @@ const MultiRangeSlider: React.FC<Props> = ({ min, max, onChange }) => {
             setMaxVal(value);
             event.target.value = value.toString();
           }}
-          className="thumb absolute z-[4] h-0 w-full outline-none"
+          className='thumb absolute z-[4] h-0 w-full outline-none'
         />
-        <div className="relative w-full">
-          <div className="track absolute z-[1] h-1 w-full rounded bg-gray-200" />
+        <div className='relative w-full'>
+          <div className='track absolute z-[1] h-1 w-full rounded bg-gray-200' />
           <div
             ref={range}
-            className="range absolute z-[2] h-1 rounded bg-accent"
+            className='range absolute z-[2] h-1 rounded bg-accent'
           />
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 mt-4">
-        <div className="flex flex-col items-start p-2 border border-gray-200 rounded">
-          <label className="text-sm font-semibold text-gray-400">Min</label>
-          <span className="text-sm font-bold text-heading">{minVal}</span>
+      <div className='mt-4 grid grid-cols-2 gap-3'>
+        <div className='flex flex-col items-start rounded border border-gray-200 p-2'>
+          <label className='text-sm font-semibold text-gray-400'>Min</label>
+          <span className='text-sm font-bold text-heading'>{minVal}</span>
         </div>
-        <div className="flex flex-col items-end p-2 border border-gray-200 rounded">
-          <label className="text-sm font-semibold text-gray-400">Max</label>
-          <span className="text-sm font-bold text-heading">{maxVal}</span>
+        <div className='flex flex-col items-end rounded border border-gray-200 p-2'>
+          <label className='text-sm font-semibold text-gray-400'>Max</label>
+          <span className='text-sm font-bold text-heading'>{maxVal}</span>
         </div>
       </div>
     </div>

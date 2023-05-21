@@ -44,14 +44,14 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
       inputClassName,
       ...rest
     },
-    ref
+    ref,
   ) => {
     return (
       <div className={className}>
         {label && (
           <label
             htmlFor={name}
-            className="mb-3 block text-sm font-semibold leading-none text-body-dark"
+            className='mb-3 block text-sm font-semibold leading-none text-body-dark'
           >
             {label}
           </label>
@@ -67,20 +67,20 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
             variantClasses[variant],
             sizeClasses[dimension],
             disabled && 'cursor-not-allowed bg-gray-100',
-            inputClassName
+            inputClassName,
           )}
           disabled={disabled}
-          autoComplete="off"
-          autoCorrect="off"
-          autoCapitalize="off"
-          spellCheck="false"
+          autoComplete='off'
+          autoCorrect='off'
+          autoCapitalize='off'
+          spellCheck='false'
           aria-invalid={error ? 'true' : 'false'}
           {...rest}
         />
-        {error && <p className="mt-2 text-xs text-red-500">{error}</p>}
+        {error && <p className='mt-2 text-xs text-red-500'>{error}</p>}
       </div>
     );
-  }
+  },
 );
 Input.displayName = 'Input';
 export default Input;

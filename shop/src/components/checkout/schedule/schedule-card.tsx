@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import classNames from 'classnames';
 
 interface ScheduleProps {
   schedule: any;
@@ -7,17 +7,17 @@ interface ScheduleProps {
 const ScheduleCard: React.FC<ScheduleProps> = ({ checked, schedule }) => (
   <div
     className={classNames(
-      "relative p-4 rounded border cursor-pointer group hover:border-accent",
+      'group relative cursor-pointer rounded border p-4 hover:border-accent',
       {
-        "border-accent shadow-sm": checked,
-        "bg-gray-100 border-transparent": !checked,
-      }
+        'border-accent shadow-sm': checked,
+        'border-transparent bg-gray-100': !checked,
+      },
     )}
   >
-    <span className="text-sm text-heading font-semibold block mb-2">
+    <span className='mb-2 block text-sm font-semibold text-heading'>
       {schedule.title}
     </span>
-    <span className="text-sm text-heading block">{schedule.description}</span>
+    <span className='block text-sm text-heading'>{schedule.description}</span>
   </div>
 );
 

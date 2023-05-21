@@ -37,7 +37,7 @@ import {
   SqlOperator,
 } from '__generated__/__types__';
 import { Routes } from '@/config/routes';
-import {Config} from "@/config";
+import { Config } from '@/config';
 
 function SelectTypes({
   control,
@@ -55,10 +55,10 @@ function SelectTypes({
     fetchPolicy: 'network-only',
   });
   return (
-    <div className="mb-5">
+    <div className='mb-5'>
       <Label>{t('form:input-label-types')}</Label>
       <SelectInput
-        name="type"
+        name='type'
         control={control}
         getOptionLabel={(option: any) => option.name}
         getOptionValue={(option: any) => option.slug}
@@ -109,7 +109,7 @@ function SelectCategories({
     <div>
       <Label>{t('form:input-label-parent-category')}</Label>
       <SelectInput
-        name="parent"
+        name='parent'
         control={control}
         getOptionLabel={(option: any) => option.name}
         getOptionValue={(option: any) => option.id}
@@ -123,8 +123,8 @@ function SelectCategories({
 
 export const updatedIcons = categoryIcons.map((item: any) => {
   item.label = (
-    <div className="flex space-s-5 items-center">
-      <span className="flex w-5 h-5 items-center justify-center">
+    <div className='flex items-center space-s-5'>
+      <span className='flex h-5 w-5 items-center justify-center'>
         {getIcon({
           iconList: categoriesIcon,
           iconName: item.value,
@@ -178,7 +178,7 @@ export default function CreateOrUpdateCategoriesForm({
           ...initialValues,
           icon: initialValues?.icon
             ? categoryIcons.find(
-                (singleIcon) => singleIcon.value === initialValues?.icon!
+                (singleIcon) => singleIcon.value === initialValues?.icon!,
               )
             : '',
           ...(isNewTranslation && {
@@ -269,19 +269,19 @@ export default function CreateOrUpdateCategoriesForm({
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="flex flex-wrap pb-8 border-b border-dashed border-border-base my-5 sm:my-8">
+      <div className='my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8'>
         <Description
           title={t('form:input-label-image')}
           details={t('form:category-image-helper-text')}
-          className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8"
+          className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
         />
 
-        <Card className="w-full sm:w-8/12 md:w-2/3">
-          <FileInput name="image" control={control} multiple={false} />
+        <Card className='w-full sm:w-8/12 md:w-2/3'>
+          <FileInput name='image' control={control} multiple={false} />
         </Card>
       </div>
 
-      <div className="flex flex-wrap my-5 sm:my-8">
+      <div className='my-5 flex flex-wrap sm:my-8'>
         <Description
           title={t('form:input-label-description')}
           details={`${
@@ -289,29 +289,29 @@ export default function CreateOrUpdateCategoriesForm({
               ? t('form:item-description-edit')
               : t('form:item-description-add')
           } ${t('form:category-description-helper-text')}`}
-          className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8 "
+          className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5 '
         />
 
-        <Card className="w-full sm:w-8/12 md:w-2/3">
+        <Card className='w-full sm:w-8/12 md:w-2/3'>
           <Input
             label={t('form:input-label-name')}
             {...register('name')}
             error={t(errors.name?.message!)}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
           />
 
           <TextArea
             label={t('form:input-label-details')}
             {...register('details')}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
           />
 
-          <div className="mb-5">
+          <div className='mb-5'>
             <Label>{t('form:input-label-select-icon')}</Label>
             <SelectInput
-              name="icon"
+              name='icon'
               control={control}
               options={updatedIcons}
               isClearable={true}
@@ -321,13 +321,13 @@ export default function CreateOrUpdateCategoriesForm({
           <SelectCategories control={control} setValue={setValue} />
         </Card>
       </div>
-      <div className="mb-4 text-end">
+      <div className='mb-4 text-end'>
         {initialValues && (
           <Button
-            variant="outline"
+            variant='outline'
             onClick={router.back}
-            className="me-4"
-            type="button"
+            className='me-4'
+            type='button'
           >
             {t('form:button-label-back')}
           </Button>

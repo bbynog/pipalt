@@ -17,11 +17,11 @@ export function useSettings() {
   const formattedOptions = {
     language: locale,
   };
-  
+
   const { data, isLoading, error } = useQuery<Settings, Error>(
     [API_ENDPOINTS.SETTINGS, formattedOptions],
     ({ queryKey, pageParam }) =>
-      client.settings.all(Object.assign({}, queryKey[1], pageParam))
+      client.settings.all(Object.assign({}, queryKey[1], pageParam)),
   );
 
   return {
@@ -33,14 +33,14 @@ export function useSettings() {
 
 export const useUploads = ({ onChange, defaultFiles }: any) => {
   const [files, setFiles] = useState<FileWithPath[]>(
-    getPreviewImage(defaultFiles)
+    getPreviewImage(defaultFiles),
   );
 
   const { mutate: upload, isLoading } = useMutation(client.settings.upload, {
     onSuccess: (data) => {
       if (onChange) {
         const dataAfterRemoveTypename = data?.map(
-          ({ __typename, ...rest }: any) => rest
+          ({ __typename, ...rest }: any) => rest,
         );
         onChange(dataAfterRemoveTypename);
         setFiles(getPreviewImage(dataAfterRemoveTypename));
@@ -83,7 +83,7 @@ export function useVerifyCoupon() {
         setFormError({
           code: t(`common:${data?.message}`),
         });
-      } 
+      }
       applyCoupon(data?.coupon);
     },
     onError: (error) => {

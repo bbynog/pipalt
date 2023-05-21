@@ -33,9 +33,9 @@ export default function RefundsPage() {
 
   return (
     <>
-      <Card className="flex flex-col md:flex-row items-center justify-between mb-8">
-        <div className="md:w-1/4 mb-4 md:mb-0">
-          <h1 className="text-lg font-semibold text-heading">
+      <Card className='mb-8 flex flex-col items-center justify-between md:flex-row'>
+        <div className='mb-4 md:mb-0 md:w-1/4'>
+          <h1 className='text-lg font-semibold text-heading'>
             {t('common:sidebar-nav-item-refunds')}
           </h1>
         </div>

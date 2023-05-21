@@ -24,7 +24,7 @@ import dynamic from 'next/dynamic';
 
 const FavoriteButton = dynamic(
   () => import('@/components/products/details/favorite-button'),
-  { ssr: false }
+  { ssr: false },
 );
 
 type Props = {
@@ -75,7 +75,7 @@ const BookDetails: React.FC<Props> = ({ product, isModal = false }) => {
 
   const variations = useMemo(
     () => getVariations(product?.variations),
-    [product?.variations]
+    [product?.variations],
   );
   const isSelected = isVariationSelected(variations, attributes);
   let selectedVariation: any = {};
@@ -83,8 +83,8 @@ const BookDetails: React.FC<Props> = ({ product, isModal = false }) => {
     selectedVariation = product?.variation_options?.find((o: any) =>
       isEqual(
         o.options.map((v: any) => v.value).sort(),
-        Object.values(attributes).sort()
-      )
+        Object.values(attributes).sort(),
+      ),
     );
   }
 
@@ -98,29 +98,29 @@ const BookDetails: React.FC<Props> = ({ product, isModal = false }) => {
   const hasVariations = !isEmpty(variations);
   const previewImages = displayImage(selectedVariation?.image, gallery, image);
   return (
-    <article className="max-w-screen-xl px-5 py-16 mx-auto rounded-lg bg-light xl:px-0">
-      <div className="flex flex-col border-b border-border-200 border-opacity-70 pb-14 lg:flex-row">
-        <div className="lg:w-1/2">
-          <div className="h-full py-5 bg-gray-100 product-gallery md:py-16">
+    <article className='mx-auto max-w-screen-xl rounded-lg bg-light px-5 py-16 xl:px-0'>
+      <div className='flex flex-col border-b border-border-200 border-opacity-70 pb-14 lg:flex-row'>
+        <div className='lg:w-1/2'>
+          <div className='product-gallery h-full bg-gray-100 py-5 md:py-16'>
             <ThumbsCarousel
               gallery={previewImages}
               hideThumbs={previewImages.length <= 1}
-              aspectRatio="auto"
+              aspectRatio='auto'
             />
           </div>
         </div>
 
-        <div className="flex flex-col items-start mt-8 lg:mt-0 lg:w-1/2 ltr:lg:pl-10 rtl:lg:pr-10 ltr:xl:pl-16 rtl:xl:pr-16 ">
-          <div className="w-full" ref={intersectionRef}>
-            <div className="flex items-start justify-between w-full space-x-5 rtl:space-x-reverse lg:space-x-8">
-              <div className="flex flex-col items-start">
+        <div className='mt-8 flex flex-col items-start lg:mt-0 lg:w-1/2 ltr:lg:pl-10 rtl:lg:pr-10 ltr:xl:pl-16 rtl:xl:pr-16 '>
+          <div className='w-full' ref={intersectionRef}>
+            <div className='flex w-full items-start justify-between space-x-5 rtl:space-x-reverse lg:space-x-8'>
+              <div className='flex flex-col items-start'>
                 {name && (
-                  <h1 className="text-xl font-bold tracking-tight text-heading lg:text-2xl xl:text-3xl">
+                  <h1 className='text-xl font-bold tracking-tight text-heading lg:text-2xl xl:text-3xl'>
                     {name}
                   </h1>
                 )}
                 {Boolean(is_digital) && (
-                  <span className="mt-3 rounded bg-accent-400 px-3 py-1.5 text-xs font-normal text-white md:mt-4">
+                  <span className='mt-3 rounded bg-accent-400 px-3 py-1.5 text-xs font-normal text-white md:mt-4'>
                     {t('text-downloadable')}
                   </span>
                 )}
@@ -130,12 +130,12 @@ const BookDetails: React.FC<Props> = ({ product, isModal = false }) => {
             </div>
 
             {author?.name && (
-              <div className="flex items-center mt-4 space-x-5 rtl:space-x-reverse md:mt-5">
-                <p className="flex items-center text-sm font-normal text-body">
+              <div className='mt-4 flex items-center space-x-5 rtl:space-x-reverse md:mt-5'>
+                <p className='flex items-center text-sm font-normal text-body'>
                   {t('text-by-author')}
                   <Link
                     href={Routes.author(author?.slug)}
-                    className="text-sm font-bold transition-colors text-heading hover:text-accent ltr:ml-2 rtl:mr-2"
+                    className='text-sm font-bold text-heading transition-colors hover:text-accent ltr:ml-2 rtl:mr-2'
                   >
                     {author?.name}
                   </Link>
@@ -145,35 +145,35 @@ const BookDetails: React.FC<Props> = ({ product, isModal = false }) => {
 
             {hasVariations ? (
               <>
-                <div className="flex items-center mt-5 mb-7">
+                <div className='mt-5 mb-7 flex items-center'>
                   <VariationPrice
                     selectedVariation={selectedVariation}
                     minPrice={product.min_price}
                     maxPrice={product.max_price}
                   />
                   {isSelected && discount && (
-                    <span className="px-2 py-1 text-xs font-semibold leading-6 uppercase rounded-md bg-accent-200 text-accent ltr:ml-4 rtl:mr-4">
+                    <span className='rounded-md bg-accent-200 px-2 py-1 text-xs font-semibold uppercase leading-6 text-accent ltr:ml-4 rtl:mr-4'>
                       {discount} {t('text-off')}
                     </span>
                   )}
                 </div>
                 <div>
-                  <VariationGroups variations={variations} variant="outline" />
+                  <VariationGroups variations={variations} variant='outline' />
                 </div>
               </>
             ) : (
-              <span className="flex items-center mt-5 space-x-4 mb-7 rtl:space-x-reverse">
-                <ins className="text-2xl font-bold no-underline text-heading md:text-3xl">
+              <span className='mt-5 mb-7 flex items-center space-x-4 rtl:space-x-reverse'>
+                <ins className='text-2xl font-bold text-heading no-underline md:text-3xl'>
                   {price}
                 </ins>
                 {basePrice && (
-                  <del className="text-base font-normal text-muted md:text-base">
+                  <del className='text-base font-normal text-muted md:text-base'>
                     {basePrice}
                   </del>
                 )}
 
                 {discount && (
-                  <span className="px-2 py-1 text-xs font-semibold leading-6 uppercase rounded-md bg-accent-200 text-accent">
+                  <span className='rounded-md bg-accent-200 px-2 py-1 text-xs font-semibold uppercase leading-6 text-accent'>
                     {discount} {t('text-off')}
                   </span>
                 )}
@@ -181,7 +181,7 @@ const BookDetails: React.FC<Props> = ({ product, isModal = false }) => {
             )}
 
             {description && (
-              <div className="text-sm leading-7 mt-7 text-body">
+              <div className='mt-7 text-sm leading-7 text-body'>
                 <Truncate
                   character={150}
                   {...(!isModal && {
@@ -194,11 +194,11 @@ const BookDetails: React.FC<Props> = ({ product, isModal = false }) => {
               </div>
             )}
 
-            <div className="flex flex-col items-center pb-5 mt-4 border-b border-border-200 border-opacity-70 md:mt-6 md:pb-8 lg:flex-row">
-              <div className="w-full mb-3 lg:mb-0">
+            <div className='mt-4 flex flex-col items-center border-b border-border-200 border-opacity-70 pb-5 md:mt-6 md:pb-8 lg:flex-row'>
+              <div className='mb-3 w-full lg:mb-0'>
                 <AddToCartAlt
                   data={product}
-                  variant="bordered"
+                  variant='bordered'
                   variation={selectedVariation}
                   disabled={selectedVariation?.is_disable || !isSelected}
                 />
@@ -206,7 +206,7 @@ const BookDetails: React.FC<Props> = ({ product, isModal = false }) => {
             </div>
           </div>
 
-          <div className="grid w-full grid-cols-1 gap-5 mt-8 md:grid-cols-3">
+          <div className='mt-8 grid w-full grid-cols-1 gap-5 md:grid-cols-3'>
             {!!categories?.length && (
               <BadgeGroups title={t('text-categories')}>
                 {categories.map((category: any) => (
@@ -235,20 +235,20 @@ const BookDetails: React.FC<Props> = ({ product, isModal = false }) => {
               </BadgeGroups>
             )}
 
-            <div className="flex flex-col items-start w-full overflow-hidden">
-              <span className="pb-3 text-sm font-semibold capitalize text-heading">
+            <div className='flex w-full flex-col items-start overflow-hidden'>
+              <span className='pb-3 text-sm font-semibold capitalize text-heading'>
                 {t('text-sku')}
               </span>
               {hasVariations ? (
                 <span
-                  className="w-full text-sm truncate text-body"
+                  className='w-full truncate text-sm text-body'
                   title={selectedVariation.sku ?? 'sku'}
                 >
                   {selectedVariation.sku}
                 </span>
               ) : (
                 <span
-                  className="w-full text-sm truncate text-body"
+                  className='w-full truncate text-sm text-body'
                   title={sku ?? 'sku'}
                 >
                   {sku}
@@ -259,42 +259,42 @@ const BookDetails: React.FC<Props> = ({ product, isModal = false }) => {
         </div>
       </div>
 
-      <Element name="details" className="pt-5 lg:pt-14">
-        <h2 className="mb-4 text-xl font-bold tracking-tight text-heading md:mb-6 lg:text-3xl">
+      <Element name='details' className='pt-5 lg:pt-14'>
+        <h2 className='mb-4 text-xl font-bold tracking-tight text-heading md:mb-6 lg:text-3xl'>
           {t('text-details')}
         </h2>
-        <p className="text-sm leading-relaxed text-body">{description}</p>
+        <p className='text-sm leading-relaxed text-body'>{description}</p>
 
-        <div className="flex flex-col space-y-3 mt-7">
+        <div className='mt-7 flex flex-col space-y-3'>
           {name && (
-            <p className="text-sm text-body">
-              <span className="font-semibold text-heading ltr:pr-1 rtl:pl-1">
+            <p className='text-sm text-body'>
+              <span className='font-semibold text-heading ltr:pr-1 rtl:pl-1'>
                 {t('text-title')} :
               </span>
               {name}
             </p>
           )}
           {author?.name && (
-            <p className="flex items-center text-sm text-body">
-              <span className="order-1 font-semibold text-heading ltr:pr-1 rtl:pl-1">
+            <p className='flex items-center text-sm text-body'>
+              <span className='order-1 font-semibold text-heading ltr:pr-1 rtl:pl-1'>
                 {t('text-author')} :
               </span>
               <Link
                 href={Routes.author(author?.slug)}
-                className="order-2 hover:text-accent"
+                className='order-2 hover:text-accent'
               >
                 {author?.name}
               </Link>
             </p>
           )}
           {manufacturer?.name && (
-            <p className="flex items-center text-sm text-body">
-              <span className="order-1 font-semibold text-heading ltr:pr-1 rtl:pl-1">
+            <p className='flex items-center text-sm text-body'>
+              <span className='order-1 font-semibold text-heading ltr:pr-1 rtl:pl-1'>
                 {t('text-publisher')} :
               </span>
               <Link
                 href={Routes.manufacturer(manufacturer?.slug)}
-                className="order-2 hover:text-accent"
+                className='order-2 hover:text-accent'
               >
                 {manufacturer?.name}
               </Link>

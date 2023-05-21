@@ -14,7 +14,7 @@ import ProductGridHome from '@/components/products/grids/home';
 function findParentCategories(
   treeItems: any[],
   parentId: number | null = null,
-  link = 'id'
+  link = 'id',
 ): any[] {
   let itemList: any[] = [];
   if (parentId) {
@@ -52,7 +52,7 @@ const FilterCategoryGrid: React.FC<FilterCategoryGridProps> = ({
     findNestedData(categories, query.category, 'children');
   const parentCategories = findParentCategories(
     categories,
-    selectedCategory?.parent_id
+    selectedCategory?.parent_id,
   );
   const renderCategories = Boolean(selectedCategory)
     ? selectedCategory?.children
@@ -67,14 +67,14 @@ const FilterCategoryGrid: React.FC<FilterCategoryGridProps> = ({
       undefined,
       {
         scroll: false,
-      }
+      },
     );
   };
 
   if (loading) {
     return (
-      <div className="hidden xl:block">
-        <div className="px-2 mt-8 w-72">
+      <div className='hidden xl:block'>
+        <div className='mt-8 w-72 px-2'>
           <CategoriesLoader />
         </div>
       </div>
@@ -82,18 +82,18 @@ const FilterCategoryGrid: React.FC<FilterCategoryGridProps> = ({
   }
   if (notFound) {
     return (
-      <div className="bg-light">
-        <div className="min-h-full p-5 md:p-8 lg:p-12 2xl:p-16">
-          <NotFound text="text-no-category" className="h-96" />
+      <div className='bg-light'>
+        <div className='min-h-full p-5 md:p-8 lg:p-12 2xl:p-16'>
+          <NotFound text='text-no-category' className='h-96' />
         </div>
       </div>
     );
   }
   return (
-    <div className="bg-light">
-      <div className="px-3 pt-3 md:px-6 md:pt-6 lg:px-10 lg:pt-10 2xl:px-14 2xl:pt-14">
+    <div className='bg-light'>
+      <div className='px-3 pt-3 md:px-6 md:pt-6 lg:px-10 lg:pt-10 2xl:px-14 2xl:pt-14'>
         {query?.category ? (
-          <Scrollbar className="w-full">
+          <Scrollbar className='w-full'>
             <div
               className={cn('px-2 pt-2 pb-7', {
                 'mb-8 divide-dashed border-b border-dashed border-gray-200':
@@ -106,14 +106,14 @@ const FilterCategoryGrid: React.FC<FilterCategoryGridProps> = ({
             </div>
           </Scrollbar>
         ) : (
-          <h3 className="px-2 pt-2 mb-8 text-2xl font-semibold text-heading">
+          <h3 className='mb-8 px-2 pt-2 text-2xl font-semibold text-heading'>
             {t('text-all-categories')}
           </h3>
         )}
       </div>
 
-      <div className="p-5 !pt-0 md:p-8 lg:p-12 2xl:p-16">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-6">
+      <div className='p-5 !pt-0 md:p-8 lg:p-12 2xl:p-16'>
+        <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-6'>
           {Array.isArray(renderCategories) &&
             renderCategories?.map((item: any, idx: number) => (
               <CategoryCard
@@ -126,7 +126,7 @@ const FilterCategoryGrid: React.FC<FilterCategoryGridProps> = ({
         {/* {isEmpty(renderCategories) && <Products layout="minimal" />} */}
         {isEmpty(renderCategories) && (
           <ProductGridHome
-            gridClassName="!grid-cols-[repeat(auto-fill,minmax(290px,1fr))]"
+            gridClassName='!grid-cols-[repeat(auto-fill,minmax(290px,1fr))]'
             variables={variables}
           />
         )}

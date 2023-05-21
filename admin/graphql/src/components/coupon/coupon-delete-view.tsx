@@ -14,7 +14,7 @@ const CouponDeleteView = () => {
         fields: {
           coupons(existingRefs, { readField }) {
             return existingRefs.data.filter(
-              (ref: any) => deleteCoupon.id !== readField('id', ref)
+              (ref: any) => deleteCoupon.id !== readField('id', ref),
             );
           },
         },

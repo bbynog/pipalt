@@ -40,7 +40,7 @@ const GroupsList = ({ types, refetch }: IProps) => {
           ],
         });
       }, 500),
-    [order]
+    [order],
   );
 
   const onHeaderClick = (value: string | undefined) => ({
@@ -72,7 +72,7 @@ const GroupsList = ({ types, refetch }: IProps) => {
       key: 'name',
       align: alignLeft,
       onHeaderCell: () => onHeaderClick(QueryTypesOrderByColumn.Name),
-      render: (name: any) => <span className="whitespace-nowrap">{name}</span>,
+      render: (name: any) => <span className='whitespace-nowrap'>{name}</span>,
     },
     {
       title: t('table:table-item-icon'),
@@ -82,7 +82,7 @@ const GroupsList = ({ types, refetch }: IProps) => {
       render: (icon: string) => {
         if (!icon) return null;
         return (
-          <span className="flex items-center justify-center">
+          <span className='flex items-center justify-center'>
             {getIcon({
               iconList: typeIcons,
               iconName: icon,
@@ -101,7 +101,7 @@ const GroupsList = ({ types, refetch }: IProps) => {
         <LanguageSwitcher
           slug={slug}
           record={record}
-          deleteModalView="DELETE_TYPE"
+          deleteModalView='DELETE_TYPE'
           routes={Routes?.type}
         />
       ),
@@ -109,13 +109,13 @@ const GroupsList = ({ types, refetch }: IProps) => {
   ];
 
   return (
-    <div className="rounded overflow-hidden shadow mb-8">
+    <div className='mb-8 overflow-hidden rounded shadow'>
       <Table
         // @ts-ignore
         columns={columns}
         emptyText={t('table:empty-table-data')}
         data={types}
-        rowKey="id"
+        rowKey='id'
         scroll={{ x: 380 }}
       />
     </div>

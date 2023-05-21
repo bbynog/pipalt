@@ -40,18 +40,18 @@ const ProfileForm = ({ user }: { user: User }) => {
     >
       {({ register, control }) => (
         <>
-          <div className="mb-8 flex">
-            <Card className="w-full">
-              <div className="mb-8">
-                <FileInput control={control} name="profile.avatar" />
+          <div className='mb-8 flex'>
+            <Card className='w-full'>
+              <div className='mb-8'>
+                <FileInput control={control} name='profile.avatar' />
               </div>
 
-              <div className="mb-6 flex flex-row">
+              <div className='mb-6 flex flex-row'>
                 <Input
-                  className="flex-1"
+                  className='flex-1'
                   label={t('text-name')}
                   {...register('name')}
-                  variant="outline"
+                  variant='outline'
                 />
               </div>
 
@@ -59,13 +59,13 @@ const ProfileForm = ({ user }: { user: User }) => {
                 label={t('text-bio')}
                 //@ts-ignore
                 {...register('profile.bio')}
-                variant="outline"
-                className="mb-6"
+                variant='outline'
+                className='mb-6'
               />
 
-              <div className="flex">
+              <div className='flex'>
                 <Button
-                  className="ltr:ml-auto rtl:mr-auto"
+                  className='ltr:ml-auto rtl:mr-auto'
                   loading={isLoading}
                   disabled={isLoading}
                 >

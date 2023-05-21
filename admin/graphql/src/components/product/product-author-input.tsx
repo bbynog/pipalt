@@ -22,10 +22,10 @@ const ProductAuthorInput = ({ control }: Props) => {
   });
 
   return (
-    <div className="mb-5">
+    <div className='mb-5'>
       <Label>{t('common:text-authors')}</Label>
       <SelectInput
-        name="author"
+        name='author'
         control={control}
         getOptionLabel={(option: any) => option.name}
         getOptionValue={(option: any) => option.id}

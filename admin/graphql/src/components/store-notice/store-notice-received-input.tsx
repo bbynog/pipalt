@@ -43,7 +43,7 @@ const NoticeReceivedByInput = ({
     <div className={className}>
       <Label>{t('form:input-label-received-by')}</Label>
       <SelectInput
-        name="received_by"
+        name='received_by'
         isMulti
         control={control}
         getOptionLabel={(option: any) => option.name}

@@ -22,20 +22,20 @@ const ShopsPage: NextPageWithLayout = () => {
   if (error) return <ErrorMessage message={error.message} />;
   if (!isLoading && !shops.length) {
     return (
-      <div className="min-h-full px-4 pt-6 pb-8 bg-gray-100 lg:p-8">
-        <NotFound text="text-no-shops" />
+      <div className='min-h-full bg-gray-100 px-4 pt-6 pb-8 lg:p-8'>
+        <NotFound text='text-no-shops' />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-light ">
-      <div className="flex flex-col w-full max-w-6xl p-8 mx-auto pt-14">
-        <h3 className="mb-8 text-2xl font-bold text-heading">
+    <div className='min-h-screen bg-light '>
+      <div className='mx-auto flex w-full max-w-6xl flex-col p-8 pt-14'>
+        <h3 className='mb-8 text-2xl font-bold text-heading'>
           {t('text-all-shops')}
         </h3>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
           {isLoading && !shops.length ? (
             <>
               {rangeMap(limit, (i) => (
@@ -47,7 +47,7 @@ const ShopsPage: NextPageWithLayout = () => {
           )}
         </div>
         {hasMore && (
-          <div className="flex items-center justify-center mt-8 lg:mt-12">
+          <div className='mt-8 flex items-center justify-center lg:mt-12'>
             <Button onClick={loadMore} loading={isLoadingMore}>
               {t('text-load-more')}
             </Button>

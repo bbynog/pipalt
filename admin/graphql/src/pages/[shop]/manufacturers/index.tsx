@@ -86,20 +86,20 @@ export default function Manufacturers() {
 
   return (
     <>
-      <Card className="flex flex-col items-center mb-8 xl:flex-row">
-        <div className="mb-4 md:w-1/3 xl:mb-0">
-          <h1 className="text-xl font-semibold text-heading">
+      <Card className='mb-8 flex flex-col items-center xl:flex-row'>
+        <div className='mb-4 md:w-1/3 xl:mb-0'>
+          <h1 className='text-xl font-semibold text-heading'>
             {t('common:text-manufacturers-publications')}
           </h1>
         </div>
 
-        <div className="flex flex-col items-center w-full space-y-4 xl:w-2/3 md:flex-row md:space-y-0 ms-auto">
+        <div className='flex w-full flex-col items-center space-y-4 ms-auto md:flex-row md:space-y-0 xl:w-2/3'>
           <Search onSearch={handleSearch} />
 
           {locale === Config.defaultLanguage && (
             <LinkButton
               href={`/${shop}${Routes.manufacturer.create}`}
-              className="w-full h-12 md:ms-6 md:w-auto"
+              className='h-12 w-full md:w-auto md:ms-6'
             >
               <span>
                 + {t('form:button-label-add-manufacturer-publication')}

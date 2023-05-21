@@ -14,7 +14,7 @@ const CategoryDeleteView = () => {
         fields: {
           categories(existingRefs, { readField }) {
             return existingRefs.data.filter(
-              (ref: any) => deleteCategory.id !== readField('id', ref)
+              (ref: any) => deleteCategory.id !== readField('id', ref),
             );
           },
         },

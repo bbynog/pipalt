@@ -24,8 +24,8 @@ const StickySidebarListCategories: React.FC<
 
   if (loading) {
     return (
-      <div className="hidden xl:block">
-        <div className="mt-8 w-72 px-2">
+      <div className='hidden xl:block'>
+        <div className='mt-8 w-72 px-2'>
           <CategoriesLoader />
         </div>
       </div>
@@ -36,18 +36,18 @@ const StickySidebarListCategories: React.FC<
       className={`hidden h-full bg-light lg:sticky lg:top-22 xl:block xl:w-72 ${className}`}
     >
       {!isMobile && (
-        <div className="max-h-full grow overflow-hidden">
+        <div className='max-h-full grow overflow-hidden'>
           <Scrollbar
-            className="max-h-screen w-full"
+            className='max-h-screen w-full'
             style={{ height: 'calc(100vh - 5.35rem)' }}
           >
             {!notFound ? (
-              <div className="px-5">
-                <TreeMenu items={categories} className="xl:py-8" />
+              <div className='px-5'>
+                <TreeMenu items={categories} className='xl:py-8' />
               </div>
             ) : (
-              <div className="min-h-full w-full px-9 pt-6 pb-8 lg:p-8">
-                <NotFound text="text-no-category" className="h-96" />
+              <div className='min-h-full w-full px-9 pt-6 pb-8 lg:p-8'>
+                <NotFound text='text-no-category' className='h-96' />
               </div>
             )}
           </Scrollbar>
@@ -55,14 +55,14 @@ const StickySidebarListCategories: React.FC<
       )}
 
       {isMobile && (
-        <div className="max-h-full grow overflow-hidden">
+        <div className='max-h-full grow overflow-hidden'>
           {!notFound ? (
-            <div className="px-5">
-              <TreeMenu items={categories} className="xl:py-8" />
+            <div className='px-5'>
+              <TreeMenu items={categories} className='xl:py-8' />
             </div>
           ) : (
-            <div className="min-h-full w-full px-9 pt-6 pb-8 lg:p-8">
-              <NotFound text="text-no-category" className="h-96" />
+            <div className='min-h-full w-full px-9 pt-6 pb-8 lg:p-8'>
+              <NotFound text='text-no-category' className='h-96' />
             </div>
           )}
         </div>

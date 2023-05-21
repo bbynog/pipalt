@@ -366,7 +366,7 @@ export function useRegister() {
   const [_, setAuthorized] = useAtom(authorizationAtom);
   const { closeModal } = useModalAction();
   let [formError, setFormError] = useState<Partial<RegisterUserInput> | null>(
-    null
+    null,
   );
   const [registerUser, { loading: isLoading }] = useRegisterMutation({
     onCompleted: (data) => {
@@ -385,8 +385,8 @@ export function useRegister() {
           Object.entries(serverErrors?.validation).map(([k, v]) => [
             k.split('.')[1],
             v,
-          ])
-        )
+          ]),
+        ),
       );
     },
   });
@@ -437,7 +437,7 @@ export function useChangePassword() {
   const { t } = useTranslation('common');
   const [changePassword, { loading: isLoading }] = useChangePasswordMutation();
   let [formError, setFormError] = useState<Partial<ChangePasswordInput> | null>(
-    null
+    null,
   );
 
   function change(input: ChangePasswordInput) {

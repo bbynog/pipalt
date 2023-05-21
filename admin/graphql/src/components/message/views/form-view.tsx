@@ -80,27 +80,27 @@ const CreateMessageForm = () => {
   return (
     <>
       <form noValidate onSubmit={handleSubmit(onSubmit)}>
-        <div className="relative">
+        <div className='relative'>
           {!!creating ? (
-            <div className="absolute top-0 left-0 z-50 flex h-full w-full cursor-not-allowed bg-[#EEF1F4]/50">
-              <div className="w-4 h-5 m-auto border-2 border-t-2 border-transparent rounded-full animate-spin border-t-accent"></div>
+            <div className='absolute top-0 left-0 z-50 flex h-full w-full cursor-not-allowed bg-[#EEF1F4]/50'>
+              <div className='m-auto h-5 w-4 animate-spin rounded-full border-2 border-t-2 border-transparent border-t-accent'></div>
             </div>
           ) : (
             ''
           )}
           <TextArea
-            className="overflow-x-hidden overflow-y-auto shadow-chatBox"
-            placeholder="Type your message here.."
+            className='overflow-y-auto overflow-x-hidden shadow-chatBox'
+            placeholder='Type your message here..'
             {...register('message')}
-            variant="solid"
-            inputClassName="!border-0 bg-white pr-12 block !h-full"
+            variant='solid'
+            inputClassName='!border-0 bg-white pr-12 block !h-full'
             rows={3}
             disabled={!!creating}
           />
-          <div className="absolute top-0 right-0 h-full">
+          <div className='absolute top-0 right-0 h-full'>
             <Button
-              className="!h-full px-4 text-lg focus:!shadow-none focus:!ring-0"
-              variant="custom"
+              className='!h-full px-4 text-lg focus:!shadow-none focus:!ring-0'
+              variant='custom'
               disabled={!!creating}
             >
               <SendMessageIcon />

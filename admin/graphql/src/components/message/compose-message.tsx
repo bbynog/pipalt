@@ -20,24 +20,24 @@ type FormatOptionLabelProps = {
 };
 
 const formatOptionLabel = ({ logo, name }: FormatOptionLabelProps) => (
-  <div className="flex items-center">
-    <div className="relative mr-3 h-6 w-6 shrink-0 overflow-hidden rounded-full">
+  <div className='flex items-center'>
+    <div className='relative mr-3 h-6 w-6 shrink-0 overflow-hidden rounded-full'>
       {!isEmpty(logo?.thumbnail) ? (
         <Image
           src={logo?.thumbnail}
           alt={name}
           fill
-          sizes="(max-width: 768px) 100vw"
-          className="product-image object-contain"
+          sizes='(max-width: 768px) 100vw'
+          className='product-image object-contain'
         />
       ) : (
         <MessageAvatarPlaceholderIcon
-          className="text-[1.5rem]"
-          color="#DDDDDD"
+          className='text-[1.5rem]'
+          color='#DDDDDD'
         />
       )}
     </div>
-    <div className="truncate">{name}</div>
+    <div className='truncate'>{name}</div>
   </div>
 );
 
@@ -79,23 +79,23 @@ const ComposeMessageModal = () => {
     }
   }
   return (
-    <div className="m-auto block max-w-lg rounded bg-light p-6 md:w-[32.5rem]">
-      <h2 className="mb-6 text-base font-medium">{t('text-starting-chat')}</h2>
+    <div className='m-auto block max-w-lg rounded bg-light p-6 md:w-[32.5rem]'>
+      <h2 className='mb-6 text-base font-medium'>{t('text-starting-chat')}</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Select
           options={shops?.shops?.data}
           isLoading={loading}
           getOptionLabel={(option: any) => option.name}
           getOptionValue={(option: any) => option.slug}
-          placeholder="Find Vendor"
+          placeholder='Find Vendor'
           onChange={onTypeFilter as any}
           isClearable={true}
           // @ts-ignore
           formatOptionLabel={formatOptionLabel}
         />
-        <div className="mt-6 text-right">
+        <div className='mt-6 text-right'>
           <Button
-            className="px-4 text-base"
+            className='px-4 text-base'
             loading={creating}
             disabled={!!creating || !shop || !Boolean(active)}
           >

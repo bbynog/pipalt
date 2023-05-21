@@ -36,7 +36,7 @@ const ShopList = ({ shops, onPagination, refetch }: IProps) => {
           orderBy: value,
         });
       }, 500),
-    [order]
+    [order],
   );
 
   const onHeaderClick = (value: string | undefined) => ({
@@ -58,7 +58,7 @@ const ShopList = ({ shops, onPagination, refetch }: IProps) => {
           alt={record?.name}
           width={42}
           height={42}
-          className="overflow-hidden rounded"
+          className='overflow-hidden rounded'
         />
       ),
     },
@@ -77,7 +77,7 @@ const ShopList = ({ shops, onPagination, refetch }: IProps) => {
       onHeaderCell: () => onHeaderClick('name'),
       render: (name: any, { slug }: any) => (
         <Link href={`/${slug}`}>
-          <span className="whitespace-nowrap">{name}</span>
+          <span className='whitespace-nowrap'>{name}</span>
         </Link>
       ),
     },
@@ -156,19 +156,19 @@ const ShopList = ({ shops, onPagination, refetch }: IProps) => {
 
   return (
     <>
-      <div className="mb-6 overflow-hidden rounded shadow">
+      <div className='mb-6 overflow-hidden rounded shadow'>
         <Table
           //@ts-ignore
           columns={columns}
           emptyText={t('table:empty-table-data')}
           data={data}
-          rowKey="id"
+          rowKey='id'
           scroll={{ x: 800 }}
         />
       </div>
 
       {!!paginatorInfo.total && (
-        <div className="flex items-center justify-end">
+        <div className='flex items-center justify-end'>
           <Pagination
             total={paginatorInfo.total}
             current={paginatorInfo.currentPage}

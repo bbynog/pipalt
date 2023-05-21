@@ -48,13 +48,13 @@ const AddressForm: React.FC<any> = ({ onSubmit }) => {
     data: { address, type },
   } = useModalState();
   return (
-    <div className="min-h-screen p-5 bg-light sm:p-8 md:min-h-0 md:rounded-xl">
-      <h1 className="mb-4 text-lg font-semibold text-center text-heading sm:mb-6">
+    <div className='min-h-screen bg-light p-5 sm:p-8 md:min-h-0 md:rounded-xl'>
+      <h1 className='mb-4 text-center text-lg font-semibold text-heading sm:mb-6'>
         {address ? t('text-update') : t('text-add-new')} {t('text-address')}
       </h1>
       <Form<FormValues>
         onSubmit={onSubmit}
-        className="grid h-full grid-cols-2 gap-5"
+        className='grid h-full grid-cols-2 gap-5'
         validationSchema={addressSchema}
         options={{
           shouldUnregister: true,
@@ -83,18 +83,18 @@ const AddressForm: React.FC<any> = ({ onSubmit }) => {
           <>
             <div>
               <Label>{t('text-type')}</Label>
-              <div className="flex items-center space-s-4">
+              <div className='flex items-center space-s-4'>
                 <Radio
-                  id="billing"
+                  id='billing'
                   {...register('type')}
-                  type="radio"
+                  type='radio'
                   value={AddressType.Billing}
                   label={t('text-billing')}
                 />
                 <Radio
-                  id="shipping"
+                  id='shipping'
                   {...register('type')}
-                  type="radio"
+                  type='radio'
                   value={AddressType.Shipping}
                   label={t('text-shipping')}
                 />
@@ -105,16 +105,16 @@ const AddressForm: React.FC<any> = ({ onSubmit }) => {
               label={t('text-title')}
               {...register('title')}
               error={t(errors.title?.message!)}
-              variant="outline"
-              className="col-span-2"
+              variant='outline'
+              className='col-span-2'
             />
 
             {useGoogleMap && (
-              <div className="col-span-2">
+              <div className='col-span-2'>
                 <Label>{t('text-location')}</Label>
                 <Controller
                   control={control}
-                  name="location"
+                  name='location'
                   render={({ field: { onChange } }) => (
                     <GooglePlacesAutocomplete
                       icon={true}
@@ -126,7 +126,7 @@ const AddressForm: React.FC<any> = ({ onSubmit }) => {
                         setValue('address.zip', location?.zip);
                         setValue(
                           'address.street_address',
-                          location?.street_address
+                          location?.street_address,
                         );
                       }}
                       data={getValues('location')!}
@@ -140,39 +140,39 @@ const AddressForm: React.FC<any> = ({ onSubmit }) => {
               label={t('text-country')}
               {...register('address.country')}
               error={t(errors.address?.country?.message!)}
-              variant="outline"
+              variant='outline'
             />
 
             <Input
               label={t('text-city')}
               {...register('address.city')}
               error={t(errors.address?.city?.message!)}
-              variant="outline"
+              variant='outline'
             />
 
             <Input
               label={t('text-state')}
               {...register('address.state')}
               error={t(errors.address?.state?.message!)}
-              variant="outline"
+              variant='outline'
             />
 
             <Input
               label={t('text-zip')}
               {...register('address.zip')}
               error={t(errors.address?.zip?.message!)}
-              variant="outline"
+              variant='outline'
             />
 
             <TextArea
               label={t('text-street-address')}
               {...register('address.street_address')}
               error={t(errors.address?.street_address?.message!)}
-              variant="outline"
-              className="col-span-2"
+              variant='outline'
+              className='col-span-2'
             />
 
-            <Button className="w-full col-span-2">
+            <Button className='col-span-2 w-full'>
               {address ? t('text-update') : t('text-save')} {t('text-address')}
             </Button>
           </>

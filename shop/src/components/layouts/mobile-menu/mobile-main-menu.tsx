@@ -26,12 +26,12 @@ export default function MobileMainMenu() {
 
   return (
     <DrawerWrapper>
-      <ul className="grow">
+      <ul className='grow'>
         {headerLinks.map(({ href, label }) => (
           <li key={`${href}${label}`}>
             <button
               onClick={() => handleClick(href)}
-              className="flex cursor-pointer items-center py-3 px-5 text-sm font-semibold capitalize text-heading transition duration-200 hover:text-accent md:px-8"
+              className='flex cursor-pointer items-center py-3 px-5 text-sm font-semibold capitalize text-heading transition duration-200 hover:text-accent md:px-8'
             >
               {t(label)}
             </button>

@@ -7,8 +7,8 @@ const Label: React.FC<React.LabelHTMLAttributes<HTMLLabelElement>> = ({
   return (
     <label
       className={cn(
-        'block text-body-dark font-semibold text-sm leading-none mb-3',
-        className
+        'mb-3 block text-sm font-semibold leading-none text-body-dark',
+        className,
       )}
       {...rest}
     />

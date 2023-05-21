@@ -25,11 +25,11 @@ const AddToCartBtn: React.FC<Props> = ({ variant, onClick, disabled }) => {
         <button
           onClick={onClick}
           disabled={disabled}
-          className="group flex h-7 w-full items-center justify-between rounded bg-gray-100 text-xs text-body-dark transition-colors hover:border-accent hover:bg-accent hover:text-light focus:border-accent focus:bg-accent focus:text-light focus:outline-0 md:h-9 md:text-sm"
+          className='group flex h-7 w-full items-center justify-between rounded bg-gray-100 text-xs text-body-dark transition-colors hover:border-accent hover:bg-accent hover:text-light focus:border-accent focus:bg-accent focus:text-light focus:outline-0 md:h-9 md:text-sm'
         >
-          <span className="flex-1">{t('text-add')}</span>
-          <span className="grid h-7 w-7 place-items-center bg-gray-200 transition-colors duration-200 group-hover:bg-accent-600 group-focus:bg-accent-600 ltr:rounded-tr ltr:rounded-br rtl:rounded-tl rtl:rounded-bl md:h-9 md:w-9">
-            <PlusIcon className="h-4 w-4 stroke-2" />
+          <span className='flex-1'>{t('text-add')}</span>
+          <span className='grid h-7 w-7 place-items-center bg-gray-200 transition-colors duration-200 group-hover:bg-accent-600 group-focus:bg-accent-600 ltr:rounded-tr ltr:rounded-br rtl:rounded-tl rtl:rounded-bl md:h-9 md:w-9'>
+            <PlusIcon className='h-4 w-4 stroke-2' />
           </span>
         </button>
       );
@@ -38,9 +38,9 @@ const AddToCartBtn: React.FC<Props> = ({ variant, onClick, disabled }) => {
         <button
           onClick={onClick}
           disabled={disabled}
-          className="flex h-7 w-7 items-center justify-center rounded border border-border-200 bg-light text-sm text-heading transition-colors hover:border-accent hover:bg-accent hover:text-light focus:border-accent focus:bg-accent focus:text-light focus:outline-0 md:h-9 md:w-9"
+          className='flex h-7 w-7 items-center justify-center rounded border border-border-200 bg-light text-sm text-heading transition-colors hover:border-accent hover:bg-accent hover:text-light focus:border-accent focus:bg-accent focus:text-light focus:outline-0 md:h-9 md:w-9'
         >
-          <PlusIcon className="h-5 w-5 stroke-2" />
+          <PlusIcon className='h-5 w-5 stroke-2' />
         </button>
       );
     case 'oganesson':
@@ -48,10 +48,10 @@ const AddToCartBtn: React.FC<Props> = ({ variant, onClick, disabled }) => {
         <button
           onClick={onClick}
           disabled={disabled}
-          className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-sm text-light shadow-500 transition-colors hover:border-accent hover:bg-accent hover:text-light focus:border-accent focus:bg-accent focus:text-light focus:outline-0 md:h-10 md:w-10"
+          className='flex h-8 w-8 items-center justify-center rounded-full bg-accent text-sm text-light shadow-500 transition-colors hover:border-accent hover:bg-accent hover:text-light focus:border-accent focus:bg-accent focus:text-light focus:outline-0 md:h-10 md:w-10'
         >
-          <span className="sr-only">{t('text-plus')}</span>
-          <PlusIcon className="h-5 w-5 stroke-2 md:h-6 md:w-6" />
+          <span className='sr-only'>{t('text-plus')}</span>
+          <PlusIcon className='h-5 w-5 stroke-2 md:h-6 md:w-6' />
         </button>
       );
     case 'single':
@@ -59,9 +59,9 @@ const AddToCartBtn: React.FC<Props> = ({ variant, onClick, disabled }) => {
         <button
           onClick={onClick}
           disabled={disabled}
-          className="order-5 flex items-center justify-center rounded-full border-2 border-border-100 bg-light px-3 py-2 text-sm font-semibold text-accent transition-colors duration-300 hover:border-accent hover:bg-accent hover:text-light focus:border-accent focus:bg-accent focus:text-light focus:outline-0 sm:order-4 sm:justify-start sm:px-5"
+          className='order-5 flex items-center justify-center rounded-full border-2 border-border-100 bg-light px-3 py-2 text-sm font-semibold text-accent transition-colors duration-300 hover:border-accent hover:bg-accent hover:text-light focus:border-accent focus:bg-accent focus:text-light focus:outline-0 sm:order-4 sm:justify-start sm:px-5'
         >
-          <CartIcon className="h-4 w-4 ltr:mr-2.5 rtl:ml-2.5" />
+          <CartIcon className='h-4 w-4 ltr:mr-2.5 rtl:ml-2.5' />
           <span>{t('text-cart')}</span>
         </button>
       );
@@ -75,7 +75,7 @@ const AddToCartBtn: React.FC<Props> = ({ variant, onClick, disabled }) => {
             {
               'cursor-not-allowed border border-border-400 !bg-gray-300 !text-body hover:!bg-gray-300':
                 disabled,
-            }
+            },
           )}
         >
           <span>{t('text-add-cart')}</span>
@@ -90,7 +90,7 @@ const AddToCartBtn: React.FC<Props> = ({ variant, onClick, disabled }) => {
             'whitespace-nowrap text-sm font-semibold text-accent hover:text-accent-hover hover:underline',
             {
               'text-gray-300 hover:text-gray-300': disabled,
-            }
+            },
           )}
         >
           <span>{t('text-add-to-cart')}</span>
@@ -102,10 +102,10 @@ const AddToCartBtn: React.FC<Props> = ({ variant, onClick, disabled }) => {
           onClick={onClick}
           disabled={disabled}
           title={disabled ? 'Out Of Stock' : ''}
-          className="flex h-7 w-7 items-center justify-center rounded border border-border-200 bg-light text-sm text-accent transition-colors hover:border-accent hover:bg-accent hover:text-light focus:border-accent focus:bg-accent focus:text-light focus:outline-0 md:h-9 md:w-9"
+          className='flex h-7 w-7 items-center justify-center rounded border border-border-200 bg-light text-sm text-accent transition-colors hover:border-accent hover:bg-accent hover:text-light focus:border-accent focus:bg-accent focus:text-light focus:outline-0 md:h-9 md:w-9'
         >
-          <span className="sr-only">{t('text-plus')}</span>
-          <PlusIcon className="h-5 w-5 stroke-2" />
+          <span className='sr-only'>{t('text-plus')}</span>
+          <PlusIcon className='h-5 w-5 stroke-2' />
         </button>
       );
   }

@@ -21,10 +21,10 @@ const ProductGroupInput = ({ control, error }: Props) => {
   });
   const { t } = useTranslation();
   return (
-    <div className="mb-5">
+    <div className='mb-5'>
       <Label>{t('form:input-label-group')}*</Label>
       <SelectInput
-        name="type"
+        name='type'
         control={control}
         getOptionLabel={(option: any) => option.name}
         getOptionValue={(option: any) => option.id}

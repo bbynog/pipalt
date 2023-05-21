@@ -3,6 +3,6 @@ import { PaymentIntentService } from './payment-intent.service';
 import { PaymentIntentResolver } from './payment-intent.resolver';
 
 @Module({
-  providers: [PaymentIntentService, PaymentIntentResolver]
+  providers: [PaymentIntentService, PaymentIntentResolver],
 })
 export class PaymentIntentModule {}

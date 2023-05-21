@@ -66,7 +66,7 @@ export function useProducts(options: Partial<ProductQueryOptions>) {
 }
 
 export const usePopularProducts = (
-  options: Partial<PopularProductQueryOptions>
+  options: Partial<PopularProductQueryOptions>,
 ) => {
   const { locale } = useRouter();
 

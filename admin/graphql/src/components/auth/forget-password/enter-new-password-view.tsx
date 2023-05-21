@@ -28,11 +28,11 @@ const EnterNewPasswordView = ({ onSubmit, loading }: Props) => {
         label={t('form:input-label-password')}
         {...register('password')}
         error={t(errors.password?.message!)}
-        variant="outline"
-        className="mb-5"
+        variant='outline'
+        className='mb-5'
       />
 
-      <Button className="w-full h-11" loading={loading} disabled={loading}>
+      <Button className='h-11 w-full' loading={loading} disabled={loading}>
         {t('form:text-reset-password')}
       </Button>
     </form>

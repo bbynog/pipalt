@@ -20,10 +20,10 @@ export default function OrderViewHeader({
 }: OrderViewHeaderProps) {
   const { t } = useTranslation('common');
   const isPaymentCOD = [PaymentGateway.COD, PaymentGateway.CASH].includes(
-    order?.payment_gateway
+    order?.payment_gateway,
   );
   const isOrderPending = ![OrderStatus.CANCELLED, OrderStatus.FAILED].includes(
-    order?.order_status
+    order?.order_status,
   );
   const isPaymentActionPending =
     !isPaymentCOD &&
@@ -32,7 +32,7 @@ export default function OrderViewHeader({
 
   return (
     <div className={cn(`bg-[#F7F8FA] ${wrapperClassName}`)}>
-      <div className="mb-0 flex flex-col flex-wrap items-center justify-between gap-x-8 text-base font-bold text-heading sm:flex-row lg:flex-nowrap">
+      <div className='mb-0 flex flex-col flex-wrap items-center justify-between gap-x-8 text-base font-bold text-heading sm:flex-row lg:flex-nowrap'>
         <div
           className={`order-2 flex  w-full gap-6 sm:order-1 ${
             !isPaymentActionPending
@@ -41,7 +41,7 @@ export default function OrderViewHeader({
           }`}
         >
           <div>
-            <span className="mb-2 block lg:mb-0 lg:inline-block lg:ltr:mr-4 lg:rtl:ml-4">
+            <span className='mb-2 block lg:mb-0 lg:inline-block lg:ltr:mr-4 lg:rtl:ml-4'>
               {t('text-order-status')} :
             </span>
             <Badge
@@ -50,7 +50,7 @@ export default function OrderViewHeader({
             />
           </div>
           <div>
-            <span className="mb-2 block lg:mb-0 lg:inline-block lg:ltr:mr-4 lg:rtl:ml-4">
+            <span className='mb-2 block lg:mb-0 lg:inline-block lg:ltr:mr-4 lg:rtl:ml-4'>
               {t('text-payment-status')} :
             </span>
             <Badge

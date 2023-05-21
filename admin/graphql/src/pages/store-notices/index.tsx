@@ -49,20 +49,20 @@ export default function StoreNotices() {
 
   return (
     <>
-      <Card className="flex flex-col items-center mb-8 xl:flex-row">
-        <div className="mb-4 md:w-1/4 xl:mb-0">
-          <h1 className="text-xl font-semibold text-heading">
+      <Card className='mb-8 flex flex-col items-center xl:flex-row'>
+        <div className='mb-4 md:w-1/4 xl:mb-0'>
+          <h1 className='text-xl font-semibold text-heading'>
             {t('form:input-label-store-notices')}
           </h1>
         </div>
 
-        <div className="flex flex-col items-center w-full space-y-4 xl:w-1/2 md:flex-row md:space-y-0 ms-auto">
+        <div className='flex w-full flex-col items-center space-y-4 ms-auto md:flex-row md:space-y-0 xl:w-1/2'>
           <Search onSearch={handleSearch} />
 
           {locale === Config.defaultLanguage && (
             <LinkButton
               href={`${Routes.storeNotice.create}`}
-              className="w-full h-12 md:ms-6 md:w-auto"
+              className='h-12 w-full md:w-auto md:ms-6'
             >
               <span>+ {t('form:button-label-add-store-notice')}</span>
             </LinkButton>

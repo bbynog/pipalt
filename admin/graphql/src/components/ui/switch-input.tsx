@@ -39,9 +39,9 @@ const SwitchInput = ({
             } relative inline-flex h-6 w-11 items-center rounded-full focus:outline-none ${
               disabled ? 'cursor-not-allowed bg-[#EEF1F4]' : ''
             }`}
-            dir="ltr"
+            dir='ltr'
           >
-            <span className="sr-only">Enable {label}</span>
+            <span className='sr-only'>Enable {label}</span>
             <span
               className={`${
                 value ? 'translate-x-6' : 'translate-x-1'

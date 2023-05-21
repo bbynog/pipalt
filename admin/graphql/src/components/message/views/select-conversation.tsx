@@ -11,9 +11,9 @@ const SelectConversation = ({ className, ...rest }: Props) => {
   return (
     <>
       <div className={cn('m-auto w-full', className)} {...rest}>
-        <div className="text-center">
-          <SelectConversationIcon className="mx-auto mb-14" />
-          <h2 className="text-xl font-medium">
+        <div className='text-center'>
+          <SelectConversationIcon className='mx-auto mb-14' />
+          <h2 className='text-xl font-medium'>
             {t('text-select-your-conversation')}
           </h2>
         </div>

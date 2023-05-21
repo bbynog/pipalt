@@ -20,20 +20,20 @@ const OrderListMobile: React.FC<OrdersWithLoaderProps> = ({
   isLoadingMore,
   onLoadMore,
   orders,
-  loadingStatus
+  loadingStatus,
 }) => {
   const { t } = useTranslation('common');
   const [selectedOrder, setSelectedOrder] = useSelectedOrder();
 
   return (
-    <div className="flex w-full flex-col lg:hidden">
-      <div className="flex h-full w-full flex-col px-0 pb-5">
-        <h3 className="pb-5 text-xl font-semibold text-heading">
+    <div className='flex w-full flex-col lg:hidden'>
+      <div className='flex h-full w-full flex-col px-0 pb-5'>
+        <h3 className='pb-5 text-xl font-semibold text-heading'>
           {t('profile-sidebar-orders')}
         </h3>
         <Collapse
           accordion={true}
-          defaultActiveKey="active"
+          defaultActiveKey='active'
           expandIcon={() => null}
         >
           {orders.map((order, index: number) => (
@@ -46,9 +46,9 @@ const OrderListMobile: React.FC<OrdersWithLoaderProps> = ({
                   isActive={order?.id === selectedOrder?.id}
                 />
               }
-              headerClass="accordion-title"
+              headerClass='accordion-title'
               key={index}
-              className="mb-4"
+              className='mb-4'
             >
               {selectedOrder && (
                 <OrderDetails
@@ -60,11 +60,11 @@ const OrderListMobile: React.FC<OrdersWithLoaderProps> = ({
           ))}
 
           {hasNextPage && (
-            <div className="mt-8 flex justify-center">
+            <div className='mt-8 flex justify-center'>
               <Button
                 loading={isLoadingMore}
                 onClick={onLoadMore}
-                className="h-11 text-sm font-semibold md:text-base"
+                className='h-11 text-sm font-semibold md:text-base'
               >
                 {t('text-load-more')}
               </Button>

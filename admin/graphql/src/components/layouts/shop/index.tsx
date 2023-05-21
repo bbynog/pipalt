@@ -32,7 +32,7 @@ const ShopLayout: React.FC<{
               icon={icon}
             />
           );
-        }
+        },
       )}
     </Fragment>
   );
@@ -41,7 +41,7 @@ const ShopLayout: React.FC<{
 
   return (
     <div
-      className="flex flex-col min-h-screen transition-colors duration-150 bg-gray-100"
+      className='flex min-h-screen flex-col bg-gray-100 transition-colors duration-150'
       dir={dir}
     >
       <Navbar />
@@ -49,14 +49,14 @@ const ShopLayout: React.FC<{
         <SidebarItemMap />
       </MobileNavigation>
 
-      <div className="flex flex-1 pt-20">
-        <aside className="fixed bottom-0 hidden h-full px-4 overflow-y-auto bg-white shadow w-72 xl:w-76 lg:block start-0 pt-22">
-          <div className="flex flex-col py-3 space-y-6">
+      <div className='flex flex-1 pt-20'>
+        <aside className='xl:w-76 fixed bottom-0 hidden h-full w-72 overflow-y-auto bg-white px-4 pt-22 shadow start-0 lg:block'>
+          <div className='flex flex-col space-y-6 py-3'>
             <SidebarItemMap />
           </div>
         </aside>
-        <main className="w-full lg:ps-72 xl:ps-76">
-          <div className="h-full p-5 md:p-8">{children}</div>
+        <main className='xl:ps-76 w-full lg:ps-72'>
+          <div className='h-full p-5 md:p-8'>{children}</div>
         </main>
       </div>
     </div>

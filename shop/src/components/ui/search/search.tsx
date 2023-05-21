@@ -29,7 +29,7 @@ const Search: React.FC<Props> = ({ label, variant, ...props }) => {
       undefined,
       {
         scroll: false,
-      }
+      },
     );
   };
 
@@ -46,7 +46,7 @@ const Search: React.FC<Props> = ({ label, variant, ...props }) => {
         undefined,
         {
           scroll: false,
-        }
+        },
       );
     }
   }
@@ -58,7 +58,7 @@ const Search: React.FC<Props> = ({ label, variant, ...props }) => {
       onClearSearch={clearSearch}
       onChange={handleOnChange}
       value={searchTerm}
-      name="search"
+      name='search'
       placeholder={t('common:text-search-placeholder')}
       variant={variant}
       {...props}

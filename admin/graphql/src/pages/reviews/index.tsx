@@ -38,9 +38,9 @@ export default function Reviews() {
 
   return (
     <>
-      <Card className="flex flex-col mb-8">
-        <div className="w-full flex flex-col md:flex-row items-center">
-          <h1 className="text-xl font-semibold text-heading">
+      <Card className='mb-8 flex flex-col'>
+        <div className='flex w-full flex-col items-center md:flex-row'>
+          <h1 className='text-xl font-semibold text-heading'>
             {t('form:input-label-reviews')}
           </h1>
         </div>

@@ -38,7 +38,7 @@ const StoreNoticeCard: React.FC<NoticeCardProps> = ({ noticeData }) => {
   };
 
   return (
-    <div onClick={onClickHandel} role="button">
+    <div onClick={onClickHandel} role='button'>
       <div
         className={cn('relative', {
           'opacity-70': is_read,
@@ -54,19 +54,19 @@ const StoreNoticeCard: React.FC<NoticeCardProps> = ({ noticeData }) => {
                 StoreNoticePriority.Medium.toLocaleLowerCase() === priority,
               'border-[#FFD361] bg-[#FFFBF0]':
                 StoreNoticePriority.Low.toLocaleLowerCase() === priority,
-            }
+            },
           )}
         >
           <div
             className={cn(
               'flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl text-white md:h-[70px] md:w-[70px] md:rounded-[20px]',
-              PriorityColor(priority)
+              PriorityColor(priority),
             )}
           >
-            <InfoIcon className="w-8 h-8 md:h-9 md:w-9" />
+            <InfoIcon className='h-8 w-8 md:h-9 md:w-9' />
           </div>
 
-          <div className="mt-4 md:mt-0 md:ms-6 lg:ms-8">
+          <div className='mt-4 md:mt-0 md:ms-6 lg:ms-8'>
             <h3
               className={`mb-2.5 text-lg  ${
                 is_read
@@ -78,15 +78,15 @@ const StoreNoticeCard: React.FC<NoticeCardProps> = ({ noticeData }) => {
               <Badge
                 text={priority}
                 color={PriorityColor(priority)}
-                className="font-medium uppercase"
+                className='font-medium uppercase'
               />
             </h3>
             {description && (
               <>
-                <p className="mb-2 text-[15px] leading-relaxed text-body">
+                <p className='mb-2 text-[15px] leading-relaxed text-body'>
                   {description.substring(0, 250) + '...'}
                 </p>
-                <span className="inline-block text-[15px] font-bold text-accent">
+                <span className='inline-block text-[15px] font-bold text-accent'>
                   {t('common:text-read-more')}
                 </span>
               </>
@@ -99,11 +99,11 @@ const StoreNoticeCard: React.FC<NoticeCardProps> = ({ noticeData }) => {
             is_read ? 'opacity-60' : 'hover:text-black'
           }`}
         >
-          <span className="sr-only">{t('text-close')}</span>
+          <span className='sr-only'>{t('text-close')}</span>
           {is_read ? (
-            <CheckMarkFill className="w-5 h-5" />
+            <CheckMarkFill className='h-5 w-5' />
           ) : (
-            <CheckMarkCircle className="w-5 h-5" />
+            <CheckMarkCircle className='h-5 w-5' />
           )}
         </div>
       </div>

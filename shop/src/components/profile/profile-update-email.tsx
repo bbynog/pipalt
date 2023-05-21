@@ -31,20 +31,20 @@ const ProfileUpdateEmail = ({ user }: { user: User }) => {
     >
       {({ register }) => (
         <>
-          <Card className="mb-8 w-full">
-            <div className="mb-6 flex flex-row">
+          <Card className='mb-8 w-full'>
+            <div className='mb-6 flex flex-row'>
               <Input
-                className="flex-1"
+                className='flex-1'
                 label={t('text-email')}
                 {...register('email')}
-                variant="outline"
+                variant='outline'
                 disabled={!!isLoading}
               />
             </div>
 
-            <div className="flex">
+            <div className='flex'>
               <Button
-                className="ltr:ml-auto rtl:mr-auto"
+                className='ltr:ml-auto rtl:mr-auto'
                 loading={isLoading}
                 disabled={isLoading}
               >

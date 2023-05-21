@@ -18,19 +18,19 @@ type MegaMenuProps = {
 const MegaMenu: React.FC<MegaMenuProps> = ({ columns }) => {
   const { t } = useTranslation('menu');
   return (
-    <div className="megaMenu shadow-header bg-white absolute border border-gray-200 ltr:left-0 rtl:right-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible shadow-md">
-      <div className="grid grid-cols-5">
+    <div className='megaMenu shadow-header invisible absolute border border-gray-200 bg-white opacity-0 shadow-md group-hover:visible group-hover:opacity-100 ltr:left-0 rtl:right-0'>
+      <div className='grid grid-cols-5'>
         {columns?.map((column) => (
           <ul
-            className="even:bg-gray-50 pb-7 2xl:pb-8 pt-6 2xl:pt-7"
+            className='pb-7 pt-6 even:bg-gray-50 2xl:pb-8 2xl:pt-7'
             key={column.id}
           >
             {column?.columnItems?.map((columnItem) => (
               <React.Fragment key={columnItem.id}>
-                <li className="mb-1.5">
+                <li className='mb-1.5'>
                   <Link
                     href={columnItem.path}
-                    className="block text-sm py-1.5 text-heading font-semibold px-5 xl:px-8 2xl:px-10 transition-colors hover:text-accent"
+                    className='block py-1.5 px-5 text-sm font-semibold text-heading transition-colors hover:text-accent xl:px-8 2xl:px-10'
                   >
                     {t(columnItem.label)}
                   </Link>
@@ -40,13 +40,13 @@ const MegaMenu: React.FC<MegaMenuProps> = ({ columns }) => {
                     key={item.id}
                     className={
                       columnItem?.columnItemItems?.length === item.id
-                        ? 'border-b border-gray-200 pb-3.5 mb-3'
+                        ? 'mb-3 border-b border-gray-200 pb-3.5'
                         : ''
                     }
                   >
                     <Link
                       href={item.path}
-                      className="transition-colors text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-accent"
+                      className='block py-1.5 px-5 text-sm text-body transition-colors hover:text-accent xl:px-8 2xl:px-10'
                     >
                       {t(item.label)}
                     </Link>

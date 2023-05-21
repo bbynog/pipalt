@@ -53,8 +53,8 @@ const socialIcon = [
 
 export const updatedIcons = socialIcon.map((item: any) => {
   item.label = (
-    <div className="flex space-s-4 items-center text-body">
-      <span className="flex w-4 h-4 items-center justify-center">
+    <div className='flex items-center text-body space-s-4'>
+      <span className='flex h-4 w-4 items-center justify-center'>
         {getIcon({
           iconList: socialIcons,
           iconName: item.value,
@@ -116,7 +116,7 @@ const ShopForm = ({ initialValues }: { initialValues?: any }) => {
               socials: initialValues?.settings?.socials
                 ? initialValues?.settings?.socials.map((social: any) => ({
                     icon: updatedIcons?.find(
-                      (icon) => icon?.value === social?.icon
+                      (icon) => icon?.value === social?.icon,
                     ),
                     url: social?.url,
                   }))
@@ -183,163 +183,163 @@ const ShopForm = ({ initialValues }: { initialValues?: any }) => {
     <span>
       {t('form:shop-cover-image-help-text')} <br />
       {t('form:cover-image-dimension-help-text')} &nbsp;
-      <span className="font-bold">1170 x 435{t('common:text-px')}</span>
+      <span className='font-bold'>1170 x 435{t('common:text-px')}</span>
     </span>
   );
 
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        <div className="flex flex-wrap pb-8 border-b border-dashed border-border-base my-5 sm:my-8">
+        <div className='my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8'>
           <Description
             title={t('form:input-label-logo')}
             details={t('form:shop-logo-help-text')}
-            className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8"
+            className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
           />
 
-          <Card className="w-full sm:w-8/12 md:w-2/3">
-            <FileInput name="logo" control={control} multiple={false} />
+          <Card className='w-full sm:w-8/12 md:w-2/3'>
+            <FileInput name='logo' control={control} multiple={false} />
           </Card>
         </div>
 
-        <div className="flex flex-wrap pb-8 border-b border-dashed border-border-base my-5 sm:my-8">
+        <div className='my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8'>
           <Description
             title={t('form:shop-cover-image-title')}
             details={coverImageInformation}
-            className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8"
+            className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
           />
 
-          <Card className="w-full sm:w-8/12 md:w-2/3">
-            <FileInput name="cover_image" control={control} multiple={false} />
+          <Card className='w-full sm:w-8/12 md:w-2/3'>
+            <FileInput name='cover_image' control={control} multiple={false} />
           </Card>
         </div>
-        <div className="flex flex-wrap pb-8 border-b border-dashed border-border-base my-5 sm:my-8">
+        <div className='my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8'>
           <Description
             title={t('form:shop-basic-info')}
             details={t('form:shop-basic-info-help-text')}
-            className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8"
+            className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
           />
-          <Card className="w-full sm:w-8/12 md:w-2/3">
+          <Card className='w-full sm:w-8/12 md:w-2/3'>
             <Input
               label={t('form:input-label-name')}
               {...register('name')}
-              variant="outline"
-              className="mb-5"
+              variant='outline'
+              className='mb-5'
               error={t(errors.name?.message!)}
             />
             <TextArea
               label={t('form:input-label-description')}
               {...register('description')}
-              variant="outline"
+              variant='outline'
               error={t(errors.description?.message!)}
             />
           </Card>
         </div>
-        <div className="flex flex-wrap pb-8 border-b border-dashed border-gray-300 my-5 sm:my-8">
+        <div className='my-5 flex flex-wrap border-b border-dashed border-gray-300 pb-8 sm:my-8'>
           <Description
             title={t('form:shop-payment-info')}
             details={t('form:payment-info-helper-text')}
-            className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8"
+            className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
           />
 
-          <Card className="w-full sm:w-8/12 md:w-2/3">
+          <Card className='w-full sm:w-8/12 md:w-2/3'>
             <Input
               label={t('form:input-label-account-holder-name')}
               {...register('balance.payment_info.name')}
-              variant="outline"
-              className="mb-5"
+              variant='outline'
+              className='mb-5'
               error={t(errors.balance?.payment_info?.name?.message!)}
             />
             <Input
               label={t('form:input-label-account-holder-email')}
               {...register('balance.payment_info.email')}
-              variant="outline"
-              className="mb-5"
+              variant='outline'
+              className='mb-5'
               error={t(errors.balance?.payment_info?.email?.message!)}
             />
             <Input
               label={t('form:input-label-bank-name')}
               {...register('balance.payment_info.bank')}
-              variant="outline"
-              className="mb-5"
+              variant='outline'
+              className='mb-5'
               error={t(errors.balance?.payment_info?.bank?.message!)}
             />
             <Input
               label={t('form:input-label-account-number')}
               {...register('balance.payment_info.account')}
-              variant="outline"
+              variant='outline'
               error={t(errors.balance?.payment_info?.account?.message!)}
             />
           </Card>
         </div>
-        <div className="flex flex-wrap pb-8 border-b border-dashed border-gray-300 my-5 sm:my-8">
+        <div className='my-5 flex flex-wrap border-b border-dashed border-gray-300 pb-8 sm:my-8'>
           <Description
             title={t('form:shop-address')}
             details={t('form:shop-address-helper-text')}
-            className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8"
+            className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
           />
 
-          <Card className="w-full sm:w-8/12 md:w-2/3">
+          <Card className='w-full sm:w-8/12 md:w-2/3'>
             <Input
               label={t('form:input-label-country')}
               {...register('address.country')}
-              variant="outline"
-              className="mb-5"
+              variant='outline'
+              className='mb-5'
               error={t(errors.address?.country?.message!)}
             />
             <Input
               label={t('form:input-label-city')}
               {...register('address.city')}
-              variant="outline"
-              className="mb-5"
+              variant='outline'
+              className='mb-5'
               error={t(errors.address?.city?.message!)}
             />
             <Input
               label={t('form:input-label-state')}
               {...register('address.state')}
-              variant="outline"
-              className="mb-5"
+              variant='outline'
+              className='mb-5'
               error={t(errors.address?.state?.message!)}
             />
             <Input
               label={t('form:input-label-zip')}
               {...register('address.zip')}
-              variant="outline"
-              className="mb-5"
+              variant='outline'
+              className='mb-5'
               error={t(errors.address?.zip?.message!)}
             />
             <TextArea
               label={t('form:input-label-street-address')}
               {...register('address.street_address')}
-              variant="outline"
+              variant='outline'
               error={t(errors.address?.street_address?.message!)}
             />
           </Card>
         </div>
         {permissions?.includes(STORE_OWNER) ? (
-          <div className="my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8">
+          <div className='my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8'>
             <Description
               title={t('form:form-notification-title')}
               details={t('form:form-notification-description')}
-              className="w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5"
+              className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
             />
 
-            <Card className="mb-5 w-full sm:w-8/12 md:w-2/3">
+            <Card className='mb-5 w-full sm:w-8/12 md:w-2/3'>
               <Input
                 label={t('form:input-notification-email')}
                 {...register('settings.notifications.email')}
-                variant="outline"
-                className="mb-5"
+                variant='outline'
+                className='mb-5'
                 disabled={permissions?.includes(SUPER_ADMIN)}
-                type="email"
+                type='email'
               />
-              <div className="flex items-center gap-x-4">
+              <div className='flex items-center gap-x-4'>
                 <SwitchInput
-                  name="settings.notifications.enable"
+                  name='settings.notifications.enable'
                   control={control}
                   disabled={permissions?.includes(SUPER_ADMIN)}
                 />
-                <Label className="mb-0">
+                <Label className='mb-0'>
                   {t('form:input-enable-notification')}
                 </Label>
               </div>
@@ -348,19 +348,19 @@ const ShopForm = ({ initialValues }: { initialValues?: any }) => {
         ) : (
           ''
         )}
-        <div className="flex flex-wrap pb-8 border-b border-dashed border-gray-300 my-5 sm:my-8">
+        <div className='my-5 flex flex-wrap border-b border-dashed border-gray-300 pb-8 sm:my-8'>
           <Description
             title={t('form:shop-settings')}
             details={t('form:shop-settings-helper-text')}
-            className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8"
+            className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
           />
 
-          <Card className="w-full sm:w-8/12 md:w-2/3">
-            <div className="mb-5">
+          <Card className='w-full sm:w-8/12 md:w-2/3'>
+            <div className='mb-5'>
               <Label>{t('form:input-label-autocomplete')}</Label>
               <Controller
                 control={control}
-                name="settings.location"
+                name='settings.location'
                 render={({ field: { onChange } }) => (
                   <GooglePlacesAutocomplete
                     onChange={onChange}
@@ -372,15 +372,15 @@ const ShopForm = ({ initialValues }: { initialValues?: any }) => {
             <Input
               label={t('form:input-label-contact')}
               {...register('settings.contact')}
-              variant="outline"
-              className="mb-5"
+              variant='outline'
+              className='mb-5'
               error={t(errors.settings?.contact?.message!)}
             />
             <Input
               label={t('form:input-label-website')}
               {...register('settings.website')}
-              variant="outline"
-              className="mb-5"
+              variant='outline'
+              className='mb-5'
               error={t(errors.settings?.website?.message!)}
             />
 
@@ -389,11 +389,11 @@ const ShopForm = ({ initialValues }: { initialValues?: any }) => {
               {fields.map(
                 (item: ShopSocialInput & { id: string }, index: number) => (
                   <div
-                    className="border-b border-dashed border-border-200 first:border-t last:border-b-0 first:mt-5 md:first:mt-10 py-5 md:py-8"
+                    className='border-b border-dashed border-border-200 py-5 first:mt-5 first:border-t last:border-b-0 md:py-8 md:first:mt-10'
                     key={item.id}
                   >
-                    <div className="grid grid-cols-1 sm:grid-cols-5 gap-5">
-                      <div className="sm:col-span-2">
+                    <div className='grid grid-cols-1 gap-5 sm:grid-cols-5'>
+                      <div className='sm:col-span-2'>
                         <Label>{t('form:input-label-select-platform')}</Label>
                         <SelectInput
                           name={`settings.socials.${index}.icon` as const}
@@ -411,9 +411,9 @@ const ShopForm = ({ initialValues }: { initialValues?: any }) => {
                         defaultValue={item?.icon!} // make sure to set up defaultValue
                       /> */}
                       <Input
-                        className="sm:col-span-2"
+                        className='sm:col-span-2'
                         label={t('form:input-label-social-url')}
-                        variant="outline"
+                        variant='outline'
                         {...register(`settings.socials.${index}.url` as const)}
                         defaultValue={item.url!} // make sure to set up defaultValue
                       />
@@ -421,27 +421,27 @@ const ShopForm = ({ initialValues }: { initialValues?: any }) => {
                         onClick={() => {
                           remove(index);
                         }}
-                        type="button"
-                        className="text-sm text-red-500 hover:text-red-700 transition-colors duration-200 focus:outline-none sm:mt-4 sm:col-span-1"
+                        type='button'
+                        className='text-sm text-red-500 transition-colors duration-200 hover:text-red-700 focus:outline-none sm:col-span-1 sm:mt-4'
                       >
                         {t('form:button-label-remove')}
                       </button>
                     </div>
                   </div>
-                )
+                ),
               )}
             </div>
 
             <Button
-              type="button"
+              type='button'
               onClick={() => append({ icon: '', url: '' })}
-              className="w-full sm:w-auto"
+              className='w-full sm:w-auto'
             >
               {t('form:button-label-add-social')}
             </Button>
           </Card>
         </div>
-        <div className="mb-5 text-end">
+        <div className='mb-5 text-end'>
           <Button
             loading={creating || updating}
             disabled={creating || updating}

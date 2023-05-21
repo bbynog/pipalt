@@ -1,6 +1,6 @@
-import {CoreEntity} from 'src/common/entities/core.entity';
-import {PaymentGateWay} from './payment-gateway.entity';
-import {InputType, ObjectType} from '@nestjs/graphql';
+import { CoreEntity } from 'src/common/entities/core.entity';
+import { PaymentGateWay } from './payment-gateway.entity';
+import { InputType, ObjectType } from '@nestjs/graphql';
 
 @InputType('Card', { isAbstract: true })
 @ObjectType()

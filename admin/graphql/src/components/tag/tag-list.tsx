@@ -43,7 +43,7 @@ const TagList = ({ tags, onPagination, refetch }: IProps) => {
           ],
         });
       }, 300),
-    [order]
+    [order],
   );
 
   const onHeaderClick = (value: string | undefined) => ({
@@ -91,7 +91,7 @@ const TagList = ({ tags, onPagination, refetch }: IProps) => {
 
       render: (type: any) => (
         <div
-          className="whitespace-nowrap truncate overflow-hidden"
+          className='overflow-hidden truncate whitespace-nowrap'
           title={type?.name}
         >
           {type?.name}
@@ -107,7 +107,7 @@ const TagList = ({ tags, onPagination, refetch }: IProps) => {
         <LanguageSwitcher
           slug={slug}
           record={record}
-          deleteModalView="DELETE_TAG"
+          deleteModalView='DELETE_TAG'
           routes={Routes?.tag}
         />
       ),
@@ -116,14 +116,14 @@ const TagList = ({ tags, onPagination, refetch }: IProps) => {
 
   return (
     <>
-      <div className="rounded overflow-hidden shadow mb-6">
+      <div className='mb-6 overflow-hidden rounded shadow'>
         <Table
           //@ts-ignore
           columns={columns}
           emptyText={t('table:empty-table-data')}
           //@ts-ignore
           data={data}
-          rowKey="id"
+          rowKey='id'
           scroll={{ x: 1000 }}
           expandable={{
             expandedRowRender: () => '',
@@ -133,7 +133,7 @@ const TagList = ({ tags, onPagination, refetch }: IProps) => {
       </div>
 
       {!!paginatorInfo.total && (
-        <div className="flex justify-end items-center">
+        <div className='flex items-center justify-end'>
           <Pagination
             total={paginatorInfo.total}
             current={paginatorInfo.currentPage}

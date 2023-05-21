@@ -14,7 +14,7 @@ const TaxDeleteView = () => {
         fields: {
           taxClasses(existingRefs, { readField }) {
             return existingRefs.filter(
-              (ref: any) => deleteTax.id !== readField('id', ref)
+              (ref: any) => deleteTax.id !== readField('id', ref),
             );
           },
         },

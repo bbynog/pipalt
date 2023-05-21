@@ -17,39 +17,39 @@ const OrderItemList = (_: any, record: any) => {
   let name = record.name;
   if (record?.pivot?.variation_option_id) {
     const variationTitle = record?.variation_options?.find(
-      (vo: any) => vo?.id === record?.pivot?.variation_option_id
+      (vo: any) => vo?.id === record?.pivot?.variation_option_id,
     )['title'];
     name = `${name} - ${variationTitle}`;
   }
   return (
-    <div className="flex items-center">
-      <div className="relative flex h-16 w-16 shrink-0 overflow-hidden rounded">
+    <div className='flex items-center'>
+      <div className='relative flex h-16 w-16 shrink-0 overflow-hidden rounded'>
         <Image
           src={record.image?.thumbnail ?? productPlaceholder}
           alt={name}
-          className="h-full w-full object-cover"
+          className='h-full w-full object-cover'
           fill
-          sizes="(max-width: 768px) 100vw"
+          sizes='(max-width: 768px) 100vw'
         />
       </div>
 
-      <div className="flex flex-col overflow-hidden ltr:ml-4 rtl:mr-4">
-        <div className="mb-1 flex space-x-1 rtl:space-x-reverse">
+      <div className='flex flex-col overflow-hidden ltr:ml-4 rtl:mr-4'>
+        <div className='mb-1 flex space-x-1 rtl:space-x-reverse'>
           <Link
             href={Routes.product(record?.slug)}
-            className="inline-block overflow-hidden truncate text-sm text-body transition-colors hover:text-accent hover:underline"
+            className='inline-block overflow-hidden truncate text-sm text-body transition-colors hover:text-accent hover:underline'
             locale={record?.language}
           >
             {name}
           </Link>
-          <span className="inline-block overflow-hidden truncate text-sm text-body">
+          <span className='inline-block overflow-hidden truncate text-sm text-body'>
             x
           </span>
-          <span className="inline-block overflow-hidden truncate text-sm font-semibold text-heading">
+          <span className='inline-block overflow-hidden truncate text-sm font-semibold text-heading'>
             {record.unit}
           </span>
         </div>
-        <span className="mb-1 inline-block overflow-hidden truncate text-sm font-semibold text-accent">
+        <span className='mb-1 inline-block overflow-hidden truncate text-sm font-semibold text-accent'>
           {price}
         </span>
       </div>
@@ -69,7 +69,7 @@ export const OrderItems = ({
 
   const orderTableColumns = [
     {
-      title: <span className="ltr:pl-20 rtl:pr-20">{t('text-item')}</span>,
+      title: <span className='ltr:pl-20 rtl:pr-20'>{t('text-item')}</span>,
       dataIndex: '',
       key: 'items',
       align: alignLeft,
@@ -84,7 +84,7 @@ export const OrderItems = ({
       align: 'center',
       width: 100,
       render: function renderQuantity(pivot: any) {
-        return <p className="text-base">{pivot.order_quantity}</p>;
+        return <p className='text-base'>{pivot.order_quantity}</p>;
       },
     },
     {
@@ -124,7 +124,7 @@ export const OrderItems = ({
         return (
           <button
             onClick={openReviewModal}
-            className="cursor-pointer text-sm font-semibold text-body transition-colors hover:text-accent"
+            className='cursor-pointer text-sm font-semibold text-body transition-colors hover:text-accent'
           >
             {getReview(record)
               ? t('text-update-review')
@@ -145,8 +145,8 @@ export const OrderItems = ({
           ? record.pivot.variation_option_id
           : record.created_at
       }
-      className="orderDetailsTable w-full"
-      rowClassName="!cursor-auto"
+      className='orderDetailsTable w-full'
+      rowClassName='!cursor-auto'
       scroll={{ x: 350, y: 500 }}
     />
   );

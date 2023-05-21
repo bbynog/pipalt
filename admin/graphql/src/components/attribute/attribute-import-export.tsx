@@ -9,24 +9,24 @@ const AttributeExportImport = () => {
   const { data: shopId } = useModalState();
 
   return (
-    <Card className="flex flex-col min-h-screen w-screen md:w-auto md:min-h-0 lg:min-w-[900px]">
-      <div className="w-full mb-5">
-        <h1 className="text-lg font-semibold text-heading">
+    <Card className='flex min-h-screen w-screen flex-col md:min-h-0 md:w-auto lg:min-w-[900px]'>
+      <div className='mb-5 w-full'>
+        <h1 className='text-lg font-semibold text-heading'>
           {t('common:text-export-import')}
         </h1>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+      <div className='grid grid-cols-2 gap-5 md:grid-cols-3'>
         <ImportAttributes />
         <a
           href={`${process?.env?.NEXT_PUBLIC_API_ROOT}/export-attributes/${shopId}`}
-          target="_blank"
-          rel="noreferrer"
-          className="border-dashed border-2 border-border-base h-36 rounded flex flex-col justify-center items-center cursor-pointer focus:border-accent-400 focus:outline-none p-5"
+          target='_blank'
+          rel='noreferrer'
+          className='flex h-36 cursor-pointer flex-col items-center justify-center rounded border-2 border-dashed border-border-base p-5 focus:border-accent-400 focus:outline-none'
         >
-          <DownloadIcon className="text-muted-light w-10" />
+          <DownloadIcon className='w-10 text-muted-light' />
 
-          <span className="text-sm mt-4 text-center text-accent font-semibold">
+          <span className='mt-4 text-center text-sm font-semibold text-accent'>
             {t('common:text-export-attributes')}
           </span>
         </a>

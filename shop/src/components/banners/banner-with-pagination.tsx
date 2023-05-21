@@ -13,11 +13,11 @@ interface BannerProps {
 
 const BannerWithPagination: React.FC<BannerProps> = ({ banners, slug }) => {
   return (
-    <div className="compact relative">
-      <div className="-z-1 overflow-hidden rounded-xl">
-        <div className="relative">
+    <div className='compact relative'>
+      <div className='-z-1 overflow-hidden rounded-xl'>
+        <div className='relative'>
           <Swiper
-            id="banner"
+            id='banner'
             loop={true}
             modules={[Pagination]}
             resizeObserver={true}
@@ -35,9 +35,9 @@ const BannerWithPagination: React.FC<BannerProps> = ({ banners, slug }) => {
             {banners?.map((banner, idx) => (
               <SwiperSlide key={idx}>
                 <Link href={`/${slug}${Routes.search}`}>
-                  <div className="relative h-full max-h-[240px] w-full md:max-h-[610px]">
+                  <div className='relative h-full max-h-[240px] w-full md:max-h-[610px]'>
                     <Image
-                      className="h-full w-full"
+                      className='h-full w-full'
                       src={banner.image?.original ?? productPlaceholder}
                       alt={banner.title ?? ''}
                       width={1800}

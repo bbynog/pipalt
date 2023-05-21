@@ -32,7 +32,7 @@ const PopularProductList = ({ products, title }: IProps) => {
       align: alignLeft,
       width: 200,
       render: (name: string) => (
-        <span className="whitespace-nowrap">{name}</span>
+        <span className='whitespace-nowrap'>{name}</span>
       ),
     },
     {
@@ -42,7 +42,7 @@ const PopularProductList = ({ products, title }: IProps) => {
       align: 'center',
       width: 120,
       render: (type: any) => (
-        <span className="whitespace-nowrap">{type?.name}</span>
+        <span className='whitespace-nowrap'>{type?.name}</span>
       ),
     },
 
@@ -54,7 +54,7 @@ const PopularProductList = ({ products, title }: IProps) => {
       align: 'center',
       ellipsis: true,
       render: (shop: Shop) => (
-        <span className="whitespace-nowrap truncate">{shop?.name}</span>
+        <span className='truncate whitespace-nowrap'>{shop?.name}</span>
       ),
     },
 
@@ -82,7 +82,7 @@ const PopularProductList = ({ products, title }: IProps) => {
             : price;
 
         return (
-          <span className="whitespace-nowrap" title={renderPrice}>
+          <span className='whitespace-nowrap' title={renderPrice}>
             {renderPrice}
           </span>
         );
@@ -101,8 +101,8 @@ const PopularProductList = ({ products, title }: IProps) => {
   }
   return (
     <>
-      <div className="rounded overflow-hidden shadow mb-6">
-        <h3 className="text-heading text-center font-semibold px-4 py-3 bg-light border-b border-border-200">
+      <div className='mb-6 overflow-hidden rounded shadow'>
+        <h3 className='border-b border-border-200 bg-light px-4 py-3 text-center font-semibold text-heading'>
           {title}
         </h3>
         <Table
@@ -110,7 +110,7 @@ const PopularProductList = ({ products, title }: IProps) => {
           columns={columns}
           emptyText={t('table:empty-table-data')}
           data={products!}
-          rowKey="id"
+          rowKey='id'
           scroll={{ x: 700 }}
         />
       </div>

@@ -46,7 +46,7 @@ const ProductList = ({ products, onPagination, refetch }: IProps) => {
           sortedBy: order === SortOrder.Desc ? SortOrder.Asc : SortOrder.Desc,
         });
       }, 500),
-    [order]
+    [order],
   );
 
   const onHeaderClick = (value: string | undefined) => ({
@@ -63,12 +63,12 @@ const ProductList = ({ products, onPagination, refetch }: IProps) => {
       align: alignLeft as AlignType,
       width: 74,
       render: (image: any, { name }: { name: string }) => (
-        <div className="relative flex h-[42px] w-[42px] items-center">
+        <div className='relative flex h-[42px] w-[42px] items-center'>
           <Image
             src={image?.thumbnail ?? siteSettings.product.placeholder}
             alt={name}
             fill
-            className="overflow-hidden rounded object-fill"
+            className='overflow-hidden rounded object-fill'
           />
         </div>
       ),
@@ -99,7 +99,7 @@ const ProductList = ({ products, onPagination, refetch }: IProps) => {
       width: 120,
       align: 'center' as AlignType,
       render: (type: any) => (
-        <span className="truncate whitespace-nowrap">{type?.name}</span>
+        <span className='truncate whitespace-nowrap'>{type?.name}</span>
       ),
     },
     {
@@ -110,7 +110,7 @@ const ProductList = ({ products, onPagination, refetch }: IProps) => {
       align: 'center' as AlignType,
       ellipsis: true,
       render: (shop: Shop) => (
-        <span className="truncate whitespace-nowrap">{shop?.name}</span>
+        <span className='truncate whitespace-nowrap'>{shop?.name}</span>
       ),
     },
     {
@@ -148,7 +148,7 @@ const ProductList = ({ products, onPagination, refetch }: IProps) => {
             : price;
 
         return (
-          <span className="whitespace-nowrap" title={renderPrice}>
+          <span className='whitespace-nowrap' title={renderPrice}>
             {renderPrice}
           </span>
         );
@@ -176,7 +176,7 @@ const ProductList = ({ products, onPagination, refetch }: IProps) => {
           return (
             <Badge
               text={t('common:text-out-of-stock')}
-              color="bg-red-500 text-white"
+              color='bg-red-500 text-white'
             />
           );
         }
@@ -201,7 +201,7 @@ const ProductList = ({ products, onPagination, refetch }: IProps) => {
       width: 200,
       onHeaderCell: () => onHeaderClick(QueryProductsOrderByColumn.STATUS),
       render: (status: string, record: any) => (
-        <div className="flex items-center justify-center space-s-3">
+        <div className='flex items-center justify-center space-s-3'>
           <Badge
             text={status}
             color={status === 'DRAFT' ? 'bg-yellow-400' : 'bg-accent'}
@@ -209,7 +209,7 @@ const ProductList = ({ products, onPagination, refetch }: IProps) => {
           {record?.quantity > 0 && record?.quantity < 10 && (
             <Badge
               text={t('common:text-low-quantity')}
-              color="bg-red-600"
+              color='bg-red-600'
               animate={true}
             />
           )}
@@ -226,7 +226,7 @@ const ProductList = ({ products, onPagination, refetch }: IProps) => {
         <LanguageSwitcher
           slug={slug}
           record={record}
-          deleteModalView="DELETE_PRODUCT"
+          deleteModalView='DELETE_PRODUCT'
           routes={Routes?.product}
         />
       ),
@@ -239,18 +239,18 @@ const ProductList = ({ products, onPagination, refetch }: IProps) => {
 
   return (
     <>
-      <div className="mb-6 overflow-hidden rounded shadow">
+      <div className='mb-6 overflow-hidden rounded shadow'>
         <Table
           columns={columns}
           emptyText={t('table:empty-table-data')}
           data={data}
-          rowKey="id"
+          rowKey='id'
           scroll={{ x: 900 }}
         />
       </div>
 
       {!!paginatorInfo.total && (
-        <div className="flex items-center justify-end">
+        <div className='flex items-center justify-end'>
           <Pagination
             total={paginatorInfo.total}
             current={paginatorInfo.currentPage}

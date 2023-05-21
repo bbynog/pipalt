@@ -94,11 +94,11 @@ const ReviewDetailsView = ({ review }: IProps) => {
       align: alignLeft,
       width: 200,
       render: (record: any) => (
-        <div className="flex flex-col space-y-1">
-          <span className="font-semibold text-heading">
+        <div className='flex flex-col space-y-1'>
+          <span className='font-semibold text-heading'>
             {record?.user?.name}
           </span>
-          <span className="text-xs font-semibold text-heading">
+          <span className='text-xs font-semibold text-heading'>
             {record?.user?.email}
           </span>
         </div>
@@ -115,7 +115,7 @@ const ReviewDetailsView = ({ review }: IProps) => {
         dayjs.extend(utc);
         dayjs.extend(timezone);
         return (
-          <span className="whitespace-nowrap">
+          <span className='whitespace-nowrap'>
             {dayjs.utc(date).tz(dayjs.tz.guess()).fromNow()}
           </span>
         );
@@ -124,48 +124,48 @@ const ReviewDetailsView = ({ review }: IProps) => {
   ];
 
   return (
-    <Card className="md:px-10 xl:px-20">
-      <h3 className="mb-8 text-3xl font-semibold text-center text-heading">
+    <Card className='md:px-10 xl:px-20'>
+      <h3 className='mb-8 text-center text-3xl font-semibold text-heading'>
         {t('common:text-abuse-report')}
       </h3>
 
       {/* Product details */}
-      <div className="flex items-start w-full mb-10 space-x-4 md:space-x-5 rtl:space-x-reverse">
-        <div className="relative w-20 h-20 border border-gray-200 shrink-0">
+      <div className='mb-10 flex w-full items-start space-x-4 rtl:space-x-reverse md:space-x-5'>
+        <div className='relative h-20 w-20 shrink-0 border border-gray-200'>
           <Image
             src={image?.thumbnail ?? siteSettings.product.placeholder}
             alt={name}
             width={75}
             height={75}
-            className="overflow-hidden rounded"
+            className='overflow-hidden rounded'
           />
         </div>
 
-        <div className="flex flex-col space-y-1.5 pe-4 md:pe-5">
+        <div className='flex flex-col space-y-1.5 pe-4 md:pe-5'>
           <Link
             href={process.env.NEXT_PUBLIC_SHOP_URL + '/products/' + slug}
-            className="text-lg font-semibold transition-colors text-heading hover:text-accent focus:text-accent-700 hover:no-underline focus:no-underline"
+            className='text-lg font-semibold text-heading transition-colors hover:text-accent hover:no-underline focus:text-accent-700 focus:no-underline'
           >
             {name}
           </Link>
 
           {product_type === ProductType.Variable ? (
-            <div className="flex items-center">
-              <span className="text-sm font-semibold md:text-base text-heading">
+            <div className='flex items-center'>
+              <span className='text-sm font-semibold text-heading md:text-base'>
                 {minPrice}
               </span>
               <span> - </span>
-              <span className="text-sm font-semibold md:text-base text-heading">
+              <span className='text-sm font-semibold text-heading md:text-base'>
                 {maxPrice}
               </span>
             </div>
           ) : (
-            <div className="flex items-center">
-              <span className="text-sm font-semibold md:text-base text-heading">
+            <div className='flex items-center'>
+              <span className='text-sm font-semibold text-heading md:text-base'>
                 {currentPrice}
               </span>
               {basePrice && (
-                <del className="text-xs md:text-sm text-muted ms-2">
+                <del className='text-xs text-muted ms-2 md:text-sm'>
                   {basePrice}
                 </del>
               )}
@@ -173,34 +173,34 @@ const ReviewDetailsView = ({ review }: IProps) => {
           )}
         </div>
 
-        <div className="inline-flex items-center rounded-full text-accent shrink-0 text-base px-3 py-0.5 border border-accent !ml-auto">
+        <div className='!ml-auto inline-flex shrink-0 items-center rounded-full border border-accent px-3 py-0.5 text-base text-accent'>
           {ratings}
-          <StarIcon className="w-3 h-3 ms-1" />
+          <StarIcon className='h-3 w-3 ms-1' />
         </div>
       </div>
 
       {/* Rating details */}
-      <div className="block mb-8">
-        <div className="flex items-center justify-between mb-5">
-          <div className="inline-flex items-center rounded-full text-accent shrink-0 text-base px-3 py-0.5 border border-accent">
+      <div className='mb-8 block'>
+        <div className='mb-5 flex items-center justify-between'>
+          <div className='inline-flex shrink-0 items-center rounded-full border border-accent px-3 py-0.5 text-base text-accent'>
             {rating}
-            <StarIcon className="w-3 h-3 ms-1" />
+            <StarIcon className='h-3 w-3 ms-1' />
           </div>
 
           {/* Accept/decline buttons */}
-          <div className="flex items-center space-x-4 md:space-x-5 rtl:space-x-reverse">
+          <div className='flex items-center space-x-4 rtl:space-x-reverse md:space-x-5'>
             <Button
-              size="small"
-              variant="outline"
-              className="text-accent !border-accent"
+              size='small'
+              variant='outline'
+              className='!border-accent text-accent'
               onClick={handleAcceptReport}
             >
               {t('common:text-accept')}
             </Button>
             <Button
-              size="small"
-              variant="outline"
-              className="text-red-500 !border-red-500 hover:bg-red-500 hover:border-red-500"
+              size='small'
+              variant='outline'
+              className='!border-red-500 text-red-500 hover:border-red-500 hover:bg-red-500'
               onClick={handleDeclineReport}
             >
               {t('common:text-decline')}
@@ -208,45 +208,45 @@ const ReviewDetailsView = ({ review }: IProps) => {
           </div>
         </div>
 
-        <div className="flex items-center mb-3 text-xs text-gray-500">
+        <div className='mb-3 flex items-center text-xs text-gray-500'>
           {t('common:text-by')}{' '}
-          <span className="font-semibold capitalize ltr:ml-1 rtl:mr-1 text-heading">
+          <span className='font-semibold capitalize text-heading ltr:ml-1 rtl:mr-1'>
             {user?.name}
           </span>
           {user?.is_active && (
-            <CheckedIcon className="h-[13px] w-[13px] text-gray-700 ltr:ml-1 rtl:mr-1" />
+            <CheckedIcon className='h-[13px] w-[13px] text-gray-700 ltr:ml-1 rtl:mr-1' />
           )}
         </div>
-        <p className="text-sm leading-6 text-heading">{comment}</p>
+        <p className='text-sm leading-6 text-heading'>{comment}</p>
         {photos && !isEmpty(photos) && (
-          <div className="flex items-start pt-3 space-s-2">
+          <div className='flex items-start pt-3 space-s-2'>
             {photos?.map((photo: any, idx: any) => (
-              <div className="mb-1" key={idx}>
+              <div className='mb-1' key={idx}>
                 <Image
                   src={photo?.original ?? '/product-placeholder-borderless.svg'}
                   width={32}
                   height={32}
-                  className="inline-flex bg-gray-200 rounded-md"
+                  className='inline-flex rounded-md bg-gray-200'
                   alt={`${user?.name}-${idx}`}
                 />
               </div>
             ))}
 
             <button
-              className="my-1.5 text-sm font-semibold underline transition-colors text-heading hover:text-accent"
+              className='my-1.5 text-sm font-semibold text-heading underline transition-colors hover:text-accent'
               onClick={handleImageClick}
             >
               {t('common:text-view-images')}
             </button>
           </div>
         )}
-        <div className="flex items-center mt-4 space-x-4 rtl:space-x-reverse">
-          <span className="flex items-center text-xs tracking-wider text-gray-400 transition">
-            <LikeIcon className="w-4 h-4 me-1.5" />
+        <div className='mt-4 flex items-center space-x-4 rtl:space-x-reverse'>
+          <span className='flex items-center text-xs tracking-wider text-gray-400 transition'>
+            <LikeIcon className='h-4 w-4 me-1.5' />
             {positive_feedbacks_count}
           </span>
-          <span className="flex items-center text-xs tracking-wider text-gray-400 transition">
-            <DislikeIcon className="w-4 h-4 me-1.5" />
+          <span className='flex items-center text-xs tracking-wider text-gray-400 transition'>
+            <DislikeIcon className='h-4 w-4 me-1.5' />
             {negative_feedbacks_count}
           </span>
         </div>
@@ -258,7 +258,7 @@ const ReviewDetailsView = ({ review }: IProps) => {
         columns={columns}
         emptyText={t('table:empty-table-data')}
         data={abusive_reports as any}
-        rowKey="id"
+        rowKey='id'
         scroll={{ x: 700 }}
         // scroll={{ x: 300 }}
       />

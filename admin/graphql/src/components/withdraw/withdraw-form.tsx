@@ -89,14 +89,14 @@ export default function CreateOrUpdateWithdrawForm({ initialValues }: IProps) {
       {errorMessage ? (
         <Alert
           message={t(errorMessage)}
-          variant="error"
+          variant='error'
           closeable={true}
-          className="mt-5"
+          className='mt-5'
           onClose={() => setErrorMessage(null)}
         />
       ) : null}
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="flex flex-wrap my-5 sm:my-8">
+        <div className='my-5 flex flex-wrap sm:my-8'>
           <Description
             title={t('form:input-label-description')}
             details={`${
@@ -104,53 +104,53 @@ export default function CreateOrUpdateWithdrawForm({ initialValues }: IProps) {
                 ? t('form:item-description-update')
                 : t('form:item-description-add')
             } ${t('form:withdraw-description-helper-text')}`}
-            className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8 "
+            className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5 '
           />
 
-          <Card className="w-full sm:w-8/12 md:w-2/3">
+          <Card className='w-full sm:w-8/12 md:w-2/3'>
             <Label>
               {t('form:input-label-amount')}
-              <span className="text-xs text-body">
+              <span className='text-xs text-body'>
                 ({t('common:text-available-balance')}:
-                <span className="font-bold text-accent">{shopBalance}</span>)
+                <span className='font-bold text-accent'>{shopBalance}</span>)
               </span>
             </Label>
             <Input
               // label={t("form:input-label-amount")}
               {...register('amount')}
               error={t(errors.amount?.message!)}
-              variant="outline"
-              className="mb-5"
+              variant='outline'
+              className='mb-5'
             />
             <Input
               label={t('form:input-label-payment-method')}
               {...register('payment_method')}
               error={t(errors.payment_method?.message!)}
-              variant="outline"
-              className="mb-5"
+              variant='outline'
+              className='mb-5'
             />
 
             <TextArea
               label={t('form:input-label-details')}
               {...register('details')}
-              variant="outline"
-              className="mb-5"
+              variant='outline'
+              className='mb-5'
             />
             <TextArea
               label={t('form:input-label-note')}
               {...register('note')}
-              variant="outline"
-              className="mb-5"
+              variant='outline'
+              className='mb-5'
             />
           </Card>
         </div>
-        <div className="mb-4 text-end">
+        <div className='mb-4 text-end'>
           {initialValues && (
             <Button
-              variant="outline"
+              variant='outline'
               onClick={router.back}
-              className="me-4"
-              type="button"
+              className='me-4'
+              type='button'
             >
               {t('form:button-label-back')}
             </Button>

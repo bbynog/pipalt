@@ -14,19 +14,19 @@ const ItemCard = ({ item, notAvailable }: Props) => {
   });
   return (
     <div className={cn('flex justify-between py-2')} key={item.id}>
-      <p className="flex items-center justify-between text-base">
+      <p className='flex items-center justify-between text-base'>
         <span
           className={cn('text-sm', notAvailable ? 'text-red-500' : 'text-body')}
         >
           <span
             className={cn(
               'text-sm font-bold',
-              notAvailable ? 'text-red-500' : 'text-heading'
+              notAvailable ? 'text-red-500' : 'text-heading',
             )}
           >
             {item.quantity}
           </span>
-          <span className="mx-2">x</span>
+          <span className='mx-2'>x</span>
           <span>{item.name}</span> | <span>{item.unit}</span>
         </span>
       </p>

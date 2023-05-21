@@ -33,15 +33,15 @@ const WithdrawList = ({ withdraws, onPagination, refetch }: IProps) => {
   const renderStatusBadge = (status: string) => {
     switch (status) {
       case 'APPROVED':
-        return <Badge text={t('text-approved')} color="bg-accent" />;
+        return <Badge text={t('text-approved')} color='bg-accent' />;
       case 'PENDING':
-        return <Badge text={t('text-pending')} color="bg-purple-500" />;
+        return <Badge text={t('text-pending')} color='bg-purple-500' />;
       case 'ON_HOLD':
-        return <Badge text={t('text-on-hold')} color="bg-pink-500" />;
+        return <Badge text={t('text-on-hold')} color='bg-pink-500' />;
       case 'REJECTED':
-        return <Badge text={t('text-rejected')} color="bg-red-500" />;
+        return <Badge text={t('text-rejected')} color='bg-red-500' />;
       case 'PROCESSING':
-        return <Badge text={t('text-processing')} color="bg-yellow-500" />;
+        return <Badge text={t('text-processing')} color='bg-yellow-500' />;
     }
   };
 
@@ -58,7 +58,7 @@ const WithdrawList = ({ withdraws, onPagination, refetch }: IProps) => {
           orderBy: value,
         });
       }, 500),
-    [order]
+    [order],
   );
 
   const onHeaderClick = (value: string | undefined) => ({
@@ -128,7 +128,7 @@ const WithdrawList = ({ withdraws, onPagination, refetch }: IProps) => {
         dayjs.extend(utc);
         dayjs.extend(timezone);
         return (
-          <span className="whitespace-nowrap">
+          <span className='whitespace-nowrap'>
             {dayjs.utc(date).tz(dayjs.tz.guess()).fromNow()}
           </span>
         );
@@ -160,19 +160,19 @@ const WithdrawList = ({ withdraws, onPagination, refetch }: IProps) => {
 
   return (
     <>
-      <div className="rounded overflow-hidden shadow mb-6">
+      <div className='mb-6 overflow-hidden rounded shadow'>
         <Table
           //@ts-ignore
           columns={columns}
           emptyText={t('table:empty-table-data')}
           data={data}
-          rowKey="id"
+          rowKey='id'
           scroll={{ x: 800 }}
         />
       </div>
 
       {!!paginatorInfo?.total && (
-        <div className="flex justify-end items-center">
+        <div className='flex items-center justify-end'>
           <Pagination
             total={paginatorInfo?.total}
             current={paginatorInfo?.currentPage}

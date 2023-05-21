@@ -18,13 +18,13 @@ const StoreNoticeDeleteView = () => {
           fields: {
             storeNotices(existingRefs, { readField }) {
               return existingRefs.data.filter(
-                (ref: any) => deleteStoreNotice.id !== readField('id', ref)
+                (ref: any) => deleteStoreNotice.id !== readField('id', ref),
               );
             },
           },
         });
       },
-    }
+    },
   );
 
   const { data: modalData } = useModalState();

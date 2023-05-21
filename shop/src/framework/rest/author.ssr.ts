@@ -18,7 +18,7 @@ export const getStaticPaths: GetStaticPaths<ParsedQueryParams> = async ({
   invariant(locales, 'locales is not defined');
   const { data } = await client.authors.all({ limit: 100 });
   const paths = data?.flatMap((shop) =>
-    locales?.map((locale) => ({ params: { author: shop.slug }, locale }))
+    locales?.map((locale) => ({ params: { author: shop.slug }, locale })),
   );
   return {
     paths,
@@ -35,7 +35,7 @@ export const getStaticProps: GetStaticProps<
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery(
     [API_ENDPOINTS.SETTINGS, { language: locale }],
-    ({ queryKey }) => client.settings.all(queryKey[1] as SettingsQueryOptions)
+    ({ queryKey }) => client.settings.all(queryKey[1] as SettingsQueryOptions),
   );
 
   try {

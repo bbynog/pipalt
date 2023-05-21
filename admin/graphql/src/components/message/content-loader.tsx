@@ -34,13 +34,13 @@ const Loader = ({ props, backgroundColor, foregroundColor }: LoaderProps) => {
       speed={2}
       width={'100%'}
       height={'100%'}
-      viewBox="0 0 241 18"
+      viewBox='0 0 241 18'
       backgroundColor={backgroundColor ? backgroundColor : '#E5E5E5'}
       foregroundColor={foregroundColor ? foregroundColor : '#c0c0c0'}
       {...props}
     >
-      <rect width="241" height="6" rx="2" />
-      <rect y="12" width="120.5" height="6" rx="2" />
+      <rect width='241' height='6' rx='2' />
+      <rect y='12' width='120.5' height='6' rx='2' />
     </ContentLoader>
   );
 };
@@ -51,7 +51,7 @@ const MessageCardLoader = ({
   ...rest
 }: MessageCardLoaderProps) => {
   return (
-    <div className="space-y-3" {...rest}>
+    <div className='space-y-3' {...rest}>
       {rangeMap(limit, (i) => (
         <>
           <div
@@ -60,8 +60,8 @@ const MessageCardLoader = ({
             } flex w-full`}
           >
             {checkOddAdnEven(i) ? (
-              <div className="w-10">
-                <Avatar src={siteSettings?.avatar?.placeholder} alt="avatar" />
+              <div className='w-10'>
+                <Avatar src={siteSettings?.avatar?.placeholder} alt='avatar' />
               </div>
             ) : (
               ''
@@ -69,10 +69,10 @@ const MessageCardLoader = ({
             <div
               className={cn(
                 classes?.common,
-                checkOddAdnEven(i) ? classes?.default : classes?.reverse
+                checkOddAdnEven(i) ? classes?.default : classes?.reverse,
               )}
             >
-              <div className="p-2">
+              <div className='p-2'>
                 <Loader
                   backgroundColor={checkOddAdnEven(i) ? '#d7d7d7' : '#119278'}
                   foregroundColor={checkOddAdnEven(i) ? '#ECECEC' : '#21A087'}

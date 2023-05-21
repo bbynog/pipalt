@@ -12,7 +12,7 @@ export default function LanguageSwitcher() {
   const { asPath, locale, locales } = router;
 
   let filterItem = languageMenu?.filter((element) =>
-    locales?.includes(element?.id)
+    locales?.includes(element?.id),
   );
 
   const currentSelectedItem = locale
@@ -31,29 +31,29 @@ export default function LanguageSwitcher() {
   return (
     <Listbox value={selectedItem} onChange={handleItemClick}>
       {({ open }) => (
-        <div className="ms-2 lg:ms-0 relative z-10 xl:w-[130px]">
-          <Listbox.Button className="relative flex h-full w-full cursor-pointer items-center rounded text-[13px] font-semibold focus:outline-0 focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 xl:h-auto xl:w-full xl:border xl:border-solid xl:border-[#CFD3DA] xl:bg-white xl:py-2 xl:text-sm xl:text-heading xl:ltr:pl-3  xl:ltr:pr-7 xl:rtl:pl-7 xl:rtl:pr-3">
-            <span className="relative block h-[38px] w-[38px] overflow-hidden rounded-full xl:hidden">
-              <span className="relative top-[3px] block">
+        <div className='ms-2 lg:ms-0 relative z-10 xl:w-[130px]'>
+          <Listbox.Button className='relative flex h-full w-full cursor-pointer items-center rounded text-[13px] font-semibold focus:outline-0 focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 xl:h-auto xl:w-full xl:border xl:border-solid xl:border-[#CFD3DA] xl:bg-white xl:py-2 xl:text-sm xl:text-heading xl:ltr:pl-3  xl:ltr:pr-7 xl:rtl:pl-7 xl:rtl:pr-3'>
+            <span className='relative block h-[38px] w-[38px] overflow-hidden rounded-full xl:hidden'>
+              <span className='relative top-[3px] block'>
                 {selectedItem.iconMobile}
               </span>
             </span>
-            <span className="hidden items-center truncate xl:flex">
-              <span className="text-xl ltr:mr-3 rtl:ml-3">
+            <span className='hidden items-center truncate xl:flex'>
+              <span className='text-xl ltr:mr-3 rtl:ml-3'>
                 {selectedItem.icon}
               </span>{' '}
               {t(selectedItem.name)}
             </span>
-            <span className="pointer-events-none absolute inset-y-0 hidden items-center ltr:right-0 ltr:pr-2 rtl:left-0 rtl:pl-2 xl:flex">
-              <LangSwitcherIcon className="text-gray-400" aria-hidden="true" />
+            <span className='pointer-events-none absolute inset-y-0 hidden items-center ltr:right-0 ltr:pr-2 rtl:left-0 rtl:pl-2 xl:flex'>
+              <LangSwitcherIcon className='text-gray-400' aria-hidden='true' />
             </span>
           </Listbox.Button>
           <Transition
             show={open}
             as={Fragment}
-            leave="transition ease-in duration-100"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
+            leave='transition ease-in duration-100'
+            leaveFrom='opacity-100'
+            leaveTo='opacity-0'
           >
             <Listbox.Options
               static
@@ -69,8 +69,8 @@ export default function LanguageSwitcher() {
                   value={option}
                 >
                   {({ selected, active }) => (
-                    <span className="flex items-center">
-                      <span className="text-xl">{option.icon}</span>
+                    <span className='flex items-center'>
+                      <span className='text-xl'>{option.icon}</span>
                       <span
                         className={`${
                           selected ? 'font-medium' : 'font-normal'

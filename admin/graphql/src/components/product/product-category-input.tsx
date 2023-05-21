@@ -46,10 +46,10 @@ const ProductCategoryInput = ({ control, setValue }: Props) => {
     },
   });
   return (
-    <div className="mb-5">
+    <div className='mb-5'>
       <Label>{t('form:input-label-categories')}</Label>
       <SelectInput
-        name="categories"
+        name='categories'
         isMulti
         control={control}
         getOptionLabel={(option: any) => option.name}

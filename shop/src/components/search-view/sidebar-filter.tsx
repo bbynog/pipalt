@@ -15,7 +15,7 @@ import { useIsRTL } from '@/lib/locals';
 import Button from '@/components/ui/button';
 
 const FieldWrapper = ({ children, title }: any) => (
-  <div className="border-b border-gray-200 py-7 last:border-0">
+  <div className='border-b border-gray-200 py-7 last:border-0'>
     <CustomDisclosure title={title}>{children}</CustomDisclosure>
   </div>
 );
@@ -45,7 +45,7 @@ function ClearFiltersButton() {
   }
   return (
     <button
-      className="text-sm font-semibold text-body transition-colors hover:text-red-500 focus:text-red-500 focus:outline-0 lg:m-0"
+      className='text-sm font-semibold text-body transition-colors hover:text-red-500 focus:text-red-500 focus:outline-0 lg:m-0'
       onClick={clearFilters}
     >
       {t('text-clear-all')}
@@ -66,13 +66,13 @@ const SidebarFilter: React.FC<{
     <div
       className={classNames(
         'flex h-full w-full flex-col rounded-xl border-gray-200 bg-white lg:h-auto lg:border',
-        className
+        className,
       )}
     >
-      <div className="sticky top-0 z-10 flex items-center justify-between rounded-tl-xl rounded-tr-xl border-b border-gray-200 bg-white px-5 py-6 lg:static">
-        <div className="flex items-center space-x-3 rtl:space-x-reverse lg:space-x-0">
+      <div className='sticky top-0 z-10 flex items-center justify-between rounded-tl-xl rounded-tr-xl border-b border-gray-200 bg-white px-5 py-6 lg:static'>
+        <div className='flex items-center space-x-3 rtl:space-x-reverse lg:space-x-0'>
           <button
-            className="text-body focus:outline-0 lg:hidden"
+            className='text-body focus:outline-0 lg:hidden'
             onClick={() => closeSidebar({ display: false, view: '' })}
           >
             <ArrowNarrowLeft
@@ -81,10 +81,10 @@ const SidebarFilter: React.FC<{
               })}
               strokeWidth={1.7}
             />
-            <span className="sr-only">{t('text-close')}</span>
+            <span className='sr-only'>{t('text-close')}</span>
           </button>
 
-          <h3 className="text-xl font-semibold text-heading lg:text-2xl">
+          <h3 className='text-xl font-semibold text-heading lg:text-2xl'>
             {t('text-filter')}
           </h3>
         </div>
@@ -92,38 +92,38 @@ const SidebarFilter: React.FC<{
         <ClearFiltersButton />
       </div>
 
-      <div className="flex-1 px-5">
-        <FieldWrapper title="text-search">
-          <Search variant="minimal" label="search" />
+      <div className='flex-1 px-5'>
+        <FieldWrapper title='text-search'>
+          <Search variant='minimal' label='search' />
         </FieldWrapper>
 
         {router.route !== '/[searchType]/search' && (
-          <FieldWrapper title="text-sort">
+          <FieldWrapper title='text-sort'>
             <Sorting />
           </FieldWrapper>
         )}
 
-        <FieldWrapper title="text-categories">
+        <FieldWrapper title='text-categories'>
           <CategoryFilter type={type} />
         </FieldWrapper>
 
-        <FieldWrapper title="text-sort-by-price">
+        <FieldWrapper title='text-sort-by-price'>
           <PriceFilter />
         </FieldWrapper>
 
-        <FieldWrapper title="text-tags">
+        <FieldWrapper title='text-tags'>
           <TagFilter />
         </FieldWrapper>
 
         {showManufacturers && (
-          <FieldWrapper title="text-manufacturers">
+          <FieldWrapper title='text-manufacturers'>
             <ManufacturerFilter />
           </FieldWrapper>
         )}
       </div>
-      <div className="sticky bottom-0 z-10 mt-auto border-t border-gray-200 bg-white p-5 lg:hidden">
+      <div className='sticky bottom-0 z-10 mt-auto border-t border-gray-200 bg-white p-5 lg:hidden'>
         <Button
-          className="w-full"
+          className='w-full'
           onClick={() => closeSidebar({ display: false, view: '' })}
         >
           Show Products

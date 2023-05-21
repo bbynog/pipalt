@@ -134,8 +134,8 @@ const productCards = [
 
 export const updatedIcons = typeIcon.map((item: any) => {
   item.label = (
-    <div className="flex space-s-5 items-center">
-      <span className="flex w-5 h-5 items-center justify-center">
+    <div className='flex items-center space-s-5'>
+      <span className='flex h-5 w-5 items-center justify-center'>
         {getIcon({
           iconList: typeIcons,
           iconName: item.value,
@@ -191,7 +191,7 @@ export default function CreateOrUpdateGroupForm({ initialValues }: IProps) {
       },
       icon: initialValues?.icon
         ? typeIcon.find(
-            (singleIcon) => singleIcon.value === initialValues?.icon!
+            (singleIcon) => singleIcon.value === initialValues?.icon!,
           )
         : '',
     },
@@ -219,7 +219,7 @@ export default function CreateOrUpdateGroupForm({ initialValues }: IProps) {
             thumbnail,
             original,
             id,
-          })
+          }),
         ),
         banners: values?.banners?.map(({ title, description, image }) => ({
           title,
@@ -271,7 +271,7 @@ export default function CreateOrUpdateGroupForm({ initialValues }: IProps) {
   // @ts-ignore
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="flex flex-wrap pb-8 border-b border-dashed border-border-base my-5 sm:my-8">
+      <div className='my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8'>
         <Description
           title={t('form:item-description')}
           details={`${
@@ -279,22 +279,22 @@ export default function CreateOrUpdateGroupForm({ initialValues }: IProps) {
               ? t('form:item-description-update')
               : t('form:item-description-add')
           } ${t('form:group-description-help-text')}`}
-          className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8"
+          className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
         />
 
-        <Card className="w-full sm:w-8/12 md:w-2/3">
+        <Card className='w-full sm:w-8/12 md:w-2/3'>
           <Input
             label={t('form:input-label-name')}
             {...register('name')}
             error={t(errors.name?.message!)}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
           />
 
-          <div className="mb-5">
+          <div className='mb-5'>
             <Label>{t('form:input-label-select-icon')}</Label>
             <SelectInput
-              name="icon"
+              name='icon'
               control={control}
               options={updatedIcons}
               isClearable={true}
@@ -303,23 +303,23 @@ export default function CreateOrUpdateGroupForm({ initialValues }: IProps) {
         </Card>
       </div>
 
-      <div className="flex flex-wrap pb-8 border-b border-dashed border-border-base my-5 sm:my-8">
+      <div className='my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8'>
         <Description
           title={t('form:group-settings')}
           details={t('form:group-settings-help-text')}
-          className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8"
+          className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
         />
-        <Card className="w-full sm:w-8/12 md:w-2/3">
+        <Card className='w-full sm:w-8/12 md:w-2/3'>
           <Checkbox
             {...register('settings.isHome')}
             error={t(errors.settings?.isHome?.message!)}
             label={t('form:input-label-is-home')}
-            className="mb-5"
+            className='mb-5'
           />
-          <div className="mb-10">
-            <Label className="mb-5">{t('form:input-label-layout-type')}</Label>
+          <div className='mb-10'>
+            <Label className='mb-5'>{t('form:input-label-layout-type')}</Label>
 
-            <div className="grid grid-cols-3 gap-5">
+            <div className='grid grid-cols-3 gap-5'>
               {layoutTypes?.map((layout, index) => {
                 return (
                   <RadioCard
@@ -334,12 +334,12 @@ export default function CreateOrUpdateGroupForm({ initialValues }: IProps) {
               })}
             </div>
           </div>
-          <div className="mb-5">
-            <Label className="mb-5">
+          <div className='mb-5'>
+            <Label className='mb-5'>
               {t('form:input-label-product-card-type')}
             </Label>
 
-            <div className="grid grid-cols-3 gap-5">
+            <div className='grid grid-cols-3 gap-5'>
               {productCards?.map((productCard, index) => {
                 return (
                   <RadioCard
@@ -358,49 +358,49 @@ export default function CreateOrUpdateGroupForm({ initialValues }: IProps) {
       </div>
 
       {layoutType === 'classic' ? (
-        <div className="flex flex-wrap pb-8 border-b border-dashed border-border-base my-5 sm:my-8">
+        <div className='my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8'>
           <Description
             title={t('form:promotional-slider')}
             details={t('form:promotional-slider-help-text')}
-            className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8"
+            className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
           />
-          <Card className="w-full sm:w-8/12 md:w-2/3">
-            <FileInput name="promotional_sliders" control={control} />
+          <Card className='w-full sm:w-8/12 md:w-2/3'>
+            <FileInput name='promotional_sliders' control={control} />
           </Card>
         </div>
       ) : null}
-      <div className="flex flex-wrap my-5 sm:my-8">
+      <div className='my-5 flex flex-wrap sm:my-8'>
         <Description
           title={t('common:text-banner')}
           details={t('form:banner-slider-help-text')}
-          className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8"
+          className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
         />
-        <Card className="w-full sm:w-8/12 md:w-2/3">
+        <Card className='w-full sm:w-8/12 md:w-2/3'>
           <div>
             {fields.map((item: any & { id: string }, index: number) => (
               <div
-                className="border-b border-dashed border-border-200 last:border-0 py-5 md:py-8 first:pt-0"
+                className='border-b border-dashed border-border-200 py-5 first:pt-0 last:border-0 md:py-8'
                 key={item.id}
               >
-                <div className="flex items-center justify-between mb-5">
-                  <Title className="mb-0">
+                <div className='mb-5 flex items-center justify-between'>
+                  <Title className='mb-0'>
                     {t('common:text-banner')} {index + 1}
                   </Title>
                   <button
                     onClick={() => {
                       remove(index);
                     }}
-                    type="button"
-                    className="text-sm text-red-500 hover:text-red-700 transition-colors duration-200 focus:outline-none"
+                    type='button'
+                    className='text-sm text-red-500 transition-colors duration-200 hover:text-red-700 focus:outline-none'
                   >
                     {t('form:button-label-remove')}
                   </button>
                 </div>
 
-                <div className="grid grid-cols-1 gap-5">
+                <div className='grid grid-cols-1 gap-5'>
                   <Input
                     label={t('form:input-title')}
-                    variant="outline"
+                    variant='outline'
                     {...register(`banners.${index}.title` as const)}
                     defaultValue={item?.title!} // make sure to set up defaultValue
                     error={t(errors.banners?.[index]?.title?.message!)}
@@ -408,14 +408,14 @@ export default function CreateOrUpdateGroupForm({ initialValues }: IProps) {
 
                   <TextArea
                     label={t('form:input-description')}
-                    variant="outline"
+                    variant='outline'
                     {...register(`banners.${index}.description` as const)}
                     defaultValue={item.description!}
                     // make sure to set up defaultValue
                   />
                 </div>
 
-                <div className="w-full mt-5">
+                <div className='mt-5 w-full'>
                   <Title>{t('form:input-banner')}</Title>
                   <FileInput
                     name={`banners.${index}.image`}
@@ -428,9 +428,9 @@ export default function CreateOrUpdateGroupForm({ initialValues }: IProps) {
           </div>
 
           <Button
-            type="button"
+            type='button'
             onClick={() => append({ title: '', description: '', image: {} })}
-            className="w-full sm:w-auto"
+            className='w-full sm:w-auto'
           >
             {t('form:button-label-add-banner')}
           </Button>
@@ -439,20 +439,20 @@ export default function CreateOrUpdateGroupForm({ initialValues }: IProps) {
             <Alert
               // @ts-ignore
               message={t(errors?.banners?.message)}
-              variant="error"
-              className="mt-5"
+              variant='error'
+              className='mt-5'
             />
           ) : null}
         </Card>
       </div>
 
-      <div className="mb-4 text-end">
+      <div className='mb-4 text-end'>
         {initialValues && (
           <Button
-            variant="outline"
+            variant='outline'
             onClick={router.back}
-            className="me-4"
-            type="button"
+            className='me-4'
+            type='button'
           >
             {t('form:button-label-back')}
           </Button>

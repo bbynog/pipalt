@@ -11,9 +11,7 @@
     "created_at": "2021-12-08T13:40:17.000000Z",
     "updated_at": "2021-12-08T13:40:17.000000Z",
     "deleted_at": null,
-    "translated_languages": [
-      "en"
-    ],
+    "translated_languages": ["en"],
     "type": {
       "id": 8,
       "name": "Books",
@@ -28,9 +26,7 @@
       "promotional_sliders": [],
       "created_at": "2021-12-07T16:30:18.000000Z",
       "updated_at": "2021-12-08T13:06:56.000000Z",
-      "translated_languages": [
-        "en"
-      ]
+      "translated_languages": ["en"]
     }
   },
   {
@@ -45,9 +41,7 @@
     "created_at": "2021-12-08T13:40:37.000000Z",
     "updated_at": "2021-12-08T13:40:37.000000Z",
     "deleted_at": null,
-    "translated_languages": [
-      "en"
-    ],
+    "translated_languages": ["en"],
     "type": {
       "id": 8,
       "name": "Books",
@@ -62,9 +56,7 @@
       "promotional_sliders": [],
       "created_at": "2021-12-07T16:30:18.000000Z",
       "updated_at": "2021-12-08T13:06:56.000000Z",
-      "translated_languages": [
-        "en"
-      ]
+      "translated_languages": ["en"]
     }
   },
   {
@@ -79,9 +71,7 @@
     "created_at": "2021-12-08T13:40:49.000000Z",
     "updated_at": "2021-12-08T13:40:49.000000Z",
     "deleted_at": null,
-    "translated_languages": [
-      "en"
-    ],
+    "translated_languages": ["en"],
     "type": {
       "id": 8,
       "name": "Books",
@@ -96,9 +86,7 @@
       "promotional_sliders": [],
       "created_at": "2021-12-07T16:30:18.000000Z",
       "updated_at": "2021-12-08T13:06:56.000000Z",
-      "translated_languages": [
-        "en"
-      ]
+      "translated_languages": ["en"]
     }
   },
   {
@@ -113,9 +101,7 @@
     "created_at": "2021-12-08T13:41:01.000000Z",
     "updated_at": "2021-12-08T13:41:01.000000Z",
     "deleted_at": null,
-    "translated_languages": [
-      "en"
-    ],
+    "translated_languages": ["en"],
     "type": {
       "id": 8,
       "name": "Books",
@@ -130,9 +116,7 @@
       "promotional_sliders": [],
       "created_at": "2021-12-07T16:30:18.000000Z",
       "updated_at": "2021-12-08T13:06:56.000000Z",
-      "translated_languages": [
-        "en"
-      ]
+      "translated_languages": ["en"]
     }
   },
   {
@@ -147,9 +131,7 @@
     "created_at": "2021-12-08T13:41:18.000000Z",
     "updated_at": "2021-12-08T13:41:18.000000Z",
     "deleted_at": null,
-    "translated_languages": [
-      "en"
-    ],
+    "translated_languages": ["en"],
     "type": {
       "id": 8,
       "name": "Books",
@@ -164,9 +146,7 @@
       "promotional_sliders": [],
       "created_at": "2021-12-07T16:30:18.000000Z",
       "updated_at": "2021-12-08T13:06:56.000000Z",
-      "translated_languages": [
-        "en"
-      ]
+      "translated_languages": ["en"]
     }
   },
   {
@@ -181,9 +161,7 @@
     "created_at": "2021-12-08T13:41:46.000000Z",
     "updated_at": "2021-12-08T13:41:46.000000Z",
     "deleted_at": null,
-    "translated_languages": [
-      "en"
-    ],
+    "translated_languages": ["en"],
     "type": {
       "id": 8,
       "name": "Books",
@@ -198,9 +176,7 @@
       "promotional_sliders": [],
       "created_at": "2021-12-07T16:30:18.000000Z",
       "updated_at": "2021-12-08T13:06:56.000000Z",
-      "translated_languages": [
-        "en"
-      ]
+      "translated_languages": ["en"]
     }
   },
   {
@@ -215,9 +191,7 @@
     "created_at": "2021-12-08T13:42:04.000000Z",
     "updated_at": "2021-12-08T13:42:04.000000Z",
     "deleted_at": null,
-    "translated_languages": [
-      "en"
-    ],
+    "translated_languages": ["en"],
     "type": {
       "id": 8,
       "name": "Books",
@@ -232,9 +206,7 @@
       "promotional_sliders": [],
       "created_at": "2021-12-07T16:30:18.000000Z",
       "updated_at": "2021-12-08T13:06:56.000000Z",
-      "translated_languages": [
-        "en"
-      ]
+      "translated_languages": ["en"]
     }
   },
   {
@@ -249,9 +221,7 @@
     "created_at": "2021-12-08T13:42:20.000000Z",
     "updated_at": "2021-12-08T13:42:20.000000Z",
     "deleted_at": null,
-    "translated_languages": [
-      "en"
-    ],
+    "translated_languages": ["en"],
     "type": {
       "id": 8,
       "name": "Books",
@@ -266,9 +236,7 @@
       "promotional_sliders": [],
       "created_at": "2021-12-07T16:30:18.000000Z",
       "updated_at": "2021-12-08T13:06:56.000000Z",
-      "translated_languages": [
-        "en"
-      ]
+      "translated_languages": ["en"]
     }
   },
   {
@@ -283,9 +251,7 @@
     "created_at": "2021-12-08T13:42:56.000000Z",
     "updated_at": "2021-12-08T14:17:28.000000Z",
     "deleted_at": null,
-    "translated_languages": [
-      "en"
-    ],
+    "translated_languages": ["en"],
     "type": {
       "id": 8,
       "name": "Books",
@@ -300,9 +266,7 @@
       "promotional_sliders": [],
       "created_at": "2021-12-07T16:30:18.000000Z",
       "updated_at": "2021-12-08T13:06:56.000000Z",
-      "translated_languages": [
-        "en"
-      ]
+      "translated_languages": ["en"]
     }
   },
   {
@@ -317,9 +281,7 @@
     "created_at": "2021-12-08T13:43:09.000000Z",
     "updated_at": "2021-12-08T13:43:09.000000Z",
     "deleted_at": null,
-    "translated_languages": [
-      "en"
-    ],
+    "translated_languages": ["en"],
     "type": {
       "id": 8,
       "name": "Books",
@@ -334,9 +296,7 @@
       "promotional_sliders": [],
       "created_at": "2021-12-07T16:30:18.000000Z",
       "updated_at": "2021-12-08T13:06:56.000000Z",
-      "translated_languages": [
-        "en"
-      ]
+      "translated_languages": ["en"]
     }
   },
   {
@@ -351,9 +311,7 @@
     "created_at": "2021-12-08T13:43:17.000000Z",
     "updated_at": "2021-12-08T13:43:17.000000Z",
     "deleted_at": null,
-    "translated_languages": [
-      "en"
-    ],
+    "translated_languages": ["en"],
     "type": {
       "id": 8,
       "name": "Books",
@@ -368,9 +326,7 @@
       "promotional_sliders": [],
       "created_at": "2021-12-07T16:30:18.000000Z",
       "updated_at": "2021-12-08T13:06:56.000000Z",
-      "translated_languages": [
-        "en"
-      ]
+      "translated_languages": ["en"]
     }
   },
   {
@@ -385,9 +341,7 @@
     "created_at": "2021-12-08T14:16:46.000000Z",
     "updated_at": "2021-12-08T14:17:12.000000Z",
     "deleted_at": null,
-    "translated_languages": [
-      "en"
-    ],
+    "translated_languages": ["en"],
     "type": {
       "id": 8,
       "name": "Books",
@@ -402,9 +356,7 @@
       "promotional_sliders": [],
       "created_at": "2021-12-07T16:30:18.000000Z",
       "updated_at": "2021-12-08T13:06:56.000000Z",
-      "translated_languages": [
-        "en"
-      ]
+      "translated_languages": ["en"]
     }
   },
   {
@@ -419,9 +371,7 @@
     "created_at": "2021-12-08T14:17:42.000000Z",
     "updated_at": "2021-12-08T14:17:42.000000Z",
     "deleted_at": null,
-    "translated_languages": [
-      "en"
-    ],
+    "translated_languages": ["en"],
     "type": {
       "id": 8,
       "name": "Books",
@@ -436,9 +386,7 @@
       "promotional_sliders": [],
       "created_at": "2021-12-07T16:30:18.000000Z",
       "updated_at": "2021-12-08T13:06:56.000000Z",
-      "translated_languages": [
-        "en"
-      ]
+      "translated_languages": ["en"]
     }
   },
   {
@@ -453,9 +401,7 @@
     "created_at": "2021-12-08T14:18:08.000000Z",
     "updated_at": "2021-12-08T14:18:08.000000Z",
     "deleted_at": null,
-    "translated_languages": [
-      "en"
-    ],
+    "translated_languages": ["en"],
     "type": {
       "id": 8,
       "name": "Books",
@@ -470,9 +416,7 @@
       "promotional_sliders": [],
       "created_at": "2021-12-07T16:30:18.000000Z",
       "updated_at": "2021-12-08T13:06:56.000000Z",
-      "translated_languages": [
-        "en"
-      ]
+      "translated_languages": ["en"]
     }
   },
   {
@@ -487,9 +431,7 @@
     "created_at": "2021-12-08T14:18:18.000000Z",
     "updated_at": "2021-12-08T14:18:18.000000Z",
     "deleted_at": null,
-    "translated_languages": [
-      "en"
-    ],
+    "translated_languages": ["en"],
     "type": {
       "id": 8,
       "name": "Books",
@@ -504,9 +446,7 @@
       "promotional_sliders": [],
       "created_at": "2021-12-07T16:30:18.000000Z",
       "updated_at": "2021-12-08T13:06:56.000000Z",
-      "translated_languages": [
-        "en"
-      ]
+      "translated_languages": ["en"]
     }
   },
   {
@@ -521,9 +461,7 @@
     "created_at": "2021-12-08T14:18:33.000000Z",
     "updated_at": "2021-12-08T14:18:33.000000Z",
     "deleted_at": null,
-    "translated_languages": [
-      "en"
-    ],
+    "translated_languages": ["en"],
     "type": {
       "id": 8,
       "name": "Books",
@@ -538,9 +476,7 @@
       "promotional_sliders": [],
       "created_at": "2021-12-07T16:30:18.000000Z",
       "updated_at": "2021-12-08T13:06:56.000000Z",
-      "translated_languages": [
-        "en"
-      ]
+      "translated_languages": ["en"]
     }
   },
   {
@@ -555,9 +491,7 @@
     "created_at": "2021-12-08T14:18:43.000000Z",
     "updated_at": "2021-12-08T14:18:43.000000Z",
     "deleted_at": null,
-    "translated_languages": [
-      "en"
-    ],
+    "translated_languages": ["en"],
     "type": {
       "id": 8,
       "name": "Books",
@@ -572,9 +506,7 @@
       "promotional_sliders": [],
       "created_at": "2021-12-07T16:30:18.000000Z",
       "updated_at": "2021-12-08T13:06:56.000000Z",
-      "translated_languages": [
-        "en"
-      ]
+      "translated_languages": ["en"]
     }
   },
   {
@@ -589,9 +521,7 @@
     "created_at": "2021-12-08T14:18:53.000000Z",
     "updated_at": "2021-12-08T14:18:53.000000Z",
     "deleted_at": null,
-    "translated_languages": [
-      "en"
-    ],
+    "translated_languages": ["en"],
     "type": {
       "id": 8,
       "name": "Books",
@@ -606,9 +536,7 @@
       "promotional_sliders": [],
       "created_at": "2021-12-07T16:30:18.000000Z",
       "updated_at": "2021-12-08T13:06:56.000000Z",
-      "translated_languages": [
-        "en"
-      ]
+      "translated_languages": ["en"]
     }
   },
   {
@@ -623,9 +551,7 @@
     "created_at": "2021-12-08T14:19:03.000000Z",
     "updated_at": "2021-12-08T14:19:03.000000Z",
     "deleted_at": null,
-    "translated_languages": [
-      "en"
-    ],
+    "translated_languages": ["en"],
     "type": {
       "id": 8,
       "name": "Books",
@@ -640,9 +566,7 @@
       "promotional_sliders": [],
       "created_at": "2021-12-07T16:30:18.000000Z",
       "updated_at": "2021-12-08T13:06:56.000000Z",
-      "translated_languages": [
-        "en"
-      ]
+      "translated_languages": ["en"]
     }
   },
   {
@@ -657,9 +581,7 @@
     "created_at": "2021-12-08T14:19:13.000000Z",
     "updated_at": "2021-12-08T14:19:13.000000Z",
     "deleted_at": null,
-    "translated_languages": [
-      "en"
-    ],
+    "translated_languages": ["en"],
     "type": {
       "id": 8,
       "name": "Books",
@@ -674,9 +596,7 @@
       "promotional_sliders": [],
       "created_at": "2021-12-07T16:30:18.000000Z",
       "updated_at": "2021-12-08T13:06:56.000000Z",
-      "translated_languages": [
-        "en"
-      ]
+      "translated_languages": ["en"]
     }
   },
   {
@@ -691,9 +611,7 @@
     "created_at": "2021-12-08T14:19:22.000000Z",
     "updated_at": "2021-12-08T14:19:22.000000Z",
     "deleted_at": null,
-    "translated_languages": [
-      "en"
-    ],
+    "translated_languages": ["en"],
     "type": {
       "id": 8,
       "name": "Books",
@@ -708,9 +626,7 @@
       "promotional_sliders": [],
       "created_at": "2021-12-07T16:30:18.000000Z",
       "updated_at": "2021-12-08T13:06:56.000000Z",
-      "translated_languages": [
-        "en"
-      ]
+      "translated_languages": ["en"]
     }
   },
   {
@@ -725,9 +641,7 @@
     "created_at": "2021-12-08T14:19:32.000000Z",
     "updated_at": "2021-12-08T14:19:32.000000Z",
     "deleted_at": null,
-    "translated_languages": [
-      "en"
-    ],
+    "translated_languages": ["en"],
     "type": {
       "id": 8,
       "name": "Books",
@@ -742,9 +656,7 @@
       "promotional_sliders": [],
       "created_at": "2021-12-07T16:30:18.000000Z",
       "updated_at": "2021-12-08T13:06:56.000000Z",
-      "translated_languages": [
-        "en"
-      ]
+      "translated_languages": ["en"]
     }
   },
   {
@@ -759,9 +671,7 @@
     "created_at": "2021-12-08T14:19:48.000000Z",
     "updated_at": "2021-12-08T14:19:48.000000Z",
     "deleted_at": null,
-    "translated_languages": [
-      "en"
-    ],
+    "translated_languages": ["en"],
     "type": {
       "id": 8,
       "name": "Books",
@@ -776,9 +686,7 @@
       "promotional_sliders": [],
       "created_at": "2021-12-07T16:30:18.000000Z",
       "updated_at": "2021-12-08T13:06:56.000000Z",
-      "translated_languages": [
-        "en"
-      ]
+      "translated_languages": ["en"]
     }
   },
   {
@@ -793,9 +701,7 @@
     "created_at": "2021-12-08T14:19:57.000000Z",
     "updated_at": "2021-12-08T14:19:57.000000Z",
     "deleted_at": null,
-    "translated_languages": [
-      "en"
-    ],
+    "translated_languages": ["en"],
     "type": {
       "id": 8,
       "name": "Books",
@@ -810,9 +716,7 @@
       "promotional_sliders": [],
       "created_at": "2021-12-07T16:30:18.000000Z",
       "updated_at": "2021-12-08T13:06:56.000000Z",
-      "translated_languages": [
-        "en"
-      ]
+      "translated_languages": ["en"]
     }
   },
   {
@@ -827,9 +731,7 @@
     "created_at": "2021-12-08T14:20:19.000000Z",
     "updated_at": "2021-12-08T14:20:19.000000Z",
     "deleted_at": null,
-    "translated_languages": [
-      "en"
-    ],
+    "translated_languages": ["en"],
     "type": {
       "id": 8,
       "name": "Books",
@@ -844,9 +746,7 @@
       "promotional_sliders": [],
       "created_at": "2021-12-07T16:30:18.000000Z",
       "updated_at": "2021-12-08T13:06:56.000000Z",
-      "translated_languages": [
-        "en"
-      ]
+      "translated_languages": ["en"]
     }
   },
   {
@@ -861,9 +761,7 @@
     "created_at": "2022-01-04T16:32:26.000000Z",
     "updated_at": "2022-01-04T16:37:00.000000Z",
     "deleted_at": null,
-    "translated_languages": [
-      "en"
-    ],
+    "translated_languages": ["en"],
     "type": {
       "id": 8,
       "name": "Books",
@@ -878,9 +776,7 @@
       "promotional_sliders": [],
       "created_at": "2021-12-07T16:30:18.000000Z",
       "updated_at": "2021-12-08T13:06:56.000000Z",
-      "translated_languages": [
-        "en"
-      ]
+      "translated_languages": ["en"]
     }
   }
 ]

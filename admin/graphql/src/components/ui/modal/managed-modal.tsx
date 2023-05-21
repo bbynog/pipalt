@@ -2,103 +2,103 @@ import Modal from '@/components/ui/modal/modal';
 import dynamic from 'next/dynamic';
 import { MODAL_VIEWS, useModalAction, useModalState } from './modal.context';
 const AuthorDeleteView = dynamic(
-  () => import('@/components/author/author-delete-view')
+  () => import('@/components/author/author-delete-view'),
 );
 const ManufacturerDeleteView = dynamic(
-  () => import('@/components/manufacturer/manufacturer-delete-view')
+  () => import('@/components/manufacturer/manufacturer-delete-view'),
 );
 const ProductVariation = dynamic(
-  () => import('@/components/product/variation/variation')
+  () => import('@/components/product/variation/variation'),
 );
 const UserWalletPointsAddView = dynamic(
-  () => import('@/components/user/user-wallet-points-add-view')
+  () => import('@/components/user/user-wallet-points-add-view'),
 );
 const TagDeleteView = dynamic(() => import('@/components/tag/tag-delete-view'));
 const TaxDeleteView = dynamic(() => import('@/components/tax/tax-delete-view'));
 const BanCustomerView = dynamic(
-  () => import('@/components/user/user-ban-view')
+  () => import('@/components/user/user-ban-view'),
 );
 const ShippingDeleteView = dynamic(
-  () => import('@/components/shipping/shipping-delete-view')
+  () => import('@/components/shipping/shipping-delete-view'),
 );
 const CategoryDeleteView = dynamic(
-  () => import('@/components/category/category-delete-view')
+  () => import('@/components/category/category-delete-view'),
 );
 const CouponDeleteView = dynamic(
-  () => import('@/components/coupon/coupon-delete-view')
+  () => import('@/components/coupon/coupon-delete-view'),
 );
 const StoreNoticeDeleteView = dynamic(
-  () => import('@/components/store-notice/store-notice-delete-view')
+  () => import('@/components/store-notice/store-notice-delete-view'),
 );
 const OrderDeleteView = dynamic(
-  () => import('@/components/order/order-delete-view')
+  () => import('@/components/order/order-delete-view'),
 );
 const ProductDeleteView = dynamic(
-  () => import('@/components/product/product-delete-view')
+  () => import('@/components/product/product-delete-view'),
 );
 const TypeDeleteView = dynamic(
-  () => import('@/components/group/group-delete-view')
+  () => import('@/components/group/group-delete-view'),
 );
 const AttributeDeleteView = dynamic(
-  () => import('@/components/attribute/attribute-delete-view')
+  () => import('@/components/attribute/attribute-delete-view'),
 );
 const ApproveShopView = dynamic(
-  () => import('@/components/shop/approve-shop-view')
+  () => import('@/components/shop/approve-shop-view'),
 );
 const DisApproveShopView = dynamic(
-  () => import('@/components/shop/disapprove-shop-view')
+  () => import('@/components/shop/disapprove-shop-view'),
 );
 const RemoveStaffView = dynamic(
-  () => import('@/components/shop/staff-delete-view')
+  () => import('@/components/shop/staff-delete-view'),
 );
 
 const ExportImportView = dynamic(
-  () => import('@/components/product/import-export-modal')
+  () => import('@/components/product/import-export-modal'),
 );
 
 const AttributeExportImport = dynamic(
-  () => import('@/components/attribute/attribute-import-export')
+  () => import('@/components/attribute/attribute-import-export'),
 );
 const UpdateRefundConfirmationView = dynamic(
-  () => import('@/components/refund/refund-confirmation-view')
+  () => import('@/components/refund/refund-confirmation-view'),
 );
 const RefundImageModal = dynamic(
-  () => import('@/components/refund/refund-image-modal')
+  () => import('@/components/refund/refund-image-modal'),
 );
 const ReviewImageModal = dynamic(
-  () => import('@/components/reviews/review-image-modal')
+  () => import('@/components/reviews/review-image-modal'),
 );
 const MakeAdminView = dynamic(
-  () => import('@/components/user/make-admin-view')
+  () => import('@/components/user/make-admin-view'),
 );
 const CreateOrUpdateAddressForm = dynamic(
-  () => import('@/components/address/create-or-update')
+  () => import('@/components/address/create-or-update'),
 );
 const AddOrUpdateCheckoutContact = dynamic(
-  () => import('@/components/checkout/contact/add-or-update')
+  () => import('@/components/checkout/contact/add-or-update'),
 );
 const SelectCustomer = dynamic(
-  () => import('@/components/checkout/customer/select-customer')
+  () => import('@/components/checkout/customer/select-customer'),
 );
 
 const QuestionReplyView = dynamic(
-  () => import('@/components/question/question-reply-view')
+  () => import('@/components/question/question-reply-view'),
 );
 const QuestionDeleteView = dynamic(
-  () => import('@/components/question/question-delete-view')
+  () => import('@/components/question/question-delete-view'),
 );
 const ReviewDeleteView = dynamic(
-  () => import('@/components/reviews/review-delete-view')
+  () => import('@/components/reviews/review-delete-view'),
 );
 const AcceptAbuseReportView = dynamic(
-  () => import('@/components/reviews/acccpt-report-confirmation')
+  () => import('@/components/reviews/acccpt-report-confirmation'),
 );
 const DeclineAbuseReportView = dynamic(
-  () => import('@/components/reviews/decline-report-confirmation')
+  () => import('@/components/reviews/decline-report-confirmation'),
 );
 const AbuseReport = dynamic(() => import('@/components/reviews/abuse-report'));
 const ComposerMessage = dynamic(
-  () => import('@/components/message/compose-message')
+  () => import('@/components/message/compose-message'),
 );
 
 function renderModal(view: MODAL_VIEWS | undefined, data: any) {

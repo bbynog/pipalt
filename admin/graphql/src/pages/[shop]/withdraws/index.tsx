@@ -62,16 +62,16 @@ export default function WithdrawsPage() {
 
   return (
     <>
-      <Card className="flex flex-col items-center justify-between mb-8 md:flex-row">
-        <div className="mb-4 md:w-1/4 md:mb-0">
-          <h1 className="text-lg font-semibold text-heading">
+      <Card className='mb-8 flex flex-col items-center justify-between md:flex-row'>
+        <div className='mb-4 md:mb-0 md:w-1/4'>
+          <h1 className='text-lg font-semibold text-heading'>
             {t('common:sidebar-nav-item-withdraws')}
           </h1>
         </div>
 
         <LinkButton
           href={`/${shop}/withdraws/create`}
-          className="w-full h-12 md:w-auto md:ms-auto"
+          className='h-12 w-full md:w-auto md:ms-auto'
         >
           <span>+ {t('form:button-label-add-withdraw')}</span>
         </LinkButton>

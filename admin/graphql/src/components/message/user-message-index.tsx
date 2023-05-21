@@ -64,7 +64,7 @@ const UserMessageIndex = ({ className, ...rest }: Props) => {
   };
   if (!isEmpty(query?.id) && messageError)
     return (
-      <div className="flex !h-full flex-1 items-center justify-center bg-[#F3F4F6]">
+      <div className='flex !h-full flex-1 items-center justify-center bg-[#F3F4F6]'>
         <ErrorMessage message={messageError?.message} />
       </div>
     );
@@ -74,7 +74,7 @@ const UserMessageIndex = ({ className, ...rest }: Props) => {
         className={cn(
           'flex h-full flex-1 bg-[#F3F4F6] pb-7',
           width >= RESPONSIVE_WIDTH ? '2xl:max-w-[calc(100% - 26rem)]' : '',
-          className
+          className,
         )}
         {...rest}
       >
@@ -94,7 +94,7 @@ const UserMessageIndex = ({ className, ...rest }: Props) => {
                   <UserMessageView
                     // @ts-ignore
                     messages={messages ?? []}
-                    id="chatBody"
+                    id='chatBody'
                     error={messageError}
                     loading={messageLoading}
                     classes={classes}
@@ -103,7 +103,7 @@ const UserMessageIndex = ({ className, ...rest }: Props) => {
                     loadMore={loadMore}
                   >
                     {hasMore ? (
-                      <div ref={loadMoreRef} className="mb-4 text-center">
+                      <div ref={loadMoreRef} className='mb-4 text-center'>
                         {isLoadingMore ? (
                           <MessageCardLoader
                             classes={classes}
@@ -118,7 +118,7 @@ const UserMessageIndex = ({ className, ...rest }: Props) => {
                     )}
                   </UserMessageView>
 
-                  <div className="relative mx-6">
+                  <div className='relative mx-6'>
                     {/* @ts-ignore */}
                     {Boolean(data?.shop?.is_active) ? (
                       <>
@@ -134,7 +134,7 @@ const UserMessageIndex = ({ className, ...rest }: Props) => {
                 </div>
               </>
             ) : (
-              <Loader className="!h-full" text={t('common:text-loading')} />
+              <Loader className='!h-full' text={t('common:text-loading')} />
             )}
           </>
         ) : (

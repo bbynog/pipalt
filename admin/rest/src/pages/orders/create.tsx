@@ -22,7 +22,7 @@ import { Product, ProductStatus } from '@/types';
 import { useProductsQuery } from '@/data/product';
 import NotFound from '@/components/ui/not-found';
 import { useRouter } from 'next/router';
-import {useSettings} from "@/contexts/settings.context";
+import { useSettings } from '@/contexts/settings.context';
 
 export default function ProductsPage() {
   const { locale } = useRouter();

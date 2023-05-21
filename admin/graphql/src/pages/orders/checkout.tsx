@@ -17,14 +17,14 @@ import { useAtom } from 'jotai';
 import Loader from '@/components/ui/loader/loader';
 
 const ScheduleGrid = dynamic(
-  () => import('@/components/checkout/schedule/schedule-grid')
+  () => import('@/components/checkout/schedule/schedule-grid'),
 );
 const AddressGrid = dynamic(() => import('@/components/checkout/address-grid'));
 const ContactGrid = dynamic(
-  () => import('@/components/checkout/contact/contact-grid')
+  () => import('@/components/checkout/contact/contact-grid'),
 );
 const RightSideView = dynamic(
-  () => import('@/components/checkout/right-side-view')
+  () => import('@/components/checkout/right-side-view'),
 );
 
 export default function CheckoutPage() {
@@ -42,18 +42,18 @@ export default function CheckoutPage() {
 
   const { user } = data ?? {};
   return (
-    <div className="bg-gray-100">
-      <div className="flex flex-col lg:flex-row items-center lg:items-start m-auto lg:space-s-8 w-full max-w-5xl">
-        <div className="lg:max-w-2xl w-full space-y-6">
+    <div className='bg-gray-100'>
+      <div className='m-auto flex w-full max-w-5xl flex-col items-center lg:flex-row lg:items-start lg:space-s-8'>
+        <div className='w-full space-y-6 lg:max-w-2xl'>
           <CustomerGrid
-            className="shadow-700 bg-light p-5 md:p-8"
+            className='shadow-700 bg-light p-5 md:p-8'
             //@ts-ignore
             // contact={user?.profile?.contact}
             label={t('text-customer')}
             count={1}
           />
           <ContactGrid
-            className="shadow-700 bg-light p-5 md:p-8"
+            className='shadow-700 bg-light p-5 md:p-8'
             //@ts-ignore
             contact={user?.profile?.contact}
             label={t('text-contact-number')}
@@ -62,35 +62,35 @@ export default function CheckoutPage() {
 
           <AddressGrid
             userId={user?.id!}
-            className="shadow-700 bg-light p-5 md:p-8"
+            className='shadow-700 bg-light p-5 md:p-8'
             label={t('text-billing-address')}
             count={2}
             //@ts-ignore
             addresses={user?.address?.filter(
-              (address) => address?.type === AddressType.Billing
+              (address) => address?.type === AddressType.Billing,
             )}
             atom={billingAddressAtom}
             type={AddressType.Billing}
           />
           <AddressGrid
             userId={user?.id!}
-            className="shadow-700 bg-light p-5 md:p-8"
+            className='shadow-700 bg-light p-5 md:p-8'
             label={t('text-shipping-address')}
             count={3}
             //@ts-ignore
             addresses={user?.address?.filter(
-              (address) => address?.type === AddressType.Shipping
+              (address) => address?.type === AddressType.Shipping,
             )}
             atom={shippingAddressAtom}
             type={AddressType.Shipping}
           />
           <ScheduleGrid
-            className="shadow-700 bg-light p-5 md:p-8"
+            className='shadow-700 bg-light p-5 md:p-8'
             label={t('text-delivery-schedule')}
             count={4}
           />
         </div>
-        <div className="w-full lg:w-96 mb-10 sm:mb-12 lg:mb-0 mt-10">
+        <div className='mb-10 mt-10 w-full sm:mb-12 lg:mb-0 lg:w-96'>
           <RightSideView />
         </div>
       </div>

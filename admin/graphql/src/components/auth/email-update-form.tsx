@@ -28,9 +28,9 @@ export default function EmailUpdateForm({ me }: any) {
     try {
       const { data } = await updateUserEmailMutation({
         variables: {
-          input:{
+          input: {
             email,
-          }
+          },
         },
       });
       console.log(data);
@@ -39,24 +39,24 @@ export default function EmailUpdateForm({ me }: any) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8">
+      <div className='my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8'>
         <Description
           title={t('common:text-email')}
           details={t('form:email-change-helper-text')}
-          className="sm:pe-4 md:pe-5 w-full px-0 pb-5 sm:w-4/12 sm:py-8 md:w-1/3"
+          className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
         />
 
-        <Card className="mb-5 w-full sm:w-8/12 md:w-2/3">
+        <Card className='mb-5 w-full sm:w-8/12 md:w-2/3'>
           <Input
             label={t('form:input-label-email')}
             {...register('email')}
             error={t(errors.email?.message!)}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
           />
         </Card>
 
-        <div className="text-end w-full">
+        <div className='w-full text-end'>
           <Button loading={loading} disabled={loading}>
             {t('form:button-label-save')}
           </Button>

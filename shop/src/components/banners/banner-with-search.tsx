@@ -38,10 +38,10 @@ const BannerWithSearch: React.FC<BannerProps> = ({ banners, layout }) => {
         '!block': layout === 'minimal',
       })}
     >
-      <div className="-z-1 overflow-hidden">
-        <div className="relative">
+      <div className='-z-1 overflow-hidden'>
+        <div className='relative'>
           <Swiper
-            id="banner"
+            id='banner'
             // loop={true}
             modules={[Navigation]}
             resizeObserver={true}
@@ -57,18 +57,18 @@ const BannerWithSearch: React.FC<BannerProps> = ({ banners, layout }) => {
                   })}
                 >
                   <Image
-                    className="h-full min-h-140 w-full object-cover"
+                    className='h-full min-h-140 w-full object-cover'
                     src={banner.image?.original ?? productPlaceholder}
                     alt={banner.title ?? ''}
                     fill
-                    sizes="(max-width: 768px) 100vw"
+                    sizes='(max-width: 768px) 100vw'
                   />
                   <div
                     className={cn(
                       'absolute inset-0 mt-8 flex w-full flex-col items-center justify-center p-5 text-center md:px-20 lg:space-y-10',
                       {
                         'space-y-5 md:!space-y-8': layout === 'minimal',
-                      }
+                      },
                     )}
                   >
                     <h1
@@ -76,16 +76,16 @@ const BannerWithSearch: React.FC<BannerProps> = ({ banners, layout }) => {
                         'text-2xl font-bold tracking-tight text-heading lg:text-4xl xl:text-5xl',
                         {
                           '!text-accent': layout === 'minimal',
-                        }
+                        },
                       )}
                     >
                       {banner?.title}
                     </h1>
-                    <p className="text-sm text-heading lg:text-base xl:text-lg">
+                    <p className='text-sm text-heading lg:text-base xl:text-lg'>
                       {banner?.description}
                     </p>
-                    <div className="w-full max-w-3xl" ref={intersectionRef}>
-                      <Search label="search" />
+                    <div className='w-full max-w-3xl' ref={intersectionRef}>
+                      <Search label='search' />
                     </div>
                   </div>
                 </div>

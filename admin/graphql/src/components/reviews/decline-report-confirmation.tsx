@@ -18,10 +18,10 @@ const DeclineAbuseReportView = () => {
   }
   return (
     <ConfirmationCard
-      title="text-decline"
-      description="text-decline-report-modal-description"
+      title='text-decline'
+      description='text-decline-report-modal-description'
       onCancel={closeModal}
-      deleteBtnText="text-decline"
+      deleteBtnText='text-decline'
       onDelete={handleDelete}
       deleteBtnLoading={loading}
     />

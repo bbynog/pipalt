@@ -50,7 +50,7 @@ export function useOrders(options?: Partial<OrderQueryOptions>) {
       getNextPageParam: ({ current_page, last_page }) =>
         last_page > current_page && { page: current_page + 1 },
       refetchOnWindowFocus: false,
-    }
+    },
   );
 
   function handleLoadMore() {
@@ -78,7 +78,7 @@ export function useOrder({ tracking_number }: { tracking_number: string }) {
   >(
     [API_ENDPOINTS.ORDERS, tracking_number],
     () => client.orders.get(tracking_number),
-    { refetchOnWindowFocus: false }
+    { refetchOnWindowFocus: false },
   );
 
   return {
@@ -112,7 +112,7 @@ export function useRefunds(options: Pick<QueryOptions, 'limit'>) {
     {
       getNextPageParam: ({ current_page, last_page }) =>
         last_page > current_page && { page: current_page + 1 },
-    }
+    },
   );
 
   function handleLoadMore() {
@@ -133,7 +133,7 @@ export function useRefunds(options: Pick<QueryOptions, 'limit'>) {
 }
 
 export const useDownloadableProducts = (
-  options: Pick<QueryOptions, 'limit'>
+  options: Pick<QueryOptions, 'limit'>,
 ) => {
   const { locale } = useRouter();
 
@@ -158,7 +158,7 @@ export const useDownloadableProducts = (
       getNextPageParam: ({ current_page, last_page }) =>
         last_page > current_page && { page: current_page + 1 },
       refetchOnWindowFocus: false,
-    }
+    },
   );
 
   function handleLoadMore() {
@@ -201,7 +201,7 @@ export function useCreateRefund() {
         queryClient.invalidateQueries(API_ENDPOINTS.ORDERS);
         closeModal();
       },
-    }
+    },
   );
 
   function formatRefundInput(input: CreateRefundInput) {
@@ -237,7 +237,7 @@ export function useCreateOrder() {
 
         if (payment_intent?.payment_intent_info?.is_redirect) {
           return router.push(
-            payment_intent?.payment_intent_info?.redirect_url as string
+            payment_intent?.payment_intent_info?.redirect_url as string,
           );
         } else {
           return router.push(`${Routes.order(tracking_number)}/payment`);
@@ -292,7 +292,7 @@ export function useGenerateDownloadableUrl() {
 
         download(data, 'record.name');
       },
-    }
+    },
   );
 
   function generateDownloadableUrl(digital_file_id: string) {
@@ -346,7 +346,7 @@ export function useOrderPayment() {
         }: any = error ?? {};
         toast.error(data?.message);
       },
-    }
+    },
   );
 
   function formatOrderInput(input: CreateOrderPaymentInput) {
@@ -403,7 +403,7 @@ export function useGetPaymentIntent({
           });
         }
       },
-    }
+    },
   );
 
   return {

@@ -63,15 +63,15 @@ export default function StaffsPage() {
 
   return (
     <>
-      <Card className="flex flex-row items-center justify-between mb-8">
-        <div className="md:w-1/4">
-          <h1 className="text-lg font-semibold text-heading">
+      <Card className='mb-8 flex flex-row items-center justify-between'>
+        <div className='md:w-1/4'>
+          <h1 className='text-lg font-semibold text-heading'>
             {t('form:text-staff')}
           </h1>
         </div>
 
-        <div className="flex items-center w-3/4 xl:w-2/4 ms-auto">
-          <LinkButton href={`/${shop}/staffs/create`} className="h-12 ms-auto">
+        <div className='flex w-3/4 items-center ms-auto xl:w-2/4'>
+          <LinkButton href={`/${shop}/staffs/create`} className='h-12 ms-auto'>
             <span>+ {t('form:button-label-add-staff')}</span>
           </LinkButton>
         </div>

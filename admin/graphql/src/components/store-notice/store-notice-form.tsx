@@ -97,13 +97,13 @@ export default function CreateOrUpdateStoreNoticeForm({
           expired_at: new Date(initialValues.expired_at!),
           priority: initialValues?.priority
             ? priorityType?.find(
-                (priority) => priority.value === initialValues?.priority!
+                (priority) => priority.value === initialValues?.priority!,
               )
             : { name: '', value: '' },
           type: initialValues?.type
             ? noticeTypes &&
               noticeTypes?.find(
-                (type: any) => type.value === initialValues.type!
+                (type: any) => type.value === initialValues.type!,
               )
             : { name: '', value: '' },
           received_by: noticeReceived ? noticeReceived : [],
@@ -127,7 +127,7 @@ export default function CreateOrUpdateStoreNoticeForm({
   });
   let shopIndexFind: any = find(
     data?.storeNoticeReceiver,
-    (x: any) => x.slug === router.query.shop
+    (x: any) => x.slug === router.query.shop,
   );
 
   const [effective_from, expired_at] = watch(['effective_from', 'expired_at']);
@@ -183,7 +183,7 @@ export default function CreateOrUpdateStoreNoticeForm({
             undefined,
             {
               locale: router.locale,
-            }
+            },
           );
           toast.success(t('common:successfully-updated'));
         }
@@ -201,7 +201,7 @@ export default function CreateOrUpdateStoreNoticeForm({
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="flex flex-wrap my-5 sm:my-8">
+      <div className='my-5 flex flex-wrap sm:my-8'>
         <Description
           title={t('form:input-label-description')}
           details={`${
@@ -209,14 +209,14 @@ export default function CreateOrUpdateStoreNoticeForm({
               ? t('form:item-description-edit')
               : t('form:item-description-add')
           } ${t('form:store-notice-form-info-help-text')}`}
-          className="w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5 "
+          className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5 '
         />
 
-        <Card className="w-full sm:w-8/12 md:w-2/3">
-          <div className="mb-5">
+        <Card className='w-full sm:w-8/12 md:w-2/3'>
+          <div className='mb-5'>
             <Label>{t('form:input-label-priority')}</Label>
             <SelectInput
-              name="priority"
+              name='priority'
               getOptionLabel={(option: any) => option.name}
               getOptionValue={(option: any) => option.value}
               control={control}
@@ -231,8 +231,8 @@ export default function CreateOrUpdateStoreNoticeForm({
             label={`${t('form:input-title')}*`}
             {...register('notice')}
             error={t(errors.notice?.message!)}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
             disabled={isTranslateStoreNotice}
           />
 
@@ -240,22 +240,22 @@ export default function CreateOrUpdateStoreNoticeForm({
             label={`${t('form:input-label-description')}*`}
             {...register('description')}
             error={t(errors.description?.message!)}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
             disabled={isTranslateStoreNotice}
           />
 
-          <div className="flex flex-col mb-6 sm:flex-row">
-            <div className="w-full p-0 mb-5 sm:mb-0 sm:w-1/2 sm:pe-2">
+          <div className='mb-6 flex flex-col sm:flex-row'>
+            <div className='mb-5 w-full p-0 sm:mb-0 sm:w-1/2 sm:pe-2'>
               <Label>{`${t('form:store-notice-active-from')}*`}</Label>
 
               <Controller
                 control={control}
-                name="effective_from"
+                name='effective_from'
                 render={({ field: { onChange, onBlur, value } }) => (
                   //@ts-ignore
                   <DatePicker
-                    dateFormat="dd/MM/yyyy"
+                    dateFormat='dd/MM/yyyy'
                     onChange={onChange}
                     onBlur={onBlur}
                     selected={value}
@@ -264,23 +264,23 @@ export default function CreateOrUpdateStoreNoticeForm({
                     maxDate={expired_at}
                     startDate={effective_from}
                     endDate={expired_at}
-                    className="border border-border-base"
+                    className='border border-border-base'
                     disabled={isTranslateStoreNotice}
                   />
                 )}
               />
               <ValidationError message={t(errors.effective_from?.message!)} />
             </div>
-            <div className="w-full p-0 sm:w-1/2 sm:ps-2">
+            <div className='w-full p-0 sm:w-1/2 sm:ps-2'>
               <Label>{`${t('form:store-notice-expire-at')}*`}</Label>
 
               <Controller
                 control={control}
-                name="expired_at"
+                name='expired_at'
                 render={({ field: { onChange, onBlur, value } }) => (
                   //@ts-ignore
                   <DatePicker
-                    dateFormat="dd/MM/yyyy"
+                    dateFormat='dd/MM/yyyy'
                     onChange={onChange}
                     onBlur={onBlur}
                     selected={value}
@@ -288,7 +288,7 @@ export default function CreateOrUpdateStoreNoticeForm({
                     startDate={effective_from}
                     endDate={expired_at}
                     minDate={effective_from}
-                    className="border border-border-base"
+                    className='border border-border-base'
                     disabled={isTranslateStoreNotice}
                   />
                 )}
@@ -298,10 +298,10 @@ export default function CreateOrUpdateStoreNoticeForm({
           </div>
           {superAdmin && (
             <>
-              <div className="mb-0">
+              <div className='mb-0'>
                 <Label>{t('form:input-label-type')}</Label>
                 <SelectInput
-                  name="type"
+                  name='type'
                   control={control}
                   getOptionLabel={(option: any) => option.name}
                   getOptionValue={(option: any) => option.value}
@@ -319,7 +319,7 @@ export default function CreateOrUpdateStoreNoticeForm({
                   noticeType.value ===
                     StoreNoticeType.SpecificShop.toLowerCase()) && (
                   <NoticeReceivedByInput
-                    className="mt-5"
+                    className='mt-5'
                     control={control}
                     setValue={setValue}
                     //@ts-ignore
@@ -330,13 +330,13 @@ export default function CreateOrUpdateStoreNoticeForm({
           )}
         </Card>
       </div>
-      <div className="mb-4 text-end">
+      <div className='mb-4 text-end'>
         {initialValues && (
           <Button
-            variant="outline"
+            variant='outline'
             onClick={router.back}
-            className="me-4"
-            type="button"
+            className='me-4'
+            type='button'
           >
             {t('form:button-label-back')}
           </Button>

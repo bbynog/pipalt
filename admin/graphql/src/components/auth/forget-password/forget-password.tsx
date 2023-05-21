@@ -77,7 +77,7 @@ const ForgetPassword = () => {
     <>
       {errorMsg && (
         <Alert
-          variant="error"
+          variant='error'
           message={t(`common:${errorMsg}`)}
           closeable={true}
           onClose={() => setErrorMsg('')}

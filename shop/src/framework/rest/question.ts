@@ -20,7 +20,7 @@ export function useMyQuestions(options?: MyQuestionQueryOptions) {
     {
       getNextPageParam: ({ current_page, last_page }) =>
         last_page > current_page && { page: current_page + 1 },
-    }
+    },
   );
   function handleLoadMore() {
     fetchNextPage();

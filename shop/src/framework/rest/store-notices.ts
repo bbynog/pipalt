@@ -10,7 +10,7 @@ export const useStoreNotices = (options: Partial<StoreNoticeQueryOptions>) => {
       client.storeNotice.all(Object.assign({}, queryKey[1], pageParam)),
     {
       keepPreviousData: true,
-    }
+    },
   );
 
   return {

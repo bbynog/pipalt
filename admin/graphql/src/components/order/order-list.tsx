@@ -19,7 +19,9 @@ import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { useMemo, useState } from 'react';
 import {
-  OrderPaginator, SortOrder, UserAddress
+  OrderPaginator,
+  SortOrder,
+  UserAddress,
 } from '__generated__/__types__';
 
 type IProps = {
@@ -62,7 +64,7 @@ const OrderList = ({ orders, onPagination, refetch }: IProps) => {
           orderBy: value,
         });
       }, 500),
-    [order]
+    [order],
   );
 
   const onHeaderClick = (value: string | undefined) => ({
@@ -111,7 +113,7 @@ const OrderList = ({ orders, onPagination, refetch }: IProps) => {
         const { price } = usePrice({
           amount: value,
         });
-        return <span className="whitespace-nowrap">{price}</span>;
+        return <span className='whitespace-nowrap'>{price}</span>;
       },
     },
     {
@@ -132,7 +134,7 @@ const OrderList = ({ orders, onPagination, refetch }: IProps) => {
         dayjs.extend(utc);
         dayjs.extend(timezone);
         return (
-          <span className="whitespace-nowrap">
+          <span className='whitespace-nowrap'>
             {dayjs.utc(date).tz(dayjs.tz.guess()).fromNow()}
           </span>
         );
@@ -174,9 +176,9 @@ const OrderList = ({ orders, onPagination, refetch }: IProps) => {
                   <button
                     onClick={() => onSubmit(order?.shop?.id)}
                     disabled={!!loading && loading === order?.shop?.id}
-                    className="cursor-pointer text-accent transition-colors duration-300 hover:text-accent-hover"
+                    className='cursor-pointer text-accent transition-colors duration-300 hover:text-accent-hover'
                   >
-                    <ChatIcon width="19" height="20" />
+                    <ChatIcon width='19' height='20' />
                   </button>
                 ) : (
                   ''
@@ -196,13 +198,13 @@ const OrderList = ({ orders, onPagination, refetch }: IProps) => {
 
   return (
     <>
-      <div className="mb-6 overflow-hidden rounded shadow">
+      <div className='mb-6 overflow-hidden rounded shadow'>
         <Table
           //@ts-ignore
           columns={columns}
           emptyText={t('table:empty-table-data')}
           data={data}
-          rowKey="id"
+          rowKey='id'
           scroll={{ x: 1000 }}
           expandable={{
             expandedRowRender: () => '',
@@ -212,7 +214,7 @@ const OrderList = ({ orders, onPagination, refetch }: IProps) => {
       </div>
 
       {!!paginatorInfo?.total && (
-        <div className="flex items-center justify-end">
+        <div className='flex items-center justify-end'>
           <Pagination
             total={paginatorInfo?.total}
             current={paginatorInfo?.currentPage}

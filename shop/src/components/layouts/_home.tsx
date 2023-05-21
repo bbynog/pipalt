@@ -19,25 +19,25 @@ export default function HomeLayout({
 }: React.PropsWithChildren<{ layout: string }>) {
   const { t } = useTranslation('common');
   const [, setDisplayMobileHeaderSearch] = useAtom(
-    displayMobileHeaderSearchAtom
+    displayMobileHeaderSearchAtom,
   );
   return (
-    <div className="flex min-h-screen flex-col bg-gray-100 transition-colors duration-150">
+    <div className='flex min-h-screen flex-col bg-gray-100 transition-colors duration-150'>
       {['minimal', 'compact'].includes(layout) ? (
         <HeaderMinimal layout={layout} />
       ) : (
         <Header layout={layout} />
       )}
-      <div className="min-h-screen">{children}</div>
+      <div className='min-h-screen'>{children}</div>
       {['compact'].includes(layout) && <Footer />}
       <MobileNavigation>
         <motion.button
           whileTap={{ scale: 0.88 }}
           onClick={() => setDisplayMobileHeaderSearch((prev) => !prev)}
-          className="flex h-full items-center justify-center p-2 focus:text-accent focus:outline-0"
+          className='flex h-full items-center justify-center p-2 focus:text-accent focus:outline-0'
         >
-          <span className="sr-only">{t('text-search')}</span>
-          <SearchIcon width="17.05" height="18" />
+          <span className='sr-only'>{t('text-search')}</span>
+          <SearchIcon width='17.05' height='18' />
         </motion.button>
       </MobileNavigation>
     </div>

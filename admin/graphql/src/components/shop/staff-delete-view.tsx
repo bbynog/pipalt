@@ -14,7 +14,7 @@ const StaffDeleteView = () => {
         fields: {
           staffs(existingRefs, { readField }) {
             return existingRefs?.data?.filter(
-              (ref: any) => removeStaff.id !== readField('id', ref)
+              (ref: any) => removeStaff.id !== readField('id', ref),
             );
           },
         },

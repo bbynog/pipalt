@@ -1,9 +1,9 @@
-import {Args, ID, Mutation, Query, Resolver} from '@nestjs/graphql';
-import {Card} from './entities/card.entity';
-import {AddNewCardInput} from './dto/add-new-card.input';
-import {PaymentMethodService} from './payment-method.service';
-import {UpdateCardInput} from './dto/update-card.input';
-import {SavePaymentMethodInput} from './dto/save-payment-method.input';
+import { Args, ID, Mutation, Query, Resolver } from '@nestjs/graphql';
+import { Card } from './entities/card.entity';
+import { AddNewCardInput } from './dto/add-new-card.input';
+import { PaymentMethodService } from './payment-method.service';
+import { UpdateCardInput } from './dto/update-card.input';
+import { SavePaymentMethodInput } from './dto/save-payment-method.input';
 
 @Resolver(() => Card)
 export class PaymentMethodResolver {

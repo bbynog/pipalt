@@ -40,7 +40,7 @@ const AttributeList = ({ attributes, refetch }: IProps) => {
           ],
         });
       }, 500),
-    [order]
+    [order],
   );
 
   const onHeaderClick = (value: string | undefined) => ({
@@ -74,7 +74,7 @@ const AttributeList = ({ attributes, refetch }: IProps) => {
       key: 'name',
       align: alignLeft,
       onHeaderCell: () => onHeaderClick(QueryAttributesOrderByColumn.Name),
-      render: (name: any) => <span className="whitespace-nowrap">{name}</span>,
+      render: (name: any) => <span className='whitespace-nowrap'>{name}</span>,
     },
     {
       title: t('table:table-item-shop'),
@@ -84,7 +84,7 @@ const AttributeList = ({ attributes, refetch }: IProps) => {
       align: 'center',
       ellipsis: true,
       render: (shop: Shop) => (
-        <span className="whitespace-nowrap truncate">{shop?.name}</span>
+        <span className='truncate whitespace-nowrap'>{shop?.name}</span>
       ),
     },
     {
@@ -94,7 +94,7 @@ const AttributeList = ({ attributes, refetch }: IProps) => {
       align: alignLeft,
       render: (values: any) => {
         return (
-          <span className="whitespace-nowrap">
+          <span className='whitespace-nowrap'>
             {values.map((singleValues: any, index: number) => {
               return index > 0
                 ? `, ${singleValues.value}`
@@ -113,7 +113,7 @@ const AttributeList = ({ attributes, refetch }: IProps) => {
         <LanguageSwitcher
           slug={slug}
           record={record}
-          deleteModalView="DELETE_ATTRIBUTE"
+          deleteModalView='DELETE_ATTRIBUTE'
           routes={Routes?.attribute}
         />
       ),
@@ -125,13 +125,13 @@ const AttributeList = ({ attributes, refetch }: IProps) => {
   }
 
   return (
-    <div className="rounded overflow-hidden shadow mb-8">
+    <div className='mb-8 overflow-hidden rounded shadow'>
       <Table
         // @ts-ignore
         columns={columns}
         emptyText={t('table:empty-table-data')}
         data={attributes}
-        rowKey="id"
+        rowKey='id'
         scroll={{ x: 380 }}
       />
     </div>

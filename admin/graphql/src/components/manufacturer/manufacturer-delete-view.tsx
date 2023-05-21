@@ -15,7 +15,7 @@ const ManufacturerDeleteView = () => {
           fields: {
             manufacturers(existingRefs, { readField }) {
               return existingRefs.data.filter(
-                (ref: any) => deleteManufacturer.id !== readField('id', ref)
+                (ref: any) => deleteManufacturer.id !== readField('id', ref),
               );
             },
           },

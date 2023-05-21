@@ -37,7 +37,7 @@ const CustomerBanView = () => {
       onDelete={handleDelete}
       deleteBtnText={data?.type === 'ban' ? 'Block' : 'Unblock'}
       title={data?.type === 'ban' ? 'Block Customer' : 'Unblock Customer'}
-      description="Are you sure you want to block this customer?"
+      description='Are you sure you want to block this customer?'
       deleteBtnLoading={loading || activeLoading}
     />
   );

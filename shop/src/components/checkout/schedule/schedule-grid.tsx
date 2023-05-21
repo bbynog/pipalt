@@ -28,21 +28,21 @@ export const ScheduleGrid: React.FC<ScheduleProps> = ({
   }, []);
   return (
     <div className={className}>
-      <div className="mb-5 flex items-center justify-between md:mb-8">
-        <div className="flex items-center space-x-3 rtl:space-x-reverse md:space-x-4">
+      <div className='mb-5 flex items-center justify-between md:mb-8'>
+        <div className='flex items-center space-x-3 rtl:space-x-reverse md:space-x-4'>
           {count && (
-            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-base text-light lg:text-xl">
+            <span className='flex h-8 w-8 items-center justify-center rounded-full bg-accent text-base text-light lg:text-xl'>
               {count}
             </span>
           )}
-          <p className="text-lg capitalize text-heading lg:text-xl">{label}</p>
+          <p className='text-lg capitalize text-heading lg:text-xl'>{label}</p>
         </div>
       </div>
 
       {schedules && schedules?.length ? (
         <RadioGroup value={selectedSchedule} onChange={setSchedule}>
-          <RadioGroup.Label className="sr-only">{label}</RadioGroup.Label>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+          <RadioGroup.Label className='sr-only'>{label}</RadioGroup.Label>
+          <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3'>
             {schedules?.map((schedule: any, idx: number) => (
               <RadioGroup.Option value={schedule} key={idx}>
                 {({ checked }) => (
@@ -53,8 +53,8 @@ export const ScheduleGrid: React.FC<ScheduleProps> = ({
           </div>
         </RadioGroup>
       ) : (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-          <span className="relative rounded border border-border-200 bg-gray-100 px-5 py-6 text-center text-base">
+        <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3'>
+          <span className='relative rounded border border-border-200 bg-gray-100 px-5 py-6 text-center text-base'>
             {t('text-no-delivery-time-found')}
           </span>
         </div>

@@ -39,7 +39,7 @@ const Badge: React.FC<BadgeProps> = (props) => {
         },
         colorOverride,
         textColorOverride,
-        className
+        className,
       )}
     >
       {textKey ? t(textKey) : text}

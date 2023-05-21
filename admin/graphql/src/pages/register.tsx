@@ -22,7 +22,7 @@ export default function RegisterPage() {
   const { t } = useTranslation('common');
   return (
     <AuthPageLayout>
-      <h3 className="text-center text-base italic text-gray-500 mb-6 mt-4">
+      <h3 className='mb-6 mt-4 text-center text-base italic text-gray-500'>
         {t('admin-register-title')}
       </h3>
       <RegistrationForm />

@@ -1,7 +1,8 @@
 import Cookie from 'js-cookie';
 import SSRCookie from 'cookie';
 import {
-  AUTH_CRED, EMAIL_VERIFIED,
+  AUTH_CRED,
+  EMAIL_VERIFIED,
   PERMISSIONS,
   STAFF,
   STORE_OWNER,
@@ -67,4 +68,3 @@ export function isAuthenticated(_cookies: any) {
     !!_cookies[PERMISSIONS].length
   );
 }
-

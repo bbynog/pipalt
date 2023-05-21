@@ -16,7 +16,7 @@ const Logo: React.FC<React.AnchorHTMLAttributes<{}>> = ({
       {...props}
     >
       <span
-        className="relative overflow-hidden"
+        className='relative overflow-hidden'
         style={{
           width: siteSettings.logo.width,
           height: siteSettings.logo.height,
@@ -26,9 +26,9 @@ const Logo: React.FC<React.AnchorHTMLAttributes<{}>> = ({
           src={logo?.original ?? siteSettings.logo.url}
           alt={siteTitle ?? siteSettings.logo.alt}
           fill
-          sizes="(max-width: 768px) 100vw"
-          className="object-contain"
-          loading="eager"
+          sizes='(max-width: 768px) 100vw'
+          className='object-contain'
+          loading='eager'
         />
       </span>
     </Link>

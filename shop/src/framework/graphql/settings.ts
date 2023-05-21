@@ -16,12 +16,16 @@ import { useRouter } from 'next/router';
 export function useSettings() {
   const { locale } = useRouter();
 
-  const { data, loading: isLoading, error } = useSettingsQuery({
+  const {
+    data,
+    loading: isLoading,
+    error,
+  } = useSettingsQuery({
     variables: {
-      language: locale
-    }
+      language: locale,
+    },
   });
-  
+
   return {
     settings: data?.settings?.options ?? {},
     isLoading,
@@ -31,13 +35,13 @@ export function useSettings() {
 
 export const useUploads = ({ onChange, defaultFiles }: any) => {
   const [files, setFiles] = useState<FileWithPath[]>(
-    getPreviewImage(defaultFiles)
+    getPreviewImage(defaultFiles),
   );
   const [mutate, { loading: isLoading }] = useUploadMutation({
-    onCompleted: (data:any) => {
+    onCompleted: (data: any) => {
       if (onChange) {
         const dataAfterRemoveTypename = data.upload?.map(
-          ({ __typename, ...rest }: any) => rest
+          ({ __typename, ...rest }: any) => rest,
         );
         onChange(dataAfterRemoveTypename);
         setFiles(getPreviewImage(dataAfterRemoveTypename));
@@ -62,7 +66,7 @@ export const useVerifyCoupon = () => {
   const [_, applyCoupon] = useAtom(couponAtom);
   let [formError, setFormError] = useState<any>(null);
   const [mutate, { loading: isLoading }] = useVerifyCouponMutation({
-    onCompleted: (data:any) => {
+    onCompleted: (data: any) => {
       if (!data?.verifyCoupon?.is_valid) {
         setFormError({
           code: t(`common:${data?.verifyCoupon?.message}`),
@@ -71,13 +75,12 @@ export const useVerifyCoupon = () => {
       applyCoupon(data?.verifyCoupon?.coupon);
     },
 
-    onError: (error:any) => {
+    onError: (error: any) => {
       toast.error(error.message);
     },
   });
 
-  
-  function verify(data: { code: string, sub_total: number}) {
+  function verify(data: { code: string; sub_total: number }) {
     mutate({
       variables: {
         code: data.code,

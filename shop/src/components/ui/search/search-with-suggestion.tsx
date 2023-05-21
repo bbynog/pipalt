@@ -53,7 +53,7 @@ const SearchWithSuggestion: React.FC<Props> = ({
       undefined,
       {
         scroll: false,
-      }
+      },
     );
   };
   return (
@@ -64,7 +64,7 @@ const SearchWithSuggestion: React.FC<Props> = ({
         onClearSearch={clearSearch}
         onChange={handleOnChange}
         value={searchTerm}
-        name="search"
+        name='search'
         placeholder={t('common:text-search-placeholder-minimal')}
         variant={variant}
         {...props}

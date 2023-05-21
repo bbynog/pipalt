@@ -14,8 +14,8 @@ export { getStaticProps } from '@/framework/general.ssr';
 
 function NoOrderFound() {
   return (
-    <div className="my-auto flex h-[80vh] w-full items-center justify-center rounded bg-light p-5 md:p-8">
-      <NotFound text="text-no-order-found" />
+    <div className='my-auto flex h-[80vh] w-full items-center justify-center rounded bg-light p-5 md:p-8'>
+      <NotFound text='text-no-order-found' />
     </div>
   );
 }
@@ -39,8 +39,8 @@ export default function OrdersPage() {
 
   if (isLoading && isEmpty(ordersItem)) {
     return (
-      <div className="my-auto flex h-[80vh] w-full items-center justify-center rounded bg-light p-5 md:p-8">
-        <Spinner simple className="w-10 h-10" />
+      <div className='my-auto flex h-[80vh] w-full items-center justify-center rounded bg-light p-5 md:p-8'>
+        <Spinner simple className='h-10 w-10' />
       </div>
     );
   }
@@ -51,7 +51,7 @@ export default function OrdersPage() {
   return (
     <>
       <Seo noindex={true} nofollow={true} />
-      <div className="hidden w-full overflow-hidden lg:flex">
+      <div className='hidden w-full overflow-hidden lg:flex'>
         <OrderList
           orders={ordersItem}
           isLoadingMore={isLoadingMore}
@@ -80,10 +80,10 @@ export default function OrdersPage() {
 
 const getLayout = (page: React.ReactElement) =>
   getSiteLayout(
-    <div className="flex flex-col items-start w-full px-5 py-10 mx-auto max-w-1920 bg-light lg:bg-gray-100 xl:flex-row xl:py-14 xl:px-8 2xl:px-14">
-      <DashboardSidebar className="hidden shrink-0 ltr:mr-8 rtl:ml-8 xl:block xl:w-80" />
+    <div className='mx-auto flex w-full max-w-1920 flex-col items-start bg-light px-5 py-10 lg:bg-gray-100 xl:flex-row xl:py-14 xl:px-8 2xl:px-14'>
+      <DashboardSidebar className='hidden shrink-0 ltr:mr-8 rtl:ml-8 xl:block xl:w-80' />
       {page}
-    </div>
+    </div>,
   );
 
 // OrdersPage.authenticationRequired = true;

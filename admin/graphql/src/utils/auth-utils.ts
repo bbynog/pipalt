@@ -53,11 +53,11 @@ export function parseSSRCookie(context: any) {
 
 export function hasAccess(
   _allowedRoles: string[],
-  _userPermissions: string[] | undefined | null
+  _userPermissions: string[] | undefined | null,
 ) {
   if (_userPermissions) {
     return Boolean(
-      _allowedRoles?.find((aRole) => _userPermissions.includes(aRole))
+      _allowedRoles?.find((aRole) => _userPermissions.includes(aRole)),
     );
   }
   return false;

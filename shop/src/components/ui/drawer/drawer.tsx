@@ -78,23 +78,23 @@ const Drawer: React.FC<DrawerProps> = ({
           {open && (
             <motion.aside
               ref={ref}
-              key="drawer"
-              initial="from"
-              animate="to"
-              exit="from"
+              key='drawer'
+              initial='from'
+              animate='to'
+              exit='from'
               variants={variant === 'right' ? fadeInRight() : fadeInLeft()}
-              className="fixed inset-0 z-50 h-full overflow-hidden"
+              className='fixed inset-0 z-50 h-full overflow-hidden'
             >
-              <div className="absolute inset-0 overflow-hidden">
+              <div className='absolute inset-0 overflow-hidden'>
                 <motion.div
-                  initial="from"
-                  animate="to"
-                  exit="from"
+                  initial='from'
+                  animate='to'
+                  exit='from'
                   variants={fadeInOut(0.35)}
                   onClick={onClose}
                   className={cn(
                     'absolute inset-0 bg-dark bg-opacity-40',
-                    useBlurBackdrop && 'use-blur-backdrop'
+                    useBlurBackdrop && 'use-blur-backdrop',
                   )}
                 />
                 <div
@@ -102,12 +102,12 @@ const Drawer: React.FC<DrawerProps> = ({
                     'absolute inset-y-0 flex max-w-full outline-none',
                     variant === 'right'
                       ? 'ltr:right-0 rtl:right-0'
-                      : 'ltr:left-0 rtl:left-0'
+                      : 'ltr:left-0 rtl:left-0',
                   )}
                 >
-                  <div className="h-full w-screen max-w-md">
-                    <div className="drawer flex h-full flex-col bg-light text-base shadow-xl">
-                      <Scrollbar className="h-full w-full">
+                  <div className='h-full w-screen max-w-md'>
+                    <div className='drawer flex h-full flex-col bg-light text-base shadow-xl'>
+                      <Scrollbar className='h-full w-full'>
                         {children}
                       </Scrollbar>
                     </div>

@@ -51,7 +51,7 @@ const CouponList = ({ coupons, onPagination, refetch }: IProps) => {
           ],
         });
       }, 500),
-    [order]
+    [order],
   );
 
   const onHeaderClick = (value: string | undefined) => ({
@@ -76,10 +76,10 @@ const CouponList = ({ coupons, onPagination, refetch }: IProps) => {
       render: (image: Attachment) => (
         <Image
           src={image?.thumbnail ?? siteSettings.product.placeholder}
-          alt="coupon banner"
+          alt='coupon banner'
           width={42}
           height={42}
-          className="overflow-hidden rounded"
+          className='overflow-hidden rounded'
         />
       ),
     },
@@ -99,7 +99,7 @@ const CouponList = ({ coupons, onPagination, refetch }: IProps) => {
       align: 'center',
       onHeaderCell: () => onHeaderClick(QueryCouponsOrderByColumn.Code),
       render: (text: string) => (
-        <span className="whitespace-nowrap">{text}</span>
+        <span className='whitespace-nowrap'>{text}</span>
       ),
     },
     {
@@ -171,7 +171,7 @@ const CouponList = ({ coupons, onPagination, refetch }: IProps) => {
       align: 'center',
       onHeaderCell: () => onHeaderClick(QueryCouponsOrderByColumn.CreatedAt),
       render: (date: string) => (
-        <span className="whitespace-nowrap">
+        <span className='whitespace-nowrap'>
           {dayjs().to(dayjs.utc(date).tz(dayjs.tz.guess()))}
         </span>
       ),
@@ -193,7 +193,7 @@ const CouponList = ({ coupons, onPagination, refetch }: IProps) => {
       align: 'center',
       onHeaderCell: () => onHeaderClick(QueryCouponsOrderByColumn.ExpireAt),
       render: (date: string) => (
-        <span className="whitespace-nowrap">
+        <span className='whitespace-nowrap'>
           {dayjs().to(dayjs.utc(date).tz(dayjs.tz.guess()))}
         </span>
       ),
@@ -207,7 +207,7 @@ const CouponList = ({ coupons, onPagination, refetch }: IProps) => {
         <LanguageSwitcher
           slug={slug}
           record={record}
-          deleteModalView="DELETE_COUPON"
+          deleteModalView='DELETE_COUPON'
           routes={Routes?.coupon}
         />
       ),
@@ -216,19 +216,19 @@ const CouponList = ({ coupons, onPagination, refetch }: IProps) => {
 
   return (
     <>
-      <div className="mb-6 overflow-hidden rounded shadow">
+      <div className='mb-6 overflow-hidden rounded shadow'>
         <Table
           // @ts-ignore
           columns={columns}
           emptyText={t('table:empty-table-data')}
           data={data}
-          rowKey="id"
+          rowKey='id'
           scroll={{ x: 900 }}
         />
       </div>
 
       {!!paginatorInfo.total && (
-        <div className="flex items-center justify-end">
+        <div className='flex items-center justify-end'>
           <Pagination
             total={paginatorInfo.total}
             current={paginatorInfo.currentPage}

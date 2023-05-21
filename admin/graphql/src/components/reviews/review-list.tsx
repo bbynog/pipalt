@@ -48,7 +48,7 @@ const ReviewList = ({ reviews, onPagination, refetch }: IProps) => {
           sortedBy: order === SortOrder.Desc ? SortOrder.Asc : SortOrder.Desc,
         });
       }, 500),
-    [order]
+    [order],
   );
 
   const onHeaderClick = (value: string | undefined) => ({
@@ -72,13 +72,13 @@ const ReviewList = ({ reviews, onPagination, refetch }: IProps) => {
       align: alignLeft,
       width: 120,
       render: (product: Product) => (
-        <div className="relative h-[60px] w-[60px]">
+        <div className='relative h-[60px] w-[60px]'>
           <Image
             src={product?.image?.thumbnail ?? siteSettings.product.placeholder}
             alt={product?.name}
             fill
-            sizes="(max-width: 768px) 100vw"
-            className="overflow-hidden rounded object-fill"
+            sizes='(max-width: 768px) 100vw'
+            className='overflow-hidden rounded object-fill'
           />
         </div>
       ),
@@ -107,9 +107,9 @@ const ReviewList = ({ reviews, onPagination, refetch }: IProps) => {
       width: 300,
       onHeaderCell: () => onHeaderClick(QueryReviewsOrderByColumn.Rating),
       render: (record: any) => (
-        <div className="inline-flex shrink-0 items-center rounded-full border border-accent px-3 py-0.5 text-base text-accent">
+        <div className='inline-flex shrink-0 items-center rounded-full border border-accent px-3 py-0.5 text-base text-accent'>
           {record?.rating}
-          <StarIcon className="h-3 w-3 ms-1" />
+          <StarIcon className='h-3 w-3 ms-1' />
         </div>
       ),
     },
@@ -122,9 +122,9 @@ const ReviewList = ({ reviews, onPagination, refetch }: IProps) => {
       render: (product: Product) => (
         <a
           href={`${process.env.NEXT_PUBLIC_SHOP_URL}/${product?.language}/products/${product?.slug}`}
-          className="transition-colors hover:text-accent"
-          target="_blank"
-          rel="noreferrer"
+          className='transition-colors hover:text-accent'
+          target='_blank'
+          rel='noreferrer'
         >
           {product?.name}
         </a>
@@ -138,18 +138,18 @@ const ReviewList = ({ reviews, onPagination, refetch }: IProps) => {
       render: (record: any) => {
         if (router.query.shop) {
           return (
-            <span className="font-bold">{record?.abusive_reports_count}</span>
+            <span className='font-bold'>{record?.abusive_reports_count}</span>
           );
         }
         return (
           <>
-            <span className="font-bold">{record?.abusive_reports_count}</span>
+            <span className='font-bold'>{record?.abusive_reports_count}</span>
             {record?.abusive_reports_count > 0 && (
               <a
                 href={`${router.asPath}/${record?.id}`}
-                className="text-sm transition-colors ms-2 hover:text-accent"
-                target="_blank"
-                rel="noreferrer"
+                className='text-sm transition-colors ms-2 hover:text-accent'
+                target='_blank'
+                rel='noreferrer'
               >
                 ({t('text-details')})
               </a>
@@ -179,7 +179,7 @@ const ReviewList = ({ reviews, onPagination, refetch }: IProps) => {
         dayjs.extend(utc);
         dayjs.extend(timezone);
         return (
-          <span className="whitespace-nowrap">
+          <span className='whitespace-nowrap'>
             {dayjs.utc(date).tz(dayjs.tz.guess()).fromNow()}
           </span>
         );
@@ -199,27 +199,27 @@ const ReviewList = ({ reviews, onPagination, refetch }: IProps) => {
             </button>
           );
         }
-        return <ActionButtons id={id} deleteModalView="DELETE_REVIEW" />;
+        return <ActionButtons id={id} deleteModalView='DELETE_REVIEW' />;
       },
     },
   ];
 
   return (
     <>
-      <div className="mb-6 overflow-hidden rounded shadow">
+      <div className='mb-6 overflow-hidden rounded shadow'>
         <Table
           //@ts-ignore
           columns={columns}
-          rowClassName="align-top"
+          rowClassName='align-top'
           emptyText={t('table:empty-table-data')}
           data={data}
-          rowKey="id"
+          rowKey='id'
           scroll={{ x: 1000 }}
         />
       </div>
 
       {!!paginatorInfo.total && (
-        <div className="flex items-center justify-end">
+        <div className='flex items-center justify-end'>
           <Pagination
             total={paginatorInfo.total}
             current={paginatorInfo.currentPage}

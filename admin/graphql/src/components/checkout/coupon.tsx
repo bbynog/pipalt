@@ -38,8 +38,8 @@ const Coupon = ({ subtotal }: { subtotal: number }) => {
   if (!hasCoupon && !coupon) {
     return (
       <p
-        role="button"
-        className="text-xs font-bold transition duration-200 text-body hover:text-accent"
+        role='button'
+        className='text-xs font-bold text-body transition duration-200 hover:text-accent'
         onClick={() => setHasCoupon(true)}
       >
         {t('text-have-coupon')}
@@ -60,22 +60,22 @@ const Coupon = ({ subtotal }: { subtotal: number }) => {
     <form
       onSubmit={handleSubmit(onSubmit)}
       noValidate
-      className="flex flex-col w-full pt-1 sm:flex-row"
+      className='flex w-full flex-col pt-1 sm:flex-row'
     >
       <Input
         {...register('code', { required: 'text-coupon-required' })}
         placeholder={t('text-enter-coupon')}
-        variant="outline"
-        className="flex-1 mb-4 sm:mb-0 sm:me-4"
-        dimension="small"
+        variant='outline'
+        className='mb-4 flex-1 sm:mb-0 sm:me-4'
+        dimension='small'
         showLabel={false}
         error={t(errors?.code?.message!)}
       />
       <Button
         loading={loading}
         disabled={loading}
-        size="small"
-        className="w-full sm:w-40 lg:w-auto mt-0.5"
+        size='small'
+        className='mt-0.5 w-full sm:w-40 lg:w-auto'
       >
         {t('text-apply')}
       </Button>

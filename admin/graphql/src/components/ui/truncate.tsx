@@ -32,9 +32,9 @@ const ReadMore: React.FC<ReadMoreProps> = ({
       {children && children.length > character && !expanded && (
         <>
           <br />
-          <span className="mt-2 inline-block">
+          <span className='mt-2 inline-block'>
             <a
-              href="#"
+              href='#'
               onClick={toggleLines}
               style={{ color: '#009e7f', fontWeight: 700 }}
             >
@@ -46,9 +46,9 @@ const ReadMore: React.FC<ReadMoreProps> = ({
       {children && children.length > character && expanded && (
         <>
           <br />
-          <span className="mt-2 inline-block">
+          <span className='mt-2 inline-block'>
             <a
-              href="#"
+              href='#'
               onClick={toggleLines}
               style={{ color: '#009e7f', fontWeight: 700 }}
             >

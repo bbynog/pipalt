@@ -18,7 +18,7 @@ import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
 const ToastContainer = dynamic(
   () => import('react-toastify').then((module) => module.ToastContainer),
-  { ssr: false }
+  { ssr: false },
 );
 
 type AppPropsWithLayout = AppProps & {
@@ -58,7 +58,7 @@ function CustomApp({
                     )}
                     <ManagedModal />
                     <ManagedDrawer />
-                    <ToastContainer autoClose={2000} theme="colored" />
+                    <ToastContainer autoClose={2000} theme='colored' />
                     <SocialLogin />
                   </>
                 </CartProvider>

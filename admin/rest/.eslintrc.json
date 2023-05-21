@@ -1,8 +1,5 @@
 {
-  "extends": [
-    "next",
-    "prettier"
-  ],
+  "extends": ["next", "prettier"],
   "rules": {
     "react-hooks/exhaustive-deps": 0,
     "@next/next/no-img-element": "off"

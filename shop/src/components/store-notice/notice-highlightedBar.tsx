@@ -16,15 +16,15 @@ const HighlightedBar = ({ notice }: { notice: StoreNotice }) => {
   const { t } = useTranslation();
   const [highlightedBar, setHighlightedBar] = useSessionStorage(
     'highlightedBar',
-    'false'
+    'false',
   );
   const durationTime = new Date(notice?.expired_at!);
   durationTime.setHours(durationTime.getHours() + 6);
   return (
     <>
       {highlightedBar !== 'true' && (
-        <div className="relative w-full items-center justify-center bg-accent px-4 pt-3 pb-3.5 text-sm text-white md:px-6 lg:px-8">
-          <div className="text-center ltr:pr-4 rtl:pl-4">
+        <div className='relative w-full items-center justify-center bg-accent px-4 pt-3 pb-3.5 text-sm text-white md:px-6 lg:px-8'>
+          <div className='text-center ltr:pr-4 rtl:pl-4'>
             {notice.description}{' '}
             {notice?.expired_at && (
               <>
@@ -35,20 +35,20 @@ const HighlightedBar = ({ notice }: { notice: StoreNotice }) => {
           </div>
           <button
             onClick={() => setHighlightedBar('true')}
-            aria-label="Close Button"
-            className="absolute flex items-center justify-center transition-colors duration-200 rounded-full outline-none top-3 h-7 w-7 hover:bg-white hover:bg-opacity-10 focus:bg-opacity-10 focus:text-white ltr:right-0 ltr:mr-2 rtl:left-0 rtl:ml-2 md:h-8 md:w-8 md:ltr:mr-3 md:rtl:ml-3"
+            aria-label='Close Button'
+            className='absolute top-3 flex h-7 w-7 items-center justify-center rounded-full outline-none transition-colors duration-200 hover:bg-white hover:bg-opacity-10 focus:bg-opacity-10 focus:text-white ltr:right-0 ltr:mr-2 rtl:left-0 rtl:ml-2 md:h-8 md:w-8 md:ltr:mr-3 md:rtl:ml-3'
           >
             <svg
-              stroke="currentColor"
-              fill="currentColor"
-              strokeWidth="0"
-              viewBox="0 0 16 16"
-              className="w-6 h-6"
-              height="1em"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
+              stroke='currentColor'
+              fill='currentColor'
+              strokeWidth='0'
+              viewBox='0 0 16 16'
+              className='h-6 w-6'
+              height='1em'
+              width='1em'
+              xmlns='http://www.w3.org/2000/svg'
             >
-              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+              <path d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z'></path>
             </svg>
           </button>
         </div>
@@ -75,7 +75,7 @@ const NoticeHighlightedBar = () => {
   return (
     <>
       {storeNotices.length > 0 ? (
-        <div className="relative">
+        <div className='relative'>
           {
             //@ts-ignore
             storeNotices.map((notice: StoreNotice, idx: number) => (

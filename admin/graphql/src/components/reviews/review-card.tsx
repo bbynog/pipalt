@@ -30,46 +30,46 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review }) => {
   }
 
   return (
-    <div className="block">
-      <div className="flex items-center mb-3 text-xs text-gray-500">
+    <div className='block'>
+      <div className='mb-3 flex items-center text-xs text-gray-500'>
         {t('common:text-by')}{' '}
-        <span className="font-semibold capitalize ltr:ml-1 rtl:mr-1 text-heading">
+        <span className='font-semibold capitalize text-heading ltr:ml-1 rtl:mr-1'>
           {user?.name}
         </span>
         {user?.is_active && (
-          <CheckedIcon className="h-[13px] w-[13px] text-gray-700 ltr:ml-1 rtl:mr-1" />
+          <CheckedIcon className='h-[13px] w-[13px] text-gray-700 ltr:ml-1 rtl:mr-1' />
         )}
       </div>
-      <p className="text-sm leading-6 text-heading">{comment}</p>
+      <p className='text-sm leading-6 text-heading'>{comment}</p>
       {photos && !isEmpty(photos) && (
-        <div className="flex items-start mt-3 space-s-2 rtl:space-s-reverse">
+        <div className='mt-3 flex items-start space-s-2 rtl:space-s-reverse'>
           {photos?.map((photo: any, idx: any) => (
-            <div className="mb-1 bg-gray-200 rounded-md" key={idx}>
+            <div className='mb-1 rounded-md bg-gray-200' key={idx}>
               <Image
                 src={photo?.original ?? '/product-placeholder-borderless.svg'}
                 width={32}
                 height={32}
-                className="inline-flex object-contain"
+                className='inline-flex object-contain'
                 alt={`${user.name}-${idx}`}
               />
             </div>
           ))}
 
           <button
-            className="my-1.5 font-semibold underline transition-colors text-heading hover:text-accent"
+            className='my-1.5 font-semibold text-heading underline transition-colors hover:text-accent'
             onClick={handleImageClick}
           >
             {t('common:text-view-images')}
           </button>
         </div>
       )}
-      <div className="flex items-center mt-3 space-x-4">
-        <span className="flex items-center text-xs tracking-wider text-gray-400 transition">
-          <LikeIcon className="w-4 h-4 me-1.5" />
+      <div className='mt-3 flex items-center space-x-4'>
+        <span className='flex items-center text-xs tracking-wider text-gray-400 transition'>
+          <LikeIcon className='h-4 w-4 me-1.5' />
           {positive_feedbacks_count}
         </span>
-        <span className="flex items-center text-xs tracking-wider text-gray-400 transition">
-          <DislikeIcon className="w-4 h-4 me-1.5" />
+        <span className='flex items-center text-xs tracking-wider text-gray-400 transition'>
+          <DislikeIcon className='h-4 w-4 me-1.5' />
           {negative_feedbacks_count}
         </span>
       </div>

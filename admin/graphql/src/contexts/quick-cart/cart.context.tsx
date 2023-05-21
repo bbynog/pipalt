@@ -15,7 +15,7 @@ interface CartProviderState extends State {
   resetCart: () => void;
 }
 export const cartContext = React.createContext<CartProviderState | undefined>(
-  undefined
+  undefined,
 );
 
 cartContext.displayName = 'CartContext';
@@ -31,11 +31,11 @@ export const useCart = () => {
 export const CartProvider: React.FC = (props) => {
   const [savedCart, saveCart] = useLocalStorage(
     CART_KEY,
-    JSON.stringify(initialState)
+    JSON.stringify(initialState),
   );
   const [state, dispatch] = React.useReducer(
     cartReducer,
-    JSON.parse(savedCart!)
+    JSON.parse(savedCart!),
   );
   const [, emptyVerifiedResponse] = useAtom(verifiedResponseAtom);
   React.useEffect(() => {
@@ -54,15 +54,15 @@ export const CartProvider: React.FC = (props) => {
     dispatch({ type: 'REMOVE_ITEM', id });
   const isInCart = useCallback(
     (id: Item['id']) => !!getItem(state.items, id),
-    [state.items]
+    [state.items],
   );
   const getItemFromCart = useCallback(
     (id: Item['id']) => getItem(state.items, id),
-    [state.items]
+    [state.items],
   );
   const isInStock = useCallback(
     (id: Item['id']) => inStock(state.items, id),
-    [state.items]
+    [state.items],
   );
   const resetCart = () => dispatch({ type: 'RESET_CART' });
   const value = React.useMemo(
@@ -76,7 +76,7 @@ export const CartProvider: React.FC = (props) => {
       isInStock,
       resetCart,
     }),
-    [getItemFromCart, isInCart, isInStock, state]
+    [getItemFromCart, isInCart, isInStock, state],
   );
   return <cartContext.Provider value={value} {...props} />;
 };

@@ -25,7 +25,7 @@ export default function OtpForm({
     serverError,
     setServerError,
   } = useSendOtpCode({
-    verifyOnly: true
+    verifyOnly: true,
   });
 
   function onSendCodeSubmission({ phone_number }: { phone_number: string }) {
@@ -47,9 +47,9 @@ export default function OtpForm({
       {otpState.step === 'PhoneNumber' && (
         <>
           <Alert
-            variant="error"
+            variant='error'
             message={serverError && t(serverError)}
-            className="mb-4"
+            className='mb-4'
             closeable={true}
             onClose={() => setServerError(null)}
           />

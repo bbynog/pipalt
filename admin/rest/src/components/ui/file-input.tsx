@@ -16,7 +16,7 @@ const FileInput = ({
   multiple = true,
   acceptFile = false,
   helperText,
-  defaultValue = []
+  defaultValue = [],
 }: FileInputProps) => {
   return (
     <Controller

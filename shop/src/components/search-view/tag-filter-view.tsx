@@ -18,7 +18,7 @@ const TagFilterView = ({ tags }: Props) => {
   const router = useRouter();
   const selectedValues = useMemo(
     () => (router.query.tags ? (router.query.tags as string)?.split(',') : []),
-    [router.query.tags]
+    [router.query.tags],
   );
   const [state, setState] = useState<string[]>(selectedValues);
   useEffect(() => {
@@ -36,10 +36,10 @@ const TagFilterView = ({ tags }: Props) => {
   }
 
   return (
-    <div className="relative -mb-5 after:absolute after:bottom-0 after:flex after:h-6 after:w-full after:bg-gradient-to-t after:from-white ltr:after:left-0 rtl:after:right-0">
-      <Scrollbar style={{ maxHeight: '400px' }} className="pb-6">
-        <span className="sr-only">{t('text-tags')}</span>
-        <div className="grid grid-cols-1 gap-4">
+    <div className='relative -mb-5 after:absolute after:bottom-0 after:flex after:h-6 after:w-full after:bg-gradient-to-t after:from-white ltr:after:left-0 rtl:after:right-0'>
+      <Scrollbar style={{ maxHeight: '400px' }} className='pb-6'>
+        <span className='sr-only'>{t('text-tags')}</span>
+        <div className='grid grid-cols-1 gap-4'>
           <CheckboxGroup values={state} onChange={handleChange}>
             {tags.map((plan) => (
               <Checkbox
@@ -47,7 +47,7 @@ const TagFilterView = ({ tags }: Props) => {
                 label={plan.name}
                 name={plan.slug}
                 value={plan.slug}
-                theme="secondary"
+                theme='secondary'
               />
             ))}
           </CheckboxGroup>
@@ -63,8 +63,8 @@ const TagFilter = () => {
   if (err) return <ErrorMessage message={err?.message} />;
   if (isLoading)
     return (
-      <div className="flex w-full items-center justify-center py-5">
-        <Spinner className="h-6 w-6" simple={true} />
+      <div className='flex w-full items-center justify-center py-5'>
+        <Spinner className='h-6 w-6' simple={true} />
       </div>
     );
 

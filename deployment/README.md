@@ -29,7 +29,7 @@ To upload the zipped `deployment` files to server you need to run the below comm
     zx /var/www/pipalt/deployment/setenv.mjs
 ```
 
-#### Run Backend API  - RUN on Virtual Server
+#### Run Backend API - RUN on Virtual Server
 
 ```bash
     zx /var/www/pipalt/deployment/backendrun.mjs

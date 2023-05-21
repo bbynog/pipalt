@@ -8,18 +8,18 @@ export default function AuthorsPage() {
   const { t } = useTranslation('common');
   return (
     <>
-      <div className="flex flex-col items-center">
-        <h1 className="mb-4 text-2xl font-bold sm:text-3xl lg:text-4xl text-accent">
+      <div className='flex flex-col items-center'>
+        <h1 className='mb-4 text-2xl font-bold text-accent sm:text-3xl lg:text-4xl'>
           {t('text-search-authors-title')}
         </h1>
-        <p className="text-base text-heading">
+        <p className='text-base text-heading'>
           {t('text-search-authors-subtitle')}
         </p>
 
-        <div className="w-full max-w-screen-md mt-12">
+        <div className='mt-12 w-full max-w-screen-md'>
           <Search
-            variant="minimal"
-            label="search"
+            variant='minimal'
+            label='search'
             placeholder={t('text-search-author')}
           />
         </div>
@@ -31,11 +31,11 @@ export default function AuthorsPage() {
 
 const getLayout = (page: React.ReactElement) =>
   getSiteLayout(
-    <div className="w-full bg-light">
-      <div className="min-h-screen px-5 py-10 mx-auto max-w-1920 xl:py-14 xl:px-16">
+    <div className='w-full bg-light'>
+      <div className='mx-auto min-h-screen max-w-1920 px-5 py-10 xl:py-14 xl:px-16'>
         {page}
       </div>
-    </div>
+    </div>,
   );
 
 AuthorsPage.getLayout = getLayout;

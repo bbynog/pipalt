@@ -12,23 +12,23 @@ const AuthorCard: React.FC<AuthorItemProps> = ({ item }) => (
   <Link
     href={Routes.author(item?.slug)}
     className={cn(
-      'group relative flex cursor-pointer flex-col items-center bg-light text-center'
+      'group relative flex cursor-pointer flex-col items-center bg-light text-center',
     )}
   >
     <span
       className={cn(
-        'relative mb-6 flex h-44 w-44 items-center justify-center overflow-hidden rounded-full border-4 border-white bg-gray-100 shadow-350'
+        'relative mb-6 flex h-44 w-44 items-center justify-center overflow-hidden rounded-full border-4 border-white bg-gray-100 shadow-350',
       )}
     >
       <Image
         src={item?.image?.original! ?? avatarPlaceholder}
         alt={item?.name!}
         fill
-        sizes="(max-width: 768px) 100vw"
-        className="object-contain"
+        sizes='(max-width: 768px) 100vw'
+        className='object-contain'
       />
     </span>
-    <span className="block text-center font-semibold text-heading transition-colors group-hover:text-orange-500">
+    <span className='block text-center font-semibold text-heading transition-colors group-hover:text-orange-500'>
       {item.name}
     </span>
   </Link>

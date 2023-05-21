@@ -16,20 +16,20 @@ export default function GroupProducts() {
 
   return (
     <SectionBlock>
-      <div className="grid w-full gap-5 sm:grid-cols-3 lg:grid-cols-4">
+      <div className='grid w-full gap-5 sm:grid-cols-3 lg:grid-cols-4'>
         {products.slice(0, 3).map((product, idx) => {
           return (
             <Link
               href={Routes.product(product.slug)}
-              className="relative grid w-full bg-gray-100 lg:even:col-span-2"
+              className='relative grid w-full bg-gray-100 lg:even:col-span-2'
               key={product.id}
             >
               <Image
                 src={product.image?.original ?? productPlaceholder}
-                alt="Advertisement image"
+                alt='Advertisement image'
                 width={isEven(idx) ? 960 : 1560}
                 height={960}
-                className="rounded-lg lg:rounded-2xl"
+                className='rounded-lg lg:rounded-2xl'
               />
             </Link>
           );

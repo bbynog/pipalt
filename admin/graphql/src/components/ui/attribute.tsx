@@ -24,13 +24,13 @@ const Attribute: React.FC<AttributeProps> = ({
         className === 'color',
       '!border-accent': active && className === 'color',
     },
-    'cursor-pointer'
+    'cursor-pointer',
   );
   return (
     <div className={classes} {...props}>
       {className === 'color' ? (
         <span
-          className="w-full h-full rounded-full border border-border-200"
+          className='h-full w-full rounded-full border border-border-200'
           style={{ backgroundColor: color }}
         />
       ) : (

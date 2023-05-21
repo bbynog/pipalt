@@ -35,8 +35,8 @@ export default function CreateWithdrawPage() {
 
   return (
     <>
-      <div className="flex justify-between py-5 border-b border-gray-300 border-dashed sm:py-8">
-        <h1 className="text-lg font-semibold text-heading">
+      <div className='flex justify-between border-b border-dashed border-gray-300 py-5 sm:py-8'>
+        <h1 className='text-lg font-semibold text-heading'>
           {t('form:form-title-create-withdraw')}
         </h1>
       </div>

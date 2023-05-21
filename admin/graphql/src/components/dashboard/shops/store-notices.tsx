@@ -62,21 +62,21 @@ function StoreNotices() {
 
   if (!isLoading && !storeNotices?.length)
     return (
-      <div className="w-full min-h-full px-4 pt-6 pb-8 lg:p-8">
-        <NotFound text="text-notice-not-found" className="w-7/12 mx-auto" />
+      <div className='min-h-full w-full px-4 pt-6 pb-8 lg:p-8'>
+        <NotFound text='text-notice-not-found' className='mx-auto w-7/12' />
       </div>
     );
   if (error) return <ErrorMessage message={error?.message} />;
 
   return (
     <>
-      <div className="space-y-5">
+      <div className='space-y-5'>
         {storeNotices?.map((notice: any, idx: number) => (
           <StoreNoticeCard noticeData={notice} key={idx} />
         ))}
       </div>
       {hasNextPage && (
-        <div className="grid mt-8 place-content-center md:mt-10">
+        <div className='mt-8 grid place-content-center md:mt-10'>
           <Button onClick={loadMore} loading={isLoadingMore}>
             {t('common:text-load-more')}
           </Button>

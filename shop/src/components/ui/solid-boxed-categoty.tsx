@@ -29,7 +29,7 @@ const CategoryItem: React.FC<CategoryItemProps> = ({ item }) => {
         undefined,
         {
           scroll: false,
-        }
+        },
       );
       return;
     }
@@ -41,7 +41,7 @@ const CategoryItem: React.FC<CategoryItemProps> = ({ item }) => {
       undefined,
       {
         scroll: false,
-      }
+      },
     );
   };
 
@@ -49,21 +49,21 @@ const CategoryItem: React.FC<CategoryItemProps> = ({ item }) => {
     <div
       className={cn(
         'relative cursor-pointer overflow-hidden rounded border-2 bg-light text-center',
-        selectedQueries === item.slug ? 'border-accent' : 'border-light'
+        selectedQueries === item.slug ? 'border-accent' : 'border-light',
       )}
-      role="button"
+      role='button'
       onClick={() => onCategoryClick(item?.slug!)}
     >
-      <div className="relative my-2 mb-3 flex h-32 w-auto items-center justify-center overflow-hidden">
+      <div className='relative my-2 mb-3 flex h-32 w-auto items-center justify-center overflow-hidden'>
         <Image
           src={item?.image?.original! ?? productPlaceholder}
           alt={item?.name!}
           fill
-          sizes="(max-width: 768px) 100vw"
-          className="object-contain"
+          sizes='(max-width: 768px) 100vw'
+          className='object-contain'
         />
       </div>
-      <span className="block px-4 pb-4 text-center text-sm font-semibold text-heading">
+      <span className='block px-4 pb-4 text-center text-sm font-semibold text-heading'>
         {item.name}
       </span>
     </div>
@@ -104,9 +104,9 @@ function SolidBoxedCategoryMenu({ items }: any) {
   };
 
   return (
-    <div className="relative">
+    <div className='relative'>
       <Swiper
-        id="category-card-menu"
+        id='category-card-menu'
         modules={[Navigation]}
         navigation={{
           prevEl: prevRef.current!, // Assert non-null
@@ -126,16 +126,16 @@ function SolidBoxedCategoryMenu({ items }: any) {
       </Swiper>
       <div
         ref={prevRef}
-        className="category-slider-prev absolute top-1/2 z-10 -mt-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-light text-heading shadow-300 outline-none focus:outline-none ltr:-left-3 rtl:-right-3 ltr:lg:-left-4"
+        className='category-slider-prev absolute top-1/2 z-10 -mt-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-light text-heading shadow-300 outline-none focus:outline-none ltr:-left-3 rtl:-right-3 ltr:lg:-left-4'
       >
-        <span className="sr-only">{t('text-previous')}</span>
+        <span className='sr-only'>{t('text-previous')}</span>
         {isRTL ? <ArrowNextIcon /> : <ArrowPrevIcon />}
       </div>
       <div
         ref={nextRef}
-        className="category-slider-next absolute top-1/2 z-10 -mt-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-light text-heading shadow-300 outline-none focus:outline-none ltr:-right-3 rtl:-left-3 ltr:lg:-right-4 rtl:lg:-left-4"
+        className='category-slider-next absolute top-1/2 z-10 -mt-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-light text-heading shadow-300 outline-none focus:outline-none ltr:-right-3 rtl:-left-3 ltr:lg:-right-4 rtl:lg:-left-4'
       >
-        <span className="sr-only">{t('text-next')}</span>
+        <span className='sr-only'>{t('text-next')}</span>
         {isRTL ? <ArrowPrevIcon /> : <ArrowNextIcon />}
       </div>
     </div>

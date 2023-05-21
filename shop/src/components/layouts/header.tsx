@@ -35,7 +35,7 @@ const Header = ({ layout }: { layout?: string }) => {
   // }, [isHomePage]);
   const isFlattenHeader = useMemo(
     () => !show && isHomePage && layout !== 'modern',
-    [show, isHomePage, layout]
+    [show, isHomePage, layout],
   );
   return (
     <header
@@ -43,9 +43,9 @@ const Header = ({ layout }: { layout?: string }) => {
         'site-header-with-search  top-0 z-50 h-14 w-full md:h-16 lg:h-22',
         {
           'lg:!h-auto': isFlattenHeader,
-          fixed: isHomePage,
-          sticky: !isHomePage,
-        }
+          'fixed': isHomePage,
+          'sticky': !isHomePage,
+        },
       )}
     >
       <div
@@ -54,10 +54,10 @@ const Header = ({ layout }: { layout?: string }) => {
           {
             'lg:absolute lg:border-0 lg:bg-transparent lg:shadow-none':
               isFlattenHeader,
-          }
+          },
         )}
       >
-        <div className="flex w-full items-center lg:w-auto">
+        <div className='flex w-full items-center lg:w-auto'>
           <Logo
             className={`${
               !isMultilangEnable ? 'mx-auto lg:mx-0' : 'ltr:ml-0 rtl:mr-0'
@@ -65,47 +65,47 @@ const Header = ({ layout }: { layout?: string }) => {
           />
 
           {isMultilangEnable ? (
-            <div className="ltr:ml-auto rtl:mr-auto lg:hidden">
+            <div className='ltr:ml-auto rtl:mr-auto lg:hidden'>
               <LanguageSwitcher />
             </div>
           ) : (
             ''
           )}
 
-          <div className="hidden ltr:ml-10 ltr:mr-auto rtl:mr-10 rtl:ml-auto xl:block">
+          <div className='hidden ltr:ml-10 ltr:mr-auto rtl:mr-10 rtl:ml-auto xl:block'>
             <GroupsDropdownMenu />
           </div>
         </div>
         {isHomePage ? (
           <>
             {(show || layout === 'modern') && (
-              <div className="mx-auto hidden w-full overflow-hidden px-10 lg:block xl:w-11/12 2xl:w-10/12">
-                <Search label={t('text-search-label')} variant="minimal" />
+              <div className='mx-auto hidden w-full overflow-hidden px-10 lg:block xl:w-11/12 2xl:w-10/12'>
+                <Search label={t('text-search-label')} variant='minimal' />
               </div>
             )}
 
             {displayMobileHeaderSearch && (
-              <div className="absolute top-0 block h-full w-full bg-light px-5 pt-1.5 ltr:left-0 rtl:right-0 md:pt-2 lg:hidden">
-                <Search label={t('text-search-label')} variant="minimal" />
+              <div className='absolute top-0 block h-full w-full bg-light px-5 pt-1.5 ltr:left-0 rtl:right-0 md:pt-2 lg:hidden'>
+                <Search label={t('text-search-label')} variant='minimal' />
               </div>
             )}
           </>
         ) : null}
-        <ul className="hidden shrink-0 items-center space-x-7 rtl:space-x-reverse lg:flex 2xl:space-x-10">
+        <ul className='hidden shrink-0 items-center space-x-7 rtl:space-x-reverse lg:flex 2xl:space-x-10'>
           <StaticMenu />
-          <div className="flex items-center space-x-4 rtl:space-x-reverse">
+          <div className='flex items-center space-x-4 rtl:space-x-reverse'>
             <a
               href={`${process.env.NEXT_PUBLIC_ADMIN_URL}/register`}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex h-9 shrink-0 items-center justify-center rounded border border-transparent bg-accent px-3 py-0 text-sm font-semibold leading-none text-light outline-none transition duration-300 ease-in-out hover:bg-accent-hover focus:shadow focus:outline-none focus:ring-1 focus:ring-accent-700"
+              target='_blank'
+              rel='noreferrer'
+              className='inline-flex h-9 shrink-0 items-center justify-center rounded border border-transparent bg-accent px-3 py-0 text-sm font-semibold leading-none text-light outline-none transition duration-300 ease-in-out hover:bg-accent-hover focus:shadow focus:outline-none focus:ring-1 focus:ring-accent-700'
             >
               {t('text-become-seller')}
             </a>
             <li>{isAuthorize ? <AuthorizedMenu /> : <JoinButton />}</li>
           </div>
           {isMultilangEnable ? (
-            <div className="ms-auto lg:me-5 xl:me-8 2xl:me-10 hidden flex-shrink-0 lg:block">
+            <div className='ms-auto lg:me-5 xl:me-8 2xl:me-10 hidden flex-shrink-0 lg:block'>
               <LanguageSwitcher />
             </div>
           ) : (

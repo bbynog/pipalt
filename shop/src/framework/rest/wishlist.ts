@@ -24,7 +24,7 @@ export function useToggleWishlist(product_id: string) {
     onSuccess: (data) => {
       queryClient.setQueryData(
         [`${API_ENDPOINTS.WISHLIST}/in_wishlist`, product_id],
-        (old: any) => !old
+        (old: any) => !old,
       );
     },
     onError: (error) => {
@@ -82,7 +82,7 @@ export function useWishlist(options?: WishlistQueryOptions) {
     {
       getNextPageParam: ({ current_page, last_page }) =>
         last_page > current_page && { page: current_page + 1 },
-    }
+    },
   );
   function handleLoadMore() {
     fetchNextPage();
@@ -113,7 +113,7 @@ export function useInWishlist({
     () => client.wishlist.checkIsInWishlist({ product_id }),
     {
       enabled,
-    }
+    },
   );
   return {
     inWishlist: Boolean(data) ?? false,

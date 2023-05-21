@@ -15,7 +15,7 @@ const ShippingDeleteView = () => {
           shippingClasses(existingShippingRefs, { readField }) {
             return existingShippingRefs.filter(
               (shippingRef: any) =>
-                deleteShipping.id !== readField('id', shippingRef)
+                deleteShipping.id !== readField('id', shippingRef),
             );
           },
         },

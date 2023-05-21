@@ -10,7 +10,7 @@ import { OrderStatus, PaymentGateway, PaymentStatus } from '@/types';
 export function isPaymentPending(
   paymentGateway: PaymentGateway,
   orderStatus: OrderStatus,
-  paymentStatus: PaymentStatus
+  paymentStatus: PaymentStatus,
 ) {
   const isPaymentCOD = ![
     PaymentGateway.COD,

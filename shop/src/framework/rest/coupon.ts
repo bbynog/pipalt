@@ -7,10 +7,10 @@ import { useRouter } from 'next/router';
 
 export function useCoupons(options?: Partial<CouponQueryOptions>) {
   const { locale } = useRouter();
-  
+
   const formattedOptions = {
     ...options,
-    language: locale
+    language: locale,
   };
 
   const {
@@ -28,7 +28,7 @@ export function useCoupons(options?: Partial<CouponQueryOptions>) {
     {
       getNextPageParam: ({ current_page, last_page }) =>
         last_page > current_page && { page: current_page + 1 },
-    }
+    },
   );
 
   function handleLoadMore() {

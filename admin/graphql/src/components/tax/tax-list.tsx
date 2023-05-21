@@ -38,7 +38,7 @@ const TaxList = ({ taxes, refetch }: IProps) => {
           ],
         });
       }, 300),
-    [order]
+    [order],
   );
 
   const onHeaderClick = (value: string | undefined) => ({
@@ -145,7 +145,7 @@ const TaxList = ({ taxes, refetch }: IProps) => {
         <ActionButtons
           id={id}
           editUrl={`${Routes.tax.list}/${id}/edit`}
-          deleteModalView="DELETE_TAX"
+          deleteModalView='DELETE_TAX'
         />
       ),
       width: 200,
@@ -153,13 +153,13 @@ const TaxList = ({ taxes, refetch }: IProps) => {
   ];
 
   return (
-    <div className="rounded overflow-hidden shadow mb-8">
+    <div className='mb-8 overflow-hidden rounded shadow'>
       <Table
         // @ts-ignore
         columns={columns}
         emptyText={t('table:empty-table-data')}
         data={taxes}
-        rowKey="id"
+        rowKey='id'
         scroll={{ x: 900 }}
       />
     </div>

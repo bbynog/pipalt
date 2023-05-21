@@ -15,7 +15,6 @@ export class SettingsService {
   // }
 
   getSettings() {
-    
     return this.settings;
   }
 

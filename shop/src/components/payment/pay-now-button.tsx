@@ -7,7 +7,10 @@ interface Props {
   buttonSize?: 'big' | 'medium' | 'small';
 }
 
-const PayNowButton: React.FC<Props> = ({ trackingNumber, buttonSize = 'small' }) => {
+const PayNowButton: React.FC<Props> = ({
+  trackingNumber,
+  buttonSize = 'small',
+}) => {
   const { t } = useTranslation();
   const { isLoading, getPaymentIntentQuery } = useGetPaymentIntent({
     tracking_number: trackingNumber,
@@ -19,7 +22,7 @@ const PayNowButton: React.FC<Props> = ({ trackingNumber, buttonSize = 'small' })
 
   return (
     <Button
-      className="w-full"
+      className='w-full'
       onClick={handlePayNow}
       size={buttonSize}
       disabled={isLoading}

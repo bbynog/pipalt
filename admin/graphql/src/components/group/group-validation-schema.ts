@@ -7,7 +7,7 @@ export const groupValidationSchema = yup.object().shape({
     .of(
       yup.object().shape({
         title: yup.string().required('form:error-title-required'),
-      })
+      }),
     ),
   settings: yup.object().shape({
     productCard: yup.string().required('form:error-product-card-required'),

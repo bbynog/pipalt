@@ -43,10 +43,10 @@ const ProductManufacturerInput = ({ control, setValue }: Props) => {
   });
 
   return (
-    <div className="mb-5">
+    <div className='mb-5'>
       <Label>{t('common:text-manufacturers')}</Label>
       <SelectInput
-        name="manufacturer"
+        name='manufacturer'
         control={control}
         getOptionLabel={(option: any) => option.name}
         getOptionValue={(option: any) => option.id}

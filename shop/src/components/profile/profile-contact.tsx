@@ -22,30 +22,30 @@ const ProfileContact = ({ userId, profileId, contact }: Props) => {
     });
   }
   return (
-    <Card className="flex w-full flex-col">
-      <div className="mb-5 flex items-center justify-between md:mb-8">
-        <p className="text-lg capitalize text-heading lg:text-xl">
+    <Card className='flex w-full flex-col'>
+      <div className='mb-5 flex items-center justify-between md:mb-8'>
+        <p className='text-lg capitalize text-heading lg:text-xl'>
           {t('text-contact-number')}
         </p>
 
         {onAdd && (
           <button
-            className="flex items-center text-sm font-semibold text-accent transition-colors duration-200 hover:text-accent-hover focus:text-accent-hover focus:outline-0"
+            className='flex items-center text-sm font-semibold text-accent transition-colors duration-200 hover:text-accent-hover focus:text-accent-hover focus:outline-0'
             onClick={onAdd}
           >
-            <PlusIcon className="h-4 w-4 stroke-2 ltr:mr-0.5 rtl:ml-0.5" />
+            <PlusIcon className='h-4 w-4 stroke-2 ltr:mr-0.5 rtl:ml-0.5' />
             {Boolean(contact) ? t('text-update') : t('text-add')}
           </button>
         )}
       </div>
 
-      <div className="grid grid-cols-1">
+      <div className='grid grid-cols-1'>
         <PhoneInput
-          country="us"
+          country='us'
           value={contact}
           disabled={true}
-          inputClass="!p-0 ltr:!pr-4 rtl:!pl-4 ltr:!pl-14 rtl:!pr-14 !flex !items-center !w-full !appearance-none !transition !duration-300 !ease-in-out !text-heading !text-sm focus:!outline-none focus:!ring-0 !border !border-border-base !rounded focus:!border-accent !h-12"
-          dropdownClass="focus:!ring-0 !border !border-border-base !shadow-350"
+          inputClass='!p-0 ltr:!pr-4 rtl:!pl-4 ltr:!pl-14 rtl:!pr-14 !flex !items-center !w-full !appearance-none !transition !duration-300 !ease-in-out !text-heading !text-sm focus:!outline-none focus:!ring-0 !border !border-border-base !rounded focus:!border-accent !h-12'
+          dropdownClass='focus:!ring-0 !border !border-border-base !shadow-350'
         />
       </div>
     </Card>

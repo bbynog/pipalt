@@ -57,7 +57,9 @@ export default function CreateOrUpdateProductForm({
   });
   const shopId = data?.shop?.id!;
   const isNewTranslation = router?.query?.action === 'translate';
-  const isSlugEditable = router?.query?.action === 'edit' && router?.locale === Config.defaultLanguage;
+  const isSlugEditable =
+    router?.query?.action === 'edit' &&
+    router?.locale === Config.defaultLanguage;
   const generateRedirectUrl = router.query.shop
     ? `/${router.query.shop}${Routes.product.list}`
     : Routes.product.list;
@@ -109,7 +111,7 @@ export default function CreateOrUpdateProductForm({
             undefined,
             {
               locale: Config.defaultLanguage,
-            }
+            },
           );
         }
       }
@@ -182,46 +184,46 @@ export default function CreateOrUpdateProductForm({
       {errorMessage ? (
         <Alert
           message={t(`common:${errorMessage}`)}
-          variant="error"
+          variant='error'
           closeable={true}
-          className="mt-5"
+          className='mt-5'
           onClose={() => setErrorMessage(null)}
         />
       ) : null}
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit as any)} noValidate>
-          <div className="flex flex-wrap pb-8 border-b border-dashed border-border-base my-5 sm:my-8">
+          <div className='my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8'>
             <Description
               title={t('form:featured-image-title')}
               details={t('form:featured-image-help-text')}
-              className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8"
+              className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
             />
 
-            <Card className="w-full sm:w-8/12 md:w-2/3">
-              <FileInput name="image" control={control} multiple={false} />
+            <Card className='w-full sm:w-8/12 md:w-2/3'>
+              <FileInput name='image' control={control} multiple={false} />
             </Card>
           </div>
 
-          <div className="flex flex-wrap pb-8 border-b border-dashed border-border-base my-5 sm:my-8">
+          <div className='my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8'>
             <Description
               title={t('form:gallery-title')}
               details={t('form:gallery-help-text')}
-              className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8"
+              className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
             />
 
-            <Card className="w-full sm:w-8/12 md:w-2/3">
-              <FileInput name="gallery" control={control} />
+            <Card className='w-full sm:w-8/12 md:w-2/3'>
+              <FileInput name='gallery' control={control} />
             </Card>
           </div>
 
-          <div className="flex flex-wrap pb-8 border-b border-dashed border-border-base my-5 sm:my-8">
+          <div className='my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8'>
             <Description
               title={t('form:type-and-category')}
               details={t('form:type-and-category-help-text')}
-              className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8"
+              className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
             />
 
-            <Card className="w-full sm:w-8/12 md:w-2/3">
+            <Card className='w-full sm:w-8/12 md:w-2/3'>
               <ProductGroupInput
                 control={control}
                 error={t((errors.type as any)?.message)}
@@ -233,7 +235,7 @@ export default function CreateOrUpdateProductForm({
             </Card>
           </div>
 
-          <div className="flex flex-wrap pb-8 border-b border-dashed border-border-base my-5 sm:my-8">
+          <div className='my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8'>
             <Description
               title={t('form:item-description')}
               details={`${
@@ -241,30 +243,30 @@ export default function CreateOrUpdateProductForm({
                   ? t('form:item-description-edit')
                   : t('form:item-description-add')
               } ${t('form:product-description-help-text')}`}
-              className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8"
+              className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
             />
 
-            <Card className="w-full sm:w-8/12 md:w-2/3">
+            <Card className='w-full sm:w-8/12 md:w-2/3'>
               <Input
                 label={`${t('form:input-label-name')}*`}
                 {...register('name')}
                 error={t(errors.name?.message!)}
-                variant="outline"
-                className="mb-5"
+                variant='outline'
+                className='mb-5'
               />
 
               {isSlugEditable ? (
-                <div className="relative mb-5">
+                <div className='relative mb-5'>
                   <Input
                     label={`${t('Slug')}`}
                     {...register('slug')}
                     error={t(errors.slug?.message!)}
-                    variant="outline"
+                    variant='outline'
                     disabled={isSlugDisable}
                   />
                   <button
-                    className="absolute top-[27px] right-px z-10 flex h-[46px] w-11 items-center justify-center rounded-tr rounded-br border-l border-solid border-border-base bg-white px-2 text-body transition duration-200 hover:text-heading focus:outline-none"
-                    type="button"
+                    className='absolute top-[27px] right-px z-10 flex h-[46px] w-11 items-center justify-center rounded-tr rounded-br border-l border-solid border-border-base bg-white px-2 text-body transition duration-200 hover:text-heading focus:outline-none'
+                    type='button'
                     title={t('common:text-edit')}
                     onClick={() => setIsSlugDisable(false)}
                   >
@@ -276,8 +278,8 @@ export default function CreateOrUpdateProductForm({
                   label={`${t('Slug')}`}
                   {...register('slug')}
                   value={slugAutoSuggest}
-                  variant="outline"
-                  className="mb-5"
+                  variant='outline'
+                  className='mb-5'
                   disabled
                 />
               )}
@@ -286,16 +288,16 @@ export default function CreateOrUpdateProductForm({
                 label={`${t('form:input-label-unit')}*`}
                 {...register('unit')}
                 error={t(errors.unit?.message!)}
-                variant="outline"
-                className="mb-5"
+                variant='outline'
+                className='mb-5'
               />
 
               <TextArea
                 label={t('form:input-label-description')}
                 {...register('description')}
                 error={t(errors.description?.message!)}
-                variant="outline"
-                className="mb-5"
+                variant='outline'
+                className='mb-5'
               />
 
               <div>
@@ -303,24 +305,24 @@ export default function CreateOrUpdateProductForm({
                 <Radio
                   {...register('status')}
                   label={t('form:input-label-published')}
-                  id="published"
-                  value="PUBLISH"
-                  className="mb-2"
+                  id='published'
+                  value='PUBLISH'
+                  className='mb-2'
                 />
                 <Radio
                   {...register('status')}
-                  id="draft"
+                  id='draft'
                   label={t('form:input-label-draft')}
-                  value="DRAFT"
+                  value='DRAFT'
                 />
               </div>
             </Card>
           </div>
-          <div className="flex flex-wrap pb-8 border-b border-dashed border-border-base my-5 sm:my-8">
+          <div className='my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8'>
             <Description
               title={t('form:form-title-product-type')}
               details={t('form:form-description-product-type')}
-              className="w-full px-0 sm:pr-4 md:pr-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8"
+              className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pr-4 md:w-1/3 md:pr-5'
             />
 
             <ProductTypeInput />
@@ -336,13 +338,13 @@ export default function CreateOrUpdateProductForm({
             <ProductVariableForm initialValues={initialValues} />
           )}
 
-          <div className="mb-4 text-end">
+          <div className='mb-4 text-end'>
             {initialValues && (
               <Button
-                variant="outline"
+                variant='outline'
                 onClick={router.back}
-                className="me-4"
-                type="button"
+                className='me-4'
+                type='button'
               >
                 {t('form:button-label-back')}
               </Button>

@@ -23,7 +23,7 @@ const CategoryItem: React.FC<CategoryItemProps> = ({ item }) => {
         undefined,
         {
           scroll: false,
-        }
+        },
       );
       return;
     }
@@ -35,23 +35,23 @@ const CategoryItem: React.FC<CategoryItemProps> = ({ item }) => {
       undefined,
       {
         scroll: false,
-      }
+      },
     );
   };
 
   return (
     <div
       className={cn(
-        'text-center rounded bg-light py-4 flex flex-col items-center justify-start relative overflow-hidden cursor-pointer border-2',
+        'relative flex cursor-pointer flex-col items-center justify-start overflow-hidden rounded border-2 bg-light py-4 text-center',
         selectedQueries === item?.slug
           ? 'border-gray-800'
-          : 'border-border-100 xl:border-transparent'
+          : 'border-border-100 xl:border-transparent',
       )}
-      role="button"
+      role='button'
       onClick={() => onCategoryClick(item?.slug!)}
     >
-      <div className="w-full h-20 flex items-center justify-center">
-        <span className="w-10 h-10 inline-block">
+      <div className='flex h-20 w-full items-center justify-center'>
+        <span className='inline-block h-10 w-10'>
           {getIcon({
             iconList: CategoryIcons,
             iconName: item?.icon!,
@@ -60,7 +60,7 @@ const CategoryItem: React.FC<CategoryItemProps> = ({ item }) => {
         </span>
       </div>
 
-      <span className="text-sm font-semibold text-heading text-center px-2.5 block">
+      <span className='block px-2.5 text-center text-sm font-semibold text-heading'>
         {item?.name}
       </span>
     </div>

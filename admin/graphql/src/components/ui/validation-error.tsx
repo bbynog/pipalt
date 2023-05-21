@@ -3,7 +3,7 @@ interface Props {
 }
 
 const ValidationError = ({ message }: Props) => {
-  return <p className="my-2 text-sm text-start text-red-500">{message}</p>;
+  return <p className='my-2 text-sm text-red-500 text-start'>{message}</p>;
 };
 
 export default ValidationError;

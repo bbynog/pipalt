@@ -14,22 +14,22 @@ const SlidingVerticalRectangleCategories: React.FC<
 > = ({ notFound, categories, loading }) => {
   if (loading) {
     return (
-      <div className="hidden xl:block">
-        <div className="mt-8 flex h-52 w-full justify-center px-2">
+      <div className='hidden xl:block'>
+        <div className='mt-8 flex h-52 w-full justify-center px-2'>
           <BakeryCategoryLoader />
         </div>
       </div>
     );
   }
   return (
-    <div className="w-full bg-gray-100">
+    <div className='w-full bg-gray-100'>
       {!notFound ? (
-        <div className="px-4 pt-5 lg:p-8 lg:pb-0">
-          <SolidBoxedCategoryMenu items={categories} className="py-8" />
+        <div className='px-4 pt-5 lg:p-8 lg:pb-0'>
+          <SolidBoxedCategoryMenu items={categories} className='py-8' />
         </div>
       ) : (
-        <div className="min-h-full px-9 pt-6 pb-8 lg:p-8">
-          <NotFound text="text-no-category" className="h-96" />
+        <div className='min-h-full px-9 pt-6 pb-8 lg:p-8'>
+          <NotFound text='text-no-category' className='h-96' />
         </div>
       )}
     </div>

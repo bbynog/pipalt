@@ -16,7 +16,11 @@ import Loader from '@/components/ui/loader/loader';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { AuthorPaginator, QueryAuthorsOrderByColumn, SortOrder } from '__generated__/__types__';
+import {
+  AuthorPaginator,
+  QueryAuthorsOrderByColumn,
+  SortOrder,
+} from '__generated__/__types__';
 import AuthorList from '@/components/author/author-list';
 import { Routes } from '@/config/routes';
 import { Config } from '@/config';
@@ -80,20 +84,20 @@ export default function Authors() {
 
   return (
     <>
-      <Card className="flex flex-col items-center mb-8 xl:flex-row">
-        <div className="mb-4 md:w-1/4 xl:mb-0">
-          <h1 className="text-xl font-semibold text-heading">
+      <Card className='mb-8 flex flex-col items-center xl:flex-row'>
+        <div className='mb-4 md:w-1/4 xl:mb-0'>
+          <h1 className='text-xl font-semibold text-heading'>
             {t('common:text-authors')}
           </h1>
         </div>
 
-        <div className="flex flex-col items-center w-full space-y-4 xl:w-1/2 md:flex-row md:space-y-0 ms-auto">
+        <div className='flex w-full flex-col items-center space-y-4 ms-auto md:flex-row md:space-y-0 xl:w-1/2'>
           <Search onSearch={handleSearch} />
 
           {locale === Config.defaultLanguage && (
             <LinkButton
               href={`/${shop}${Routes.author.create}`}
-              className="w-full h-12 md:ms-6 md:w-auto"
+              className='h-12 w-full md:w-auto md:ms-6'
             >
               <span>+ {t('form:button-label-add-author')}</span>
             </LinkButton>

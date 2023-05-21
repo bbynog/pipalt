@@ -13,7 +13,7 @@ const Avatar: React.FC<AvatarProps> = ({ src, className, title, ...rest }) => {
     <div
       className={cn(
         'relative cursor-pointer overflow-hidden rounded-full border border-border-100',
-        className
+        className,
       )}
       {...rest}
     >
@@ -21,7 +21,7 @@ const Avatar: React.FC<AvatarProps> = ({ src, className, title, ...rest }) => {
         alt={title}
         src={src}
         fill
-        sizes="(max-width: 768px) 100vw"
+        sizes='(max-width: 768px) 100vw'
         priority={true}
       />
     </div>

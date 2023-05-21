@@ -13,7 +13,7 @@ const QuestionDeleteView = () => {
         fields: {
           tags(existingRefs, { readField }) {
             return existingRefs.data.filter(
-              (ref: any) => deleteQuestion.id !== readField('id', ref)
+              (ref: any) => deleteQuestion.id !== readField('id', ref),
             );
           },
         },

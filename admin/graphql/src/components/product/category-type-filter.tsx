@@ -18,7 +18,7 @@ export default function CategoryTypeFilter({ refetch, className }: Props) {
   const { locale } = useRouter();
   const { data, loading } = useTypesQuery({
     variables: {
-      language: locale
+      language: locale,
     },
     fetchPolicy: 'network-only',
   });
@@ -34,11 +34,11 @@ export default function CategoryTypeFilter({ refetch, className }: Props) {
   return (
     <div
       className={cn(
-        'flex flex-col md:flex-row md:space-x-5 rtl:space-x-reverse md:items-end space-y-5 md:space-y-0 w-full',
-        className
+        'flex w-full flex-col space-y-5 rtl:space-x-reverse md:flex-row md:items-end md:space-x-5 md:space-y-0',
+        className,
       )}
     >
-      <div className="w-full">
+      <div className='w-full'>
         <Label>{t('common:filter-by-group')}</Label>
         <Select
           options={data?.types}
@@ -56,7 +56,7 @@ export default function CategoryTypeFilter({ refetch, className }: Props) {
           }}
         />
       </div>
-      <div className="w-full">
+      <div className='w-full'>
         <Label>{t('common:filter-by-category')}</Label>
         <Select
           options={categoryData?.categories?.data}

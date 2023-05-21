@@ -62,7 +62,7 @@ const ProductQuestions: React.FC<ProductQuestionsProps> = ({
           {
             'px-5 lg:px-16': !boxedLayout,
             'px-5 xl:px-0': boxedLayout,
-          }
+          },
         )}
       >
         <div
@@ -70,25 +70,25 @@ const ProductQuestions: React.FC<ProductQuestionsProps> = ({
             'flex flex-col justify-between sm:flex-row sm:items-center',
             {
               'mx-auto max-w-screen-xl': boxedLayout,
-            }
+            },
           )}
         >
-          <div className="flex w-full flex-col items-start space-y-1 py-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0 lg:py-0 ltr:lg:pr-5 rtl:lg:pl-5">
-            <h2 className="mb-1 text-lg font-semibold tracking-tight text-heading">
+          <div className='flex w-full flex-col items-start space-y-1 py-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0 lg:py-0 ltr:lg:pr-5 rtl:lg:pl-5'>
+            <h2 className='mb-1 text-lg font-semibold tracking-tight text-heading'>
               {t('text-question-answers')} ({paginatorInfo?.total ?? 0})
             </h2>
             <button
-              className="rounded-full bg-accent px-5 py-3 text-xs font-bold text-white transition-colors hover:border-accent hover:bg-accent-hover"
+              className='rounded-full bg-accent px-5 py-3 text-xs font-bold text-white transition-colors hover:border-accent hover:bg-accent-hover'
               onClick={openQuestionModal}
             >
               {t('text-ask-question')}
             </button>
           </div>
-          <div className="-ml-3 shrink-0 border-t border-border-200 border-opacity-70 py-3 sm:ml-0 sm:min-w-[50%] sm:border-t-0 sm:py-8 ltr:sm:border-l ltr:sm:pl-5 rtl:sm:border-r rtl:sm:pr-5 md:min-w-[380px] lg:py-5">
+          <div className='-ml-3 shrink-0 border-t border-border-200 border-opacity-70 py-3 sm:ml-0 sm:min-w-[50%] sm:border-t-0 sm:py-8 ltr:sm:border-l ltr:sm:pl-5 rtl:sm:border-r rtl:sm:pr-5 md:min-w-[380px] lg:py-5'>
             <Search
               label={t('text-search-label')}
               placeholder={t('text-question-search-placeholder')}
-              variant="flat"
+              variant='flat'
             />
           </div>
         </div>
@@ -105,7 +105,7 @@ const ProductQuestions: React.FC<ProductQuestionsProps> = ({
               'mx-auto max-w-screen-xl': boxedLayout,
             })}
           >
-            {questions?.map((question:any) => (
+            {questions?.map((question: any) => (
               <QuestionCard
                 key={`question-no-${question.id}`}
                 question={question}
@@ -113,13 +113,13 @@ const ProductQuestions: React.FC<ProductQuestionsProps> = ({
             ))}
             {/* Pagination */}
             {paginatorInfo && (
-              <div className="flex items-center justify-between border-t border-border-200 border-opacity-70 py-4">
-                <div className="text-xs text-body text-opacity-70">
+              <div className='flex items-center justify-between border-t border-border-200 border-opacity-70 py-4'>
+                <div className='text-xs text-body text-opacity-70'>
                   {t('text-page')} {paginatorInfo.currentPage} {t('text-of')}{' '}
                   {Math.ceil(paginatorInfo.total / paginatorInfo.perPage)}
                 </div>
 
-                <div className="mb-2 flex items-center">
+                <div className='mb-2 flex items-center'>
                   <Pagination
                     total={paginatorInfo.total}
                     current={paginatorInfo.currentPage}
@@ -132,8 +132,8 @@ const ProductQuestions: React.FC<ProductQuestionsProps> = ({
           </div>
         </div>
       ) : (
-        <div className="flex flex-col items-center justify-center border-b border-border-200 border-opacity-70 px-5 py-16">
-          <h3 className="text-lg font-semibold text-gray-400">
+        <div className='flex flex-col items-center justify-center border-b border-border-200 border-opacity-70 px-5 py-16'>
+          <h3 className='text-lg font-semibold text-gray-400'>
             {t('text-no-question-found')}
           </h3>
         </div>

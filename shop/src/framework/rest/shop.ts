@@ -20,7 +20,7 @@ export function useShops(options?: Partial<ShopQueryOptions>) {
     {
       getNextPageParam: ({ current_page, last_page }) =>
         last_page > current_page && { page: current_page + 1 },
-    }
+    },
   );
 
   function handleLoadMore() {
@@ -45,6 +45,6 @@ export const useShop = ({ slug }: { slug: string }, options?: any) => {
   return useQuery<Shop, Error>(
     [API_ENDPOINTS.SHOPS, { slug }],
     () => client.shops.get(slug),
-    options
+    options,
   );
 };

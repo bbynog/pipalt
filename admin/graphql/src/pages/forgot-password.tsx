@@ -22,7 +22,7 @@ export default function ForgotPasswordPage() {
   const { t } = useTranslation();
   return (
     <AuthPageLayout>
-      <h3 className="text-center text-base italic text-body mb-6 mt-4">
+      <h3 className='mb-6 mt-4 text-center text-base italic text-body'>
         {t('form:form-title-forgot-password')}
       </h3>
       <ForgotPasswordForm />

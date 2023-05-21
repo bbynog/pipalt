@@ -1,5 +1,12 @@
 import { RegisterInput } from './create-user.input';
-import { InputType, Field, PartialType, ID, PickType, ObjectType } from '@nestjs/graphql';
+import {
+  InputType,
+  Field,
+  PartialType,
+  ID,
+  PickType,
+  ObjectType,
+} from '@nestjs/graphql';
 import { UserAddressInput } from '../../orders/dto/create-order.input';
 import { AddressType } from '../../addresses/entities/address.entity';
 import { Profile, Social } from '../entities/profile.entity';
@@ -44,5 +51,3 @@ class ProfileHasOne {
   @Field(() => UserProfileInput, { nullable: true })
   upsert: UserProfileInput;
 }
-
-

@@ -63,18 +63,18 @@ export default function AttributePage() {
 
   return (
     <>
-      <Card className="flex flex-col items-center justify-between mb-8 md:flex-row">
-        <div className="mb-4 md:w-1/4 md:mb-0">
-          <h1 className="text-xl font-semibold text-heading">
+      <Card className='mb-8 flex flex-col items-center justify-between md:flex-row'>
+        <div className='mb-4 md:mb-0 md:w-1/4'>
+          <h1 className='text-xl font-semibold text-heading'>
             {t('common:sidebar-nav-item-attributes')}
           </h1>
         </div>
 
-        <div className="flex flex-col items-center w-full md:flex-row md:w-3/4 xl:w-2/4 ms-auto">
+        <div className='flex w-full flex-col items-center ms-auto md:w-3/4 md:flex-row xl:w-2/4'>
           {locale === Config.defaultLanguage && (
             <LinkButton
               href={`/${shop}/attributes/create`}
-              className="w-full h-12 mt-5 md:mt-0 md:ms-auto md:w-auto"
+              className='mt-5 h-12 w-full md:mt-0 md:w-auto md:ms-auto'
             >
               <span>
                 + {t('form:button-label-add')} {t('common:attribute')}
@@ -82,15 +82,15 @@ export default function AttributePage() {
             </LinkButton>
           )}
 
-          <Button onClick={handleImportModal} className="w-full mt-5 md:hidden">
+          <Button onClick={handleImportModal} className='mt-5 w-full md:hidden'>
             {t('common:text-export-import')}
           </Button>
 
           <button
             onClick={handleImportModal}
-            className="items-center justify-center flex-shrink-0 hidden w-8 h-8 transition duration-300 rounded-full md:flex bg-gray-50 hover:bg-gray-100 ms-6"
+            className='hidden h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-gray-50 transition duration-300 ms-6 hover:bg-gray-100 md:flex'
           >
-            <MoreIcon className="w-3.5 text-body" />
+            <MoreIcon className='w-3.5 text-body' />
           </button>
         </div>
       </Card>

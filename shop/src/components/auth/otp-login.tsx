@@ -39,21 +39,21 @@ function OtpLogin() {
   }
 
   return (
-    <div className="mt-4">
+    <div className='mt-4'>
       {otpState.step === 'PhoneNumber' && (
         <>
           <Alert
-            variant="error"
+            variant='error'
             message={serverError && t(serverError)}
-            className="mb-4"
+            className='mb-4'
             closeable={true}
             onClose={() => setServerError(null)}
           />
-          <div className="flex items-center">
+          <div className='flex items-center'>
             <PhoneNumberForm
               onSubmit={onSendCodeSubmission}
               isLoading={isLoading}
-              view="login"
+              view='login'
             />
           </div>
         </>
@@ -79,25 +79,25 @@ export default function OtpLoginView() {
   const { openModal } = useModalAction();
 
   return (
-    <div className="flex h-screen w-screen flex-col justify-center bg-light px-5 py-6 sm:p-8 md:h-auto md:max-w-md md:rounded-xl">
-      <div className="flex justify-center">
+    <div className='flex h-screen w-screen flex-col justify-center bg-light px-5 py-6 sm:p-8 md:h-auto md:max-w-md md:rounded-xl'>
+      <div className='flex justify-center'>
         <Logo />
       </div>
-      <p className="mt-4 mb-7 text-center text-sm leading-relaxed text-body sm:mt-5 sm:mb-10 md:text-base">
+      <p className='mt-4 mb-7 text-center text-sm leading-relaxed text-body sm:mt-5 sm:mb-10 md:text-base'>
         {t('otp-login-helper')}
       </p>
       <OtpLogin />
-      <div className="relative mt-9 mb-7 flex flex-col items-center justify-center text-sm text-heading sm:mt-11 sm:mb-8">
-        <hr className="w-full" />
-        <span className="absolute -top-2.5 bg-light px-2 ltr:left-2/4 ltr:-ml-4 rtl:right-2/4 rtl:-mr-4">
+      <div className='relative mt-9 mb-7 flex flex-col items-center justify-center text-sm text-heading sm:mt-11 sm:mb-8'>
+        <hr className='w-full' />
+        <span className='absolute -top-2.5 bg-light px-2 ltr:left-2/4 ltr:-ml-4 rtl:right-2/4 rtl:-mr-4'>
           {t('text-or')}
         </span>
       </div>
-      <div className="text-center text-sm text-body sm:text-base">
+      <div className='text-center text-sm text-body sm:text-base'>
         {t('text-back-to')}{' '}
         <button
           onClick={() => openModal('LOGIN_VIEW')}
-          className="font-semibold text-accent underline transition-colors duration-200 hover:text-accent-hover hover:no-underline focus:text-accent-hover focus:no-underline focus:outline-0 ltr:ml-1 rtl:mr-1"
+          className='font-semibold text-accent underline transition-colors duration-200 hover:text-accent-hover hover:no-underline focus:text-accent-hover focus:no-underline focus:outline-0 ltr:ml-1 rtl:mr-1'
         >
           {t('text-login')}
         </button>

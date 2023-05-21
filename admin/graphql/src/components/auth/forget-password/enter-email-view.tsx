@@ -29,13 +29,13 @@ const EnterEmailView = ({ onSubmit, loading }: Props) => {
       <Input
         label={t('form:input-label-email')}
         {...register('email')}
-        type="email"
-        variant="outline"
-        className="mb-5"
-        placeholder="demo@demo.com"
+        type='email'
+        variant='outline'
+        className='mb-5'
+        placeholder='demo@demo.com'
         error={t(errors.email?.message!)}
       />
-      <Button className="w-full h-11" loading={loading} disabled={loading}>
+      <Button className='h-11 w-full' loading={loading} disabled={loading}>
         {t('form:text-submit-email')}
       </Button>
     </form>

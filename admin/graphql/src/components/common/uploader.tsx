@@ -52,7 +52,7 @@ export default function Uploader({
         setFiles(
           Array.isArray(dataAfterRemoveTypename)
             ? dataAfterRemoveTypename
-            : [dataAfterRemoveTypename]
+            : [dataAfterRemoveTypename],
         );
         if (onChange) {
           onChange(dataAfterRemoveTypename);
@@ -104,25 +104,25 @@ export default function Uploader({
 
       return (
         <div
-          className={`relative mt-2 inline-flex flex-col overflow-hidden rounded me-2 ${
+          className={`me-2 relative mt-2 inline-flex flex-col overflow-hidden rounded ${
             isImage ? 'border border-border-200' : ''
           }`}
           key={idx}
         >
           {/* {file?.thumbnail && isImage ? ( */}
           {isImage ? (
-            <figure className="relative h-16 w-28">
+            <figure className='relative h-16 w-28'>
               <Image
                 src={file.thumbnail}
                 alt={filename}
                 fill
-                sizes="(max-width: 768px) 100vw"
-                className="object-contain"
+                sizes='(max-width: 768px) 100vw'
+                className='object-contain'
               />
             </figure>
           ) : (
-            <div className="flex flex-col items-center">
-              <div className="flex h-14 w-14 min-w-0 items-center justify-center overflow-hidden">
+            <div className='flex flex-col items-center'>
+              <div className='flex h-14 w-14 min-w-0 items-center justify-center overflow-hidden'>
                 <Image
                   src={zipPlaceholder}
                   width={56}
@@ -130,9 +130,9 @@ export default function Uploader({
                   alt={filename}
                 />
               </div>
-              <p className="flex cursor-default items-baseline p-1 text-xs text-body">
+              <p className='flex cursor-default items-baseline p-1 text-xs text-body'>
                 <span
-                  className="inline-block max-w-[64px] overflow-hidden overflow-ellipsis whitespace-nowrap"
+                  className='inline-block max-w-[64px] overflow-hidden overflow-ellipsis whitespace-nowrap'
                   title={`${filename}.${fileType}`}
                 >
                   {filename}
@@ -146,7 +146,7 @@ export default function Uploader({
           )}
           {multiple ? (
             <button
-              className="absolute top-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-600 text-xs text-light shadow-xl outline-none end-1"
+              className='absolute top-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-600 text-xs text-light shadow-xl outline-none end-1'
               onClick={() => handleDelete(file.thumbnail)}
             >
               <CloseIcon width={10} height={10} />
@@ -165,11 +165,11 @@ export default function Uploader({
       // Make sure to revoke the data uris to avoid memory leaks
       files.forEach((file: any) => URL.revokeObjectURL(file.thumbnail));
     },
-    [files]
+    [files],
   );
 
   return (
-    <section className="upload">
+    <section className='upload'>
       <div
         {...getRootProps({
           className:
@@ -177,34 +177,34 @@ export default function Uploader({
         })}
       >
         <input {...getInputProps()} />
-        <UploadIcon className="text-muted-light" />
-        <p className="mt-4 text-center text-sm text-body">
+        <UploadIcon className='text-muted-light' />
+        <p className='mt-4 text-center text-sm text-body'>
           {helperText ? (
-            <span className="font-semibold text-gray-500">{helperText}</span>
+            <span className='font-semibold text-gray-500'>{helperText}</span>
           ) : (
             <>
-              <span className="font-semibold text-accent">
+              <span className='font-semibold text-accent'>
                 {t('text-upload-highlight')}
               </span>{' '}
               {t('text-upload-message')} <br />
-              <span className="text-xs text-body">{t('text-img-format')}</span>
+              <span className='text-xs text-body'>{t('text-img-format')}</span>
             </>
           )}
         </p>
 
         {error && (
-          <p className="mt-4 text-center text-sm text-red-600 text-body">
+          <p className='mt-4 text-center text-sm text-red-600 text-body'>
             {error}
           </p>
         )}
       </div>
 
       {(!!thumbs.length || loading) && (
-        <aside className="mt-2 flex flex-wrap">
+        <aside className='mt-2 flex flex-wrap'>
           {!!thumbs.length && thumbs}
           {loading && (
-            <div className="mt-2 flex h-16 items-center ms-2">
-              <Loader simple={true} className="h-6 w-6" />
+            <div className='mt-2 flex h-16 items-center ms-2'>
+              <Loader simple={true} className='h-6 w-6' />
             </div>
           )}
         </aside>

@@ -61,21 +61,21 @@ const OwnerStoreNoticePage = () => {
   }
 
   return (
-    <div className="px-8 py-10 bg-white rounded shadow">
-      <div className="mb-5">
+    <div className='rounded bg-white px-8 py-10 shadow'>
+      <div className='mb-5'>
         <Link
           href={`${Routes?.dashboard}?tab=2`}
-          className="flex items-center font-bold no-underline transition-colors duration-200 text-accent ms-1 hover:text-accent-hover hover:underline focus:text-accent-700 focus:no-underline focus:outline-none"
+          className='flex items-center font-bold text-accent no-underline transition-colors duration-200 ms-1 hover:text-accent-hover hover:underline focus:text-accent-700 focus:no-underline focus:outline-none'
         >
-          <IosArrowLeft height={12} width={15} className="mr-2.5" />
+          <IosArrowLeft height={12} width={15} className='mr-2.5' />
           {t('common:text-back-to-home')}
         </Link>
       </div>
-      <h3 className="mb-6 text-[22px] font-bold">
+      <h3 className='mb-6 text-[22px] font-bold'>
         {data?.storeNotice?.notice}
       </h3>
 
-      <p className="mb-6 text-[15px] leading-[1.75em] text-[#5A5A5A]">
+      <p className='mb-6 text-[15px] leading-[1.75em] text-[#5A5A5A]'>
         {data?.storeNotice?.description}
       </p>
 

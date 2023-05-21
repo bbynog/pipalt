@@ -4,7 +4,7 @@ import { MinusIcon } from '@/components/icons/minus-icon';
 import { useTranslation } from 'next-i18next';
 
 type ButtonEvent = (
-  e: React.MouseEvent<HTMLButtonElement | MouseEvent>
+  e: React.MouseEvent<HTMLButtonElement | MouseEvent>,
 ) => void;
 
 type CounterProps = {
@@ -58,21 +58,21 @@ const Counter: React.FC<CounterProps> = ({
       <button
         onClick={onDecrement}
         className={cn(
-          'cursor-pointer p-2 transition-colors duration-200 focus:outline-none hover:bg-accent-hover',
+          'cursor-pointer p-2 transition-colors duration-200 hover:bg-accent-hover focus:outline-none',
           {
             'px-3 py-3 sm:px-2': variant === 'single',
             'px-5': variant === 'big',
             'hover:!bg-gray-100': variant === 'pillVertical',
-          }
+          },
         )}
       >
-        <span className="sr-only">{t('text-minus')}</span>
-        <MinusIcon className="h-3 w-3 stroke-2" />
+        <span className='sr-only'>{t('text-minus')}</span>
+        <MinusIcon className='h-3 w-3 stroke-2' />
       </button>
       <div
         className={cn(
-          'flex-1 flex items-center justify-center text-sm font-semibold',
-          variant === 'pillVertical' && 'text-heading'
+          'flex flex-1 items-center justify-center text-sm font-semibold',
+          variant === 'pillVertical' && 'text-heading',
         )}
       >
         {value}
@@ -81,17 +81,17 @@ const Counter: React.FC<CounterProps> = ({
         onClick={onIncrement}
         disabled={disabled}
         className={cn(
-          'cursor-pointer p-2 transition-colors duration-200 focus:outline-none hover:bg-accent-hover',
+          'cursor-pointer p-2 transition-colors duration-200 hover:bg-accent-hover focus:outline-none',
           {
             'px-3 py-3 sm:px-2': variant === 'single',
             'px-5': variant === 'big',
             'hover:!bg-gray-100': variant === 'pillVertical',
-          }
+          },
         )}
         title={disabled ? t('text-out-stock') : ''}
       >
-        <span className="sr-only">{t('text-plus')}</span>
-        <PlusIcon className="h-3.5 w-3.5 md:h-4.5 md:w-4.5 stroke-2" />
+        <span className='sr-only'>{t('text-plus')}</span>
+        <PlusIcon className='md:h-4.5 md:w-4.5 h-3.5 w-3.5 stroke-2' />
       </button>
     </div>
   );

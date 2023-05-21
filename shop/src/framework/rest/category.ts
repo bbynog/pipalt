@@ -3,15 +3,15 @@ import { useInfiniteQuery } from 'react-query';
 import client from './client';
 import { API_ENDPOINTS } from './client/api-endpoints';
 import { mapPaginatorData } from '@/framework/utils/data-mappers';
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
 
 export function useCategories(options?: Partial<CategoryQueryOptions>) {
   const { locale } = useRouter();
 
   const formattedOptions = {
     ...options,
-    language: locale
-  }
+    language: locale,
+  };
 
   const {
     data,
@@ -28,7 +28,7 @@ export function useCategories(options?: Partial<CategoryQueryOptions>) {
     {
       getNextPageParam: ({ current_page, last_page }) =>
         last_page > current_page && { page: current_page + 1 },
-    }
+    },
   );
 
   function handleLoadMore() {

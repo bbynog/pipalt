@@ -16,28 +16,28 @@ const CartItem = ({ item, notAvailable }: Props) => {
   return (
     <div
       className={cn(
-        'flex w-full space-x-3 py-3 first:pt-0 last:pb-0 rtl:space-x-reverse'
+        'flex w-full space-x-3 py-3 first:pt-0 last:pb-0 rtl:space-x-reverse',
       )}
       key={item.id}
     >
-      <div className="relative h-[42px] w-[42px] flex-shrink-0 bg-gray-100">
+      <div className='relative h-[42px] w-[42px] flex-shrink-0 bg-gray-100'>
         <Image
           src={item?.image ?? productPlaceholder}
           alt={item.name}
           fill
-          sizes="(max-width: 768px) 100vw"
-          className="product-image fill rounded-md"
+          sizes='(max-width: 768px) 100vw'
+          className='product-image fill rounded-md'
         />
       </div>
-      <div className="flex w-full justify-between">
-        <p className="flex flex-col text-sm">
+      <div className='flex w-full justify-between'>
+        <p className='flex flex-col text-sm'>
           <span className={cn(notAvailable ? 'text-red-500' : 'text-gray-800')}>
             {item.name}
           </span>
           <span
             className={cn(
               'mt-1.5 text-xs font-semibold',
-              notAvailable ? 'text-red-500' : 'text-gray-500'
+              notAvailable ? 'text-red-500' : 'text-gray-500',
             )}
           >
             X {item.quantity}
@@ -47,7 +47,7 @@ const CartItem = ({ item, notAvailable }: Props) => {
         <span
           className={cn(
             'text-sm font-semibold',
-            notAvailable ? 'text-red-500' : 'text-gray-800'
+            notAvailable ? 'text-red-500' : 'text-gray-800',
           )}
         >
           {!notAvailable ? price : t('text-unavailable')}

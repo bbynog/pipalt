@@ -17,20 +17,20 @@ const SlidingCardCategories: React.FC<SlidingCardCategoriesProps> = ({
 }) => {
   if (loading) {
     return (
-      <div className="hidden xl:block">
-        <div className="mt-8 flex h-52 w-full justify-center px-2">
+      <div className='hidden xl:block'>
+        <div className='mt-8 flex h-52 w-full justify-center px-2'>
           <BakeryCategoryLoader />
         </div>
       </div>
     );
   }
   return (
-    <SectionBlock title="text-which-book">
+    <SectionBlock title='text-which-book'>
       {!notFound ? (
-        <SolidCardCategory items={categories} className="py-8" />
+        <SolidCardCategory items={categories} className='py-8' />
       ) : (
-        <div className="min-h-full">
-          <NotFound text="text-no-category" className="h-96" />
+        <div className='min-h-full'>
+          <NotFound text='text-no-category' className='h-96' />
         </div>
       )}
     </SectionBlock>

@@ -22,7 +22,11 @@ export const selectStyles = {
     backgroundColor: state?.isDisabled ? '#EEF1F4' : '#ffffff',
     borderRadius: 5,
     border: '1px solid #D1D5DB',
-    borderColor: state?.isDisabled ? '#D4D8DD' : state.isFocused ? 'rgb(var(--color-accent-500))' : '#D1D5DB',
+    borderColor: state?.isDisabled
+      ? '#D4D8DD'
+      : state.isFocused
+      ? 'rgb(var(--color-accent-500))'
+      : '#D1D5DB',
     boxShadow:
       state.menuIsOpen &&
       '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
@@ -32,16 +36,16 @@ export const selectStyles = {
   }),
   dropdownIndicator: (provided: any, state: any) => ({
     ...provided,
-    color: state.isFocused ? '#9CA3AF' : '#cccccc',
+    'color': state.isFocused ? '#9CA3AF' : '#cccccc',
     '&:hover': {
       color: '#9CA3AF',
     },
   }),
   clearIndicator: (provided: any, state: any) => ({
     ...provided,
-    color: state.isFocused ? '#9CA3AF' : '#cccccc',
-    padding: 0,
-    cursor: 'pointer',
+    'color': state.isFocused ? '#9CA3AF' : '#cccccc',
+    'padding': 0,
+    'cursor': 'pointer',
 
     '&:hover': {
       color: '#9CA3AF',
@@ -80,10 +84,10 @@ export const selectStyles = {
   }),
   multiValueRemove: (provided: any, _: any) => ({
     ...provided,
-    paddingLeft: 6,
-    paddingRight: 6,
-    color: '#ffffff',
-    cursor: 'pointer',
+    'paddingLeft': 6,
+    'paddingRight': 6,
+    'color': '#ffffff',
+    'cursor': 'pointer',
 
     '&:hover': {
       backgroundColor: 'rgb(var(--color-accent-300))',

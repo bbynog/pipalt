@@ -38,7 +38,7 @@ const ShippingList = ({ shippings, refetch }: IProps) => {
           ],
         });
       }, 300),
-    [order]
+    [order],
   );
 
   const onHeaderClick = (value: string | undefined) => ({
@@ -109,7 +109,7 @@ const ShippingList = ({ shippings, refetch }: IProps) => {
       onHeaderCell: () =>
         onHeaderClick(QueryShippingClassesOrderByColumn.IsGlobal),
       render: (value: boolean) => (
-        <span className="capitalize">{value?.toString()}</span>
+        <span className='capitalize'>{value?.toString()}</span>
       ),
     },
     {
@@ -138,7 +138,7 @@ const ShippingList = ({ shippings, refetch }: IProps) => {
         <ActionButtons
           id={id}
           editUrl={`${Routes.shipping.list}/${id}/edit`}
-          deleteModalView="DELETE_SHIPPING"
+          deleteModalView='DELETE_SHIPPING'
         />
       ),
       width: 200,
@@ -146,13 +146,13 @@ const ShippingList = ({ shippings, refetch }: IProps) => {
   ];
 
   return (
-    <div className="rounded overflow-hidden shadow mb-8">
+    <div className='mb-8 overflow-hidden rounded shadow'>
       <Table
         //@ts-ignore
         columns={columns}
         emptyText={t('table:empty-table-data')}
         data={shippings}
-        rowKey="id"
+        rowKey='id'
         scroll={{ x: 900 }}
       />
     </div>

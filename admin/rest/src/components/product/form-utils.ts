@@ -136,7 +136,7 @@ export function getProductDefaultValues(
           id: digital_file?.attachment_id,
           thumbnail: digital_file?.url,
           original: digital_file?.url,
-          file_name:digital_file?.file_name
+          file_name: digital_file?.file_name,
         },
       }),
     }),

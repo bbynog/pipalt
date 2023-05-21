@@ -1,7 +1,7 @@
 import paymentIntentJson from './payment-intent.json';
-import {Injectable} from '@nestjs/common';
-import {plainToClass} from 'class-transformer';
-import {PaymentIntent} from './entities/payment-intent.entity';
+import { Injectable } from '@nestjs/common';
+import { plainToClass } from 'class-transformer';
+import { PaymentIntent } from './entities/payment-intent.entity';
 
 const paymentIntents = plainToClass(PaymentIntent, paymentIntentJson);
 

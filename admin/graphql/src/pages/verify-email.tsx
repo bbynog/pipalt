@@ -54,20 +54,20 @@ export default function VerifyEmailActions() {
   return (
     <>
       <AuthPageLayout>
-        <h3 className="mb-6 mt-4 text-center text-base italic text-red-500 text-body">
+        <h3 className='mb-6 mt-4 text-center text-base italic text-red-500 text-body'>
           {t('common:email-not-verified')}
         </h3>
-        <div className="w-full space-y-3">
+        <div className='w-full space-y-3'>
           <Button
             onClick={() => resend()}
             disabled={emailVerified || resendLoading}
-            className="w-full"
+            className='w-full'
           >
             {t('common:resend-verification-email')}
           </Button>
           <Button
-            type="button"
-            className="w-full"
+            type='button'
+            className='w-full'
             disabled={signOutLoading}
             onClick={() => signOut()}
           >

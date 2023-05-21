@@ -39,9 +39,9 @@ export const GuestAddressGrid: React.FC<AddressesProps> = ({
     <div className={className}>
       <AddressHeader onAdd={onAdd} count={count} label={label} />
       {addresses && addresses?.length ? (
-        <RadioGroup as="span" value={selectedAddress} onChange={setAddress}>
-          <RadioGroup.Label className="sr-only">{label}</RadioGroup.Label>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+        <RadioGroup as='span' value={selectedAddress} onChange={setAddress}>
+          <RadioGroup.Label className='sr-only'>{label}</RadioGroup.Label>
+          <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3'>
             {addresses?.map((address) => (
               <RadioGroup.Option value={address} key={address?.id}>
                 {({ checked }) => (
@@ -56,8 +56,8 @@ export const GuestAddressGrid: React.FC<AddressesProps> = ({
           </div>
         </RadioGroup>
       ) : (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-          <span className="relative rounded border border-border-200 bg-gray-100 px-5 py-6 text-center text-base">
+        <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3'>
+          <span className='relative rounded border border-border-200 bg-gray-100 px-5 py-6 text-center text-base'>
             {t('text-no-address')}
           </span>
         </div>

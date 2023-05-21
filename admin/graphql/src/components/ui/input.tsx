@@ -47,7 +47,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
       showLabel = true,
       ...rest
     },
-    ref
+    ref,
   ) => {
     const rootClassName = cn(
       classes.root,
@@ -60,7 +60,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
         [classes.shadow]: shadow,
       },
       sizeClasses[dimension],
-      inputClassName
+      inputClassName,
     );
     let numberDisable = type === 'number' && disabled ? 'number-disable' : '';
     return (
@@ -68,7 +68,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
         {showLabel ? (
           <label
             htmlFor={name}
-            className="mb-3 block text-sm font-semibold leading-none text-body-dark"
+            className='mb-3 block text-sm font-semibold leading-none text-body-dark'
           >
             {label}
           </label>
@@ -85,21 +85,21 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
               ? `cursor-not-allowed border-[#D4D8DD] bg-[#EEF1F4] ${numberDisable} select-none`
               : ''
           }`}
-          autoComplete="off"
-          autoCorrect="off"
-          autoCapitalize="off"
-          spellCheck="false"
+          autoComplete='off'
+          autoCorrect='off'
+          autoCapitalize='off'
+          spellCheck='false'
           disabled={disabled}
           aria-invalid={error ? 'true' : 'false'}
           {...rest}
         />
-        {note && <p className="mt-2 text-xs text-body">{note}</p>}
+        {note && <p className='mt-2 text-xs text-body'>{note}</p>}
         {error && (
-          <p className="my-2 text-xs text-red-500 text-start">{error}</p>
+          <p className='my-2 text-xs text-red-500 text-start'>{error}</p>
         )}
       </div>
     );
-  }
+  },
 );
 
 Input.displayName = 'Input';

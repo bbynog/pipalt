@@ -15,16 +15,16 @@ export interface Props extends InputHTMLAttributes<HTMLInputElement> {
 const RadioCard = React.forwardRef<HTMLInputElement, Props>(
   (
     { className, label, labelKey, name, id, src, error, errorKey, ...rest },
-    ref
+    ref,
   ) => {
     const { t } = useTranslation();
     return (
       <div className={className}>
-        <div className="flex w-full h-full">
+        <div className='flex h-full w-full'>
           <input
             id={id}
             name={name}
-            type="radio"
+            type='radio'
             ref={ref}
             className={styles.radio_input}
             {...rest}
@@ -32,28 +32,28 @@ const RadioCard = React.forwardRef<HTMLInputElement, Props>(
 
           <label
             htmlFor={id}
-            className="w-full flex flex-col rounded cursor-pointer border border-gray-200"
+            className='flex w-full cursor-pointer flex-col rounded border border-gray-200'
           >
-            <div className="p-3 pb-0 w-full max-h-72 flex items-center justify-center overflow-hidden">
+            <div className='flex max-h-72 w-full items-center justify-center overflow-hidden p-3 pb-0'>
               <img
                 src={src ?? '/product-placeholder-borderless.svg'}
                 alt={t(labelKey ? labelKey : label!)}
-                className="w-auto h-full object-contain"
+                className='h-full w-auto object-contain'
               />
             </div>
 
-            <h3 className="text-body text-sm text-center font-semibold p-5 mt-auto">
+            <h3 className='mt-auto p-5 text-center text-sm font-semibold text-body'>
               <span>{t(labelKey ? labelKey : label!)}</span>
             </h3>
           </label>
         </div>
 
         {errorKey && (
-          <p className="my-2 text-xs text-start text-red-500">{t(errorKey)}</p>
+          <p className='my-2 text-xs text-red-500 text-start'>{t(errorKey)}</p>
         )}
       </div>
     );
-  }
+  },
 );
 
 RadioCard.displayName = 'RadioCard';

@@ -50,8 +50,8 @@ const socialIcon = [
 
 export const updatedIcons = socialIcon.map((item: any) => {
   item.label = (
-    <div className="flex space-s-4 items-center text-body">
-      <span className="flex w-4 h-4 items-center justify-center">
+    <div className='flex items-center text-body space-s-4'>
+      <span className='flex h-4 w-4 items-center justify-center'>
         {getIcon({
           iconList: socialIcons,
           iconName: item.value,
@@ -198,30 +198,30 @@ export default function CreateOrUpdateAuthorForm({ initialValues }: IProps) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="flex flex-wrap pb-8 border-b border-dashed border-border-base my-5 sm:my-8">
+      <div className='my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8'>
         <Description
           title={t('form:input-label-image')}
           details={t('form:author-image-helper-text')}
-          className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8"
+          className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
         />
 
-        <Card className="w-full sm:w-8/12 md:w-2/3">
-          <FileInput name="image" control={control} multiple={false} />
+        <Card className='w-full sm:w-8/12 md:w-2/3'>
+          <FileInput name='image' control={control} multiple={false} />
         </Card>
       </div>
-      <div className="flex flex-wrap pb-8 border-b border-dashed border-border-base my-5 sm:my-8">
+      <div className='my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8'>
         <Description
           title={t('form:input-label-cover-image')}
           details={t('form:author-cover-image-helper-text')}
-          className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8"
+          className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5'
         />
 
-        <Card className="w-full sm:w-8/12 md:w-2/3">
-          <FileInput name="cover_image" control={control} multiple={false} />
+        <Card className='w-full sm:w-8/12 md:w-2/3'>
+          <FileInput name='cover_image' control={control} multiple={false} />
         </Card>
       </div>
 
-      <div className="flex flex-wrap my-5 sm:my-8">
+      <div className='my-5 flex flex-wrap sm:my-8'>
         <Description
           title={t('form:input-label-description')}
           details={`${
@@ -229,48 +229,48 @@ export default function CreateOrUpdateAuthorForm({ initialValues }: IProps) {
               ? t('form:item-description-edit')
               : t('form:item-description-add')
           } ${t('form:author-form-description-details')}`}
-          className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8 "
+          className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5 '
         />
 
-        <Card className="w-full sm:w-8/12 md:w-2/3">
+        <Card className='w-full sm:w-8/12 md:w-2/3'>
           <Input
             label={t('form:input-label-name')}
             {...register('name')}
             error={t(errors.name?.message!)}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
           />
           <Input
             label={t('form:input-label-languages')}
             {...register('languages')}
             error={t(errors.languages?.message!)}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
             placeholder={t('form:placeholder-add-languages-comma-separated')}
           />
           <TextArea
             label={t('form:input-label-bio')}
             {...register('bio')}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
           />
 
           <TextArea
             label={t('form:input-label-quote')}
             {...register('quote')}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
           />
 
-          <div className="flex flex-col sm:flex-row mb-5">
-            <div className="w-full sm:w-1/2 p-0 sm:pe-2 mb-5 sm:mb-0">
+          <div className='mb-5 flex flex-col sm:flex-row'>
+            <div className='mb-5 w-full p-0 sm:mb-0 sm:w-1/2 sm:pe-2'>
               <Label>{t('form:input-label-author-born')}</Label>
               <Controller
                 control={control}
-                name="born"
+                name='born'
                 render={({ field: { onChange, onBlur, value } }) => (
                   <DatePicker
-                    dateFormat="dd/MM/yyyy"
+                    dateFormat='dd/MM/yyyy'
                     onChange={onChange}
                     onBlur={onBlur}
                     //@ts-ignore
@@ -280,21 +280,21 @@ export default function CreateOrUpdateAuthorForm({ initialValues }: IProps) {
                     // maxDate={expire_at}
                     startDate={new Date()}
                     // endDate={expire_at}
-                    className="border border-border-base"
+                    className='border border-border-base'
                   />
                 )}
               />
               <ValidationError message={t(errors.born?.message!)} />
             </div>
-            <div className="w-full sm:w-1/2 p-0 sm:ps-2">
+            <div className='w-full p-0 sm:w-1/2 sm:ps-2'>
               <Label>{t('form:input-label-author-death')}</Label>
 
               <Controller
                 control={control}
-                name="death"
+                name='death'
                 render={({ field: { onChange, onBlur, value } }) => (
                   <DatePicker
-                    dateFormat="dd/MM/yyyy"
+                    dateFormat='dd/MM/yyyy'
                     onChange={onChange}
                     onBlur={onBlur}
                     //@ts-ignore
@@ -303,7 +303,7 @@ export default function CreateOrUpdateAuthorForm({ initialValues }: IProps) {
                     startDate={new Date()}
                     // endDate={expire_at}
                     // minDate={active_from}
-                    className="border border-border-base"
+                    className='border border-border-base'
                   />
                 )}
               />
@@ -315,11 +315,11 @@ export default function CreateOrUpdateAuthorForm({ initialValues }: IProps) {
             {fields.map(
               (item: ShopSocialInput & { id: string }, index: number) => (
                 <div
-                  className="border-b border-dashed border-border-200 first:border-t last:border-b-0 first:mt-5 md:first:mt-10 py-5 md:py-8"
+                  className='border-b border-dashed border-border-200 py-5 first:mt-5 first:border-t last:border-b-0 md:py-8 md:first:mt-10'
                   key={item.id}
                 >
-                  <div className="grid grid-cols-1 sm:grid-cols-5 gap-5">
-                    <div className="sm:col-span-2">
+                  <div className='grid grid-cols-1 gap-5 sm:grid-cols-5'>
+                    <div className='sm:col-span-2'>
                       <Label>{t('form:input-label-select-platform')}</Label>
                       <SelectInput
                         name={`socials.${index}.icon` as const}
@@ -337,9 +337,9 @@ export default function CreateOrUpdateAuthorForm({ initialValues }: IProps) {
                         defaultValue={item?.icon!} // make sure to set up defaultValue
                       /> */}
                     <Input
-                      className="sm:col-span-2"
+                      className='sm:col-span-2'
                       label={t('form:input-label-social-url')}
-                      variant="outline"
+                      variant='outline'
                       {...register(`socials.${index}.url` as const)}
                       defaultValue={item.url!} // make sure to set up defaultValue
                     />
@@ -347,33 +347,33 @@ export default function CreateOrUpdateAuthorForm({ initialValues }: IProps) {
                       onClick={() => {
                         remove(index);
                       }}
-                      type="button"
-                      className="text-sm text-red-500 hover:text-red-700 transition-colors duration-200 focus:outline-none sm:mt-4 sm:col-span-1"
+                      type='button'
+                      className='text-sm text-red-500 transition-colors duration-200 hover:text-red-700 focus:outline-none sm:col-span-1 sm:mt-4'
                     >
                       {t('form:button-label-remove')}
                     </button>
                   </div>
                 </div>
-              )
+              ),
             )}
           </div>
 
           <Button
-            type="button"
+            type='button'
             onClick={() => append({ icon: '', url: '' })}
-            className="w-full sm:w-auto"
+            className='w-full sm:w-auto'
           >
             {t('form:button-label-add-social')}
           </Button>
         </Card>
       </div>
-      <div className="mb-4 text-end">
+      <div className='mb-4 text-end'>
         {initialValues && (
           <Button
-            variant="outline"
+            variant='outline'
             onClick={router.back}
-            className="me-4"
-            type="button"
+            className='me-4'
+            type='button'
           >
             {t('form:button-label-back')}
           </Button>

@@ -150,7 +150,7 @@ export const UIProvider: FC = (props) => {
       setModalView,
       setModalData,
     }),
-    [state]
+    [state],
   );
 
   return <UIContext.Provider value={value} {...props} />;

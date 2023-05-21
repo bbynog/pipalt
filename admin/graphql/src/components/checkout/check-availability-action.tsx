@@ -65,13 +65,13 @@ export const CheckAvailabilityAction: React.FC<{
     <>
       <Button
         loading={loading}
-        className="w-full mt-5"
+        className='mt-5 w-full'
         onClick={handleVerifyCheckout}
         disabled={isEmpty}
         {...props}
       />
       {errorMessage && (
-        <div className="mt-3">
+        <div className='mt-3'>
           <ValidationError message={t(errorMessage)} />
         </div>
       )}

@@ -41,7 +41,7 @@ const RefundList = ({ refunds, onPagination, refetch }: IProps) => {
           orderBy: value,
         });
       }, 500),
-    [order]
+    [order],
   );
 
   const onHeaderClick = (value: string | undefined) => ({
@@ -73,7 +73,7 @@ const RefundList = ({ refunds, onPagination, refetch }: IProps) => {
       align: 'center',
       width: 200,
       render: (customer: any) => (
-        <span className="whitespace-nowrap">{customer?.email}</span>
+        <span className='whitespace-nowrap'>{customer?.email}</span>
       ),
     },
     {
@@ -104,7 +104,7 @@ const RefundList = ({ refunds, onPagination, refetch }: IProps) => {
       align: 'center',
       width: 180,
       render: (_order: any) => (
-        <span className="whitespace-nowrap">{_order?.tracking_number}</span>
+        <span className='whitespace-nowrap'>{_order?.tracking_number}</span>
       ),
     },
 
@@ -124,7 +124,7 @@ const RefundList = ({ refunds, onPagination, refetch }: IProps) => {
       ellipsis: true,
       onHeaderCell: () => onHeaderClick('created_at'),
       render: (active_date: string) => (
-        <span className="whitespace-nowrap capitalize">
+        <span className='whitespace-nowrap capitalize'>
           {dayjs().to(dayjs.utc(active_date).tz(dayjs.tz.guess()))}
         </span>
       ),
@@ -137,7 +137,7 @@ const RefundList = ({ refunds, onPagination, refetch }: IProps) => {
       width: 160,
       ellipsis: true,
       render: (_order: any) => (
-        <span className="whitespace-nowrap capitalize">
+        <span className='whitespace-nowrap capitalize'>
           {dayjs().to(dayjs.utc(_order?.created_at).tz(dayjs.tz.guess()))}
         </span>
       ),
@@ -177,18 +177,18 @@ const RefundList = ({ refunds, onPagination, refetch }: IProps) => {
 
   return (
     <>
-      <div className="rounded overflow-hidden shadow mb-8">
+      <div className='mb-8 overflow-hidden rounded shadow'>
         <Table
           //@ts-ignore
           columns={columns}
           emptyText={t('table:empty-table-data')}
           data={refunds?.data}
-          rowKey="id"
+          rowKey='id'
           scroll={{ x: 900 }}
         />
       </div>
       {!!refunds?.paginatorInfo.total && (
-        <div className="flex justify-end items-center">
+        <div className='flex items-center justify-end'>
           <Pagination
             total={refunds?.paginatorInfo.total}
             current={refunds?.paginatorInfo.currentPage}

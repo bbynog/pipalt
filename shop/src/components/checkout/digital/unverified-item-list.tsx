@@ -12,15 +12,15 @@ const UnverifiedItemList = ({ hideTitle = false }: { hideTitle?: boolean }) => {
   const { price: subtotal } = usePrice(
     items && {
       amount: total,
-    }
+    },
   );
   return (
-    <div className="w-full">
-      <div className="flex flex-col border-b border-dashed pb-7 border-border-400">
+    <div className='w-full'>
+      <div className='flex flex-col border-b border-dashed border-border-400 pb-7'>
         {isEmpty ? (
-          <div className="flex flex-col items-center justify-center h-full mb-4">
+          <div className='mb-4 flex h-full flex-col items-center justify-center'>
             <EmptyCartIcon width={140} height={176} />
-            <h4 className="mt-6 text-base font-semibold">
+            <h4 className='mt-6 text-base font-semibold'>
               {t('text-no-products')}
             </h4>
           </div>
@@ -28,7 +28,7 @@ const UnverifiedItemList = ({ hideTitle = false }: { hideTitle?: boolean }) => {
           items?.map((item) => <CartItem item={item} key={item.id} />)
         )}
       </div>
-      <div className="mt-4 space-y-2">
+      <div className='mt-4 space-y-2'>
         <ItemInfoRow title={t('text-sub-total')} value={subtotal} />
         <ItemInfoRow
           title={t('text-tax')}
@@ -39,7 +39,7 @@ const UnverifiedItemList = ({ hideTitle = false }: { hideTitle?: boolean }) => {
           value={t('text-calculated-checkout')}
         />
       </div>
-      <CheckAvailabilityAction className="w-full mt-8 font-normal h-[50px] !bg-gray-800 transition-colors hover:!bg-gray-900">
+      <CheckAvailabilityAction className='mt-8 h-[50px] w-full !bg-gray-800 font-normal transition-colors hover:!bg-gray-900'>
         {t('text-check-availability')}
       </CheckAvailabilityAction>
     </div>

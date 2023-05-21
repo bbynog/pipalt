@@ -4,7 +4,7 @@ const Helium = dynamic(() => import('@/components/products/cards/helium'));
 const Neon = dynamic(() => import('@/components/products/cards/neon')); // grocery-two
 const Argon = dynamic(() => import('@/components/products/cards/argon')); // bakery
 const Krypton = dynamic(
-  () => import('@/components/products/cards/krypton') // furniture extra price
+  () => import('@/components/products/cards/krypton'), // furniture extra price
 );
 const Xenon = dynamic(() => import('@/components/products/cards/xenon')); // furniture-two
 const Radon = dynamic(() => import('@/components/products/cards/radon')); // Book

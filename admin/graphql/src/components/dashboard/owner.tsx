@@ -9,7 +9,7 @@ const ShopList = dynamic(() => import('@/components/dashboard/shops/shops'));
 
 const Message = dynamic(() => import('@/components/dashboard/shops/message'));
 const StoreNotices = dynamic(
-  () => import('@/components/dashboard/shops/store-notices')
+  () => import('@/components/dashboard/shops/store-notices'),
 );
 import { adminOnly, getAuthCredentials, hasAccess } from '@/utils/auth-utils';
 
@@ -57,7 +57,7 @@ const OwnerShopLayout = () => {
           });
         }}
       >
-        <Tab.List className="flex flex-wrap gap-x-9 border-b-2 border-solid border-b-[#E4E1E7]">
+        <Tab.List className='flex flex-wrap gap-x-9 border-b-2 border-solid border-b-[#E4E1E7]'>
           {tabList?.map((tab, key) => {
             let { title } = tab;
             return (
@@ -66,7 +66,7 @@ const OwnerShopLayout = () => {
                   <button
                     className={cn(
                       selected ? classNames?.selected : classNames?.normal,
-                      classNames?.basic
+                      classNames?.basic,
                     )}
                   >
                     {t(title)}
@@ -77,14 +77,14 @@ const OwnerShopLayout = () => {
           })}
         </Tab.List>
         <Tab.Panels
-          className="mt-4 lg:mt-8"
+          className='mt-4 lg:mt-8'
           style={{ height: 'calc(100% - 94px)' }}
         >
           {tabList?.map((tab, key) => {
             let { children } = tab;
             const Component = MAP_PAGE_LIST[children];
             return (
-              <Tab.Panel key={key} className="h-full">
+              <Tab.Panel key={key} className='h-full'>
                 <Component />
               </Tab.Panel>
             );

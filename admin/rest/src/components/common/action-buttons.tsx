@@ -41,7 +41,7 @@ const ActionButtons = ({
   changeRefundStatus = false,
   showMakeAdminButton = false,
   showReplyQuestion = false,
-  customLocale
+  customLocale,
 }: Props) => {
   const { t } = useTranslation();
   const { openModal } = useModalAction();

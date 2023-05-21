@@ -12,13 +12,13 @@ const CategoryCard: React.FC<CategoryItemProps> = ({ item, onClick }) => {
 
   return (
     <div
-      className="group relative h-80 w-full rounded-lg bg-light p-8 shadow-downfall-sm transition-shadow hover:shadow-downfall-lg"
+      className='group relative h-80 w-full rounded-lg bg-light p-8 shadow-downfall-sm transition-shadow hover:shadow-downfall-lg'
       onClick={onClick}
-      role="button"
+      role='button'
     >
-      <div className="relative z-10 flex h-full flex-1 flex-col">
-        <h3 className="mb-1 text-lg font-semibold text-heading">{item.name}</h3>
-        <span className="text-s text-body">
+      <div className='relative z-10 flex h-full flex-1 flex-col'>
+        <h3 className='mb-1 text-lg font-semibold text-heading'>{item.name}</h3>
+        <span className='text-s text-body'>
           {item?.children?.length
             ? `${item?.children?.length} ${
                 item?.children?.length > 1
@@ -30,14 +30,14 @@ const CategoryCard: React.FC<CategoryItemProps> = ({ item, onClick }) => {
             : ''}
         </span>
 
-        <button className="mt-auto flex text-sm font-semibold text-accent underline opacity-100 transition-opacity group-hover:opacity-100 lg:opacity-0">
+        <button className='mt-auto flex text-sm font-semibold text-accent underline opacity-100 transition-opacity group-hover:opacity-100 lg:opacity-0'>
           {t('text-view-more')}
         </button>
       </div>
 
-      <div className="absolute bottom-0 h-full w-full overflow-hidden rounded-lg ltr:right-0 rtl:left-0">
+      <div className='absolute bottom-0 h-full w-full overflow-hidden rounded-lg ltr:right-0 rtl:left-0'>
         <Image
-          className="h-full w-full"
+          className='h-full w-full'
           src={item?.image?.original ?? productPlaceholder}
           alt={item?.name ?? ''}
           width={432}

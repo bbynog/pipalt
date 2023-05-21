@@ -9,14 +9,14 @@ const ContactCard: React.FC<PhoneNumberProps> = ({ checked, number }) => {
   return (
     <div
       className={classNames(
-        'relative p-4 h-full rounded border cursor-pointer group hover:border-accent',
+        'group relative h-full cursor-pointer rounded border p-4 hover:border-accent',
         {
-          'border-accent shadow-sm bg-light': checked,
-          'bg-gray-100 border-transparent': !checked,
-        }
+          'border-accent bg-light shadow-sm': checked,
+          'border-transparent bg-gray-100': !checked,
+        },
       )}
     >
-      <p className="text-sm text-heading font-semibold capitalize">{number}</p>
+      <p className='text-sm font-semibold capitalize text-heading'>{number}</p>
     </div>
   );
 };

@@ -32,25 +32,25 @@ const Radon: React.FC<RadonProps> = ({ product, className }) => {
     <article
       className={cn(
         'product-card cart-type-radon flex h-full flex-col overflow-hidden duration-200',
-        className
+        className,
       )}
     >
-      <Link href={Routes.product(slug)} className="cursor-pointer">
+      <Link href={Routes.product(slug)} className='cursor-pointer'>
         <Image
           src={image?.original ?? productPlaceholder}
           alt={name}
           width={600}
           height={888}
-          className="product-image rounded-lg"
+          className='product-image rounded-lg'
         />
       </Link>
       {/* End of product image */}
 
-      <header className="flex shrink-0 flex-col space-y-2 pt-4">
+      <header className='flex shrink-0 flex-col space-y-2 pt-4'>
         {name && (
           <Link
             href={Routes.product(slug)}
-            className="text-sm font-semibold text-heading transition-colors hover:text-orange-500 md:text-base"
+            className='text-sm font-semibold text-heading transition-colors hover:text-orange-500 md:text-base'
             title={name}
           >
             {name}
@@ -58,38 +58,38 @@ const Radon: React.FC<RadonProps> = ({ product, className }) => {
         )}
 
         {author && (
-          <span className="text-xs text-gray-400 md:text-sm">
+          <span className='text-xs text-gray-400 md:text-sm'>
             {t('text-by')}
             <Link
               href={Routes.author(author?.slug!)}
-              className="text-body transition-colors hover:text-orange-500 ltr:ml-1 rtl:mr-1"
+              className='text-body transition-colors hover:text-orange-500 ltr:ml-1 rtl:mr-1'
             >
               {author?.name}
             </Link>
           </span>
         )}
 
-        <div className="flex shrink-0 items-center">
+        <div className='flex shrink-0 items-center'>
           {product_type.toLowerCase() === 'variable' ? (
-            <p className="text-sm font-semibold text-orange-500 md:text-base">
+            <p className='text-sm font-semibold text-orange-500 md:text-base'>
               {minPrice}
 
-              <span className="text-heading"> - </span>
+              <span className='text-heading'> - </span>
 
               {maxPrice}
             </p>
           ) : (
-            <div className="flex items-center space-x-2.5 rtl:space-x-reverse">
-              <span className="text-base font-semibold text-orange-500">
+            <div className='flex items-center space-x-2.5 rtl:space-x-reverse'>
+              <span className='text-base font-semibold text-orange-500'>
                 {price}
               </span>
               {basePrice && (
-                <del className="text-xs font-semibold text-gray-400 ltr:mr-2 rtl:ml-2">
+                <del className='text-xs font-semibold text-gray-400 ltr:mr-2 rtl:ml-2'>
                   {basePrice}
                 </del>
               )}
               {discount && (
-                <div className="text-xs text-accent">
+                <div className='text-xs text-accent'>
                   ({t('text-save')} {discount})
                 </div>
               )}

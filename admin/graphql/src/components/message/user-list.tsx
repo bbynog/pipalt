@@ -56,7 +56,7 @@ const UserList = ({ className, filterText, permission, ...rest }: Props) => {
   if (isLoading && isEmpty(conversations)) {
     return (
       <Loader
-        className="!h-auto flex-grow"
+        className='!h-auto flex-grow'
         showText={false}
         text={t('common:text-loading')}
       />
@@ -72,7 +72,7 @@ const UserList = ({ className, filterText, permission, ...rest }: Props) => {
         {!isEmpty(conversations) ? (
           <>
             <Scrollbar
-              className="w-full h-full"
+              className='h-full w-full'
               options={{
                 scrollbars: {
                   autoHide: 'never',
@@ -90,9 +90,9 @@ const UserList = ({ className, filterText, permission, ...rest }: Props) => {
                 </React.Fragment>
               ))}
               {hasMore ? (
-                <div className="mt-4 text-center loader" ref={loadMoreRef}>
+                <div className='loader mt-4 text-center' ref={loadMoreRef}>
                   {isLoadingMore ? (
-                    <Loader className="!h-auto" showText={false} />
+                    <Loader className='!h-auto' showText={false} />
                   ) : (
                     ''
                   )}

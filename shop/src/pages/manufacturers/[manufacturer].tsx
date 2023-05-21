@@ -17,14 +17,14 @@ export { getStaticPaths, getStaticProps } from '@/framework/manufacturer.ssr';
 
 const CartCounterButton = dynamic(
   () => import('@/components/cart/cart-counter-button'),
-  { ssr: false }
+  { ssr: false },
 );
 
 const MobileNavigation = dynamic(
   () => import('@/components/layouts/mobile-navigation'),
   {
     ssr: false,
-  }
+  },
 );
 
 export default function Manufacturer({ manufacturer, variables }: any) {
@@ -38,9 +38,9 @@ export default function Manufacturer({ manufacturer, variables }: any) {
   const productsItem: any = products;
   return (
     <>
-      <div className="flex w-full flex-col">
+      <div className='flex w-full flex-col'>
         <Details manufacturer={manufacturer} />
-        <h2 className="mb-8 text-3xl font-semibold tracking-tight text-heading">
+        <h2 className='mb-8 text-3xl font-semibold tracking-tight text-heading'>
           {t('text-books')}
         </h2>
         <Grid
@@ -50,7 +50,7 @@ export default function Manufacturer({ manufacturer, variables }: any) {
           isLoadingMore={isLoadingMore}
           hasMore={hasMore}
           error={error}
-          column="five"
+          column='five'
         />
       </div>
 
@@ -66,9 +66,9 @@ const GetLayout = (page: React.ReactElement) => {
   return (
     <GeneralLayout>
       <>
-        <div className="w-full bg-light">
-          <div className="mx-auto flex min-h-screen w-full max-w-1920 px-5 py-10 rtl:space-x-reverse lg:space-x-10 xl:py-14 xl:px-16">
-            <div className="hidden w-80 shrink-0 lg:block">
+        <div className='w-full bg-light'>
+          <div className='mx-auto flex min-h-screen w-full max-w-1920 px-5 py-10 rtl:space-x-reverse lg:space-x-10 xl:py-14 xl:px-16'>
+            <div className='hidden w-80 shrink-0 lg:block'>
               <StickyBox offsetTop={140} offsetBottom={30}>
                 <SidebarFilter type={type} showManufacturers={false} />
               </StickyBox>
@@ -86,10 +86,10 @@ const GetLayout = (page: React.ReactElement) => {
                 data: { type, showManufacturers: false },
               })
             }
-            className="flex h-full items-center justify-center p-2 focus:text-accent focus:outline-0"
+            className='flex h-full items-center justify-center p-2 focus:text-accent focus:outline-0'
           >
-            <span className="sr-only">{t('text-filter')}</span>
-            <FilterIcon width="17.05" height="18" />
+            <span className='sr-only'>{t('text-filter')}</span>
+            <FilterIcon width='17.05' height='18' />
           </motion.button>
         </MobileNavigation>
       </>

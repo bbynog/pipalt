@@ -11,8 +11,8 @@ const ChangePasswordPage = () => {
   return (
     <>
       <Seo noindex={true} nofollow={true} />
-      <Card className="w-full">
-        <h1 className="mb-5 text-lg font-semibold text-heading sm:mb-8 sm:text-xl">
+      <Card className='w-full'>
+        <h1 className='mb-5 text-lg font-semibold text-heading sm:mb-8 sm:text-xl'>
           {t('change-password')}
         </h1>
         <ChangePasswordForm />

@@ -54,7 +54,7 @@ const MyReports: React.FC = () => {
         dayjs.extend(utc);
         dayjs.extend(timezone);
         return (
-          <span className="whitespace-nowrap">
+          <span className='whitespace-nowrap'>
             {dayjs.utc(date).tz(dayjs.tz.guess()).fromNow()}
           </span>
         );
@@ -65,9 +65,9 @@ const MyReports: React.FC = () => {
   // loader
   if (!reports.length && isLoading) {
     return (
-      <div className="flex w-full flex-col">
-        <div className="mb-8 flex items-center justify-center sm:mb-10">
-          <h1 className="text-center text-lg font-semibold text-heading sm:text-xl">
+      <div className='flex w-full flex-col'>
+        <div className='mb-8 flex items-center justify-center sm:mb-10'>
+          <h1 className='text-center text-lg font-semibold text-heading sm:text-xl'>
             {t('profile-sidebar-my-reports')}
           </h1>
         </div>
@@ -79,23 +79,23 @@ const MyReports: React.FC = () => {
 
   if (!reports.length && !isLoading) {
     return (
-      <div className="flex w-full flex-col">
-        <div className="mb-8 flex items-center justify-between sm:mb-10">
-          <h1 className="ml-auto text-center text-lg font-semibold text-heading sm:text-xl">
+      <div className='flex w-full flex-col'>
+        <div className='mb-8 flex items-center justify-between sm:mb-10'>
+          <h1 className='ml-auto text-center text-lg font-semibold text-heading sm:text-xl'>
             {t('profile-sidebar-my-reports')}
           </h1>
         </div>
         <NotFound
-          text="text-no-download"
-          className="mx-auto w-full md:w-7/12"
+          text='text-no-download'
+          className='mx-auto w-full md:w-7/12'
         />
       </div>
     );
   }
 
   return (
-    <div className="flex w-full flex-col">
-      <h3 className="mb-8 text-center text-2xl font-semibold text-heading">
+    <div className='flex w-full flex-col'>
+      <h3 className='mb-8 text-center text-2xl font-semibold text-heading'>
         {t('profile-sidebar-my-reports')}
       </h3>
       <Table
@@ -103,8 +103,8 @@ const MyReports: React.FC = () => {
         columns={orderTableColumns}
         data={reports}
         rowKey={(record: any) => record.created_at}
-        className="w-full border border-gray-200"
-        rowClassName="!cursor-auto"
+        className='w-full border border-gray-200'
+        rowClassName='!cursor-auto'
         scroll={{ x: 350, y: 500 }}
       />
     </div>

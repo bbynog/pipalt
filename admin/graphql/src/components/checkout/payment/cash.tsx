@@ -4,7 +4,7 @@ const CashPayment = () => {
   const { t } = useTranslation('common');
   return (
     <>
-      <span className="text-sm text-body block">{t('text-cash-message')}</span>
+      <span className='block text-sm text-body'>{t('text-cash-message')}</span>
     </>
   );
 };

@@ -10,8 +10,8 @@ const SearchCount = ({ from, to, total }: Props) => {
   const { t } = useTranslation('common');
 
   return (
-    <span className="text-sm font-semibold text-heading">{`${t(
-      'text-showing'
+    <span className='text-sm font-semibold text-heading'>{`${t(
+      'text-showing',
     )} ${from} - ${to} ${t('text-of')} ${total} ${t('text-products')}`}</span>
   );
 };

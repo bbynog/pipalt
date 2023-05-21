@@ -34,7 +34,7 @@ export function useManufacturers(options?: ManufacturerQueryOptions) {
     {
       getNextPageParam: ({ current_page, last_page }) =>
         last_page > current_page && { page: current_page + 1 },
-    }
+    },
   );
 
   function handleLoadMore() {
@@ -65,7 +65,7 @@ export function useTopManufacturers(options: Pick<QueryOptions, 'limit'>) {
 
   const { data, isLoading, error } = useQuery<Manufacturer[], Error>(
     [API_ENDPOINTS.MANUFACTURERS_TOP, formattedOptions],
-    ({ queryKey }) => client.manufacturers.top(queryKey[1] as QueryOptions)
+    ({ queryKey }) => client.manufacturers.top(queryKey[1] as QueryOptions),
   );
   return {
     manufacturers: data ?? [],

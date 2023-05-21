@@ -34,7 +34,7 @@ export default function ChangePasswordForm() {
     <Form<ChangePasswordUserInput & { passwordConfirmation: string }>
       onSubmit={onSubmit}
       validationSchema={changePasswordSchema}
-      className="flex flex-col"
+      className='flex flex-col'
       serverError={formError}
     >
       {({ register, formState: { errors } }) => (
@@ -43,27 +43,27 @@ export default function ChangePasswordForm() {
             label={t('text-old-password')}
             {...register('oldPassword')}
             error={t(errors.oldPassword?.message!)}
-            className="mb-5"
-            variant="outline"
+            className='mb-5'
+            variant='outline'
           />
           <PasswordInput
             label={t('text-new-password')}
             {...register('newPassword')}
             error={t(errors.newPassword?.message!)}
-            className="mb-5"
-            variant="outline"
+            className='mb-5'
+            variant='outline'
           />
           <PasswordInput
             label={t('text-confirm-password')}
             {...register('passwordConfirmation')}
             error={t(errors.passwordConfirmation?.message!)}
-            className="mb-5"
-            variant="outline"
+            className='mb-5'
+            variant='outline'
           />
           <Button
             loading={loading}
             disabled={loading}
-            className="ltr:ml-auto rtl:mr-auto"
+            className='ltr:ml-auto rtl:mr-auto'
           >
             {t('text-submit')}
           </Button>

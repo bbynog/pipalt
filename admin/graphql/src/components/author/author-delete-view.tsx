@@ -14,7 +14,7 @@ const AuthorDeleteView = () => {
         fields: {
           authors(existingRefs, { readField }) {
             return existingRefs.data.filter(
-              (ref: any) => deleteAuthor.id !== readField('id', ref)
+              (ref: any) => deleteAuthor.id !== readField('id', ref),
             );
           },
         },

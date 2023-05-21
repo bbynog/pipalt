@@ -14,11 +14,11 @@ const ProductTypeInput = () => {
   const { t } = useTranslation();
 
   return (
-    <Card className="w-full sm:w-8/12 md:w-2/3">
-      <div className="mb-5">
+    <Card className='w-full sm:w-8/12 md:w-2/3'>
+      <div className='mb-5'>
         <Label>{t('form:form-title-product-type')}</Label>
         <SelectInput
-          name="product_type"
+          name='product_type'
           control={control}
           getOptionLabel={(option: any) => option.name}
           getOptionValue={(option: any) => option.value}

@@ -67,7 +67,7 @@ const Search: React.FC<SearchProps> = ({
     {
       [classes.shadow]: shadow,
     },
-    inputClassName
+    inputClassName,
   );
 
   function clear() {
@@ -78,34 +78,34 @@ const Search: React.FC<SearchProps> = ({
   return (
     <form
       noValidate
-      role="search"
-      className={cn('w-full flex items-center relative', className)}
+      role='search'
+      className={cn('relative flex w-full items-center', className)}
       onSubmit={handleSubmit(onSearch)}
     >
-      <label htmlFor="search" className="sr-only">
+      <label htmlFor='search' className='sr-only'>
         {t('form:input-label-search')}
       </label>
-      <button className="outline-none absolute start-1 focus:outline-none active:outline-none p-2 text-body">
-        <SearchIcon className="w-5 h-5" />
+      <button className='absolute p-2 text-body outline-none start-1 focus:outline-none active:outline-none'>
+        <SearchIcon className='h-5 w-5' />
       </button>
       <input
-        type="text"
-        id="search"
+        type='text'
+        id='search'
         {...register('searchText')}
         className={rootClassName}
         placeholder={t('form:input-placeholder-search')}
-        aria-label="Search"
-        autoComplete="off"
+        aria-label='Search'
+        autoComplete='off'
         {...rest}
       />
       {errors.searchText && <p>{errors.searchText.message}</p>}
       {!!searchText && (
         <button
-          type="button"
+          type='button'
           onClick={clear}
-          className="outline-none absolute end-1 focus:outline-none active:outline-none p-2 text-body"
+          className='absolute p-2 text-body outline-none end-1 focus:outline-none active:outline-none'
         >
-          <CloseIcon className="w-5 h-5" />
+          <CloseIcon className='h-5 w-5' />
         </button>
       )}
     </form>

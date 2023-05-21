@@ -14,7 +14,7 @@ const GroupDeleteView = () => {
         fields: {
           types(existingRefs, { readField }) {
             return existingRefs.filter(
-              (ref: any) => deleteType.id !== readField('id', ref)
+              (ref: any) => deleteType.id !== readField('id', ref),
             );
           },
         },

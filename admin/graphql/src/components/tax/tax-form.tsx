@@ -14,7 +14,7 @@ import { useTranslation } from 'next-i18next';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { taxValidationSchema } from './tax-validation-schema';
 import { Tax } from '__generated__/__types__';
-import {Routes} from "@/config/routes";
+import { Routes } from '@/config/routes';
 
 const defaultValues = {
   name: '',
@@ -74,7 +74,7 @@ export default function CreateOrUpdateTaxForm({ initialValues }: IProps) {
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
-      <div className="flex flex-wrap my-5 sm:my-8">
+      <div className='my-5 flex flex-wrap sm:my-8'>
         <Description
           title={t('form:form-title-information')}
           details={`${
@@ -82,59 +82,59 @@ export default function CreateOrUpdateTaxForm({ initialValues }: IProps) {
               ? t('form:item-description-update')
               : t('form:item-description-add')
           } ${t('form:tax-form-info-help-text')}`}
-          className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8 "
+          className='w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5 '
         />
 
-        <Card className="w-full sm:w-8/12 md:w-2/3">
+        <Card className='w-full sm:w-8/12 md:w-2/3'>
           <Input
             label={t('form:input-label-name')}
             {...register('name')}
             error={t(errors.name?.message!)}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
           />
           <Input
             label={t('form:input-label-rate')}
             {...register('rate')}
-            type="number"
+            type='number'
             error={t(errors.rate?.message!)}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
           />
           <Input
             label={t('form:input-label-country')}
             {...register('country')}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
           />
           <Input
             label={t('form:input-label-city')}
             {...register('city')}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
           />
           <Input
-            label="State"
+            label='State'
             {...register('state')}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
           />
           <Input
             label={t('form:input-label-zip')}
             {...register('zip')}
-            variant="outline"
-            className="mb-5"
+            variant='outline'
+            className='mb-5'
           />
         </Card>
       </div>
 
-      <div className="mb-4 text-end">
+      <div className='mb-4 text-end'>
         {initialValues && (
           <Button
-            variant="outline"
+            variant='outline'
             onClick={router.back}
-            className="me-4"
-            type="button"
+            className='me-4'
+            type='button'
           >
             {t('form:button-label-back')}
           </Button>

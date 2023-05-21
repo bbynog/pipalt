@@ -46,45 +46,45 @@ const PaymentGrid: React.FC<{ className?: string }> = ({ className }) => {
       {errorMessage ? (
         <Alert
           message={t(`common:${errorMessage}`)}
-          variant="error"
+          variant='error'
           closeable={true}
-          className="mt-5"
+          className='mt-5'
           onClose={() => setErrorMessage(null)}
         />
       ) : null}
 
       <RadioGroup value={gateway} onChange={setGateway}>
-        <RadioGroup.Label className="text-base text-heading font-semibold mb-5 block">
+        <RadioGroup.Label className='mb-5 block text-base font-semibold text-heading'>
           {t('text-choose-payment')}
         </RadioGroup.Label>
 
-        <div className="grid gap-4 grid-cols-2 md:grid-cols-3 mb-8">
+        <div className='mb-8 grid grid-cols-2 gap-4 md:grid-cols-3'>
           {Object.values(AVAILABLE_PAYMENT_METHODS_MAP).map(
             ({ name, icon, value }) => (
               <RadioGroup.Option value={value} key={value}>
                 {({ checked }) => (
                   <div
                     className={cn(
-                      'w-full h-full py-3 flex items-center justify-center border text-center rounded cursor-pointer relative',
+                      'relative flex h-full w-full cursor-pointer items-center justify-center rounded border py-3 text-center',
                       checked
-                        ? 'bg-light border-accent shadow-600'
-                        : 'bg-light border-gray-200'
+                        ? 'shadow-600 border-accent bg-light'
+                        : 'border-gray-200 bg-light',
                     )}
                   >
                     {icon ? (
                       <>
                         {/* eslint-disable */}
-                        <img src={icon} alt={name} className="h-[30px]" />
+                        <img src={icon} alt={name} className='h-[30px]' />
                       </>
                     ) : (
-                      <span className="text-xs text-heading font-semibold">
+                      <span className='text-xs font-semibold text-heading'>
                         {name}
                       </span>
                     )}
                   </div>
                 )}
               </RadioGroup.Option>
-            )
+            ),
           )}
         </div>
       </RadioGroup>
