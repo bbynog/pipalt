@@ -16,7 +16,7 @@ const Logo: React.FC<React.AnchorHTMLAttributes<{}>> = ({
       <span className="relative h-10 w-32 overflow-hidden md:w-40">
         <Image
           src={logo?.original ?? logoPlaceholder}
-          alt={siteTitle || 'PickBazar Logo'}
+          alt={siteTitle || 'Pipalt Logo'}
           fill
           sizes="(max-width: 768px) 100vw"
           loading="eager"

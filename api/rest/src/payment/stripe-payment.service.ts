@@ -3,7 +3,7 @@ import settingJson from '@db/settings.json';
 import { Setting } from 'src/settings/entities/setting.entity';
 import { plainToClass } from 'class-transformer';
 import { InjectStripe } from 'nestjs-stripe';
-import paymentGatewayJson from 'src/db/pickbazar/payment-gateway.json';
+import paymentGatewayJson from 'src/db/pipalt/payment-gateway.json';
 import { Order } from 'src/orders/entities/order.entity';
 import { PaymentGateWay } from 'src/payment-method/entities/payment-gateway.entity';
 import { User } from 'src/users/entities/user.entity';

@@ -37,14 +37,13 @@ export default function VerifyEmailActions() {
       toast.success(t('common:successfully-logout'));
       router.push(Routes.login);
     },
-    onError: () =>
-      toast.error(t('common:PICKBAZAR_MESSAGE.SOMETHING_WENT_WRONG')),
+    onError: () => toast.error(t('common:PIPALT_MESSAGE.SOMETHING_WENT_WRONG')),
   });
   const router = useRouter();
   const [resend, { loading: resendLoading }] =
     useResendVerificationEmailMutation({
       onCompleted: () =>
-        toast.success(t('common:PICKBAZAR_MESSAGE.EMAIL_SENT_SUCCESSFUL')),
+        toast.success(t('common:PIPALT_MESSAGE.EMAIL_SENT_SUCCESSFUL')),
       onError: () => toast.error(t('common:SOMETHING_WENT_WRONG')),
     });
   const { emailVerified } = getEmailVerified();

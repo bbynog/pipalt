@@ -41,10 +41,10 @@ echo(chalk.green(`Your domain name is: ${domainName} \n`))
 
 let whichConfig = await question('What api do you want to use? Enter 1 for REST api or 2 for GraphQL: ')
 
-await $`sudo rm -f /etc/nginx/sites-enabled/pickbazar`
-await $`sudo rm -f /etc/nginx/sites-available/pickbazar`
-await $`sudo touch /etc/nginx/sites-available/pickbazar`
-await $`sudo chmod -R 777 /etc/nginx/sites-available/pickbazar`
+await $`sudo rm -f /etc/nginx/sites-enabled/pipalt`
+await $`sudo rm -f /etc/nginx/sites-available/pipalt`
+await $`sudo touch /etc/nginx/sites-available/pipalt`
+await $`sudo chmod -R 777 /etc/nginx/sites-available/pipalt`
 
 if(whichConfig == 1) {
     echo(chalk.blue('Settings Running For REST API'))
@@ -94,7 +94,7 @@ if(whichConfig == 1) {
         location ~ /\\.(?!well-known).* {
             deny all;
         }
-    }' > '/etc/nginx/sites-available/pickbazar'`
+    }' > '/etc/nginx/sites-available/pipalt'`
 
 } else {
     echo(chalk.blue('Settings For GraphQL API'))
@@ -145,11 +145,11 @@ if(whichConfig == 1) {
         location ~ /\\.(?!well-known).* {
             deny all;
         }
-    }' > '/etc/nginx/sites-available/pickbazar'`
+    }' > '/etc/nginx/sites-available/pipalt'`
 }
 
 echo(chalk.blue('\nEnabling the config'))
-await $`sudo ln -s /etc/nginx/sites-available/pickbazar /etc/nginx/sites-enabled/`
+await $`sudo ln -s /etc/nginx/sites-available/pipalt /etc/nginx/sites-enabled/`
 
 //below comment will check nginx error
 await $`sudo nginx -t`

@@ -9,7 +9,7 @@ read ip_address
 echo "########### connecting to server... ###########"
 echo "${username}"
 echo "${ip_address}"
-ssh -o StrictHostKeyChecking=no -l "${username}" "${ip_address}" "sudo mkdir -p /var/www/pickbazar-react; sudo chown -R \$USER:\$USER /var/www; sudo apt install zip unzip";
+ssh -o StrictHostKeyChecking=no -l "${username}" "${ip_address}" "sudo mkdir -p /var/www/pipalt; sudo chown -R \$USER:\$USER /var/www; sudo apt install zip unzip";
 
 if [ -d "./api" ]; then
   echo 'Build API'
@@ -32,16 +32,16 @@ fi
 
 if [ -f "./api.zip" ] && [ -f "./deployment.zip" ]; then
     echo 'Uploading api.zip to server...'
-    scp "./api.zip" "${username}@${ip_address}:/var/www/pickbazar-react"
+    scp "./api.zip" "${username}@${ip_address}:/var/www/pipalt"
     echo 'uploaded api.zip to server'
-    ssh -o StrictHostKeyChecking=no -l "${username}" "${ip_address}" "unzip /var/www/pickbazar-react/api.zip -d /var/www/pickbazar-react";
+    ssh -o StrictHostKeyChecking=no -l "${username}" "${ip_address}" "unzip /var/www/pipalt/api.zip -d /var/www/pipalt";
 
     echo 'Uploading deployment.zip to server...'
-    scp "./deployment.zip" "${username}@${ip_address}:/var/www/pickbazar-react"
+    scp "./deployment.zip" "${username}@${ip_address}:/var/www/pipalt"
     echo 'uploaded deployment.zip to server'
-    ssh -o StrictHostKeyChecking=no -l "${username}" "${ip_address}" "unzip /var/www/pickbazar-react/deployment.zip -d /var/www/pickbazar-react";
+    ssh -o StrictHostKeyChecking=no -l "${username}" "${ip_address}" "unzip /var/www/pipalt/deployment.zip -d /var/www/pipalt";
 else
-  echo "pickbazar api and deployment zip file missing"
+  echo "pipalt api and deployment zip file missing"
 fi
 
 echo "installing google zx for further script"

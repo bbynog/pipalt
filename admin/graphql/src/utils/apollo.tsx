@@ -1,7 +1,9 @@
 import { Routes } from '@/config/routes';
 import {
-  ApolloClient, from, InMemoryCache,
-  NormalizedCacheObject
+  ApolloClient,
+  from,
+  InMemoryCache,
+  NormalizedCacheObject,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { onError } from '@apollo/client/link/error';
@@ -11,9 +13,7 @@ import Cookies from 'js-cookie';
 import isEqual from 'lodash/isEqual';
 import Router from 'next/router';
 import { useMemo } from 'react';
-import {
-  getAuthCredentials, setEmailVerified
-} from './auth-utils';
+import { getAuthCredentials, setEmailVerified } from './auth-utils';
 
 export const APOLLO_STATE_PROP_NAME = '__APOLLO_STATE__';
 
@@ -38,7 +38,7 @@ function createApolloClient() {
   const errorLink = onError(({ graphQLErrors, networkError }) => {
     if (graphQLErrors)
       graphQLErrors.map(({ message, locations, path }) => {
-        if (message === 'PICKBAZAR_ERROR.NOT_AUTHORIZED') {
+        if (message === 'PIPALT_ERROR.NOT_AUTHORIZED') {
           Cookies.remove('AUTH_CRED');
           Router.push(Routes.login);
         }

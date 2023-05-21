@@ -2,8 +2,10 @@ import { Routes } from '@/config/routes';
 import { AUTH_TOKEN_KEY } from '@/lib/constants';
 import { useToken } from '@/lib/hooks/use-token';
 import {
-  ApolloClient, from, InMemoryCache,
-  NormalizedCacheObject
+  ApolloClient,
+  from,
+  InMemoryCache,
+  NormalizedCacheObject,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { onError } from '@apollo/client/link/error';
@@ -22,9 +24,9 @@ let apolloClient: ApolloClient<NormalizedCacheObject> | undefined;
 function mergePagination(existing: any, incoming: any) {
   return existing
     ? {
-      ...incoming,
-      data: [...existing.data, ...incoming.data],
-    }
+        ...incoming,
+        data: [...existing.data, ...incoming.data],
+      }
     : incoming;
 }
 
@@ -48,7 +50,7 @@ function createApolloClient() {
     const token = useToken();
     if (graphQLErrors)
       graphQLErrors.map(({ message, locations, path }) => {
-        if (message === 'PICKBAZAR_ERROR.NOT_AUTHORIZED') {
+        if (message === 'PIPALT_ERROR.NOT_AUTHORIZED') {
           // every 401/unauthorized error will be caught here and update the global local state
           Cookies.remove(AUTH_TOKEN_KEY);
           Router.reload();

@@ -9,9 +9,8 @@ import { API_ENDPOINTS } from './client/api-endpoints';
 import { userClient } from './client/user';
 import { User, QueryOptionsType, UserPaginator } from '@/types';
 import { mapPaginatorData } from '@/utils/data-mappers';
-import axios from "axios";
-import { setEmailVerified } from "@/utils/auth-utils";
-
+import axios from 'axios';
+import { setEmailVerified } from '@/utils/auth-utils';
 
 export const useMeQuery = () => {
   const queryClient = useQueryClient();
@@ -107,7 +106,7 @@ export const useUpdateUserEmailMutation = () => {
       queryClient.invalidateQueries(API_ENDPOINTS.USERS);
     },
   });
-}
+};
 
 export const useChangePasswordMutation = () => {
   return useMutation(userClient.changePassword);
@@ -120,13 +119,13 @@ export const useResendVerificationEmail = () => {
   const { t } = useTranslation('common');
   return useMutation(userClient.resendVerificationEmail, {
     onSuccess: () => {
-      toast.success(t('common:PICKBAZAR_MESSAGE.EMAIL_SENT_SUCCESSFUL'));
+      toast.success(t('common:PIPALT_MESSAGE.EMAIL_SENT_SUCCESSFUL'));
     },
     onError: () => {
-      toast(t('common:PICKBAZAR_MESSAGE.EMAIL_SENT_FAILED'));
-    }
+      toast(t('common:PIPALT_MESSAGE.EMAIL_SENT_FAILED'));
+    },
   });
-}
+};
 
 export const useVerifyForgetPasswordTokenMutation = () => {
   return useMutation(userClient.verifyForgetPasswordToken);

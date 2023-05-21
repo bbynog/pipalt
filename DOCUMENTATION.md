@@ -1,4 +1,4 @@
-# PickBazar Documentation
+# Documentation
 
 > For updated online docs, please check this,
 
@@ -6,18 +6,16 @@
 
 # Introduction
 
-
-
 Fastest E-commerce template built with React, NextJS, TypeScript, Apollo, React-Query, NestJs & Tailwind. Its very easy to use, you can build your schema very easily. GraphQL playground makes it’s own documentation, and for rest we use swagger, your frontend team will love using it.
 
 # Demo Links
 
-1. [PickBazar Shop GraphQL](https://pickbazar-react.vercel.app)
-2. [PickBazar Shop REST](https://pickbazar-react-rest.vercel.app)
-3. [PickBazar Admin GraphQL](https://pickbazar-react-admin.vercel.app)
-4. [PickBazar Admin REST](https://pickbazar-react-admin-rest.vercel.app)
-5. [PickBazar API GraphQL Playground](https://mock.redq.io/graphql)
-6. [PickBazar API REST Playground](https://mock.redq.io/docs)
+1. [Shop GraphQL](https://pickbazar-react.vercel.app)
+2. [Shop REST](https://pickbazar-react-rest.vercel.app)
+3. [Admin GraphQL](https://pickbazar-react-admin.vercel.app)
+4. [Admin REST](https://pickbazar-react-admin-rest.vercel.app)
+5. [API GraphQL Playground](https://mock.redq.io/graphql)
+6. [API REST Playground](https://mock.redq.io/docs)
 
 # Tech We Have Used
 
@@ -170,7 +168,9 @@ yarn dev:gql
 **NOTE** : API must be running for the above commands to work.
 
 **NOTE** : `.env` file must be filled with your values.
+
 ## Only For Windows Users
+
 ```
 - Go to your specific project root and find `.graphql-let.yml`
 - Replace the env variable `${NEXT_PUBLIC_GRAPHQL_API_ENDPOINT}` in schema field manually
@@ -182,6 +182,7 @@ yarn dev:gql
 to
 "codegen": "graphql-let",
 ```
+
 <br>
 
 # If you want to test your production build admin or shop in local environment then run the below commands.

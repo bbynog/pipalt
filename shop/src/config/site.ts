@@ -2,17 +2,17 @@ import { Routes } from '@/config/routes';
 import { PaymentGateway } from '@/types';
 
 export const siteSettings = {
-  name: 'PickBazar',
-  description: '',
+  name: 'Pipalt',
+  description: 'Sua loja',
   logo: {
     url: '/logo.svg',
-    alt: 'PickBazar',
+    alt: 'Pipalt',
     href: '/grocery',
     width: 128,
     height: 40,
   },
-  defaultLanguage: 'en',
-  currencyCode: 'USD',
+  defaultLanguage: 'pt',
+  currencyCode: 'BRL',
   product: {
     placeholderImage: '/product-placeholder.svg',
     cardMaps: {

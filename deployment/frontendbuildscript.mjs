@@ -103,9 +103,9 @@ await $`zip -r frontend.zip shop admin package.json babel.config.js yarn.lock`;
 echo(chalk.green("frontend.zip file created"));
 let front_end_source_path = "./frontend.zip";
 echo("Uploading frontend.zip to server, Please wait...");
-await $`scp ${front_end_source_path} ${username}@${ip_address}:/var/www/pickbazar-react`;
+await $`scp ${front_end_source_path} ${username}@${ip_address}:/var/www/pipalt`;
 echo(chalk.green("Uploaded frontend.zip to server"));
 
-await $`ssh -o StrictHostKeyChecking=no -l ${username} ${ip_address} "unzip /var/www/pickbazar-react/frontend.zip -d /var/www/pickbazar-react";`;
+await $`ssh -o StrictHostKeyChecking=no -l ${username} ${ip_address} "unzip /var/www/pipalt/frontend.zip -d /var/www/pipalt";`;
 
 echo(chalk.green("Your application build successful"));

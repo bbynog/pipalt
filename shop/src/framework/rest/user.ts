@@ -339,7 +339,7 @@ export function useResendVerificationEmail() {
     {
       onSuccess: (data) => {
         if (data?.success) {
-          toast.success(t('PICKBAZAR_MESSAGE.EMAIL_SENT_SUCCESSFUL'));
+          toast.success(t('PIPALT_MESSAGE.EMAIL_SENT_SUCCESSFUL'));
         }
       },
       onError: (error) => {

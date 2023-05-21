@@ -13,7 +13,7 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "paths": {
-      "@db/*": ["./src/db/pickbazar/*"]
+      "@db/*": ["./src/db/pipalt/*"]
     },
     "incremental": true,
     "skipLibCheck": true
